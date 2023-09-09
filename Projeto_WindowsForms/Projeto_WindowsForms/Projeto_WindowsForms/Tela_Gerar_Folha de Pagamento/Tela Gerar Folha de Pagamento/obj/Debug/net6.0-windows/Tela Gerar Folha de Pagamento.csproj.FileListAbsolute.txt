@@ -1,0 +1,17 @@
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\bin\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.exe
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\bin\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.deps.json
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\bin\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.runtimeconfig.json
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\bin\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.dll
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\bin\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.pdb
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela_Gerar_Folha_de_Pagamento.Properties.Resources.resources
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.csproj.GenerateResource.cache
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.AssemblyInfoInputs.cache
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.AssemblyInfo.cs
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.csproj.CoreCompileInputs.cache
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.dll
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\refint\Tela Gerar Folha de Pagamento.dll
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.pdb
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela Gerar Folha de Pagamento.genruntimeconfig.cache
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\ref\Tela Gerar Folha de Pagamento.dll
+Z:\Users\gb010\source\repos\Tela Gerar Folha de Pagamento\Tela Gerar Folha de Pagamento\obj\Debug\net6.0-windows\Tela_Gerar_Folha_de_Pagamento.frmGerarFolha.resources
