@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerarFolhaPagamento));
             lblTitulo = new Label();
             imageList1 = new ImageList(components);
-            imgSetaEsquerda = new PictureBox();
             lblSelecionarColaborador = new Label();
             txbNomeID = new TextBox();
             imgLupa = new PictureBox();
@@ -79,10 +77,11 @@
             btnCalcular = new Button();
             lblMensagemCalculo = new Label();
             gpbLinha = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)imgSetaEsquerda).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
             tblDadosFolhaPagamento.SuspendLayout();
             tblResultadoFolhaPagamento.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -100,16 +99,6 @@
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
-            // 
-            // imgSetaEsquerda
-            // 
-            imgSetaEsquerda.Image = (Image)resources.GetObject("imgSetaEsquerda.Image");
-            imgSetaEsquerda.InitialImage = (Image)resources.GetObject("imgSetaEsquerda.InitialImage");
-            imgSetaEsquerda.Location = new Point(12, 12);
-            imgSetaEsquerda.Name = "imgSetaEsquerda";
-            imgSetaEsquerda.Size = new Size(50, 50);
-            imgSetaEsquerda.TabIndex = 1;
-            imgSetaEsquerda.TabStop = false;
             // 
             // lblSelecionarColaborador
             // 
@@ -130,7 +119,7 @@
             // 
             // imgLupa
             // 
-            imgLupa.Image = (Image)resources.GetObject("imgLupa.Image");
+            imgLupa.Image = Properties.Resources.search_button;
             imgLupa.Location = new Point(564, 111);
             imgLupa.Name = "imgLupa";
             imgLupa.Size = new Size(24, 24);
@@ -582,11 +571,24 @@
             gpbLinha.TabIndex = 20;
             gpbLinha.TabStop = false;
             // 
-            // frmGerarFolha
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.back_button;
+            pictureBox1.Location = new Point(21, 11);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(45, 39);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // frmGerarFolhaPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 585);
+            Controls.Add(pictureBox1);
             Controls.Add(gpbLinha);
             Controls.Add(lblMensagemCalculo);
             Controls.Add(btnCalcular);
@@ -606,16 +608,16 @@
             Controls.Add(imgLupa);
             Controls.Add(txbNomeID);
             Controls.Add(lblSelecionarColaborador);
-            Controls.Add(imgSetaEsquerda);
             Controls.Add(lblTitulo);
-            Name = "frmGerarFolha";
+            Name = "frmGerarFolhaPagamento";
             Text = "Gerar Folha de Pagamento";
-            ((System.ComponentModel.ISupportInitialize)imgSetaEsquerda).EndInit();
+            Load += frmGerarFolhaPagamento_Load;
             ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
             tblDadosFolhaPagamento.ResumeLayout(false);
             tblDadosFolhaPagamento.PerformLayout();
             tblResultadoFolhaPagamento.ResumeLayout(false);
             tblResultadoFolhaPagamento.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -624,7 +626,6 @@
 
         private Label lblTitulo;
         private ImageList imageList1;
-        private PictureBox imgSetaEsquerda;
         private Label lblSelecionarColaborador;
         private TextBox txbNomeID;
         private PictureBox imgLupa;
@@ -671,5 +672,6 @@
         private Label lblIRPFDesconto;
         private Label lblMensagemCalculo;
         private GroupBox gpbLinha;
+        private PictureBox pictureBox1;
     }
 }

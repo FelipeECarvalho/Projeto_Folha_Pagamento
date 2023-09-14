@@ -176,5 +176,22 @@ namespace Projeto_WindowsForms.Apresentacao
             imgLupa.Width = (int)(imgLupa.Width / 1.2);
             imgLupa.Height = (int)(imgLupa.Height / 1.2);
         }
+
+        private void frmGerarFolhaPagamento_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgSetaEsquerda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenu frmMenu = new();
+            frmMenu.ShowDialog();
+        }
     }
 }

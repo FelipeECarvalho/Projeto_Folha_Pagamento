@@ -11,10 +11,10 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             if (txbUsuario.Text == "Luiz" && txbSenha.Text == "1234")
             {
-                frmMenu frmM = new frmMenu();
-                this.Visible = false;
+                Hide();
+                
+                frmMenu frmM = new();
                 frmM.ShowDialog();
-                this.Visible = true;
             }
             else
             {
