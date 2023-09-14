@@ -1,4 +1,4 @@
-using ProjetoPim;
+using Projeto_WindowsForms.Apresentacao;
 
 namespace Projeto_WindowsForms
 {
@@ -13,7 +13,7 @@ namespace Projeto_WindowsForms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmMenu());
+            Application.Run(new frmGerarFolhaPagamento());
         }
     }
 }

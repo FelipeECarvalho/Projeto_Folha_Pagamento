@@ -1,4 +1,4 @@
-namespace CadastroDeColaboradores
+namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmCadastroColaborador : Form
     {

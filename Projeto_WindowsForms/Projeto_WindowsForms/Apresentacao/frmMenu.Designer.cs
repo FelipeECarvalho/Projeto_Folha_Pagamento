@@ -1,4 +1,4 @@
-﻿namespace ProjetoPim
+﻿namespace Projeto_WindowsForms.Apresentacao
 {
     partial class frmMenu
     {
@@ -68,6 +68,7 @@
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(312, 153);
             flowLayoutPanel2.TabIndex = 3;
+            flowLayoutPanel2.Paint += flowLayoutPanel2_Paint;
             // 
             // flowLayoutPanel3
             // 
@@ -86,6 +87,7 @@
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Size = new Size(312, 153);
             flowLayoutPanel4.TabIndex = 3;
+            flowLayoutPanel4.Paint += flowLayoutPanel4_Paint;
             // 
             // label1
             // 
