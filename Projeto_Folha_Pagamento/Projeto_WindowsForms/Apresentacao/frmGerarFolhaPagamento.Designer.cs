@@ -573,7 +573,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.back_button;
+            pictureBox1.Image = Properties.Resources.voltar;
             pictureBox1.Location = new Point(21, 11);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";

@@ -42,7 +42,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial Narrow", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lblLogin.Location = new Point(214, 177);
+            lblLogin.Location = new Point(209, 210);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(54, 23);
             lblLogin.TabIndex = 0;
@@ -51,7 +51,7 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.Location = new Point(38, 220);
+            lblUsuario.Location = new Point(33, 253);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(47, 15);
             lblUsuario.TabIndex = 1;
@@ -60,7 +60,7 @@
             // lblSenha
             // 
             lblSenha.AutoSize = true;
-            lblSenha.Location = new Point(38, 268);
+            lblSenha.Location = new Point(33, 301);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(39, 15);
             lblSenha.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // txbUsuario
             // 
-            txbUsuario.Location = new Point(95, 215);
+            txbUsuario.Location = new Point(90, 248);
             txbUsuario.Margin = new Padding(3, 2, 3, 2);
             txbUsuario.Name = "txbUsuario";
             txbUsuario.Size = new Size(352, 23);
@@ -76,7 +76,7 @@
             // 
             // txbSenha
             // 
-            txbSenha.Location = new Point(95, 266);
+            txbSenha.Location = new Point(90, 299);
             txbSenha.Margin = new Padding(3, 2, 3, 2);
             txbSenha.Name = "txbSenha";
             txbSenha.PasswordChar = '*';
@@ -100,7 +100,7 @@
             pictureBox1.Location = new Point(146, 33);
             pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(197, 112);
+            pictureBox1.Size = new Size(197, 164);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;

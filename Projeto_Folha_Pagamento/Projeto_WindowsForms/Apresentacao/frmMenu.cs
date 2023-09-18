@@ -1,4 +1,14 @@
-﻿namespace Projeto_WindowsForms.Apresentacao
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmMenu : Form
     {
@@ -7,34 +17,31 @@
             InitializeComponent();
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void btnColaborador_Click(object sender, EventArgs e)
         {
-
+            var frmCadastroColaborador = new frmCadastroColaborador();
+            frmCadastroColaborador.ShowDialog();
+            this.Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnEmpresa_Click(object sender, EventArgs e)
         {
-
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void btnFolha_Click(object sender, EventArgs e)
         {
-
+            var frmGerarFolhaPagamento = new frmGerarFolhaPagamento();
+            frmGerarFolhaPagamento.ShowDialog();
+            this.Hide();
         }
 
-        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        private void btnRelatorio_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

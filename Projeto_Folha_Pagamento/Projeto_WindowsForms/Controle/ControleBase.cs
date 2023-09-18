@@ -5,7 +5,7 @@ namespace Projeto_WindowsForms.Controle
     public class ControleBase
     {
         // Atributos
-        public string mensagem;
+        public string? mensagem = default;
         public int i;
 
         //Construtor
