@@ -42,6 +42,14 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
+            var frmGerarRelatorio = new frmGerarRelatorio();
+            frmGerarRelatorio.ShowDialog();
+            this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

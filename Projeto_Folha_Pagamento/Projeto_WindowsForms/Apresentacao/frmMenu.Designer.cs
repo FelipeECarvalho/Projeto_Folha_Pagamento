@@ -52,7 +52,7 @@
             panel7 = new Panel();
             pictureBox3 = new PictureBox();
             label3 = new Label();
-            label9 = new Label();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -74,7 +74,7 @@
             panel1.Controls.Add(btnColaborador);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(panel5);
-            panel1.Location = new Point(99, 98);
+            panel1.Location = new Point(96, 117);
             panel1.Name = "panel1";
             panel1.Size = new Size(333, 200);
             panel1.TabIndex = 0;
@@ -142,7 +142,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnEmpresa);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(536, 98);
+            panel2.Location = new Point(533, 117);
             panel2.Name = "panel2";
             panel2.Size = new Size(333, 200);
             panel2.TabIndex = 1;
@@ -177,7 +177,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnFolha);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(99, 350);
+            panel3.Location = new Point(96, 369);
             panel3.Name = "panel3";
             panel3.Size = new Size(333, 200);
             panel3.TabIndex = 1;
@@ -213,7 +213,7 @@
             panel4.Controls.Add(btnRelatorio);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(panel8);
-            panel4.Location = new Point(536, 350);
+            panel4.Location = new Point(533, 369);
             panel4.Name = "panel4";
             panel4.Size = new Size(333, 200);
             panel4.TabIndex = 1;
@@ -280,7 +280,7 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(pictureBox2);
             panel6.Controls.Add(label2);
-            panel6.Location = new Point(536, 98);
+            panel6.Location = new Point(533, 117);
             panel6.Name = "panel6";
             panel6.Size = new Size(332, 70);
             panel6.TabIndex = 1;
@@ -313,7 +313,7 @@
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(pictureBox3);
             panel7.Controls.Add(label3);
-            panel7.Location = new Point(99, 350);
+            panel7.Location = new Point(96, 369);
             panel7.Name = "panel7";
             panel7.Size = new Size(333, 70);
             panel7.TabIndex = 2;
@@ -340,23 +340,24 @@
             label3.TabIndex = 2;
             label3.Text = "Calcular folha de pagamento";
             // 
-            // label9
+            // label10
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(272, 9);
-            label9.Name = "label9";
-            label9.Size = new Size(446, 33);
-            label9.TabIndex = 3;
-            label9.Text = "Menu Sistema de folha de pagamento";
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial Narrow", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(442, 30);
+            label10.Name = "label10";
+            label10.Size = new Size(85, 33);
+            label10.TabIndex = 3;
+            label10.Text = "MENU";
+            label10.Click += label9_Click;
             // 
             // frmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(962, 585);
-            Controls.Add(label9);
+            ClientSize = new Size(962, 640);
+            Controls.Add(label10);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel4);
@@ -411,6 +412,6 @@
         private Button btnEmpresa;
         private Button btnFolha;
         private Button btnRelatorio;
-        private Label label9;
+        private Label label10;
     }
 }
