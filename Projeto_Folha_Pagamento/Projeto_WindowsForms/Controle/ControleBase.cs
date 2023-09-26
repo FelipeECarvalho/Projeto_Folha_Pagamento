@@ -32,5 +32,19 @@ namespace Projeto_WindowsForms.Controle
             this.mensagem = validacao.mensagem;
         }
 
+        public void cadastrarColaborador(List<string> listaDadosColaborador)
+        {
+            Validacao validacao = new Validacao();
+            validacao.validarDadosColaborador(listaDadosColaborador);
+            if (validacao.mensagem.Equals(""))
+            {
+                this.mensagem = "Cadastro com sucesso";
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
     }
 }

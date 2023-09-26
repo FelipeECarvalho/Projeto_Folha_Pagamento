@@ -25,8 +25,10 @@ namespace Projeto_WindowsForms.Apresentacao
         private void btnColaborador_Click(object sender, EventArgs e)
         {
             var frmCadastroColaborador = new frmCadastroColaborador();
-            frmCadastroColaborador.ShowDialog();
             this.Hide();
+            frmCadastroColaborador.ShowDialog();
+            this.Show();
+            
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)

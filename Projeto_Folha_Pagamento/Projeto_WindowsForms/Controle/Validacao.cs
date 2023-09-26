@@ -52,5 +52,12 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem = "Número inserido é inválido!"; // Se a conversão der errado, retorna "Número inserido é inválido!"
             }
         }
+        
+        public void validarDadosColaborador(List<string>listaDadosColaborador)
+        {
+            this.mensagem = "";
+            if (listaDadosColaborador[0].Length < 3)
+                this.mensagem += "Campo nome deve ter mais de 3 caracteres";
+        }
     }
 }
