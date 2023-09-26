@@ -28,151 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblNomeColaborador = new Label();
-            txtNomeColaborador = new TextBox();
-            txtEmpresa = new TextBox();
-            lblCargo = new Label();
-            txtCargo = new TextBox();
-            lblEmpresa = new Label();
-            txtSalario = new TextBox();
-            lblSalario = new Label();
-            txtDataAdmissao = new TextBox();
-            lblDataAdmissao = new Label();
-            btnCadastrar = new Button();
-            lblCadastroDeColaborador = new Label();
-            btnCancelar = new Button();
-            SuspendLayout();
+            this.lblNomeColaborador = new System.Windows.Forms.Label();
+            this.txtNomeColaborador = new System.Windows.Forms.TextBox();
+            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.lblSalario = new System.Windows.Forms.Label();
+            this.txtDataAdmissao = new System.Windows.Forms.TextBox();
+            this.lblDataAdmissao = new System.Windows.Forms.Label();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblCadastroDeColaborador = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // lblNomeColaborador
             // 
-            lblNomeColaborador.AutoSize = true;
-            lblNomeColaborador.Location = new Point(17, 101);
-            lblNomeColaborador.Name = "lblNomeColaborador";
-            lblNomeColaborador.Size = new Size(107, 15);
-            lblNomeColaborador.TabIndex = 0;
-            lblNomeColaborador.Text = "Nome colaborador";
+            this.lblNomeColaborador.AutoSize = true;
+            this.lblNomeColaborador.Location = new System.Drawing.Point(17, 101);
+            this.lblNomeColaborador.Name = "lblNomeColaborador";
+            this.lblNomeColaborador.Size = new System.Drawing.Size(107, 15);
+            this.lblNomeColaborador.TabIndex = 0;
+            this.lblNomeColaborador.Text = "Nome colaborador";
             // 
             // txtNomeColaborador
             // 
-            txtNomeColaborador.Location = new Point(130, 98);
-            txtNomeColaborador.Name = "txtNomeColaborador";
-            txtNomeColaborador.Size = new Size(207, 23);
-            txtNomeColaborador.TabIndex = 1;
+            this.txtNomeColaborador.Location = new System.Drawing.Point(130, 98);
+            this.txtNomeColaborador.Name = "txtNomeColaborador";
+            this.txtNomeColaborador.Size = new System.Drawing.Size(207, 23);
+            this.txtNomeColaborador.TabIndex = 1;
             // 
             // txtEmpresa
             // 
-            txtEmpresa.Location = new Point(426, 98);
-            txtEmpresa.Name = "txtEmpresa";
-            txtEmpresa.Size = new Size(259, 23);
-            txtEmpresa.TabIndex = 3;
+            this.txtEmpresa.Location = new System.Drawing.Point(426, 98);
+            this.txtEmpresa.Name = "txtEmpresa";
+            this.txtEmpresa.Size = new System.Drawing.Size(259, 23);
+            this.txtEmpresa.TabIndex = 3;
             // 
             // lblCargo
             // 
-            lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(19, 143);
-            lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(39, 15);
-            lblCargo.TabIndex = 2;
-            lblCargo.Text = "Cargo";
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(19, 143);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(39, 15);
+            this.lblCargo.TabIndex = 2;
+            this.lblCargo.Text = "Cargo";
             // 
             // txtCargo
             // 
-            txtCargo.Location = new Point(63, 140);
-            txtCargo.Name = "txtCargo";
-            txtCargo.Size = new Size(274, 23);
-            txtCargo.TabIndex = 5;
+            this.txtCargo.Location = new System.Drawing.Point(63, 140);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(274, 23);
+            this.txtCargo.TabIndex = 5;
             // 
             // lblEmpresa
             // 
-            lblEmpresa.AutoSize = true;
-            lblEmpresa.Location = new Point(368, 103);
-            lblEmpresa.Name = "lblEmpresa";
-            lblEmpresa.Size = new Size(52, 15);
-            lblEmpresa.TabIndex = 4;
-            lblEmpresa.Text = "Empresa";
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Location = new System.Drawing.Point(368, 103);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(52, 15);
+            this.lblEmpresa.TabIndex = 4;
+            this.lblEmpresa.Text = "Empresa";
             // 
             // txtSalario
             // 
-            txtSalario.Location = new Point(426, 143);
-            txtSalario.Name = "txtSalario";
-            txtSalario.Size = new Size(259, 23);
-            txtSalario.TabIndex = 7;
+            this.txtSalario.Location = new System.Drawing.Point(426, 143);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(259, 23);
+            this.txtSalario.TabIndex = 7;
             // 
             // lblSalario
             // 
-            lblSalario.AutoSize = true;
-            lblSalario.Location = new Point(378, 143);
-            lblSalario.Name = "lblSalario";
-            lblSalario.Size = new Size(42, 15);
-            lblSalario.TabIndex = 6;
-            lblSalario.Text = "Salário";
+            this.lblSalario.AutoSize = true;
+            this.lblSalario.Location = new System.Drawing.Point(378, 143);
+            this.lblSalario.Name = "lblSalario";
+            this.lblSalario.Size = new System.Drawing.Size(42, 15);
+            this.lblSalario.TabIndex = 6;
+            this.lblSalario.Text = "Salário";
             // 
             // txtDataAdmissao
             // 
-            txtDataAdmissao.Location = new Point(426, 188);
-            txtDataAdmissao.Name = "txtDataAdmissao";
-            txtDataAdmissao.Size = new Size(259, 23);
-            txtDataAdmissao.TabIndex = 9;
+            this.txtDataAdmissao.Location = new System.Drawing.Point(426, 188);
+            this.txtDataAdmissao.Name = "txtDataAdmissao";
+            this.txtDataAdmissao.Size = new System.Drawing.Size(259, 23);
+            this.txtDataAdmissao.TabIndex = 9;
             // 
             // lblDataAdmissao
             // 
-            lblDataAdmissao.AutoSize = true;
-            lblDataAdmissao.Location = new Point(320, 191);
-            lblDataAdmissao.Name = "lblDataAdmissao";
-            lblDataAdmissao.Size = new Size(100, 15);
-            lblDataAdmissao.TabIndex = 8;
-            lblDataAdmissao.Text = "Data de admissão";
+            this.lblDataAdmissao.AutoSize = true;
+            this.lblDataAdmissao.Location = new System.Drawing.Point(320, 191);
+            this.lblDataAdmissao.Name = "lblDataAdmissao";
+            this.lblDataAdmissao.Size = new System.Drawing.Size(100, 15);
+            this.lblDataAdmissao.TabIndex = 8;
+            this.lblDataAdmissao.Text = "Data de admissão";
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Location = new Point(426, 251);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(150, 32);
-            btnCadastrar.TabIndex = 10;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
+            this.btnCadastrar.Location = new System.Drawing.Point(426, 251);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(150, 32);
+            this.btnCadastrar.TabIndex = 10;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
             // 
             // lblCadastroDeColaborador
             // 
-            lblCadastroDeColaborador.AutoSize = true;
-            lblCadastroDeColaborador.Location = new Point(283, 27);
-            lblCadastroDeColaborador.Name = "lblCadastroDeColaborador";
-            lblCadastroDeColaborador.Size = new Size(137, 15);
-            lblCadastroDeColaborador.TabIndex = 11;
-            lblCadastroDeColaborador.Text = "Cadastro de colaborador";
+            this.lblCadastroDeColaborador.AutoSize = true;
+            this.lblCadastroDeColaborador.Location = new System.Drawing.Point(283, 27);
+            this.lblCadastroDeColaborador.Name = "lblCadastroDeColaborador";
+            this.lblCadastroDeColaborador.Size = new System.Drawing.Size(137, 15);
+            this.lblCadastroDeColaborador.TabIndex = 11;
+            this.lblCadastroDeColaborador.Text = "Cadastro de colaborador";
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(130, 251);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(150, 32);
-            btnCancelar.TabIndex = 12;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(130, 251);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(150, 32);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmCadastroColaborador
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(711, 314);
-            Controls.Add(btnCancelar);
-            Controls.Add(lblCadastroDeColaborador);
-            Controls.Add(btnCadastrar);
-            Controls.Add(txtDataAdmissao);
-            Controls.Add(lblDataAdmissao);
-            Controls.Add(txtSalario);
-            Controls.Add(lblSalario);
-            Controls.Add(txtCargo);
-            Controls.Add(lblEmpresa);
-            Controls.Add(txtEmpresa);
-            Controls.Add(lblCargo);
-            Controls.Add(txtNomeColaborador);
-            Controls.Add(lblNomeColaborador);
-            Name = "frmCadastroColaborador";
-            Text = "Cadastro de colaborador";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(711, 314);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.lblCadastroDeColaborador);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.txtDataAdmissao);
+            this.Controls.Add(this.lblDataAdmissao);
+            this.Controls.Add(this.txtSalario);
+            this.Controls.Add(this.lblSalario);
+            this.Controls.Add(this.txtCargo);
+            this.Controls.Add(this.lblEmpresa);
+            this.Controls.Add(this.txtEmpresa);
+            this.Controls.Add(this.lblCargo);
+            this.Controls.Add(this.txtNomeColaborador);
+            this.Controls.Add(this.lblNomeColaborador);
+            this.Name = "frmCadastroColaborador";
+            this.Text = "Cadastro de colaborador";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

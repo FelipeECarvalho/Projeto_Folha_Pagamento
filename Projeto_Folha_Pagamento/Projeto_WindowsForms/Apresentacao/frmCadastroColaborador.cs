@@ -20,7 +20,14 @@ namespace Projeto_WindowsForms.Apresentacao
             ControleBase controle = new ControleBase();
             controle.cadastrarColaborador(listaDadosColaborador);
             MessageBox.Show(controle.mensagem);
+            this.Close();
             
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            frmCadastroColaborador cancelar = new frmCadastroColaborador();
+            cancelar.Close();
         }
     }
 }
