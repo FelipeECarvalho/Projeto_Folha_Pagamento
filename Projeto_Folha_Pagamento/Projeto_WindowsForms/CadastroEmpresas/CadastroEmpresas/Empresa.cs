@@ -16,9 +16,9 @@ namespace CadastroEmpresas
 
         public Empresa(string cnpj, string razaoSocial, string nomeFantasia)
         {
-            CNPJ = cnpj;
-            RazaoSocial = razaoSocial;
-            NomeFantasia = nomeFantasia;
+            this.CNPJ = cnpj;
+            this.RazaoSocial = razaoSocial;
+            this.NomeFantasia = nomeFantasia;
         }
     }
 }
