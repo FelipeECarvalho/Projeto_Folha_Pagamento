@@ -57,7 +57,11 @@ namespace Projeto_WindowsForms.Controle
         {
             this.mensagem = "";
             if (listaDadosColaborador[0].Length < 3)
-                this.mensagem += "Campo nome deve ter mais de 3 caracteres";
+                this.mensagem += "Nome do colaborador deve ter mais de 3 caracteres";
+            if (listaDadosColaborador[0].Length > 50)
+                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres"
+            if (listaDadosColaborador[1] == 0)
+                this.mensagem += "Prencha a função"
         }
     }
 }
