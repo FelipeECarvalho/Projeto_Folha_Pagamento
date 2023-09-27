@@ -61,7 +61,7 @@ namespace Projeto_WindowsForms.Controle
             if (listaDadosColaborador[0].Length > 50)
                 this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres"
             if (listaDadosColaborador[1] == 0)
-                this.mensagem += "Prencha a função"
+                this.mensagem += "Prencha o cargo"
         }
     }
 }
