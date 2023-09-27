@@ -5,7 +5,7 @@ namespace Projeto_WindowsForms.Controle
     public class Validacao
     {
         // Atributos
-        public string? mensagem;
+        public string mensagem;
         public int indice;
         public int IndiceColaboradorEncontrado = -1;
 
