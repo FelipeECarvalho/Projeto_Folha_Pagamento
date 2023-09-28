@@ -1,4 +1,5 @@
-﻿using Projeto_WindowsForms.Modelo;
+﻿using Projeto_WindowsForms.DAL;
+using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms.Controle
 {
@@ -38,7 +39,14 @@ namespace Projeto_WindowsForms.Controle
             validacao.validarDadosColaborador(listaDadosColaborador);
             if (validacao.mensagem.Equals(""))
             {
-
+                //Colaborador colaborador = new Colaborador();
+                //colaborador.Nome = listaDadosColaborador[0];
+                //colaborador.Cargo = listaDadosColaborador[1];
+                //colaborador.Empresa = listaDadosColaborador[2];
+                //colaborador.Salario = listaDadosColaborador[3];
+                //colaborador.DataAdmissao = listaDadosColaborador[4];
+                //ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
+                //colaboradorDAO.cadastrarColaborador();
                 this.mensagem = "Cadastro com sucesso";
             }
             else
