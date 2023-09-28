@@ -59,9 +59,16 @@ namespace Projeto_WindowsForms.Controle
             if (listaDadosColaborador[0].Length < 3)
                 this.mensagem += "Nome do colaborador deve ter mais de 3 caracteres";
             if (listaDadosColaborador[0].Length > 50)
-                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres"
-            if (listaDadosColaborador[1] == 0)
-                this.mensagem += "Prencha o cargo"
+                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres";
+            if (listaDadosColaborador[1].Length == 0)
+                this.mensagem += "Prencha o cargo";
+            if (listaDadosColaborador[2].Length == 0)
+                this.mensagem += "Preencha a empresa";
+            if (listaDadosColaborador[3].Length == 0)
+                this.mensagem += "Preencha o salario";
+            if (listaDadosColaborador[4].Length == 0)
+                this.mensagem += "Preencha a data de admissão";
+
         }
     }
 }
