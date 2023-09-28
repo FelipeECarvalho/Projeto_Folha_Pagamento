@@ -3,22 +3,22 @@
     public class Colaborador
     {
         // Atributos
+        public int id { get; set; }
         public string Nome { get; set; }
-        public int ID { get; set; }
-        public string NomeEmpresa { get; set; }
-        public string CNPJEmpresa { get; set; }
-        public string Funcao { get; set; }
-        public float Salario { get; set; }
+        public string Cargo { get; set; }
+        public string Empresa { get; set; }
+        public string Salario { get; set; }
+        public string DataAdmissao { get; set; }
 
         // Construtor
-        public Colaborador(string nome, int id, string nomeEmpresa, string cnpjEmpresa, string funcao, float salario)
+        public Colaborador(int id, string nome, string cargo, string empresa, string salario, string dataAdmissao)
         {
-            Nome = nome;
-            ID = id;
-            NomeEmpresa = nomeEmpresa;
-            CNPJEmpresa = cnpjEmpresa;
-            Funcao = funcao;
-            Salario = salario;
+            this.id = id;
+            this.Nome = nome;
+            this.Cargo = cargo;
+            this.Empresa = empresa;
+            this.Salario = salario;
+            this.DataAdmissao = dataAdmissao;
         }
     }
 }
