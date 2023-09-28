@@ -38,6 +38,7 @@ namespace Projeto_WindowsForms.Controle
             validacao.validarDadosColaborador(listaDadosColaborador);
             if (validacao.mensagem.Equals(""))
             {
+
                 this.mensagem = "Cadastro com sucesso";
             }
             else
