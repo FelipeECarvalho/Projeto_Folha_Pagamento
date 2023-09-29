@@ -26,7 +26,7 @@ namespace Projeto_WindowsForms.Controle
                         this.indice = i;
                         return indice; // Retorna o índice do colaborador encontrado
                     }
-                    else if (colaboradores[i].ID.ToString().Equals(nome, StringComparison.OrdinalIgnoreCase))
+                    else if (colaboradores[i].id.ToString().Equals(nome, StringComparison.OrdinalIgnoreCase))
                     {
                         this.mensagem = "Colaborador encontrado!";
                         this.indice = i;
