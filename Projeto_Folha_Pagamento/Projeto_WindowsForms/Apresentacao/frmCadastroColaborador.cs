@@ -24,7 +24,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }
