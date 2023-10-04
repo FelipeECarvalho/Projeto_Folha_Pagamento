@@ -9,7 +9,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            if (txbUsuario.Text == "Luiz" && txbSenha.Text == "1234")
+            if (txbUsuario.Text == "admin" && txbSenha.Text == "admin")
             {
                 Hide();
 

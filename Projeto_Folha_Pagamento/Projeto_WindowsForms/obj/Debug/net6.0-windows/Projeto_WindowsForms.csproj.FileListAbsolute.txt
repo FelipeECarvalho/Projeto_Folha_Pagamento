@@ -61,6 +61,5 @@ C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\
 C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.pdb
 C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.genruntimeconfig.cache
 C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\ref\Projeto_WindowsForms.dll
-C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\CadastroEmpresas.Form1.resources
-C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.CadastroEmpresas.CadastroEmpresas.Properties.Resources.resources
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.Apresentacao.frmCadastroEmpresa.resources
+C:\Users\ewert\Documents\GitHub\Projeto_Folha_Pagamento\Projeto_Folha_Pagamento\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.Apresentacao.frmCadastroEmpresa.resources

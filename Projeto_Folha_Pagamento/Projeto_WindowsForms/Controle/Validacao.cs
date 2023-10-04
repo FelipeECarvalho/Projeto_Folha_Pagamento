@@ -56,18 +56,18 @@ namespace Projeto_WindowsForms.Controle
         public void validarDadosColaborador(List<string>listaDadosColaborador)
         {
             this.mensagem = "";
-            if (listaDadosColaborador[0].Length < 3)
-                this.mensagem += "Nome do colaborador deve ter mais de 3 caracteres";
+            if (listaDadosColaborador[0].Length == 0)
+                this.mensagem += "Preencha o nome do colaborador\n";
             if (listaDadosColaborador[0].Length > 50)
-                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres";
+                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres\n";
             if (listaDadosColaborador[1].Length == 0)
-                this.mensagem += "Prencha o cargo";
+                this.mensagem += "Prencha o cargo\n";
             if (listaDadosColaborador[2].Length == 0)
-                this.mensagem += "Preencha a empresa";
+                this.mensagem += "Preencha a empresa\n";
             if (listaDadosColaborador[3].Length == 0)
-                this.mensagem += "Preencha o salario";
+                this.mensagem += "Preencha o salario\n";
             if (listaDadosColaborador[4].Length == 0)
-                this.mensagem += "Preencha a data de admissão";
+                this.mensagem += "Preencha a data de admissão\n";
 
         }
 
