@@ -57,7 +57,7 @@ namespace Projeto_WindowsForms.Controle
 
         public void cadastrarEmpresa(List<string> listaDadosEmpresa)
         {
-            Validacao validacao = new();
+            Validacao validacao = new Validacao();
 
             validacao.validarDadosEmpresa(listaDadosEmpresa);
             if (validacao.mensagem.Equals(""))

@@ -17,14 +17,17 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            List<string> listaDadosEmpresa = new ()
+            List<string> listaDadosEmpresa = new List<string>()
             {
                 txbCnpj.Text.Trim(),
                 txbRazaoSocial.Text.Trim(),
                 txbNomeFantasia.Text.Trim()
             };
 
-            ControleBase controle = new();
+            ControleBase controle = new ControleBase();
+            listaDadosEmpresa.Add(txbCnpj.Text);
+            listaDadosEmpresa.Add(txbRazaoSocial.Text);
+            listaDadosEmpresa.Add(txbNomeFantasia.Text);
             controle.cadastrarEmpresa(listaDadosEmpresa);
 
             txbCnpj.Clear();
