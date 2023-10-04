@@ -12,17 +12,17 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
             listaColaboradores = new List<Colaborador>
             {
-                new Colaborador("", 0, "", "", "", 0),
-                new Colaborador("José", 1, "Pardal & Cia Ltda.", "12345678901234", "Gerente", 5000),
-                new Colaborador("Maria", 2, "Pardal & Cia Ltda.", "12345678901234", "Analista", 3500),
-                new Colaborador("Pedro", 3, "Águia Incorporações Ltda.", "98765432109876", "Desenvolvedor", 4500),
-                new Colaborador("Ana", 4, "Águia Incorporações Ltda.", "98765432109876", "Designer", 4000),
-                new Colaborador("Carlos", 5, "Colibri Engenharia S.A.", "56789012345678", "Analista de Vendas", 3800),
-                new Colaborador("Isabel", 6, "Colibri Engenharia S.A.", "56789012345678", "Engenheiro de Software", 5500),
-                new Colaborador("Paulo", 7, "Falcão Comércio de Tecnologia Ltda.", "13579246802468", "Analista de Marketing", 4200),
-                new Colaborador("Letícia", 8, "Falcão Comércio de Tecnologia Ltda.", "13579246802468", "Contadora", 4700),
-                new Colaborador("Ricardo", 9, "Terra Elementar Consultoria Ambiental Ltda.", "98765432101234", "Analista Financeiro", 4800),
-                new Colaborador("Juliana", 10, "Terra Elementar Consultoria Ambiental Ltda.", "98765432101234", "Engenheiro de Produção", 5200)
+                new Colaborador(0, "", "", "", "", ""),
+                new Colaborador(1, "José", "Gerente", "Pardal & Cia Ltda.", "300", DateTime.Now.ToString()),
+                new Colaborador(2, "Maria", "Analista", "Pardal & Cia Ltda.", "4000", DateTime.Now.ToString()),
+                new Colaborador(3, "Pedro", "Desenvolvedor", "Águia Incorporações Ltda.", "4100", DateTime.Now.ToString()),
+                new Colaborador(4, "Ana", "Designer", "Águia Incorporações Ltda.", "4200", DateTime.Now.ToString()),
+                new Colaborador(5, "Carlos", "Analista de Vendas", "Colibri Engenharia S.A.", "4300", DateTime.Now.ToString()),
+                new Colaborador(6, "Isabel", "Engenheiro de Software", "Colibri Engenharia S.A.", "4400", DateTime.Now.ToString()),
+                new Colaborador(7, "Paulo", "Analista de Marketing", "Falcão Comércio de Tecnologia Ltda.", "4500", DateTime.Now.ToString()),
+                new Colaborador(8, "Letícia","Contadora", "Falcão Comércio de Tecnologia Ltda.", "4600",  DateTime.Now.ToString()),
+                new Colaborador(9, "Ricardo", "Analista Financeiro", "Terra Elementar Consultoria Ambiental Ltda.", "4700", DateTime.Now.ToString()),
+                new Colaborador(10, "Juliana", "Engenheiro de Produção", "Terra Elementar Consultoria Ambiental Ltda.", "4800", DateTime.Now.ToString())
             };
         }
 
@@ -47,9 +47,9 @@ namespace Projeto_WindowsForms.Apresentacao
             if (i != -1 && i != 0)
             {
                 lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
-                lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
-                lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
-                lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
+                //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
+                //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
+                //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
                 lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
                 lblIRPFDesconto.Text = "";
                 lblINSSDesconto.Text = "";
@@ -132,9 +132,9 @@ namespace Projeto_WindowsForms.Apresentacao
                 if (i != -1 && i != 0)
                 {
                     lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
-                    lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
-                    lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
-                    lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
+                    //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
+                    //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
+                    //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
                     lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
                     lblIRPFDesconto.Text = "";
                     lblINSSDesconto.Text = "";

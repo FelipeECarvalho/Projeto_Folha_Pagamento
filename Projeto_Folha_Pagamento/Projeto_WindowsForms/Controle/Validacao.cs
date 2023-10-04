@@ -26,7 +26,7 @@ namespace Projeto_WindowsForms.Controle
                         this.indice = i;
                         return indice; // Retorna o índice do colaborador encontrado
                     }
-                    else if (colaboradores[i].id.ToString().Equals(nome, StringComparison.OrdinalIgnoreCase))
+                    else if (colaboradores[i].Id.ToString().Equals(nome, StringComparison.OrdinalIgnoreCase))
                     {
                         this.mensagem = "Colaborador encontrado!";
                         this.indice = i;
@@ -69,6 +69,26 @@ namespace Projeto_WindowsForms.Controle
             if (listaDadosColaborador[4].Length == 0)
                 this.mensagem += "Preencha a data de admissão";
 
+        }
+
+        public void validarDadosEmpresa(List<string> listaDadosColaborador)
+        {
+            this.mensagem = "";
+            string cnpj = listaDadosColaborador[0];
+            string razaoSocial = listaDadosColaborador[1];
+            string nomeFantasia = listaDadosColaborador[2];
+
+            if (string.IsNullOrEmpty(cnpj) || string.IsNullOrEmpty(razaoSocial) || string.IsNullOrEmpty(nomeFantasia))
+                this.mensagem = "Preencha todos os campos antes de cadastrar a empresa.";
+
+            if (cnpj.Length != 14 || !cnpj.All(char.IsDigit))
+                this.mensagem = "O CNPJ deve conter exatamente 14 digitos numéricos.";
+
+            if (razaoSocial.Length > 50)
+                this.mensagem = "A Razão Social não pode exceder 100 caracteres.";
+
+            if (nomeFantasia.Length > 50)
+                this.mensagem = "O Nome Fantasia não pode exceder 50 caracteres.";
         }
     }
 }
