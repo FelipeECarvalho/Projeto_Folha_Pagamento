@@ -55,5 +55,22 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
+        public void cadastrarEmpresa(List<string> listaDadosEmpresa)
+        {
+            Validacao validacao = new();
+
+            validacao.validarDadosEmpresa(listaDadosEmpresa);
+            if (validacao.mensagem.Equals(""))
+            {
+                Empresa empresa = new Empresa(listaDadosEmpresa[0], listaDadosEmpresa[1], listaDadosEmpresa[2]);
+
+                this.mensagem = "Cadastro com sucesso";
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
     }
 }

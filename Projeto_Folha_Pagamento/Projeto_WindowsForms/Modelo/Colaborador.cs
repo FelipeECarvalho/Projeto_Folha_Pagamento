@@ -3,7 +3,7 @@
     public class Colaborador
     {
         // Atributos
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Cargo { get; set; }
         public string Empresa { get; set; }
@@ -13,7 +13,7 @@
         // Construtor
         public Colaborador(int id, string nome, string cargo, string empresa, string salario, string dataAdmissao)
         {
-            this.id = id;
+            this.Id= id;
             this.Nome = nome;
             this.Cargo = cargo;
             this.Empresa = empresa;

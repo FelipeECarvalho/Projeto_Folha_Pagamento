@@ -2,17 +2,15 @@
 {
     public class Empresa
     {
-        // Propriedades
-        public string Nome { get; set; }
         public string CNPJ { get; set; }
+        public string RazaoSocial { get; set; }
+        public string NomeFantasia { get; set; }
 
-        // Construtor
-        public Empresa(string nome, string cnpj)
+        public Empresa(string cnpj, string razaoSocial, string nomeFantasia)
         {
-            Nome = nome;
-            CNPJ = cnpj;
+            this.CNPJ = cnpj;
+            this.RazaoSocial = razaoSocial;
+            this.NomeFantasia = nomeFantasia;
         }
-
-        // Métodos
     }
 }

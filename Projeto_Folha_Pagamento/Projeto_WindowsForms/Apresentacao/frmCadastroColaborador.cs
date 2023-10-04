@@ -19,10 +19,15 @@ namespace Projeto_WindowsForms.Apresentacao
             listaDadosColaborador.Add(txtDataAdmissao.Text);
             ControleBase controle = new ControleBase();
             controle.cadastrarColaborador(listaDadosColaborador);
-            MessageBox.Show(controle.mensagem);            
+            MessageBox.Show(controle.mensagem);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
 
         }

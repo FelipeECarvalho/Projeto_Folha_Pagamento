@@ -1,6 +1,6 @@
-﻿namespace CadastroEmpresas
+﻿namespace Projeto_WindowsForms.Apresentacao
 {
-    partial class Form1
+    partial class frmCadastroEmpresa
     {
         /// <summary>
         ///  Required designer variable.

@@ -25,7 +25,6 @@ namespace Projeto_WindowsForms.Apresentacao
         private void btnColaborador_Click(object sender, EventArgs e)
         {
             var frmCadastroColaborador = new frmCadastroColaborador();
-            this.Hide();
             frmCadastroColaborador.ShowDialog();
             this.Show();
             
@@ -33,20 +32,22 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
+
+            var frmCadastroEmpresa = new frmCadastroEmpresa();
+            frmCadastroEmpresa.ShowDialog();
+            this.Show();
         }
 
         private void btnFolha_Click(object sender, EventArgs e)
         {
             var frmGerarFolhaPagamento = new frmGerarFolhaPagamento();
             frmGerarFolhaPagamento.ShowDialog();
-            this.Hide();
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
             var frmGerarRelatorio = new frmGerarRelatorio();
             frmGerarRelatorio.ShowDialog();
-            this.Hide();
         }
 
         private void label9_Click(object sender, EventArgs e)
