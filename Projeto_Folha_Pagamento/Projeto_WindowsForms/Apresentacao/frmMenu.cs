@@ -17,11 +17,6 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnColaborador_Click(object sender, EventArgs e)
         {
             var frmCadastroColaborador = new frmCadastroColaborador();
@@ -50,9 +45,10 @@ namespace Projeto_WindowsForms.Apresentacao
             frmGerarRelatorio.ShowDialog();
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
 
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

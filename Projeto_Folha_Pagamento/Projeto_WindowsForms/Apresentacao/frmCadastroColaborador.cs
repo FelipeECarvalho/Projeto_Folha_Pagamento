@@ -9,21 +9,8 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
         }
 
+
         private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCadastrar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCadastrar_Click_2(object sender, EventArgs e)
         {
             List<string> listaDadosColaborador = new List<string>();
             listaDadosColaborador.Add(txtNomeColaborador.Text);
@@ -35,5 +22,6 @@ namespace Projeto_WindowsForms.Apresentacao
             controle.cadastrarColaborador(listaDadosColaborador);
             MessageBox.Show(controle.mensagem);
         }
+
     }
 }

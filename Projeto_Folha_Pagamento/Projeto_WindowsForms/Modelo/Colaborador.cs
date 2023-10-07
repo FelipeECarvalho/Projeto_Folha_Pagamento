@@ -10,15 +10,5 @@
         public string Salario { get; set; }
         public string DataAdmissao { get; set; }
 
-        // Construtor
-        public Colaborador(int id, string nome, string cargo, string empresa, string salario, string dataAdmissao)
-        {
-            this.Id= id;
-            this.Nome = nome;
-            this.Cargo = cargo;
-            this.Empresa = empresa;
-            this.Salario = salario;
-            this.DataAdmissao = dataAdmissao;
-        }
     }
 }

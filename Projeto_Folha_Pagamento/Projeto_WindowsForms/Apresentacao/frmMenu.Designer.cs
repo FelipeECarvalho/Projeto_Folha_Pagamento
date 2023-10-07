@@ -28,362 +28,362 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            btnColaborador = new Button();
-            label5 = new Label();
-            panel5 = new Panel();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            panel2 = new Panel();
-            btnEmpresa = new Button();
-            label6 = new Label();
-            panel3 = new Panel();
-            btnFolha = new Button();
-            label7 = new Label();
-            panel4 = new Panel();
-            btnRelatorio = new Button();
-            label8 = new Label();
-            panel8 = new Panel();
-            pictureBox4 = new PictureBox();
-            label4 = new Label();
-            panel6 = new Panel();
-            pictureBox2 = new PictureBox();
-            label2 = new Label();
-            panel7 = new Panel();
-            pictureBox3 = new PictureBox();
-            label3 = new Label();
-            label10 = new Label();
-            panel1.SuspendLayout();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnColaborador = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnEmpresa = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnFolha = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRelatorio = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(btnColaborador);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(panel5);
-            panel1.Location = new Point(96, 117);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(333, 200);
-            panel1.TabIndex = 0;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnColaborador);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Location = new System.Drawing.Point(96, 117);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(333, 200);
+            this.panel1.TabIndex = 0;
             // 
             // btnColaborador
             // 
-            btnColaborador.BackColor = Color.FromArgb(50, 130, 184);
-            btnColaborador.FlatStyle = FlatStyle.Flat;
-            btnColaborador.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnColaborador.ForeColor = Color.White;
-            btnColaborador.Location = new Point(214, 153);
-            btnColaborador.Name = "btnColaborador";
-            btnColaborador.Size = new Size(103, 33);
-            btnColaborador.TabIndex = 2;
-            btnColaborador.Text = "Acessar";
-            btnColaborador.UseVisualStyleBackColor = false;
-            btnColaborador.Click += btnColaborador_Click;
+            this.btnColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.btnColaborador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColaborador.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnColaborador.ForeColor = System.Drawing.Color.White;
+            this.btnColaborador.Location = new System.Drawing.Point(214, 153);
+            this.btnColaborador.Name = "btnColaborador";
+            this.btnColaborador.Size = new System.Drawing.Size(103, 33);
+            this.btnColaborador.TabIndex = 2;
+            this.btnColaborador.Text = "Acessar";
+            this.btnColaborador.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
-            label5.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(3, 83);
-            label5.Name = "label5";
-            label5.Padding = new Padding(3);
-            label5.Size = new Size(314, 58);
-            label5.TabIndex = 1;
-            label5.Text = "Permite inserir informações sobre um novo colaborador, como nome, CPF, cargo, salário, entre outros.";
-            label5.Click += label5_Click;
+            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(3, 83);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(3);
+            this.label5.Size = new System.Drawing.Size(314, 58);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Permite inserir informações sobre um novo colaborador, como nome, CPF, cargo, sal" +
+    "ário, entre outros.";
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(27, 38, 44);
-            panel5.Controls.Add(pictureBox1);
-            panel5.Controls.Add(label1);
-            panel5.Location = new Point(0, 0);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(332, 70);
-            panel5.TabIndex = 0;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(44)))));
+            this.panel5.Controls.Add(this.pictureBox1);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(332, 70);
+            this.panel5.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.usuario;
-            pictureBox1.Location = new Point(13, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Padding = new Padding(3);
-            pictureBox1.Size = new Size(43, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = global::Projeto_WindowsForms.Properties.Resources.usuario;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(3);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(66, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(251, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Cadastro de colaboradores";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(66, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cadastro de colaboradores";
             // 
             // panel2
             // 
-            panel2.BackColor = Color.White;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(btnEmpresa);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(533, 117);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(333, 200);
-            panel2.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnEmpresa);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(533, 117);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(333, 200);
+            this.panel2.TabIndex = 1;
             // 
             // btnEmpresa
             // 
-            btnEmpresa.BackColor = Color.FromArgb(50, 130, 184);
-            btnEmpresa.FlatStyle = FlatStyle.Flat;
-            btnEmpresa.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEmpresa.ForeColor = Color.White;
-            btnEmpresa.Location = new Point(210, 153);
-            btnEmpresa.Name = "btnEmpresa";
-            btnEmpresa.Size = new Size(103, 33);
-            btnEmpresa.TabIndex = 3;
-            btnEmpresa.Text = "Acessar";
-            btnEmpresa.UseVisualStyleBackColor = false;
-            btnEmpresa.Click += btnEmpresa_Click;
+            this.btnEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.btnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpresa.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEmpresa.ForeColor = System.Drawing.Color.White;
+            this.btnEmpresa.Location = new System.Drawing.Point(210, 153);
+            this.btnEmpresa.Name = "btnEmpresa";
+            this.btnEmpresa.Size = new System.Drawing.Size(103, 33);
+            this.btnEmpresa.TabIndex = 3;
+            this.btnEmpresa.Text = "Acessar";
+            this.btnEmpresa.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
-            label6.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(-1, 83);
-            label6.Name = "label6";
-            label6.Padding = new Padding(3);
-            label6.Size = new Size(314, 58);
-            label6.TabIndex = 2;
-            label6.Text = "Permite registrar informações sobre uma nova empresa, como nome, CNPJ, endereço, entre outros.";
+            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(-1, 83);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(3);
+            this.label6.Size = new System.Drawing.Size(314, 58);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Permite registrar informações sobre uma nova empresa, como nome, CNPJ, endereço, " +
+    "entre outros.";
             // 
             // panel3
             // 
-            panel3.BackColor = Color.White;
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnFolha);
-            panel3.Controls.Add(label7);
-            panel3.Location = new Point(96, 369);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(333, 200);
-            panel3.TabIndex = 1;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnFolha);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Location = new System.Drawing.Point(96, 369);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(333, 200);
+            this.panel3.TabIndex = 1;
             // 
             // btnFolha
             // 
-            btnFolha.BackColor = Color.FromArgb(50, 130, 184);
-            btnFolha.FlatStyle = FlatStyle.Flat;
-            btnFolha.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFolha.ForeColor = Color.White;
-            btnFolha.Location = new Point(213, 153);
-            btnFolha.Name = "btnFolha";
-            btnFolha.Size = new Size(103, 33);
-            btnFolha.TabIndex = 3;
-            btnFolha.Text = "Acessar";
-            btnFolha.UseVisualStyleBackColor = false;
-            btnFolha.Click += btnFolha_Click;
+            this.btnFolha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.btnFolha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFolha.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFolha.ForeColor = System.Drawing.Color.White;
+            this.btnFolha.Location = new System.Drawing.Point(213, 153);
+            this.btnFolha.Name = "btnFolha";
+            this.btnFolha.Size = new System.Drawing.Size(103, 33);
+            this.btnFolha.TabIndex = 3;
+            this.btnFolha.Text = "Acessar";
+            this.btnFolha.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
-            label7.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(2, 84);
-            label7.Name = "label7";
-            label7.Padding = new Padding(3);
-            label7.Size = new Size(314, 86);
-            label7.TabIndex = 3;
-            label7.Text = "Permite inserir os dados dos colaboradores e seus respectivos salários para calcular o valor final a ser pago aos funcionários no período selecionado.";
+            this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(2, 84);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(3);
+            this.label7.Size = new System.Drawing.Size(314, 86);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Permite inserir os dados dos colaboradores e seus respectivos salários para calcu" +
+    "lar o valor final a ser pago aos funcionários no período selecionado.";
             // 
             // panel4
             // 
-            panel4.BackColor = Color.White;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(btnRelatorio);
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(panel8);
-            panel4.Location = new Point(533, 369);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(333, 200);
-            panel4.TabIndex = 1;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnRelatorio);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.panel8);
+            this.panel4.Location = new System.Drawing.Point(533, 369);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(333, 200);
+            this.panel4.TabIndex = 1;
             // 
             // btnRelatorio
             // 
-            btnRelatorio.BackColor = Color.FromArgb(50, 130, 184);
-            btnRelatorio.FlatStyle = FlatStyle.Flat;
-            btnRelatorio.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRelatorio.ForeColor = Color.White;
-            btnRelatorio.Location = new Point(210, 153);
-            btnRelatorio.Name = "btnRelatorio";
-            btnRelatorio.Size = new Size(103, 33);
-            btnRelatorio.TabIndex = 4;
-            btnRelatorio.Text = "Acessar";
-            btnRelatorio.UseVisualStyleBackColor = false;
-            btnRelatorio.Click += btnRelatorio_Click;
+            this.btnRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorio.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnRelatorio.Location = new System.Drawing.Point(210, 153);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(103, 33);
+            this.btnRelatorio.TabIndex = 4;
+            this.btnRelatorio.Text = "Acessar";
+            this.btnRelatorio.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
-            label8.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(-1, 84);
-            label8.Name = "label8";
-            label8.Padding = new Padding(3);
-            label8.Size = new Size(314, 86);
-            label8.TabIndex = 4;
-            label8.Text = "Gera informações sobre a empresa e seus colaboradores, como folha de pagamento mensal, resumo de imposto, folha de pontos, entre outros.";
+            this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(-1, 84);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(3);
+            this.label8.Size = new System.Drawing.Size(314, 86);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Gera informações sobre a empresa e seus colaboradores, como folha de pagamento me" +
+    "nsal, resumo de imposto, folha de pontos, entre outros.";
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(187, 225, 250);
-            panel8.BorderStyle = BorderStyle.FixedSingle;
-            panel8.Controls.Add(pictureBox4);
-            panel8.Controls.Add(label4);
-            panel8.Location = new Point(-1, -1);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(332, 70);
-            panel8.TabIndex = 3;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(225)))), ((int)(((byte)(250)))));
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.pictureBox4);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Location = new System.Drawing.Point(-1, -1);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(332, 70);
+            this.panel8.TabIndex = 3;
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.relatorio1;
-            pictureBox4.Location = new Point(14, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(53, 62);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 4;
-            pictureBox4.TabStop = false;
+            this.pictureBox4.Image = global::Projeto_WindowsForms.Properties.Resources.relatorio1;
+            this.pictureBox4.Location = new System.Drawing.Point(14, 4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(53, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(127, 23);
-            label4.Name = "label4";
-            label4.Size = new Size(101, 25);
-            label4.TabIndex = 3;
-            label4.Text = "Relatórios";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(127, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Relatórios";
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(15, 76, 117);
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(pictureBox2);
-            panel6.Controls.Add(label2);
-            panel6.Location = new Point(533, 117);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(332, 70);
-            panel6.TabIndex = 1;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(76)))), ((int)(((byte)(117)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Location = new System.Drawing.Point(533, 117);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(332, 70);
+            this.panel6.TabIndex = 1;
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.empresa;
-            pictureBox2.Location = new Point(14, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Padding = new Padding(3);
-            pictureBox2.Size = new Size(53, 63);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            this.pictureBox2.Image = global::Projeto_WindowsForms.Properties.Resources.empresa;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Padding = new System.Windows.Forms.Padding(3);
+            this.pictureBox2.Size = new System.Drawing.Size(53, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(84, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(206, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Cadastro de empresas";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(84, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Cadastro de empresas";
             // 
             // panel7
             // 
-            panel7.BackColor = Color.FromArgb(50, 130, 184);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(pictureBox3);
-            panel7.Controls.Add(label3);
-            panel7.Location = new Point(96, 369);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(333, 70);
-            panel7.TabIndex = 2;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(130)))), ((int)(((byte)(184)))));
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.pictureBox3);
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Location = new System.Drawing.Point(96, 369);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(333, 70);
+            this.panel7.TabIndex = 2;
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.pagamento;
-            pictureBox3.Location = new Point(14, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Padding = new Padding(3);
-            pictureBox3.Size = new Size(53, 63);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 3;
-            pictureBox3.TabStop = false;
+            this.pictureBox3.Image = global::Projeto_WindowsForms.Properties.Resources.pagamento;
+            this.pictureBox3.Location = new System.Drawing.Point(14, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Padding = new System.Windows.Forms.Padding(3);
+            this.pictureBox3.Size = new System.Drawing.Size(53, 63);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(62, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(267, 25);
-            label3.TabIndex = 2;
-            label3.Text = "Calcular folha de pagamento";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(62, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(267, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Calcular folha de pagamento";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial Narrow", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(442, 30);
-            label10.Name = "label10";
-            label10.Size = new Size(85, 33);
-            label10.TabIndex = 3;
-            label10.Text = "MENU";
-            label10.Click += label9_Click;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(442, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 33);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "MENU";
             // 
             // frmMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(962, 640);
-            Controls.Add(label10);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "frmMenu";
-            Text = "frmMenu";
-            panel1.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(962, 640);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Name = "frmMenu";
+            this.Text = "Menu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
