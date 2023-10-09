@@ -57,38 +57,38 @@ namespace Projeto_WindowsForms.Controle
         {
             this.mensagem = "";
             if (listaDadosColaborador[0].Length == 0)
-                this.mensagem += "Preencha o nome do colaborador\n";
+                this.mensagem += "Nome do colaborador obrigatório\n";
             if (listaDadosColaborador[0].Length > 50)
-                this.mensagem += "Nome do colaborador não deve ultrapassar de 50 caracteres\n";
+                this.mensagem += "Nome do colaborador não pode exceder de 50 caracteres\n";
             if (listaDadosColaborador[1].Length == 0)
-                this.mensagem += "Prencha o cargo\n";
+                this.mensagem += "Cargo obrigatóro\n";
             if (listaDadosColaborador[2].Length == 0)
-                this.mensagem += "Preencha a empresa\n";
+                this.mensagem += "Empresa obrigatório\n";
             if (listaDadosColaborador[3].Length == 0)
-                this.mensagem += "Preencha o salario\n";
+                this.mensagem += "Salário obrigatório\n";
             if (listaDadosColaborador[4].Length == 0)
-                this.mensagem += "Preencha a data de admissão\n";
+                this.mensagem += "Data de admissão obrigatório\n";
 
         }
 
-        public void validarDadosEmpresa(List<string> listaDadosColaborador)
+        public void validarDadosEmpresa(List<string> listaDadosEmpresa)
         {
             this.mensagem = "";
-            string cnpj = listaDadosColaborador[0];
-            string razaoSocial = listaDadosColaborador[1];
-            string nomeFantasia = listaDadosColaborador[2];
 
-            if (string.IsNullOrEmpty(cnpj) || string.IsNullOrEmpty(razaoSocial) || string.IsNullOrEmpty(nomeFantasia))
-                this.mensagem = "Preencha todos os campos antes de cadastrar a empresa.";
+            if (listaDadosEmpresa[0].Length == 0)
+                this.mensagem += "Cnpj obrigatório\n";
 
-            if (cnpj.Length != 14 || !cnpj.All(char.IsDigit))
-                this.mensagem = "O CNPJ deve conter exatamente 14 digitos numéricos.";
+            if (listaDadosEmpresa[0].Length > 15)
+                this.mensagem += "O CNPJ não pode exceder de 14 caracteres\n";
 
-            if (razaoSocial.Length > 50)
-                this.mensagem = "A Razão Social não pode exceder 100 caracteres.";
+            if (listaDadosEmpresa[1].Length == 0)
+                this.mensagem += "Razão social obrigatório\n";
 
-            if (nomeFantasia.Length > 50)
-                this.mensagem = "O Nome Fantasia não pode exceder 50 caracteres.";
+            if (listaDadosEmpresa[1].Length > 100)
+                this.mensagem += "A Razão Social não pode exceder 100 caracteres.\n";
+
+            if (listaDadosEmpresa[2].Length > 50)
+                this.mensagem += "O Nome Fantasia não pode exceder 50 caracteres.\n";
         }
     }
 }
