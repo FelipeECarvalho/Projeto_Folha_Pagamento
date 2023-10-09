@@ -38,6 +38,5 @@ namespace Projeto_WindowsForms.DAL
                 this.mensagem = "Erro de Banco de Dados";
             }
         }
-
     }
 }

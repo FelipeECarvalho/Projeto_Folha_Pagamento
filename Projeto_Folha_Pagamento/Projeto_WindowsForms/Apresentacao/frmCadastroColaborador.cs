@@ -9,17 +9,21 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
         }
 
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             List<string> listaDadosColaborador = new List<string>();
-            listaDadosColaborador.Add(txtNomeColaborador.Text);
-            listaDadosColaborador.Add(txtCargo.Text);
-            listaDadosColaborador.Add(txtEmpresa.Text);
-            listaDadosColaborador.Add(txtSalario.Text);
-            listaDadosColaborador.Add(txtDataAdmissao.Text);
+            listaDadosColaborador.Add(txbNomeColaborador.Text);
+            listaDadosColaborador.Add(txbCargo.Text);
+            listaDadosColaborador.Add(txbEmpresa.Text);
+            listaDadosColaborador.Add(txbSalario.Text);
+            listaDadosColaborador.Add(txbDataAdmissao.Text);
             ControleBase controle = new ControleBase();
             controle.cadastrarColaborador(listaDadosColaborador);
+            txbNomeColaborador.Clear();
+            txbCargo.Clear();
+            txbEmpresa.Clear();
+            txbSalario.Clear();
+            txbDataAdmissao.Clear();
             MessageBox.Show(controle.mensagem);
         }
 

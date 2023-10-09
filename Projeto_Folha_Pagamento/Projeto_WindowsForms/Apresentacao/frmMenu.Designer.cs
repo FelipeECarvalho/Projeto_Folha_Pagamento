@@ -364,7 +364,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmMenu";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();

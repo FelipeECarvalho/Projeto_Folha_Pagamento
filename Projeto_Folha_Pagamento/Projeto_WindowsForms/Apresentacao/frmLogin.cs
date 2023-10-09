@@ -11,10 +11,9 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             if (txbUsuario.Text == "admin" && txbSenha.Text == "admin")
             {
-                Hide();
-
-                frmMenu frmM = new();
-                frmM.ShowDialog();
+                frmMenu frmMenu = new frmMenu();
+                this.Hide();
+                frmMenu.ShowDialog();
             }
             else
             {

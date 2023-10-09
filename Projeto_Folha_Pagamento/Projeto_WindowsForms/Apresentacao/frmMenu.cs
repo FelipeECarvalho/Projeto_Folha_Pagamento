@@ -45,10 +45,5 @@ namespace Projeto_WindowsForms.Apresentacao
             frmGerarRelatorio.ShowDialog();
         }
 
-
-        private void frmMenu_Load(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.lblNomeColaborador = new System.Windows.Forms.Label();
-            this.txtNomeColaborador = new System.Windows.Forms.TextBox();
-            this.txtEmpresa = new System.Windows.Forms.TextBox();
+            this.txbNomeColaborador = new System.Windows.Forms.TextBox();
+            this.txbEmpresa = new System.Windows.Forms.TextBox();
             this.lblCargo = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txbCargo = new System.Windows.Forms.TextBox();
             this.lblEmpresa = new System.Windows.Forms.Label();
-            this.txtSalario = new System.Windows.Forms.TextBox();
+            this.txbSalario = new System.Windows.Forms.TextBox();
             this.lblSalario = new System.Windows.Forms.Label();
-            this.txtDataAdmissao = new System.Windows.Forms.TextBox();
+            this.txbDataAdmissao = new System.Windows.Forms.TextBox();
             this.lblDataAdmissao = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.lblCadastroDeColaborador = new System.Windows.Forms.Label();
@@ -56,19 +56,19 @@
             this.lblNomeColaborador.TabIndex = 0;
             this.lblNomeColaborador.Text = "Nome colaborador";
             // 
-            // txtNomeColaborador
+            // txbNomeColaborador
             // 
-            this.txtNomeColaborador.Location = new System.Drawing.Point(30, 56);
-            this.txtNomeColaborador.Name = "txtNomeColaborador";
-            this.txtNomeColaborador.Size = new System.Drawing.Size(274, 23);
-            this.txtNomeColaborador.TabIndex = 1;
+            this.txbNomeColaborador.Location = new System.Drawing.Point(30, 56);
+            this.txbNomeColaborador.Name = "txbNomeColaborador";
+            this.txbNomeColaborador.Size = new System.Drawing.Size(274, 23);
+            this.txbNomeColaborador.TabIndex = 1;
             // 
-            // txtEmpresa
+            // txbEmpresa
             // 
-            this.txtEmpresa.Location = new System.Drawing.Point(389, 56);
-            this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.Size = new System.Drawing.Size(274, 23);
-            this.txtEmpresa.TabIndex = 3;
+            this.txbEmpresa.Location = new System.Drawing.Point(389, 56);
+            this.txbEmpresa.Name = "txbEmpresa";
+            this.txbEmpresa.Size = new System.Drawing.Size(274, 23);
+            this.txbEmpresa.TabIndex = 3;
             // 
             // lblCargo
             // 
@@ -79,12 +79,12 @@
             this.lblCargo.TabIndex = 2;
             this.lblCargo.Text = "Cargo";
             // 
-            // txtCargo
+            // txbCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(30, 113);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(274, 23);
-            this.txtCargo.TabIndex = 5;
+            this.txbCargo.Location = new System.Drawing.Point(30, 113);
+            this.txbCargo.Name = "txbCargo";
+            this.txbCargo.Size = new System.Drawing.Size(274, 23);
+            this.txbCargo.TabIndex = 5;
             // 
             // lblEmpresa
             // 
@@ -95,12 +95,12 @@
             this.lblEmpresa.TabIndex = 4;
             this.lblEmpresa.Text = "Empresa";
             // 
-            // txtSalario
+            // txbSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(389, 113);
-            this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(274, 23);
-            this.txtSalario.TabIndex = 7;
+            this.txbSalario.Location = new System.Drawing.Point(389, 113);
+            this.txbSalario.Name = "txbSalario";
+            this.txbSalario.Size = new System.Drawing.Size(274, 23);
+            this.txbSalario.TabIndex = 7;
             // 
             // lblSalario
             // 
@@ -111,12 +111,12 @@
             this.lblSalario.TabIndex = 6;
             this.lblSalario.Text = "Salário";
             // 
-            // txtDataAdmissao
+            // txbDataAdmissao
             // 
-            this.txtDataAdmissao.Location = new System.Drawing.Point(389, 171);
-            this.txtDataAdmissao.Name = "txtDataAdmissao";
-            this.txtDataAdmissao.Size = new System.Drawing.Size(274, 23);
-            this.txtDataAdmissao.TabIndex = 9;
+            this.txbDataAdmissao.Location = new System.Drawing.Point(389, 171);
+            this.txbDataAdmissao.Name = "txbDataAdmissao";
+            this.txbDataAdmissao.Size = new System.Drawing.Size(274, 23);
+            this.txbDataAdmissao.TabIndex = 9;
             // 
             // lblDataAdmissao
             // 
@@ -176,15 +176,15 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txtCargo);
+            this.panel2.Controls.Add(this.txbCargo);
             this.panel2.Controls.Add(this.lblNomeColaborador);
-            this.panel2.Controls.Add(this.txtNomeColaborador);
+            this.panel2.Controls.Add(this.txbNomeColaborador);
             this.panel2.Controls.Add(this.lblCargo);
-            this.panel2.Controls.Add(this.txtDataAdmissao);
-            this.panel2.Controls.Add(this.txtEmpresa);
+            this.panel2.Controls.Add(this.txbDataAdmissao);
+            this.panel2.Controls.Add(this.txbEmpresa);
             this.panel2.Controls.Add(this.lblDataAdmissao);
             this.panel2.Controls.Add(this.lblEmpresa);
-            this.panel2.Controls.Add(this.txtSalario);
+            this.panel2.Controls.Add(this.txbSalario);
             this.panel2.Controls.Add(this.lblSalario);
             this.panel2.Location = new System.Drawing.Point(50, 118);
             this.panel2.Name = "panel2";
@@ -214,14 +214,14 @@
         #endregion
 
         private Label lblNomeColaborador;
-        private TextBox txtNomeColaborador;
-        private TextBox txtEmpresa;
+        private TextBox txbNomeColaborador;
+        private TextBox txbEmpresa;
         private Label lblCargo;
-        private TextBox txtCargo;
+        private TextBox txbCargo;
         private Label lblEmpresa;
-        private TextBox txtSalario;
+        private TextBox txbSalario;
         private Label lblSalario;
-        private TextBox txtDataAdmissao;
+        private TextBox txbDataAdmissao;
         private Label lblDataAdmissao;
         private Button btnCadastrar;
         private Label lblCadastroDeColaborador;

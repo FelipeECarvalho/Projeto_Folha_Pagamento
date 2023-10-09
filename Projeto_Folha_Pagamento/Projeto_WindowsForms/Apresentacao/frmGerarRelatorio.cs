@@ -15,16 +15,16 @@ namespace Projeto_WindowsForms.Apresentacao
 
             var listaColaboradores = new List<Colaborador>
             {
-                new Colaborador(1, "José", "Gerente", "Pardal & Cia Ltda.", "300", DateTime.Now.ToString()),
-                new Colaborador(2, "Maria", "Analista", "Pardal & Cia Ltda.", "4000", DateTime.Now.ToString()),
-                new Colaborador(3, "Pedro", "Desenvolvedor", "Águia Incorporações Ltda.", "4100", DateTime.Now.ToString()),
-                new Colaborador(4, "Ana", "Designer", "Águia Incorporações Ltda.", "4200", DateTime.Now.ToString()),
-                new Colaborador(5, "Carlos", "Analista de Vendas", "Colibri Engenharia S.A.", "4300", DateTime.Now.ToString()),
-                new Colaborador(6, "Isabel", "Engenheiro de Software", "Colibri Engenharia S.A.", "4400", DateTime.Now.ToString()),
-                new Colaborador(7, "Paulo", "Analista de Marketing", "Falcão Comércio de Tecnologia Ltda.", "4500", DateTime.Now.ToString()),
-                new Colaborador(8, "Letícia","Contadora", "Falcão Comércio de Tecnologia Ltda.", "4600",  DateTime.Now.ToString()),
-                new Colaborador(9, "Ricardo", "Analista Financeiro", "Terra Elementar Consultoria Ambiental Ltda.", "4700", DateTime.Now.ToString()),
-                new Colaborador(10, "Juliana", "Engenheiro de Produção", "Terra Elementar Consultoria Ambiental Ltda.", "4800", DateTime.Now.ToString())
+                //new Colaborador(1, "José", "Gerente", "Pardal & Cia Ltda.", "300", DateTime.Now.ToString()),
+                //new Colaborador(2, "Maria", "Analista", "Pardal & Cia Ltda.", "4000", DateTime.Now.ToString()),
+                //new Colaborador(3, "Pedro", "Desenvolvedor", "Águia Incorporações Ltda.", "4100", DateTime.Now.ToString()),
+                //new Colaborador(4, "Ana", "Designer", "Águia Incorporações Ltda.", "4200", DateTime.Now.ToString()),
+                //new Colaborador(5, "Carlos", "Analista de Vendas", "Colibri Engenharia S.A.", "4300", DateTime.Now.ToString()),
+                //new Colaborador(6, "Isabel", "Engenheiro de Software", "Colibri Engenharia S.A.", "4400", DateTime.Now.ToString()),
+                //new Colaborador(7, "Paulo", "Analista de Marketing", "Falcão Comércio de Tecnologia Ltda.", "4500", DateTime.Now.ToString()),
+                //new Colaborador(8, "Letícia","Contadora", "Falcão Comércio de Tecnologia Ltda.", "4600",  DateTime.Now.ToString()),
+                //new Colaborador(9, "Ricardo", "Analista Financeiro", "Terra Elementar Consultoria Ambiental Ltda.", "4700", DateTime.Now.ToString()),
+                //new Colaborador(10, "Juliana", "Engenheiro de Produção", "Terra Elementar Consultoria Ambiental Ltda.", "4800", DateTime.Now.ToString())
             };
 
             foreach (var colaborador in listaColaboradores)

@@ -92,6 +92,7 @@
             this.btnAcessar.TabIndex = 5;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = true;
+            btnAcessar.Click += btnAcessar_Click;
             // 
             // pictureBox1
             // 

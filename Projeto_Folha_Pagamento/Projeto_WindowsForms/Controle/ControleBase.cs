@@ -58,13 +58,16 @@ namespace Projeto_WindowsForms.Controle
         public void cadastrarEmpresa(List<string> listaDadosEmpresa)
         {
             Validacao validacao = new Validacao();
-
             validacao.validarDadosEmpresa(listaDadosEmpresa);
             if (validacao.mensagem.Equals(""))
             {
-                Empresa empresa = new Empresa(listaDadosEmpresa[0], listaDadosEmpresa[1], listaDadosEmpresa[2]);
-
-                this.mensagem = "Cadastro com sucesso";
+                Empresa empresa = new Empresa();
+                empresa.Cnpj = listaDadosEmpresa[0];
+                empresa.RazaoSocial = listaDadosEmpresa[1];
+                empresa.NomeFantasia = listaDadosEmpresa[2];
+                EmpresaDAO empresaDAO = new EmpresaDAO();
+                empresaDAO.cadastrarEmpresa(empresa);
+                this.mensagem = empresaDAO.mensagem;
             }
             else
             {
