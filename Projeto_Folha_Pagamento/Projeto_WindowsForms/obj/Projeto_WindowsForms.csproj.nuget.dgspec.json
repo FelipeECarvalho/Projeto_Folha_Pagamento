@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ewert\\Documents\\GitHub\\Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj": {}
+    "Z:\\DOWNLOADS\\PROJETOS\\_Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ewert\\Documents\\GitHub\\Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj": {
+    "Z:\\DOWNLOADS\\PROJETOS\\_Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ewert\\Documents\\GitHub\\Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj",
+        "projectUniqueName": "Z:\\DOWNLOADS\\PROJETOS\\_Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj",
         "projectName": "Projeto_WindowsForms",
-        "projectPath": "C:\\Users\\ewert\\Documents\\GitHub\\Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj",
-        "packagesPath": "C:\\Users\\ewert\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ewert\\Documents\\GitHub\\Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\obj\\",
+        "projectPath": "Z:\\DOWNLOADS\\PROJETOS\\_Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_WindowsForms.csproj",
+        "packagesPath": "C:\\Users\\gb010\\.nuget\\packages\\",
+        "outputPath": "Z:\\DOWNLOADS\\PROJETOS\\_Projeto_Folha_Pagamento\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ewert\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\gb010\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
