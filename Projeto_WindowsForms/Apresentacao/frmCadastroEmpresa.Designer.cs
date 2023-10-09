@@ -161,7 +161,7 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "frmCadastroEmpresa";
-            this.Text = "Cadastro de empresas";
+            this.Text = "Cadastro de empresa";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

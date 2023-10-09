@@ -39,14 +39,14 @@ namespace Projeto_WindowsForms.Controle
             validacao.validarDadosColaborador(listaDadosColaborador);
             if (validacao.mensagem.Equals(""))
             {
-                Colaborador colaborador = new Colaborador();
-                colaborador.Nome = listaDadosColaborador[0];
-                colaborador.Cargo = listaDadosColaborador[1];
-                colaborador.Empresa = listaDadosColaborador[2];
-                colaborador.Salario = listaDadosColaborador[3];
-                colaborador.DataAdmissao = listaDadosColaborador[4];
-                ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
-                colaboradorDAO.cadastrarColaborador(colaborador);
+                //Colaborador colaborador = new Colaborador();
+                //colaborador.Nome = listaDadosColaborador[0];
+                //colaborador.Cargo = listaDadosColaborador[1];
+                //colaborador.Empresa = listaDadosColaborador[2];
+                //colaborador.Salario = listaDadosColaborador[3];
+                //colaborador.DataAdmissao = listaDadosColaborador[4];
+                //ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
+                //colaboradorDAO.cadastrarColaborador(colaborador);
                 this.mensagem = "Cadastro com sucesso";
             }
             else
@@ -61,13 +61,14 @@ namespace Projeto_WindowsForms.Controle
             validacao.validarDadosEmpresa(listaDadosEmpresa);
             if (validacao.mensagem.Equals(""))
             {
-                Empresa empresa = new Empresa();
-                empresa.CNPJ = listaDadosEmpresa[0];
-                empresa.RazaoSocial = listaDadosEmpresa[1];
-                empresa.NomeFantasia = listaDadosEmpresa[2];
-                EmpresaDAO empresaDAO = new EmpresaDAO();
-                empresaDAO.cadastrarEmpresa(empresa);
-                this.mensagem = empresaDAO.mensagem;
+                //Empresa empresa = new Empresa();
+                //empresa.CNPJ = listaDadosEmpresa[0];
+                //empresa.RazaoSocial = listaDadosEmpresa[1];
+                //empresa.NomeFantasia = listaDadosEmpresa[2];
+                //EmpresaDAO empresaDAO = new EmpresaDAO();
+                //empresaDAO.cadastrarEmpresa(empresa);
+                //this.mensagem = empresaDAO.mensagem;
+                this.mensagem = "Cadastro com sucesso";
             }
             else
             {

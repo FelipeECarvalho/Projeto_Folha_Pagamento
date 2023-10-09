@@ -2,6 +2,7 @@ namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmLogin : Form
     {
+        public String mensagemRotuloBox = "Atenção!";
         public frmLogin()
         {
             InitializeComponent();
@@ -11,14 +12,13 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             if (txbUsuario.Text == "admin" && txbSenha.Text == "admin")
             {
-                Hide();
-
-                frmMenu frmM = new();
-                frmM.ShowDialog();
+                frmMenu frmMenu = new frmMenu();
+                frmMenu.ShowDialog();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Usuario ou senha invalidos!!!");
+                MessageBox.Show("Usuario ou senha incorreto", mensagemRotuloBox);
             }
         }
 
