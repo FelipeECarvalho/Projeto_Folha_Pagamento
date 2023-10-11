@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body, #image-container, #login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    background-color: #efefef;
+}
+
+main {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+}
+
+#image-container {
+    width: 50%;
+    background-color: #f9f9f9;
+}
+
+#login-form {
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+
+#login-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em; 
+    margin-bottom: 1.25em; 
+    width: 55%;
+}
+
+#usuario, #password {
+    outline: none;
+    border-radius: .5em;
+    border: none;
+    padding: 0.8em; 
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease-in-out;
+}
+
+#usuario:focus, #password:focus {
+    border-color: #1974BD; 
+}
+
+h1 {
+    font-size: 2.5rem; 
+    font-weight: 600;
+    margin-bottom: .8em; 
+}
+
+label {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+#login-btn {
+    background-color: #1974BD;
+    border: none;
+    border-radius: .5em;
+    width: 55%;
+    padding: 0.8em;
+    font-size: 1.0625rem; 
+    font-weight: 500;
+    margin-top: .8em; 
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+}
+
+#login-btn:hover {
+    background-color: #135ba3;
+}
+
+#company-logo {
+    width: 28.125em; 
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+
+
+
+
+
