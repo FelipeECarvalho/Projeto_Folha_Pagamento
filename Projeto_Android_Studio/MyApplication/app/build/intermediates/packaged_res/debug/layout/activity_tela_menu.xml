@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tela_Menu">
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="500dp"
+        android:layout_margin="1sp"
+        android:background="#F1F1F1"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="11dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1sp"
+            android:background="#F1F1F9"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10sp"
+                android:src="@drawable/rh_logo_png"
+                tools:srcCompat="@drawable/rh_logo_png" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txvRelatorioFolhaPagamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1"
+                    android:text="@string/txvBemVindo"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txvUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="1"
+                    android:text="@string/txvUserName"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opções de Relatórios"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginRight="35sp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:baselineAligned="false"
+                android:foregroundGravity="top"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lnlColaboradores"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2px"
+                    android:layout_marginTop="2px"
+                    android:layout_marginRight="2px"
+                    android:layout_marginBottom="2px"
+                    android:background="#F0F0F0"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgColaboradores"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_marginLeft="10sp"
+                        android:src="@drawable/colab_icon"
+                        tools:srcCompat="@drawable/colab_icon" />
+
+                    <TextView
+                        android:id="@+id/txvColaboradores"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30sp"
+                        android:text="@string/txvColaboradores"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/txvSetaColaborador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:text="@string/txvSeta"
+                        android:textAlignment="viewEnd"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="#000000"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lnlEmpresas"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2px"
+                    android:layout_marginTop="1sp"
+                    android:layout_marginRight="2px"
+                    android:layout_marginBottom="2px"
+                    android:background="#F0F0F0">
+
+                    <ImageView
+                        android:id="@+id/imgEmpresas"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_marginLeft="10sp"
+                        android:src="@drawable/empresa_icon"
+                        tools:srcCompat="@drawable/empresa_icon" />
+
+                    <TextView
+                        android:id="@+id/txvEmpresas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30sp"
+                        android:text="@string/txvEmpresas"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/txvSetaEmpresas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:text="@string/txvSeta"
+                        android:textAlignment="viewEnd"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="#000000"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/lnlFolhaPagamento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2px"
+                    android:layout_marginTop="3px"
+                    android:layout_marginRight="2px"
+                    android:layout_marginBottom="2px"
+                    android:background="#F0F0F0">
+
+                    <ImageView
+                        android:id="@+id/imgFolhaPagamento"
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_marginLeft="10sp"
+                        android:src="@drawable/relatorios_icon"
+                        tools:srcCompat="@drawable/relatorios_icon" />
+
+                    <TextView
+                        android:id="@+id/txvFolhaPagamento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30sp"
+                        android:text="@string/txvFolhaPagamento"
+                        android:textAlignment="center"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/txvSetaFolhaPagamento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10sp"
+                        android:layout_weight="1"
+                        android:text="@string/txvSeta"
+                        android:textAlignment="viewEnd"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="100dp"
+            android:text="@string/btnLogOut" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

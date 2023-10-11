@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tela_Relatorios_Empresas">
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="500dp"
+        android:layout_margin="1sp"
+        android:background="#F1F1F1"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="11dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1sp"
+            android:background="#F1F1F9"
+            android:orientation="horizontal"
+            android:paddingBottom="10sp">
+
+            <LinearLayout
+                android:id="@+id/lnlRelatorioEmpresas"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txvSetaVoltar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="0"
+                    android:paddingLeft="20sp"
+                    android:paddingRight="20sp"
+                    android:text="@string/txvSetaVoltar"
+                    android:textAlignment="viewEnd"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txvRelatorioEmpresas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:layout_weight="0"
+                    android:text="@string/txvRelatorioEmpresas"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnlSelecionarEmpresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txvSelecionarEmpresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txvSelecionarEmpresa"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:id="@+id/lnlNomeOuId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10sp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtNomeOuId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:ems="10"
+                    android:hint="@string/edtNomeOuId"
+                    android:inputType="text"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txvLupa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/txvLupa"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20sp"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:id="@+id/lnlTabela"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="10sp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#BFBFBF">
+
+                            <TextView
+                                android:id="@+id/txvId"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="@string/txvId"
+                                android:textAlignment="viewStart"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txvNomeEmpresa"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/txvNomeEmpresa"
+                                android:textAlignment="viewStart"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txvCNPJ"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="@string/txvCNPJ"
+                                android:textAlignment="viewStart"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txvRazaoSocial"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="@string/txvRazaoSocial"
+                                android:textAlignment="viewStart"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow1"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow1"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow1"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow1"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow2"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow2"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow2"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow2"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow3"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow3"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow3"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow3"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow4"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow4"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow4"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow4"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow5"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow5"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow5"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow5"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow6"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow6"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow6"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow6"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow7"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow7"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow7"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow7"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow8"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow8"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow8"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow8"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow9"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow9"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow9"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow9"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow10"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow10"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow10"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow10"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow11"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow11"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow11"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow11"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#E1E1E1"
+                            android:paddingTop="5sp"
+                            android:paddingBottom="5sp">
+
+                            <TextView
+                                android:id="@+id/txvIdRow12"
+                                android:layout_width="50sp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15sp"
+                                android:layout_marginRight="15sp"
+                                android:layout_weight="0"
+                                android:text="empresa_id"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvNomeRow12"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_name"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvEmpresaRow12"
+                                android:layout_width="200sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:text="empresa_cnpj"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txvCargoRow12"
+                                android:layout_width="150sp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:text="empresa_razao"
+                                android:textAlignment="viewStart"
+                                android:textSize="14sp" />
+
+                        </TableRow>
+
+                    </TableLayout>
+                </ScrollView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
