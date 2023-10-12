@@ -41,7 +41,7 @@ namespace Projeto_WindowsForms.DAL
             MySqlCommand cmd = new MySqlCommand();
             MySqlDataReader dr;
             cmd.CommandText = @"select * from empresas";
-            var listaEmpresa = new List<Empresa>();
+            List<Empresa> listaEmpresa = new List<Empresa>();
 
             try
             {
