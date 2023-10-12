@@ -91,6 +91,7 @@
             this.btnColaborador.TabIndex = 2;
             this.btnColaborador.Text = "Acessar";
             this.btnColaborador.UseVisualStyleBackColor = false;
+            this.btnColaborador.Click += new System.EventHandler(this.btnColaborador_Click);
             // 
             // label5
             // 
@@ -158,6 +159,7 @@
             this.btnEmpresa.TabIndex = 3;
             this.btnEmpresa.Text = "Acessar";
             this.btnEmpresa.UseVisualStyleBackColor = false;
+            this.btnEmpresa.Click += new System.EventHandler(this.btnEmpresa_Click);
             // 
             // label6
             // 
@@ -193,6 +195,7 @@
             this.btnFolha.TabIndex = 3;
             this.btnFolha.Text = "Acessar";
             this.btnFolha.UseVisualStyleBackColor = false;
+            this.btnFolha.Click += new System.EventHandler(this.btnFolha_Click);
             // 
             // label7
             // 
@@ -229,6 +232,7 @@
             this.btnRelatorio.TabIndex = 4;
             this.btnRelatorio.Text = "Acessar";
             this.btnRelatorio.UseVisualStyleBackColor = false;
+            this.btnRelatorio.Click += new System.EventHandler(this.btnFolha_Click);
             // 
             // label8
             // 

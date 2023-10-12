@@ -16,9 +16,11 @@ namespace Projeto_WindowsForms.Apresentacao
                 frmMenu.ShowDialog();
                 this.Hide();
             }
+            //if (txbUsuario.Text == "")
+            //    MessageBox.Show("Digite o usuario");
             else
             {
-                MessageBox.Show("Usuario ou senha incorreto", mensagemRotuloBox);
+                MessageBox.Show("Usuario ou senha incorreto", mensagemRotuloBox, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -61,13 +61,13 @@ namespace Projeto_WindowsForms.Controle
             validacao.validarDadosEmpresa(listaDadosEmpresa);
             if (validacao.mensagem.Equals(""))
             {
-                //Empresa empresa = new Empresa();
-                //empresa.CNPJ = listaDadosEmpresa[0];
-                //empresa.RazaoSocial = listaDadosEmpresa[1];
-                //empresa.NomeFantasia = listaDadosEmpresa[2];
-                //EmpresaDAO empresaDAO = new EmpresaDAO();
-                //empresaDAO.cadastrarEmpresa(empresa);
-                //this.mensagem = empresaDAO.mensagem;
+                Empresa empresa = new Empresa();
+                empresa.CNPJ = listaDadosEmpresa[0];
+                empresa.RazaoSocial = listaDadosEmpresa[1];
+                empresa.NomeFantasia = listaDadosEmpresa[2];
+                EmpresaDAO empresaDAO = new EmpresaDAO();
+                empresaDAO.cadastrarEmpresa(empresa);
+                this.mensagem = empresaDAO.mensagem;
                 this.mensagem = "Cadastro com sucesso";
             }
             else
@@ -75,6 +75,15 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem = validacao.mensagem;
             }
         }
+
+        public List<Empresa> listarEmpresas()
+        {
+            EmpresaDAO empresaDao = new EmpresaDAO();
+            var listaEmpresa = empresaDao.listarEmpresa();
+
+            return listaEmpresa;
+        }
+
 
     }
 }
