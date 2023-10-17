@@ -28,189 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNomeColaborador = new System.Windows.Forms.Label();
-            this.txbNomeColaborador = new System.Windows.Forms.TextBox();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.txbCargo = new System.Windows.Forms.TextBox();
-            this.lblEmpresa = new System.Windows.Forms.Label();
-            this.txbSalario = new System.Windows.Forms.TextBox();
-            this.lblSalario = new System.Windows.Forms.Label();
-            this.lblDataAdmissao = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.lblCadastroDeColaborador = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dtpDataAdmissao = new System.Windows.Forms.DateTimePicker();
-            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            lblNomeColaborador = new Label();
+            txbNomeColaborador = new TextBox();
+            lblCargo = new Label();
+            txbCargo = new TextBox();
+            lblEmpresa = new Label();
+            txbSalario = new TextBox();
+            lblSalario = new Label();
+            lblDataAdmissao = new Label();
+            btnCadastrar = new Button();
+            lblCadastroDeColaborador = new Label();
+            panel1 = new Panel();
+            label2 = new Label();
+            panel2 = new Panel();
+            dtpDataAdmissao = new DateTimePicker();
+            cmbEmpresa = new ComboBox();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // lblNomeColaborador
             // 
-            this.lblNomeColaborador.AutoSize = true;
-            this.lblNomeColaborador.Location = new System.Drawing.Point(30, 38);
-            this.lblNomeColaborador.Name = "lblNomeColaborador";
-            this.lblNomeColaborador.Size = new System.Drawing.Size(107, 15);
-            this.lblNomeColaborador.TabIndex = 0;
-            this.lblNomeColaborador.Text = "Nome colaborador";
+            lblNomeColaborador.AutoSize = true;
+            lblNomeColaborador.Location = new Point(30, 38);
+            lblNomeColaborador.Name = "lblNomeColaborador";
+            lblNomeColaborador.Size = new Size(107, 15);
+            lblNomeColaborador.TabIndex = 0;
+            lblNomeColaborador.Text = "Nome colaborador";
             // 
             // txbNomeColaborador
             // 
-            this.txbNomeColaborador.Location = new System.Drawing.Point(30, 56);
-            this.txbNomeColaborador.Name = "txbNomeColaborador";
-            this.txbNomeColaborador.Size = new System.Drawing.Size(274, 23);
-            this.txbNomeColaborador.TabIndex = 1;
+            txbNomeColaborador.Location = new Point(30, 56);
+            txbNomeColaborador.Name = "txbNomeColaborador";
+            txbNomeColaborador.Size = new Size(274, 23);
+            txbNomeColaborador.TabIndex = 1;
             // 
             // lblCargo
             // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(30, 95);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(39, 15);
-            this.lblCargo.TabIndex = 2;
-            this.lblCargo.Text = "Cargo";
+            lblCargo.AutoSize = true;
+            lblCargo.Location = new Point(30, 95);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(39, 15);
+            lblCargo.TabIndex = 2;
+            lblCargo.Text = "Cargo";
             // 
             // txbCargo
             // 
-            this.txbCargo.Location = new System.Drawing.Point(30, 113);
-            this.txbCargo.Name = "txbCargo";
-            this.txbCargo.Size = new System.Drawing.Size(274, 23);
-            this.txbCargo.TabIndex = 5;
+            txbCargo.Location = new Point(30, 113);
+            txbCargo.Name = "txbCargo";
+            txbCargo.Size = new Size(274, 23);
+            txbCargo.TabIndex = 5;
             // 
             // lblEmpresa
             // 
-            this.lblEmpresa.AutoSize = true;
-            this.lblEmpresa.Location = new System.Drawing.Point(389, 35);
-            this.lblEmpresa.Name = "lblEmpresa";
-            this.lblEmpresa.Size = new System.Drawing.Size(52, 15);
-            this.lblEmpresa.TabIndex = 4;
-            this.lblEmpresa.Text = "Empresa";
+            lblEmpresa.AutoSize = true;
+            lblEmpresa.Location = new Point(389, 35);
+            lblEmpresa.Name = "lblEmpresa";
+            lblEmpresa.Size = new Size(52, 15);
+            lblEmpresa.TabIndex = 4;
+            lblEmpresa.Text = "Empresa";
             // 
             // txbSalario
             // 
-            this.txbSalario.Location = new System.Drawing.Point(389, 113);
-            this.txbSalario.Name = "txbSalario";
-            this.txbSalario.Size = new System.Drawing.Size(274, 23);
-            this.txbSalario.TabIndex = 7;
+            txbSalario.Location = new Point(389, 113);
+            txbSalario.Name = "txbSalario";
+            txbSalario.Size = new Size(274, 23);
+            txbSalario.TabIndex = 7;
             // 
             // lblSalario
             // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(389, 95);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(42, 15);
-            this.lblSalario.TabIndex = 6;
-            this.lblSalario.Text = "Salário";
+            lblSalario.AutoSize = true;
+            lblSalario.Location = new Point(389, 95);
+            lblSalario.Name = "lblSalario";
+            lblSalario.Size = new Size(42, 15);
+            lblSalario.TabIndex = 6;
+            lblSalario.Text = "Salário";
             // 
             // lblDataAdmissao
             // 
-            this.lblDataAdmissao.AutoSize = true;
-            this.lblDataAdmissao.Location = new System.Drawing.Point(389, 153);
-            this.lblDataAdmissao.Name = "lblDataAdmissao";
-            this.lblDataAdmissao.Size = new System.Drawing.Size(100, 15);
-            this.lblDataAdmissao.TabIndex = 8;
-            this.lblDataAdmissao.Text = "Data de admissão";
+            lblDataAdmissao.AutoSize = true;
+            lblDataAdmissao.Location = new Point(389, 153);
+            lblDataAdmissao.Name = "lblDataAdmissao";
+            lblDataAdmissao.Size = new Size(100, 15);
+            lblDataAdmissao.TabIndex = 8;
+            lblDataAdmissao.Text = "Data de admissão";
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(198)))), ((int)(((byte)(186)))));
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCadastrar.Location = new System.Drawing.Point(566, 385);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(148, 35);
-            this.btnCadastrar.TabIndex = 10;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            btnCadastrar.BackColor = Color.FromArgb(50, 130, 184);
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
+            btnCadastrar.Location = new Point(566, 385);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(148, 35);
+            btnCadastrar.TabIndex = 10;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // lblCadastroDeColaborador
             // 
-            this.lblCadastroDeColaborador.AutoSize = true;
-            this.lblCadastroDeColaborador.Font = new System.Drawing.Font("Segoe UI Semibold", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCadastroDeColaborador.Location = new System.Drawing.Point(226, 18);
-            this.lblCadastroDeColaborador.Name = "lblCadastroDeColaborador";
-            this.lblCadastroDeColaborador.Size = new System.Drawing.Size(356, 41);
-            this.lblCadastroDeColaborador.TabIndex = 11;
-            this.lblCadastroDeColaborador.Text = "Cadastro de colaborador";
+            lblCadastroDeColaborador.AutoSize = true;
+            lblCadastroDeColaborador.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCadastroDeColaborador.Location = new Point(226, 18);
+            lblCadastroDeColaborador.Name = "lblCadastroDeColaborador";
+            lblCadastroDeColaborador.Size = new Size(356, 41);
+            lblCadastroDeColaborador.TabIndex = 11;
+            lblCadastroDeColaborador.Text = "Cadastro de colaborador";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.panel1.Location = new System.Drawing.Point(50, 81);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 40);
-            this.panel1.TabIndex = 12;
+            panel1.BackColor = Color.FromArgb(217, 217, 217);
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label2);
+            panel1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            panel1.Location = new Point(50, 81);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(703, 40);
+            panel1.TabIndex = 12;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(33, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Dados empresariais";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(33, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(146, 19);
+            label2.TabIndex = 0;
+            label2.Text = "Dados do calaborador";
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dtpDataAdmissao);
-            this.panel2.Controls.Add(this.cmbEmpresa);
-            this.panel2.Controls.Add(this.txbCargo);
-            this.panel2.Controls.Add(this.lblNomeColaborador);
-            this.panel2.Controls.Add(this.txbNomeColaborador);
-            this.panel2.Controls.Add(this.lblCargo);
-            this.panel2.Controls.Add(this.lblDataAdmissao);
-            this.panel2.Controls.Add(this.lblEmpresa);
-            this.panel2.Controls.Add(this.txbSalario);
-            this.panel2.Controls.Add(this.lblSalario);
-            this.panel2.Location = new System.Drawing.Point(50, 118);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(703, 240);
-            this.panel2.TabIndex = 13;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(dtpDataAdmissao);
+            panel2.Controls.Add(cmbEmpresa);
+            panel2.Controls.Add(txbCargo);
+            panel2.Controls.Add(lblNomeColaborador);
+            panel2.Controls.Add(txbNomeColaborador);
+            panel2.Controls.Add(lblCargo);
+            panel2.Controls.Add(lblDataAdmissao);
+            panel2.Controls.Add(lblEmpresa);
+            panel2.Controls.Add(txbSalario);
+            panel2.Controls.Add(lblSalario);
+            panel2.Location = new Point(50, 118);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(703, 240);
+            panel2.TabIndex = 13;
             // 
             // dtpDataAdmissao
             // 
-            this.dtpDataAdmissao.Location = new System.Drawing.Point(389, 171);
-            this.dtpDataAdmissao.Name = "dtpDataAdmissao";
-            this.dtpDataAdmissao.Size = new System.Drawing.Size(274, 23);
-            this.dtpDataAdmissao.TabIndex = 11;
+            dtpDataAdmissao.Location = new Point(389, 171);
+            dtpDataAdmissao.Name = "dtpDataAdmissao";
+            dtpDataAdmissao.Size = new Size(274, 23);
+            dtpDataAdmissao.TabIndex = 11;
             // 
             // cmbEmpresa
             // 
-            this.cmbEmpresa.FormattingEnabled = true;
-            this.cmbEmpresa.Location = new System.Drawing.Point(389, 56);
-            this.cmbEmpresa.Name = "cmbEmpresa";
-            this.cmbEmpresa.Size = new System.Drawing.Size(274, 23);
-            this.cmbEmpresa.TabIndex = 10;
+            cmbEmpresa.FormattingEnabled = true;
+            cmbEmpresa.Location = new Point(389, 56);
+            cmbEmpresa.Name = "cmbEmpresa";
+            cmbEmpresa.Size = new Size(274, 23);
+            cmbEmpresa.TabIndex = 10;
             // 
             // frmCadastroColaborador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 467);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lblCadastroDeColaborador);
-            this.Controls.Add(this.btnCadastrar);
-            this.Name = "frmCadastroColaborador";
-            this.Text = "Cadastro de colaborador";
-            this.Load += new System.EventHandler(this.frmCadastroColaborador_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(799, 467);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(lblCadastroDeColaborador);
+            Controls.Add(btnCadastrar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "frmCadastroColaborador";
+            Text = "Cadastro de colaborador";
+            Load += frmCadastroColaborador_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

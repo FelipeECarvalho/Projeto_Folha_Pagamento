@@ -53,8 +53,8 @@
             pictureBox3 = new PictureBox();
             label3 = new Label();
             panel9 = new Panel();
-            pictureBox5 = new PictureBox();
             label9 = new Label();
+            pictureBox5 = new PictureBox();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -233,7 +233,7 @@
             btnRelatorio.TabIndex = 4;
             btnRelatorio.Text = "Acessar";
             btnRelatorio.UseVisualStyleBackColor = false;
-            btnRelatorio.Click += btnFolha_Click;
+            btnRelatorio.Click += btnRelatorio_Click;
             // 
             // label8
             // 
@@ -353,32 +353,32 @@
             panel9.Size = new Size(966, 94);
             panel9.TabIndex = 4;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources.logo_empresa;
-            pictureBox5.Location = new Point(12, 11);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(119, 71);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
             // label9
             // 
             label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.Window;
-            label9.Location = new Point(137, 29);
+            label9.Location = new Point(155, 33);
             label9.Name = "label9";
             label9.Size = new Size(283, 43);
             label9.TabIndex = 8;
             label9.Text = "Olá, Felipe! Seja Bem-vindo.";
             label9.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.logo_empresa;
+            pictureBox5.Location = new Point(3, 8);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(146, 83);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 0;
+            pictureBox5.TabStop = false;
+            // 
             // frmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlLight;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(962, 640);
             Controls.Add(panel9);
             Controls.Add(panel7);
@@ -387,6 +387,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmMenu";
             Text = "Menu";
             panel1.ResumeLayout(false);

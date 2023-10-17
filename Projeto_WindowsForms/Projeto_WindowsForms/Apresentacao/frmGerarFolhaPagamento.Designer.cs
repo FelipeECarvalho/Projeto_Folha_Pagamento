@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            lblTitulo = new Label();
             imageList1 = new ImageList(components);
             lblSelecionarColaborador = new Label();
-            txbNomeID = new TextBox();
-            imgLupa = new PictureBox();
             lblNomeEmpresa = new Label();
             lblResultadoNomeEmpresa = new Label();
             lblCNPJ = new Label();
@@ -44,6 +41,8 @@
             lblResultadoFuncao = new Label();
             tblDadosFolhaPagamento = new TableLayoutPanel();
             gbxHorasExtras = new GroupBox();
+            label2 = new Label();
+            label1 = new Label();
             cbxHorasExtras = new ComboBox();
             lblHorasExtrasVencimentos = new Label();
             lblCOD04 = new Label();
@@ -73,31 +72,24 @@
             lblValorLiquido = new Label();
             lblDescontosTotais = new Label();
             lblVencimentosTotais = new Label();
-            btnGerarFolha = new Button();
             lblMensagem = new Label();
-            btnBuscar = new Button();
-            btnCalcular = new Button();
             lblMensagemCalculo = new Label();
             gpbLinha = new GroupBox();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
+            btnBuscar = new Button();
+            btnCalcular = new Button();
+            btnGerarFolha = new Button();
+            label3 = new Label();
+            panel3 = new Panel();
+            imgLupa = new PictureBox();
+            txbNomeID = new TextBox();
             tblDadosFolhaPagamento.SuspendLayout();
             gbxHorasExtras.SuspendLayout();
             tblResultadoFolhaPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
             SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(289, 34);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(263, 28);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Gerar Folha de Pagamento";
             // 
             // imageList1
             // 
@@ -108,37 +100,16 @@
             // lblSelecionarColaborador
             // 
             lblSelecionarColaborador.AutoSize = true;
-            lblSelecionarColaborador.Location = new Point(119, 115);
+            lblSelecionarColaborador.Location = new Point(159, 111);
             lblSelecionarColaborador.Name = "lblSelecionarColaborador";
             lblSelecionarColaborador.Size = new Size(131, 15);
             lblSelecionarColaborador.TabIndex = 2;
             lblSelecionarColaborador.Text = "Selecionar colaborador:";
             // 
-            // txbNomeID
-            // 
-            txbNomeID.Location = new Point(256, 112);
-            txbNomeID.Name = "txbNomeID";
-            txbNomeID.PlaceholderText = "Nome ou ID";
-            txbNomeID.Size = new Size(302, 23);
-            txbNomeID.TabIndex = 3;
-            // 
-            // imgLupa
-            // 
-            imgLupa.Image = Properties.Resources.search_button;
-            imgLupa.Location = new Point(564, 111);
-            imgLupa.Name = "imgLupa";
-            imgLupa.Size = new Size(24, 24);
-            imgLupa.SizeMode = PictureBoxSizeMode.Zoom;
-            imgLupa.TabIndex = 4;
-            imgLupa.TabStop = false;
-            imgLupa.Click += imgLupa_Click;
-            imgLupa.MouseEnter += imgLupa_MouseEnter;
-            imgLupa.MouseLeave += imgLupa_MouseLeave;
-            // 
             // lblNomeEmpresa
             // 
             lblNomeEmpresa.AutoSize = true;
-            lblNomeEmpresa.Location = new Point(42, 150);
+            lblNomeEmpresa.Location = new Point(82, 157);
             lblNomeEmpresa.Name = "lblNomeEmpresa";
             lblNomeEmpresa.Size = new Size(107, 15);
             lblNomeEmpresa.TabIndex = 5;
@@ -147,7 +118,7 @@
             // lblResultadoNomeEmpresa
             // 
             lblResultadoNomeEmpresa.AutoSize = true;
-            lblResultadoNomeEmpresa.Location = new Point(155, 150);
+            lblResultadoNomeEmpresa.Location = new Point(195, 157);
             lblResultadoNomeEmpresa.Name = "lblResultadoNomeEmpresa";
             lblResultadoNomeEmpresa.Size = new Size(12, 15);
             lblResultadoNomeEmpresa.TabIndex = 6;
@@ -156,7 +127,7 @@
             // lblCNPJ
             // 
             lblCNPJ.AutoSize = true;
-            lblCNPJ.Location = new Point(42, 171);
+            lblCNPJ.Location = new Point(82, 178);
             lblCNPJ.Name = "lblCNPJ";
             lblCNPJ.Size = new Size(37, 15);
             lblCNPJ.TabIndex = 7;
@@ -165,7 +136,7 @@
             // lblResultadoCNPJ
             // 
             lblResultadoCNPJ.AutoSize = true;
-            lblResultadoCNPJ.Location = new Point(85, 171);
+            lblResultadoCNPJ.Location = new Point(125, 178);
             lblResultadoCNPJ.Name = "lblResultadoCNPJ";
             lblResultadoCNPJ.Size = new Size(12, 15);
             lblResultadoCNPJ.TabIndex = 8;
@@ -174,7 +145,7 @@
             // lblNomeColaborador
             // 
             lblNomeColaborador.AutoSize = true;
-            lblNomeColaborador.Location = new Point(42, 214);
+            lblNomeColaborador.Location = new Point(82, 221);
             lblNomeColaborador.Name = "lblNomeColaborador";
             lblNomeColaborador.Size = new Size(129, 15);
             lblNomeColaborador.TabIndex = 12;
@@ -184,7 +155,7 @@
             // 
             lblResultadoNomeColaborador.AutoSize = true;
             lblResultadoNomeColaborador.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblResultadoNomeColaborador.Location = new Point(177, 214);
+            lblResultadoNomeColaborador.Location = new Point(217, 221);
             lblResultadoNomeColaborador.Name = "lblResultadoNomeColaborador";
             lblResultadoNomeColaborador.Size = new Size(12, 15);
             lblResultadoNomeColaborador.TabIndex = 11;
@@ -193,7 +164,7 @@
             // lblFuncao
             // 
             lblFuncao.AutoSize = true;
-            lblFuncao.Location = new Point(42, 238);
+            lblFuncao.Location = new Point(82, 245);
             lblFuncao.Name = "lblFuncao";
             lblFuncao.Size = new Size(49, 15);
             lblFuncao.TabIndex = 10;
@@ -202,7 +173,7 @@
             // lblResultadoFuncao
             // 
             lblResultadoFuncao.AutoSize = true;
-            lblResultadoFuncao.Location = new Point(97, 238);
+            lblResultadoFuncao.Location = new Point(137, 245);
             lblResultadoFuncao.Name = "lblResultadoFuncao";
             lblResultadoFuncao.Size = new Size(12, 15);
             lblResultadoFuncao.TabIndex = 9;
@@ -210,6 +181,7 @@
             // 
             // tblDadosFolhaPagamento
             // 
+            tblDadosFolhaPagamento.BackColor = SystemColors.Window;
             tblDadosFolhaPagamento.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tblDadosFolhaPagamento.ColumnCount = 5;
             tblDadosFolhaPagamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.7735844F));
@@ -238,7 +210,7 @@
             tblDadosFolhaPagamento.Controls.Add(lblSalarioBaseVencimentos, 3, 1);
             tblDadosFolhaPagamento.Controls.Add(lblINSSDesconto, 4, 3);
             tblDadosFolhaPagamento.Controls.Add(lblIRPFDesconto, 4, 4);
-            tblDadosFolhaPagamento.Location = new Point(60, 286);
+            tblDadosFolhaPagamento.Location = new Point(82, 281);
             tblDadosFolhaPagamento.Name = "tblDadosFolhaPagamento";
             tblDadosFolhaPagamento.RowCount = 5;
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
@@ -246,7 +218,7 @@
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tblDadosFolhaPagamento.Size = new Size(672, 152);
+            tblDadosFolhaPagamento.Size = new Size(690, 152);
             tblDadosFolhaPagamento.TabIndex = 13;
             // 
             // gbxHorasExtras
@@ -258,11 +230,29 @@
             gbxHorasExtras.Controls.Add(cbxHorasExtras);
             gbxHorasExtras.Controls.Add(lblHorasExtrasVencimentos);
             gbxHorasExtras.ForeColor = SystemColors.ControlText;
-            gbxHorasExtras.Location = new Point(342, 67);
+            gbxHorasExtras.Location = new Point(360, 67);
             gbxHorasExtras.Name = "gbxHorasExtras";
             gbxHorasExtras.Size = new Size(196, 23);
             gbxHorasExtras.TabIndex = 22;
             gbxHorasExtras.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(125, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Valor:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(-4, 5);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Horas extras:";
             // 
             // cbxHorasExtras
             // 
@@ -297,7 +287,7 @@
             // 
             lblVencimentos.AutoSize = true;
             lblVencimentos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblVencimentos.Location = new Point(342, 1);
+            lblVencimentos.Location = new Point(360, 1);
             lblVencimentos.Name = "lblVencimentos";
             lblVencimentos.Size = new Size(109, 21);
             lblVencimentos.TabIndex = 17;
@@ -307,7 +297,7 @@
             // 
             lblREF.AutoSize = true;
             lblREF.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblREF.Location = new Point(278, 1);
+            lblREF.Location = new Point(296, 1);
             lblREF.Name = "lblREF";
             lblREF.Size = new Size(37, 21);
             lblREF.TabIndex = 16;
@@ -327,7 +317,7 @@
             // 
             lblDescricao.AutoSize = true;
             lblDescricao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescricao.Location = new Point(83, 1);
+            lblDescricao.Location = new Point(88, 1);
             lblDescricao.Name = "lblDescricao";
             lblDescricao.Size = new Size(84, 21);
             lblDescricao.TabIndex = 15;
@@ -337,7 +327,7 @@
             // 
             lblDescontos.AutoSize = true;
             lblDescontos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescontos.Location = new Point(545, 1);
+            lblDescontos.Location = new Point(563, 1);
             lblDescontos.Name = "lblDescontos";
             lblDescontos.Size = new Size(89, 21);
             lblDescontos.TabIndex = 18;
@@ -355,7 +345,7 @@
             // lblSalarioBase
             // 
             lblSalarioBase.AutoSize = true;
-            lblSalarioBase.Location = new Point(83, 34);
+            lblSalarioBase.Location = new Point(88, 34);
             lblSalarioBase.Name = "lblSalarioBase";
             lblSalarioBase.Size = new Size(69, 15);
             lblSalarioBase.TabIndex = 20;
@@ -364,7 +354,7 @@
             // lblREF536
             // 
             lblREF536.AutoSize = true;
-            lblREF536.Location = new Point(278, 34);
+            lblREF536.Location = new Point(296, 34);
             lblREF536.Name = "lblREF536";
             lblREF536.Size = new Size(25, 15);
             lblREF536.TabIndex = 21;
@@ -382,7 +372,7 @@
             // lblHorasExtras
             // 
             lblHorasExtras.AutoSize = true;
-            lblHorasExtras.Location = new Point(83, 64);
+            lblHorasExtras.Location = new Point(88, 64);
             lblHorasExtras.Name = "lblHorasExtras";
             lblHorasExtras.Size = new Size(72, 15);
             lblHorasExtras.TabIndex = 23;
@@ -391,7 +381,7 @@
             // lblREF382
             // 
             lblREF382.AutoSize = true;
-            lblREF382.Location = new Point(278, 64);
+            lblREF382.Location = new Point(296, 64);
             lblREF382.Name = "lblREF382";
             lblREF382.Size = new Size(25, 15);
             lblREF382.TabIndex = 24;
@@ -409,7 +399,7 @@
             // lblINSS
             // 
             lblINSS.AutoSize = true;
-            lblINSS.Location = new Point(83, 94);
+            lblINSS.Location = new Point(88, 94);
             lblINSS.Name = "lblINSS";
             lblINSS.Size = new Size(31, 15);
             lblINSS.TabIndex = 26;
@@ -418,7 +408,7 @@
             // lblREF617
             // 
             lblREF617.AutoSize = true;
-            lblREF617.Location = new Point(278, 94);
+            lblREF617.Location = new Point(296, 94);
             lblREF617.Name = "lblREF617";
             lblREF617.Size = new Size(25, 15);
             lblREF617.TabIndex = 27;
@@ -427,7 +417,7 @@
             // lblIRPF
             // 
             lblIRPF.AutoSize = true;
-            lblIRPF.Location = new Point(83, 124);
+            lblIRPF.Location = new Point(88, 124);
             lblIRPF.Name = "lblIRPF";
             lblIRPF.Size = new Size(29, 15);
             lblIRPF.TabIndex = 29;
@@ -436,7 +426,7 @@
             // lblREF194
             // 
             lblREF194.AutoSize = true;
-            lblREF194.Location = new Point(278, 124);
+            lblREF194.Location = new Point(296, 124);
             lblREF194.Name = "lblREF194";
             lblREF194.Size = new Size(25, 15);
             lblREF194.TabIndex = 30;
@@ -445,7 +435,7 @@
             // lblSalarioBaseVencimentos
             // 
             lblSalarioBaseVencimentos.AutoSize = true;
-            lblSalarioBaseVencimentos.Location = new Point(342, 34);
+            lblSalarioBaseVencimentos.Location = new Point(360, 34);
             lblSalarioBaseVencimentos.Name = "lblSalarioBaseVencimentos";
             lblSalarioBaseVencimentos.Size = new Size(13, 15);
             lblSalarioBaseVencimentos.TabIndex = 39;
@@ -454,7 +444,7 @@
             // lblINSSDesconto
             // 
             lblINSSDesconto.AutoSize = true;
-            lblINSSDesconto.Location = new Point(545, 94);
+            lblINSSDesconto.Location = new Point(563, 94);
             lblINSSDesconto.Name = "lblINSSDesconto";
             lblINSSDesconto.Size = new Size(12, 15);
             lblINSSDesconto.TabIndex = 40;
@@ -463,7 +453,7 @@
             // lblIRPFDesconto
             // 
             lblIRPFDesconto.AutoSize = true;
-            lblIRPFDesconto.Location = new Point(545, 124);
+            lblIRPFDesconto.Location = new Point(563, 124);
             lblIRPFDesconto.Name = "lblIRPFDesconto";
             lblIRPFDesconto.Size = new Size(12, 15);
             lblIRPFDesconto.TabIndex = 41;
@@ -471,6 +461,7 @@
             // 
             // tblResultadoFolhaPagamento
             // 
+            tblResultadoFolhaPagamento.BackColor = SystemColors.Window;
             tblResultadoFolhaPagamento.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             tblResultadoFolhaPagamento.ColumnCount = 3;
             tblResultadoFolhaPagamento.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.9726028F));
@@ -482,18 +473,18 @@
             tblResultadoFolhaPagamento.Controls.Add(lblValorLiquido, 2, 0);
             tblResultadoFolhaPagamento.Controls.Add(lblDescontosTotais, 1, 0);
             tblResultadoFolhaPagamento.Controls.Add(lblVencimentosTotais, 0, 0);
-            tblResultadoFolhaPagamento.Location = new Point(60, 482);
+            tblResultadoFolhaPagamento.Location = new Point(82, 533);
             tblResultadoFolhaPagamento.Name = "tblResultadoFolhaPagamento";
             tblResultadoFolhaPagamento.RowCount = 2;
             tblResultadoFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
             tblResultadoFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
-            tblResultadoFolhaPagamento.Size = new Size(541, 61);
+            tblResultadoFolhaPagamento.Size = new Size(559, 61);
             tblResultadoFolhaPagamento.TabIndex = 14;
             // 
             // lblResultadoValorLiquido
             // 
             lblResultadoValorLiquido.AutoSize = true;
-            lblResultadoValorLiquido.Location = new Point(388, 34);
+            lblResultadoValorLiquido.Location = new Point(406, 34);
             lblResultadoValorLiquido.Name = "lblResultadoValorLiquido";
             lblResultadoValorLiquido.Size = new Size(12, 15);
             lblResultadoValorLiquido.TabIndex = 28;
@@ -502,7 +493,7 @@
             // lblResultadoDescontosTotais
             // 
             lblResultadoDescontosTotais.AutoSize = true;
-            lblResultadoDescontosTotais.Location = new Point(211, 34);
+            lblResultadoDescontosTotais.Location = new Point(221, 34);
             lblResultadoDescontosTotais.Name = "lblResultadoDescontosTotais";
             lblResultadoDescontosTotais.Size = new Size(12, 15);
             lblResultadoDescontosTotais.TabIndex = 27;
@@ -521,7 +512,7 @@
             // 
             lblValorLiquido.AutoSize = true;
             lblValorLiquido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblValorLiquido.Location = new Point(388, 1);
+            lblValorLiquido.Location = new Point(406, 1);
             lblValorLiquido.Name = "lblValorLiquido";
             lblValorLiquido.Size = new Size(112, 21);
             lblValorLiquido.TabIndex = 25;
@@ -531,7 +522,7 @@
             // 
             lblDescontosTotais.AutoSize = true;
             lblDescontosTotais.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescontosTotais.Location = new Point(211, 1);
+            lblDescontosTotais.Location = new Point(221, 1);
             lblDescontosTotais.Name = "lblDescontosTotais";
             lblDescontosTotais.Size = new Size(138, 21);
             lblDescontosTotais.TabIndex = 24;
@@ -547,48 +538,18 @@
             lblVencimentosTotais.TabIndex = 23;
             lblVencimentosTotais.Text = "Vencimentos Totais";
             // 
-            // btnGerarFolha
-            // 
-            btnGerarFolha.Location = new Point(634, 506);
-            btnGerarFolha.Name = "btnGerarFolha";
-            btnGerarFolha.Size = new Size(98, 23);
-            btnGerarFolha.TabIndex = 15;
-            btnGerarFolha.Text = "Gerar Folha";
-            btnGerarFolha.UseVisualStyleBackColor = true;
-            // 
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
-            lblMensagem.Location = new Point(489, 150);
+            lblMensagem.Location = new Point(303, 137);
             lblMensagem.Name = "lblMensagem";
-            lblMensagem.Size = new Size(10, 15);
+            lblMensagem.Size = new Size(0, 15);
             lblMensagem.TabIndex = 16;
-            lblMensagem.Text = " ";
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.Location = new Point(608, 112);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
-            btnBuscar.TabIndex = 17;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = true;
-            btnBuscar.Click += btnBuscar_Click;
-            // 
-            // btnCalcular
-            // 
-            btnCalcular.Location = new Point(634, 444);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(98, 23);
-            btnCalcular.TabIndex = 18;
-            btnCalcular.Text = "Calcular";
-            btnCalcular.UseVisualStyleBackColor = true;
-            btnCalcular.Click += btnCalcular_Click;
             // 
             // lblMensagemCalculo
             // 
             lblMensagemCalculo.AutoSize = true;
-            lblMensagemCalculo.Location = new Point(445, 442);
+            lblMensagemCalculo.Location = new Point(485, 437);
             lblMensagemCalculo.Name = "lblMensagemCalculo";
             lblMensagemCalculo.Size = new Size(0, 15);
             lblMensagemCalculo.TabIndex = 19;
@@ -597,7 +558,7 @@
             // 
             gpbLinha.BackColor = SystemColors.Control;
             gpbLinha.ForeColor = SystemColors.ControlLight;
-            gpbLinha.Location = new Point(42, 193);
+            gpbLinha.Location = new Point(82, 200);
             gpbLinha.Name = "gpbLinha";
             gpbLinha.Size = new Size(709, 11);
             gpbLinha.TabIndex = 20;
@@ -615,36 +576,108 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // label1
+            // btnBuscar
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(-4, 5);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Horas extras:";
+            btnBuscar.BackColor = Color.FromArgb(50, 130, 184);
+            btnBuscar.Cursor = Cursors.Hand;
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.ForeColor = SystemColors.ButtonHighlight;
+            btnBuscar.Location = new Point(674, 103);
+            btnBuscar.Margin = new Padding(0);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(98, 31);
+            btnBuscar.TabIndex = 22;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // btnCalcular
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(125, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Valor:";
+            btnCalcular.BackColor = Color.FromArgb(50, 130, 184);
+            btnCalcular.Cursor = Cursors.Hand;
+            btnCalcular.FlatStyle = FlatStyle.Flat;
+            btnCalcular.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCalcular.ForeColor = SystemColors.ButtonHighlight;
+            btnCalcular.Location = new Point(656, 448);
+            btnCalcular.Margin = new Padding(0);
+            btnCalcular.Name = "btnCalcular";
+            btnCalcular.Size = new Size(116, 32);
+            btnCalcular.TabIndex = 23;
+            btnCalcular.Text = "Calcular";
+            btnCalcular.UseVisualStyleBackColor = false;
+            // 
+            // btnGerarFolha
+            // 
+            btnGerarFolha.BackColor = Color.FromArgb(50, 130, 184);
+            btnGerarFolha.Cursor = Cursors.Hand;
+            btnGerarFolha.FlatStyle = FlatStyle.Flat;
+            btnGerarFolha.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGerarFolha.ForeColor = SystemColors.ButtonHighlight;
+            btnGerarFolha.Location = new Point(656, 560);
+            btnGerarFolha.Margin = new Padding(0);
+            btnGerarFolha.Name = "btnGerarFolha";
+            btnGerarFolha.Size = new Size(116, 34);
+            btnGerarFolha.TabIndex = 24;
+            btnGerarFolha.Text = "Gerar folha";
+            btnGerarFolha.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(256, 24);
+            label3.Name = "label3";
+            label3.Size = new Size(382, 41);
+            label3.TabIndex = 25;
+            label3.Text = "Gerar Folha de Pagamento";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.Window;
+            panel3.Controls.Add(imgLupa);
+            panel3.Controls.Add(txbNomeID);
+            panel3.Location = new Point(303, 104);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(345, 30);
+            panel3.TabIndex = 26;
+            // 
+            // imgLupa
+            // 
+            imgLupa.Image = Properties.Resources.search_button;
+            imgLupa.Location = new Point(308, 3);
+            imgLupa.Name = "imgLupa";
+            imgLupa.Size = new Size(36, 25);
+            imgLupa.SizeMode = PictureBoxSizeMode.Zoom;
+            imgLupa.TabIndex = 4;
+            imgLupa.TabStop = false;
+            imgLupa.Click += imgLupa_Click;
+            // 
+            // txbNomeID
+            // 
+            txbNomeID.BorderStyle = BorderStyle.None;
+            txbNomeID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txbNomeID.Location = new Point(3, 3);
+            txbNomeID.Margin = new Padding(3, 2, 3, 2);
+            txbNomeID.MinimumSize = new Size(100, 25);
+            txbNomeID.Name = "txbNomeID";
+            txbNomeID.PlaceholderText = "Nome ou ID";
+            txbNomeID.Size = new Size(299, 25);
+            txbNomeID.TabIndex = 3;
             // 
             // frmGerarFolhaPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 585);
+            ClientSize = new Size(876, 630);
+            Controls.Add(panel3);
+            Controls.Add(label3);
+            Controls.Add(btnGerarFolha);
+            Controls.Add(btnCalcular);
+            Controls.Add(btnBuscar);
             Controls.Add(pictureBox1);
             Controls.Add(gpbLinha);
             Controls.Add(lblMensagemCalculo);
-            Controls.Add(btnCalcular);
-            Controls.Add(btnBuscar);
             Controls.Add(lblMensagem);
-            Controls.Add(btnGerarFolha);
             Controls.Add(tblResultadoFolhaPagamento);
             Controls.Add(tblDadosFolhaPagamento);
             Controls.Add(lblNomeColaborador);
@@ -655,14 +688,11 @@
             Controls.Add(lblCNPJ);
             Controls.Add(lblResultadoNomeEmpresa);
             Controls.Add(lblNomeEmpresa);
-            Controls.Add(imgLupa);
-            Controls.Add(txbNomeID);
             Controls.Add(lblSelecionarColaborador);
-            Controls.Add(lblTitulo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGerarFolhaPagamento";
             Text = "Gerar Folha de Pagamento";
             Load += frmGerarFolhaPagamento_Load;
-            ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
             tblDadosFolhaPagamento.ResumeLayout(false);
             tblDadosFolhaPagamento.PerformLayout();
             gbxHorasExtras.ResumeLayout(false);
@@ -670,17 +700,16 @@
             tblResultadoFolhaPagamento.ResumeLayout(false);
             tblResultadoFolhaPagamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lblTitulo;
         private ImageList imageList1;
         private Label lblSelecionarColaborador;
-        private TextBox txbNomeID;
-        private PictureBox imgLupa;
         private Label lblNomeEmpresa;
         private Label lblResultadoNomeEmpresa;
         private Label lblCNPJ;
@@ -690,12 +719,7 @@
         private Label lblFuncao;
         private Label lblResultadoFuncao;
         private TableLayoutPanel tblDadosFolhaPagamento;
-        private Label lblCOD;
-        private Label lblDescricao;
         private Label lblCOD04;
-        private Label lblVencimentos;
-        private Label lblREF;
-        private Label lblDescontos;
         private Label lblCOD01;
         private Label lblSalarioBase;
         private Label lblREF536;
@@ -717,8 +741,6 @@
         private Button btnGerarFolha;
         private Label lblSalarioBaseVencimentos;
         private Label lblMensagem;
-        private Button btnBuscar;
-        private Button btnCalcular;
         private Label lblINSSDesconto;
         private Label lblIRPFDesconto;
         private Label lblMensagemCalculo;
@@ -729,5 +751,17 @@
         private Label lblHorasExtrasVencimentos;
         private Label label1;
         private Label label2;
+        private Button btnBuscar;
+        private Button btnCalcular;
+        private Button button1;
+        private Label lblVencimentos;
+        private Label lblREF;
+        private Label lblCOD;
+        private Label lblDescricao;
+        private Label lblDescontos;
+        private Label label3;
+        private Panel panel3;
+        private PictureBox imgLupa;
+        private TextBox txbNomeID;
     }
 }

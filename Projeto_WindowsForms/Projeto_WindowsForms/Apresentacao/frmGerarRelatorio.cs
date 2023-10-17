@@ -96,5 +96,10 @@ namespace Projeto_WindowsForms.Apresentacao
             label5.Text = "Selecionar folha de pagamento: ";
             textBox1.Text = "   ID";
         }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

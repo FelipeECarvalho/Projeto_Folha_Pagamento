@@ -128,7 +128,7 @@
             label1.Name = "label1";
             label1.Size = new Size(235, 151);
             label1.TabIndex = 7;
-            label1.Text = "Bem vindo ao sistema gerenciador de folha de pagamento";
+            label1.Text = "Bem-vindo ao sistema gerenciador de folha de pagamento";
             label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // panel2

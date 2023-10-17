@@ -15,34 +15,39 @@
         private void btnColaborador_Click(object sender, EventArgs e)
         {
             var frmCadastroColaborador = new frmCadastroColaborador();
-            frmCadastroColaborador.ShowDialog();
-            this.Show();
-
+            OpenForm(frmCadastroColaborador);
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
 
             var frmCadastroEmpresa = new frmCadastroEmpresa();
-            frmCadastroEmpresa.ShowDialog();
-            this.Show();
+            OpenForm(frmCadastroEmpresa);
         }
 
         private void btnFolha_Click(object sender, EventArgs e)
         {
             var frmGerarFolhaPagamento = new frmGerarFolhaPagamento();
-            frmGerarFolhaPagamento.ShowDialog();
+            OpenForm(frmGerarFolhaPagamento);
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
             var frmGerarRelatorio = new frmGerarRelatorio();
-            frmGerarRelatorio.ShowDialog();
+            OpenForm(frmGerarRelatorio);
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OpenForm(Form form)
+        {
+            this.Hide();
+
+            form.Closed += (s, args) => this.Show();
+            form.Show();
         }
     }
 }

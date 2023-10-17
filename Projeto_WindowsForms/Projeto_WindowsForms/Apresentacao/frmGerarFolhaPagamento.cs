@@ -47,9 +47,6 @@ namespace Projeto_WindowsForms.Apresentacao
             if (i != -1 && i != 0)
             {
                 lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
-                //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
-                //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
-                //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
                 lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
                 lblHorasExtrasVencimentos.Text = "0";
                 lblIRPFDesconto.Text = "";
@@ -99,49 +96,50 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void imgLupa_Click(object sender, EventArgs e)
         {
-            List<string> nomesColaboradores = new List<string>(); // Cria uma lista com o conteúdo o TextBox 'Nome ou ID'
+            // Cria uma lista com o conteúdo o TextBox 'Nome ou ID'
+            List<string> nomesColaboradores = new()
             {
-                nomesColaboradores.Add(txbNomeID.Text);
+                txbNomeID.Text
+            };
 
-                // Instancia a Classe Controle que irá validar se o valor inserido corresponde com o nome ou o ID da lista de Colaboradores
-                ControleBase controle = new();
-                controle.ValidarColaboradores(this.listaColaboradores, nomesColaboradores);
+            // Instancia a Classe Controle que irá validar se o valor inserido corresponde com o nome ou o ID da lista de Colaboradores
+            ControleBase controle = new();
+            controle.ValidarColaboradores(this.listaColaboradores, nomesColaboradores);
 
-                // Pega a mensagem da classe controle após a validação do valor inserido
-                lblMensagem.Text = controle.mensagem;
-                int i = controle.i;
+            // Pega a mensagem da classe controle após a validação do valor inserido
+            lblMensagem.Text = controle.mensagem;
+            int i = controle.i;
 
-                // Pega o índice correspondido e atribui às labels
-                if (i != -1 && i != 0)
-                {
-                    lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
-                    //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
-                    //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
-                    //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
-                    lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
-                    lblHorasExtrasVencimentos.Text = "0";
-                    lblIRPFDesconto.Text = "";
-                    lblINSSDesconto.Text = "";
-                    lblResultadoVencimentosTotais.Text = "";
-                    lblResultadoDescontosTotais.Text = "";
-                    lblResultadoValorLiquido.Text = "";
+            // Pega o índice correspondido e atribui às labels
+            if (i != -1 && i != 0)
+            {
+                lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
+                //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
+                //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
+                //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
+                lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
+                lblHorasExtrasVencimentos.Text = "0";
+                lblIRPFDesconto.Text = "";
+                lblINSSDesconto.Text = "";
+                lblResultadoVencimentosTotais.Text = "";
+                lblResultadoDescontosTotais.Text = "";
+                lblResultadoValorLiquido.Text = "";
 
-                }
-                else
-                {
-                    lblMensagem.Text = "Colaborador não encontrado!";
-                    lblResultadoNomeColaborador.Text = "";
-                    lblResultadoFuncao.Text = "";
-                    lblResultadoNomeEmpresa.Text = "";
-                    lblResultadoCNPJ.Text = "";
-                    lblSalarioBaseVencimentos.Text = "0";
-                    lblHorasExtrasVencimentos.Text = "0";
-                    lblIRPFDesconto.Text = "";
-                    lblINSSDesconto.Text = "";
-                    lblResultadoVencimentosTotais.Text = "";
-                    lblResultadoDescontosTotais.Text = "";
-                    lblResultadoValorLiquido.Text = "";
-                }
+            }
+            else
+            {
+                lblMensagem.Text = "Colaborador não encontrado!";
+                lblResultadoNomeColaborador.Text = "";
+                lblResultadoFuncao.Text = "";
+                lblResultadoNomeEmpresa.Text = "";
+                lblResultadoCNPJ.Text = "";
+                lblSalarioBaseVencimentos.Text = "0";
+                lblHorasExtrasVencimentos.Text = "0";
+                lblIRPFDesconto.Text = "";
+                lblINSSDesconto.Text = "";
+                lblResultadoVencimentosTotais.Text = "";
+                lblResultadoDescontosTotais.Text = "";
+                lblResultadoValorLiquido.Text = "";
             }
         }
 
