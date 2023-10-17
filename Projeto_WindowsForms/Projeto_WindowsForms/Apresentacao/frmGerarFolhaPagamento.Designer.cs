@@ -1,4 +1,6 @@
-﻿namespace Projeto_WindowsForms.Apresentacao
+﻿using System.Windows.Forms;
+
+namespace Projeto_WindowsForms.Apresentacao
 {
     partial class frmGerarFolhaPagamento
     {
@@ -220,6 +222,7 @@
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tblDadosFolhaPagamento.Size = new Size(690, 152);
             tblDadosFolhaPagamento.TabIndex = 13;
+            tblDadosFolhaPagamento.CellPaint += tblDadosFolhaPagamento_CellPaint;
             // 
             // gbxHorasExtras
             // 
@@ -286,7 +289,9 @@
             // lblVencimentos
             // 
             lblVencimentos.AutoSize = true;
+            lblVencimentos.BackColor = Color.Transparent;
             lblVencimentos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblVencimentos.ForeColor = SystemColors.Window;
             lblVencimentos.Location = new Point(360, 1);
             lblVencimentos.Name = "lblVencimentos";
             lblVencimentos.Size = new Size(109, 21);
@@ -296,7 +301,9 @@
             // lblREF
             // 
             lblREF.AutoSize = true;
+            lblREF.BackColor = Color.Transparent;
             lblREF.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblREF.ForeColor = SystemColors.Window;
             lblREF.Location = new Point(296, 1);
             lblREF.Name = "lblREF";
             lblREF.Size = new Size(37, 21);
@@ -306,7 +313,9 @@
             // lblCOD
             // 
             lblCOD.AutoSize = true;
+            lblCOD.BackColor = Color.Transparent;
             lblCOD.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCOD.ForeColor = SystemColors.Window;
             lblCOD.Location = new Point(4, 1);
             lblCOD.Name = "lblCOD";
             lblCOD.Size = new Size(44, 21);
@@ -316,7 +325,9 @@
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
+            lblDescricao.BackColor = Color.Transparent;
             lblDescricao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDescricao.ForeColor = SystemColors.Window;
             lblDescricao.Location = new Point(88, 1);
             lblDescricao.Name = "lblDescricao";
             lblDescricao.Size = new Size(84, 21);
@@ -326,7 +337,9 @@
             // lblDescontos
             // 
             lblDescontos.AutoSize = true;
+            lblDescontos.BackColor = Color.Transparent;
             lblDescontos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDescontos.ForeColor = SystemColors.Window;
             lblDescontos.Location = new Point(563, 1);
             lblDescontos.Name = "lblDescontos";
             lblDescontos.Size = new Size(89, 21);
@@ -480,6 +493,7 @@
             tblResultadoFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tblResultadoFolhaPagamento.Size = new Size(559, 61);
             tblResultadoFolhaPagamento.TabIndex = 14;
+            tblResultadoFolhaPagamento.CellPaint += tblResultadoFolhaPagamento_CellPaint;
             // 
             // lblResultadoValorLiquido
             // 
@@ -511,7 +525,9 @@
             // lblValorLiquido
             // 
             lblValorLiquido.AutoSize = true;
+            lblValorLiquido.BackColor = Color.Transparent;
             lblValorLiquido.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblValorLiquido.ForeColor = SystemColors.Window;
             lblValorLiquido.Location = new Point(406, 1);
             lblValorLiquido.Name = "lblValorLiquido";
             lblValorLiquido.Size = new Size(112, 21);
@@ -521,7 +537,9 @@
             // lblDescontosTotais
             // 
             lblDescontosTotais.AutoSize = true;
+            lblDescontosTotais.BackColor = Color.Transparent;
             lblDescontosTotais.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDescontosTotais.ForeColor = SystemColors.Window;
             lblDescontosTotais.Location = new Point(221, 1);
             lblDescontosTotais.Name = "lblDescontosTotais";
             lblDescontosTotais.Size = new Size(138, 21);
@@ -531,7 +549,9 @@
             // lblVencimentosTotais
             // 
             lblVencimentosTotais.AutoSize = true;
+            lblVencimentosTotais.BackColor = Color.Transparent;
             lblVencimentosTotais.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblVencimentosTotais.ForeColor = SystemColors.Window;
             lblVencimentosTotais.Location = new Point(4, 1);
             lblVencimentosTotais.Name = "lblVencimentosTotais";
             lblVencimentosTotais.Size = new Size(158, 21);

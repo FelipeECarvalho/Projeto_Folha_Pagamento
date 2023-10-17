@@ -167,14 +167,30 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMenu frmMenu = new();
-            frmMenu.ShowDialog();
+            this.Close();
         }
 
         private void cbxHorasExtras_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedOption = cbxHorasExtras.SelectedItem.ToString();
+        }
+
+        private void tblDadosFolhaPagamento_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if (e.Row == 0)
+            {
+                using SolidBrush brush = new(Color.FromArgb(50, 130, 184));
+                e.Graphics.FillRectangle(brush, e.CellBounds);
+            }
+        }
+
+        private void tblResultadoFolhaPagamento_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        {
+            if (e.Row == 0)
+            {
+                using SolidBrush brush = new(Color.FromArgb(50, 130, 184));
+                e.Graphics.FillRectangle(brush, e.CellBounds);
+            }
         }
     }
 }
