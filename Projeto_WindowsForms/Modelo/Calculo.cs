@@ -43,7 +43,7 @@
             this.Irpf = Math.Round(Irpf, 2);
             return Irpf;
         }
-        private double CalcularHorasExtras(double salariobase,double horasExtras)
+        private double CalcularHorasExtras(double salariobase, double horasExtras)
         {
             this.SalarioHora = salariobase / 30 / 8;
             this.HorasExtras = SalarioHora + (SalarioHora * 0.5);

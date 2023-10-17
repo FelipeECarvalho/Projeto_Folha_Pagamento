@@ -1,5 +1,4 @@
 using Projeto_WindowsForms.Controle;
-using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms.Apresentacao
 {

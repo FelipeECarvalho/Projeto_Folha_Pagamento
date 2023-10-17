@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Projeto_WindowsForms.Apresentacao
+﻿namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmMenu : Form
     {
@@ -27,7 +17,7 @@ namespace Projeto_WindowsForms.Apresentacao
             var frmCadastroColaborador = new frmCadastroColaborador();
             frmCadastroColaborador.ShowDialog();
             this.Show();
-            
+
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
