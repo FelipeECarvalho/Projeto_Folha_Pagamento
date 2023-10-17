@@ -28,112 +28,197 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.txbUsuario = new System.Windows.Forms.TextBox();
-            this.txbSenha = new System.Windows.Forms.TextBox();
-            this.btnAcessar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.Location = new System.Drawing.Point(209, 210);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(62, 24);
-            this.lblLogin.TabIndex = 0;
-            this.lblLogin.Text = "Login";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(33, 253);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(47, 15);
-            this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Usuario";
-            // 
-            // lblSenha
-            // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(33, 301);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(39, 15);
-            this.lblSenha.TabIndex = 2;
-            this.lblSenha.Text = "Senha";
+            txbUsuario = new TextBox();
+            txbSenha = new TextBox();
+            btnAcessar = new Button();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            label3 = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
+            pictureBox4 = new PictureBox();
+            panel3 = new Panel();
+            pictureBox2 = new PictureBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(90, 248);
-            this.txbUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbUsuario.Name = "txbUsuario";
-            this.txbUsuario.Size = new System.Drawing.Size(352, 23);
-            this.txbUsuario.TabIndex = 3;
+            txbUsuario.BorderStyle = BorderStyle.None;
+            txbUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txbUsuario.Location = new Point(53, 3);
+            txbUsuario.Margin = new Padding(3, 2, 3, 2);
+            txbUsuario.MinimumSize = new Size(400, 25);
+            txbUsuario.Name = "txbUsuario";
+            txbUsuario.Size = new Size(402, 25);
+            txbUsuario.TabIndex = 3;
+            txbUsuario.TextChanged += txbUsuario_TextChanged;
             // 
             // txbSenha
             // 
-            this.txbSenha.Location = new System.Drawing.Point(90, 299);
-            this.txbSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbSenha.Name = "txbSenha";
-            this.txbSenha.PasswordChar = '*';
-            this.txbSenha.Size = new System.Drawing.Size(352, 23);
-            this.txbSenha.TabIndex = 4;
+            txbSenha.Anchor = AnchorStyles.Left;
+            txbSenha.BorderStyle = BorderStyle.None;
+            txbSenha.Location = new Point(53, 3);
+            txbSenha.Margin = new Padding(3, 2, 3, 2);
+            txbSenha.MinimumSize = new Size(400, 25);
+            txbSenha.Name = "txbSenha";
+            txbSenha.PasswordChar = '*';
+            txbSenha.Size = new Size(402, 25);
+            txbSenha.TabIndex = 4;
             // 
             // btnAcessar
             // 
-            this.btnAcessar.Location = new System.Drawing.Point(163, 360);
-            this.btnAcessar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAcessar.Name = "btnAcessar";
-            this.btnAcessar.Size = new System.Drawing.Size(159, 38);
-            this.btnAcessar.TabIndex = 5;
-            this.btnAcessar.Text = "Acessar";
-            this.btnAcessar.UseVisualStyleBackColor = true;
+            btnAcessar.BackColor = Color.FromArgb(50, 130, 184);
+            btnAcessar.FlatStyle = FlatStyle.Flat;
+            btnAcessar.ForeColor = SystemColors.Window;
+            btnAcessar.Location = new Point(377, 293);
+            btnAcessar.Margin = new Padding(3, 2, 3, 2);
+            btnAcessar.Name = "btnAcessar";
+            btnAcessar.Size = new Size(159, 38);
+            btnAcessar.TabIndex = 5;
+            btnAcessar.Text = "Acessar";
+            btnAcessar.UseVisualStyleBackColor = false;
             btnAcessar.Click += btnAcessar_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Projeto_WindowsForms.Properties.Resources.logo_empresa;
-            this.pictureBox1.Location = new System.Drawing.Point(146, 33);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 164);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.logo_empresa;
+            pictureBox1.Location = new Point(117, 11);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(143, 121);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(50, 130, 184);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Location = new Point(1, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(357, 440);
+            panel1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.Window;
+            label3.Location = new Point(157, 396);
+            label3.Name = "label3";
+            label3.Size = new Size(188, 35);
+            label3.TabIndex = 8;
+            label3.Text = "Desenvolvido pelo grupo PIM. Versão v1.0";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Window;
+            label1.Location = new Point(79, 150);
+            label1.Name = "label1";
+            label1.Size = new Size(235, 151);
+            label1.TabIndex = 7;
+            label1.Text = "Bem vindo ao sistema gerenciador de folha de pagamento";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.Window;
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(txbSenha);
+            panel2.Location = new Point(377, 224);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(458, 30);
+            panel2.TabIndex = 8;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources._lock;
+            pictureBox4.Location = new Point(3, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(36, 25);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.Window;
+            panel3.Controls.Add(pictureBox2);
+            panel3.Controls.Add(txbUsuario);
+            panel3.Location = new Point(377, 188);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(458, 30);
+            panel3.TabIndex = 9;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.user;
+            pictureBox2.Location = new Point(3, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(36, 25);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 4;
+            pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(50, 130, 184);
+            label2.Location = new Point(416, 85);
+            label2.Name = "label2";
+            label2.Size = new Size(173, 30);
+            label2.TabIndex = 10;
+            label2.Text = "Acesse sua conta";
             // 
             // frmLogin
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(512, 431);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAcessar);
-            this.Controls.Add(this.txbSenha);
-            this.Controls.Add(this.txbUsuario);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.lblLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmLogin";
-            this.Text = "Login";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleMode = AutoScaleMode.None;
+            ClientSize = new Size(872, 440);
+            Controls.Add(label2);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(btnAcessar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmLogin";
+            Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Label lblLogin;
-        private Label lblUsuario;
-        private Label lblSenha;
         private TextBox txbUsuario;
         private TextBox txbSenha;
         private Button btnAcessar;
         private PictureBox pictureBox1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+        private PictureBox pictureBox2;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private PictureBox pictureBox4;
     }
 }
