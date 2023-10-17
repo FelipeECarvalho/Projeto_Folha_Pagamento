@@ -9,6 +9,5 @@
         public Empresa Empresa { get; set; }
         public string Salario { get; set; }
         public DateTime DataAdmissao { get; set; }
-
     }
 }

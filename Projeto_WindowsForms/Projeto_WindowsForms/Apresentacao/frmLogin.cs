@@ -2,7 +2,6 @@ namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmLogin : Form
     {
-        public String mensagemRotuloBox = "Atenção!";
         public frmLogin()
         {
             InitializeComponent();
@@ -16,11 +15,9 @@ namespace Projeto_WindowsForms.Apresentacao
                 frmMenu.ShowDialog();
                 this.Hide();
             }
-            //if (txbUsuario.Text == "")
-            //    MessageBox.Show("Digite o usuario");
             else
             {
-                MessageBox.Show("Usuario ou senha incorreto", mensagemRotuloBox, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Usuário ou senha incorretos", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
