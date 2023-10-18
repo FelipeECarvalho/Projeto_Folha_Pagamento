@@ -5,38 +5,45 @@ namespace Projeto_WindowsForms.DAL
 {
     public class ColaboradorDAO
     {
-        Conexao con = new Conexao();
-        SqlDataReader dr;
-        public string mensagem;
+        private Conexao conexao;
+        private SqlDataReader dr;
+
+        public ColaboradorDAO()
+        {
+            conexao = new Conexao();
+        }
 
         public void cadastrarColaborador(Colaborador colaborador)
         {
-            this.mensagem = "";
-
             SqlCommand cmd = new()
             {
-                CommandText = @"insert into colaboradores (nome, cargo, empresa, salario, dataadmissao) 
-                            values (@nome, @cargo, @empresa, @salario, @dataadmissao)"
+                CommandText = @"insert into colaborador (nome_completo, sexo, cargo, salario, data_admissao, id_empresa) 
+                                values (@nome, @sexo, @cargo, @salario, @dataadmissao, @id_empresa)"
             };
 
             cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto);
+            cmd.Parameters.AddWithValue("@sexo", (char)colaborador.Sexo);
             cmd.Parameters.AddWithValue("@cargo", colaborador.Cargo);
-            cmd.Parameters.AddWithValue("@empresa", colaborador.Empresa);
             cmd.Parameters.AddWithValue("@salario", colaborador.Salario);
             cmd.Parameters.AddWithValue("@dataadmissao", colaborador.DataAdmissao);
+            cmd.Parameters.AddWithValue("@id_empresa", colaborador.Empresa.Id);
 
             try
             {
-                cmd.Connection = con.conectar();
+                cmd.Connection = conexao.conectar();
+
                 cmd.ExecuteNonQuery();
-                con.desconectar();
-                this.mensagem = "Colaborador cadastrado!";
+
+                conexao.desconectar();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this.mensagem = "Erro de Banco de Dados";
+                throw;
+            }
+            finally 
+            {
+                conexao.desconectar();
             }
         }
-
     }
 }

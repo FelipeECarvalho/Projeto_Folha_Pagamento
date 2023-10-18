@@ -53,22 +53,24 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
-        public void validarDadosColaborador(List<string> listaDadosColaborador)
+        public void validarDadosColaborador(Colaborador colaborador)
         {
             this.mensagem = "";
-            if (listaDadosColaborador[0].Length == 0)
-                this.mensagem += "Nome do colaborador obrigatório\n";
-            if (listaDadosColaborador[0].Length > 50)
-                this.mensagem += "Nome do colaborador não pode exceder de 50 caracteres\n";
-            if (listaDadosColaborador[1].Length == 0)
-                this.mensagem += "Cargo obrigatóro\n";
-            if (listaDadosColaborador[2].Length == 0)
-                this.mensagem += "Empresa obrigatório\n";
-            if (listaDadosColaborador[3].Length == 0)
-                this.mensagem += "Salário obrigatório\n";
-            if (listaDadosColaborador[4].Length == 0)
-                this.mensagem += "Data de admissão obrigatório\n";
 
+            if (string.IsNullOrEmpty(colaborador.NomeCompleto))
+                this.mensagem += "Nome do colaborador obrigatório\n";
+
+            if (colaborador.NomeCompleto.Length > 50)
+                this.mensagem += "Nome do colaborador não pode exceder de 50 caracteres\n";
+
+            if (colaborador.Empresa == null || colaborador.Empresa.Id == 0)
+                this.mensagem += "Empresa obrigatório\n";
+
+            if (colaborador.Salario == default)
+                this.mensagem += "Salário obrigatório\n";
+
+            if (colaborador.DataAdmissao == default)
+                this.mensagem += "Data de admissão obrigatório\n";
         }
 
         public void validarDadosEmpresa(Empresa empresa)
@@ -84,8 +86,8 @@ namespace Projeto_WindowsForms.Controle
             if (string.IsNullOrEmpty(empresa.RazaoSocial))
                 this.mensagem += "A Razão social é obrigatória\n";
 
-            if (empresa.RazaoSocial.Length > 100)
-                this.mensagem += "A Razão Social não pode exceder 100 caracteres.\n";
+            if (empresa.RazaoSocial.Length > 50)
+                this.mensagem += "A Razão Social não pode exceder 50 caracteres.\n";
 
             if (string.IsNullOrEmpty(empresa.NomeFantasia))
                 this.mensagem += "O Nome Fantasia é obrigatório.\n";

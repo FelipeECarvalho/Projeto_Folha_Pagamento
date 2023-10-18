@@ -30,8 +30,6 @@
         {
             lblNomeColaborador = new Label();
             txbNomeColaborador = new TextBox();
-            lblCargo = new Label();
-            txbCargo = new TextBox();
             lblEmpresa = new Label();
             txbSalario = new TextBox();
             lblSalario = new Label();
@@ -40,6 +38,10 @@
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
+            cmbSexo = new ComboBox();
+            lblSexo = new Label();
+            cmbCargo = new ComboBox();
+            lblCargo = new Label();
             dtpDataAdmissao = new DateTimePicker();
             cmbEmpresa = new ComboBox();
             panel9 = new Panel();
@@ -66,22 +68,6 @@
             txbNomeColaborador.Name = "txbNomeColaborador";
             txbNomeColaborador.Size = new Size(274, 23);
             txbNomeColaborador.TabIndex = 0;
-            // 
-            // lblCargo
-            // 
-            lblCargo.AutoSize = true;
-            lblCargo.Location = new Point(30, 95);
-            lblCargo.Name = "lblCargo";
-            lblCargo.Size = new Size(39, 15);
-            lblCargo.TabIndex = 2;
-            lblCargo.Text = "Cargo";
-            // 
-            // txbCargo
-            // 
-            txbCargo.Location = new Point(30, 113);
-            txbCargo.Name = "txbCargo";
-            txbCargo.Size = new Size(274, 23);
-            txbCargo.TabIndex = 2;
             // 
             // lblEmpresa
             // 
@@ -157,12 +143,14 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(cmbSexo);
+            panel2.Controls.Add(lblSexo);
+            panel2.Controls.Add(cmbCargo);
+            panel2.Controls.Add(lblCargo);
             panel2.Controls.Add(dtpDataAdmissao);
             panel2.Controls.Add(cmbEmpresa);
-            panel2.Controls.Add(txbCargo);
             panel2.Controls.Add(lblNomeColaborador);
             panel2.Controls.Add(txbNomeColaborador);
-            panel2.Controls.Add(lblCargo);
             panel2.Controls.Add(lblDataAdmissao);
             panel2.Controls.Add(lblEmpresa);
             panel2.Controls.Add(txbSalario);
@@ -171,6 +159,40 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(703, 240);
             panel2.TabIndex = 0;
+            // 
+            // cmbSexo
+            // 
+            cmbSexo.FormattingEnabled = true;
+            cmbSexo.Location = new Point(30, 171);
+            cmbSexo.Name = "cmbSexo";
+            cmbSexo.Size = new Size(274, 23);
+            cmbSexo.TabIndex = 11;
+            // 
+            // lblSexo
+            // 
+            lblSexo.AutoSize = true;
+            lblSexo.Location = new Point(30, 150);
+            lblSexo.Name = "lblSexo";
+            lblSexo.Size = new Size(32, 15);
+            lblSexo.TabIndex = 12;
+            lblSexo.Text = "Sexo";
+            // 
+            // cmbCargo
+            // 
+            cmbCargo.FormattingEnabled = true;
+            cmbCargo.Location = new Point(30, 113);
+            cmbCargo.Name = "cmbCargo";
+            cmbCargo.Size = new Size(274, 23);
+            cmbCargo.TabIndex = 9;
+            // 
+            // lblCargo
+            // 
+            lblCargo.AutoSize = true;
+            lblCargo.Location = new Point(30, 92);
+            lblCargo.Name = "lblCargo";
+            lblCargo.Size = new Size(39, 15);
+            lblCargo.TabIndex = 10;
+            lblCargo.Text = "Cargo";
             // 
             // dtpDataAdmissao
             // 
@@ -211,7 +233,7 @@
             // btnVoltar
             // 
             btnVoltar.Cursor = Cursors.Hand;
-            btnVoltar.Image = Properties.Resources.voltar;
+            btnVoltar.Image = Properties.Resources.botao_voltar;
             btnVoltar.Location = new Point(11, 10);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);
             btnVoltar.Name = "btnVoltar";
@@ -248,8 +270,6 @@
 
         private Label lblNomeColaborador;
         private TextBox txbNomeColaborador;
-        private Label lblCargo;
-        private TextBox txbCargo;
         private Label lblEmpresa;
         private TextBox txbSalario;
         private Label lblSalario;
@@ -263,5 +283,9 @@
         private Panel panel9;
         private Label label9;
         private PictureBox btnVoltar;
+        private ComboBox cmbCargo;
+        private Label lblCargo;
+        private ComboBox cmbSexo;
+        private Label lblSexo;
     }
 }

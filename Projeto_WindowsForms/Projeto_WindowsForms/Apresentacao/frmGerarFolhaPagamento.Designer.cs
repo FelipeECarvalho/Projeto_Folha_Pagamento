@@ -590,7 +590,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // btnVoltar
             // 
             btnVoltar.Cursor = Cursors.Hand;
-            btnVoltar.Image = Properties.Resources.voltar;
+            btnVoltar.Image = Properties.Resources.botao_voltar;
             btnVoltar.Location = new Point(11, 8);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);
             btnVoltar.Name = "btnVoltar";

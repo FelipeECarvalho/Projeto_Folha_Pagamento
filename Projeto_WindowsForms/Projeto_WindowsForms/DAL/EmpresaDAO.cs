@@ -44,34 +44,36 @@ namespace Projeto_WindowsForms.DAL
         }
         public List<Empresa> listarEmpresa()
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"select * from empresas";
-            List<Empresa> listaEmpresa = new List<Empresa>();
+            var cmd = new SqlCommand
+            {
+                CommandText = @"select id, cnpj, nome_fantasia, razao_social from empresa"
+            };
+
+            var listaEmpresa = new List<Empresa>();
 
             try
             {
                 cmd.Connection = conexao.conectar();
+
                 dr = cmd.ExecuteReader();
 
                 if (dr.HasRows)
                 {
-
                     while (dr.Read())
                     {
-                        var empresa = new Empresa();
-                        empresa.Cnpj = dr["cnpj"].ToString();
-                        empresa.RazaoSocial = dr["razaosocial"].ToString();
-                        empresa.NomeFantasia = dr["nomefantasia"].ToString();
+                        var empresa = new Empresa
+                        {
+                            Id = int.Parse(dr["id"].ToString()),
+                            Cnpj = dr["cnpj"].ToString(),
+                            NomeFantasia = dr["nome_fantasia"].ToString(),
+                            RazaoSocial = dr["razao_social"].ToString()
+                        };
 
                         listaEmpresa.Add(empresa);
                     }
+
                     dr.Close();
                 }
-                else
-                {
-                }
-
-
             }
             catch (Exception)
             {

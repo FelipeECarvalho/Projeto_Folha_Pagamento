@@ -38,21 +38,22 @@ namespace Projeto_WindowsForms.Controle
             this.mensagem = validacao.mensagem;
         }
 
-        public void cadastrarColaborador(List<string> listaDadosColaborador)
+        public void cadastrarColaborador(Colaborador colaborador)
         {
-            Validacao validacao = new Validacao();
-            validacao.validarDadosColaborador(listaDadosColaborador);
+            var validacao = new Validacao();
+            validacao.validarDadosColaborador(colaborador);
+
             if (validacao.mensagem.Equals(""))
             {
-                //Colaborador colaborador = new Colaborador();
-                //colaborador.Nome = listaDadosColaborador[0];
-                //colaborador.Cargo = listaDadosColaborador[1];
-                //colaborador.Empresa = listaDadosColaborador[2];
-                //colaborador.Salario = listaDadosColaborador[3];
-                //colaborador.DataAdmissao = listaDadosColaborador[4];
-                //ColaboradorDAO colaboradorDAO = new ColaboradorDAO();
-                //colaboradorDAO.cadastrarColaborador(colaborador);
-                this.mensagem = "Cadastro com sucesso";
+                try
+                {
+                    var colaboradorDAO = new ColaboradorDAO();
+                    colaboradorDAO.cadastrarColaborador(colaborador);
+                }
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
             }
             else
             {
@@ -63,7 +64,6 @@ namespace Projeto_WindowsForms.Controle
         public void cadastrarEmpresa(Empresa empresa)
         {
             var validacao = new Validacao();
-
             validacao.validarDadosEmpresa(empresa);
 
             if (string.IsNullOrEmpty(validacao.mensagem))
@@ -71,7 +71,6 @@ namespace Projeto_WindowsForms.Controle
                 try
                 {
                     var empresaDAO = new EmpresaDAO();
-
                     empresaDAO.cadastrarEmpresa(empresa);
                 } 
                 catch (Exception e)
@@ -87,12 +86,18 @@ namespace Projeto_WindowsForms.Controle
 
         public List<Empresa> listarEmpresas()
         {
-            EmpresaDAO empresaDao = new EmpresaDAO();
-            var listaEmpresa = empresaDao.listarEmpresa();
+            try
+            {
+                var empresaDao = new EmpresaDAO();
 
-            return listaEmpresa;
+                return empresaDao.listarEmpresa();
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+
+            return new List<Empresa>();
         }
-
-
     }
 }

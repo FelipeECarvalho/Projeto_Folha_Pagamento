@@ -1,5 +1,8 @@
 using Projeto_WindowsForms.Controle;
 using Projeto_WindowsForms.Modelo;
+using Projeto_WindowsForms.Modelo.Enum;
+using System.Net.NetworkInformation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -10,43 +13,66 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
         }
 
+        private void frmCadastroColaborador_Load(object sender, EventArgs e)
+        {
+            AcceptButton = btnCadastrar;
+            cmbEmpresa.DisplayMember = "Text";
+            cmbEmpresa.ValueMember = "Value";
+
+            carregarComboBox();
+        }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            List<string> listaDadosColaborador = new()
+            Enum.TryParse<TipoSexo>(cmbSexo.SelectedValue.ToString(), out var sexo);
+            Enum.TryParse<TipoCargo>(cmbCargo.SelectedValue.ToString(), out var cargo);
+
+            var colaborador = new Colaborador
             {
-                txbNomeColaborador.Text,
-                txbCargo.Text,
-                cmbEmpresa.Text,
-                txbSalario.Text
+                Sexo = sexo,
+                Cargo = cargo,
+                NomeCompleto = txbNomeColaborador.Text,
+                Salario = decimal.Parse(txbSalario.Text),
+                DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
+                Empresa = new Empresa
+                {
+                    Id = (int)(cmbEmpresa.SelectedItem as dynamic).Value
+                }
             };
 
             var controle = new ControleBase();
-            controle.cadastrarColaborador(listaDadosColaborador);
+            controle.cadastrarColaborador(colaborador);
 
-            txbCargo.Clear();
-            txbSalario.Clear();
-            txbNomeColaborador.Clear();
+            if (string.IsNullOrEmpty(controle.mensagem))
+            {
+                txbSalario.Clear();
+                txbNomeColaborador.Clear();
 
-            MessageBox.Show(controle.mensagem);
+                MessageBox.Show("Colaborador cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(controle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void frmCadastroColaborador_Load(object sender, EventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void carregarComboBox()
         {
             var controle = new ControleBase();
             var listaEmpresa = controle.listarEmpresas();
 
             foreach (var empresa in listaEmpresa)
             {
-                cmbEmpresa.Items.Add(empresa.NomeFantasia);
+                cmbEmpresa.Items.Add(new { Text = empresa.NomeFantasia, Value = empresa.Id });
             }
 
-            this.AcceptButton = btnCadastrar;
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            cmbCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
+            cmbSexo.DataSource = Enum.GetValues(typeof(TipoSexo));
         }
     }
 }
