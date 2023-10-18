@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            pnlColaborador = new Panel();
             btnColaborador = new Button();
             label5 = new Label();
             panel5 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            panel2 = new Panel();
+            pnlEmpresas = new Panel();
             btnEmpresa = new Button();
             label6 = new Label();
-            panel3 = new Panel();
+            pnlFolhaPagamento = new Panel();
             btnFolha = new Button();
             label7 = new Label();
-            panel4 = new Panel();
+            pnlRelatorio = new Panel();
             btnRelatorio = new Button();
             label8 = new Label();
             panel8 = new Panel();
@@ -56,12 +56,12 @@
             lblSair = new Label();
             lblMenu = new Label();
             pictureBox5 = new PictureBox();
-            panel1.SuspendLayout();
+            pnlColaborador.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
+            pnlEmpresas.SuspendLayout();
+            pnlFolhaPagamento.SuspendLayout();
+            pnlRelatorio.SuspendLayout();
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
@@ -72,17 +72,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pnlColaborador
             // 
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(btnColaborador);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(panel5);
-            panel1.Location = new Point(74, 125);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(333, 200);
-            panel1.TabIndex = 0;
+            pnlColaborador.BackColor = Color.White;
+            pnlColaborador.BorderStyle = BorderStyle.FixedSingle;
+            pnlColaborador.Controls.Add(btnColaborador);
+            pnlColaborador.Controls.Add(label5);
+            pnlColaborador.Controls.Add(panel5);
+            pnlColaborador.Location = new Point(74, 125);
+            pnlColaborador.Name = "pnlColaborador";
+            pnlColaborador.Size = new Size(333, 200);
+            pnlColaborador.TabIndex = 0;
             // 
             // btnColaborador
             // 
@@ -140,16 +140,16 @@
             label1.TabIndex = 0;
             label1.Text = "Cadastro de colaboradores";
             // 
-            // panel2
+            // pnlEmpresas
             // 
-            panel2.BackColor = Color.White;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(btnEmpresa);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(553, 125);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(333, 200);
-            panel2.TabIndex = 1;
+            pnlEmpresas.BackColor = Color.White;
+            pnlEmpresas.BorderStyle = BorderStyle.FixedSingle;
+            pnlEmpresas.Controls.Add(btnEmpresa);
+            pnlEmpresas.Controls.Add(label6);
+            pnlEmpresas.Location = new Point(553, 125);
+            pnlEmpresas.Name = "pnlEmpresas";
+            pnlEmpresas.Size = new Size(333, 200);
+            pnlEmpresas.TabIndex = 1;
             // 
             // btnEmpresa
             // 
@@ -175,16 +175,16 @@
             label6.TabIndex = 2;
             label6.Text = "Permite registrar informações sobre uma nova empresa, como nome, CNPJ, endereço, entre outros.";
             // 
-            // panel3
+            // pnlFolhaPagamento
             // 
-            panel3.BackColor = Color.White;
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnFolha);
-            panel3.Controls.Add(label7);
-            panel3.Location = new Point(74, 403);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(333, 200);
-            panel3.TabIndex = 1;
+            pnlFolhaPagamento.BackColor = Color.White;
+            pnlFolhaPagamento.BorderStyle = BorderStyle.FixedSingle;
+            pnlFolhaPagamento.Controls.Add(btnFolha);
+            pnlFolhaPagamento.Controls.Add(label7);
+            pnlFolhaPagamento.Location = new Point(74, 403);
+            pnlFolhaPagamento.Name = "pnlFolhaPagamento";
+            pnlFolhaPagamento.Size = new Size(333, 200);
+            pnlFolhaPagamento.TabIndex = 1;
             // 
             // btnFolha
             // 
@@ -210,17 +210,17 @@
             label7.TabIndex = 3;
             label7.Text = "Permite inserir os dados dos colaboradores e seus respectivos salários para calcular o valor final a ser pago aos funcionários no período selecionado.";
             // 
-            // panel4
+            // pnlRelatorio
             // 
-            panel4.BackColor = Color.White;
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(btnRelatorio);
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(panel8);
-            panel4.Location = new Point(553, 403);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(333, 200);
-            panel4.TabIndex = 1;
+            pnlRelatorio.BackColor = Color.White;
+            pnlRelatorio.BorderStyle = BorderStyle.FixedSingle;
+            pnlRelatorio.Controls.Add(btnRelatorio);
+            pnlRelatorio.Controls.Add(label8);
+            pnlRelatorio.Controls.Add(panel8);
+            pnlRelatorio.Location = new Point(553, 403);
+            pnlRelatorio.Name = "pnlRelatorio";
+            pnlRelatorio.Size = new Size(333, 200);
+            pnlRelatorio.TabIndex = 1;
             // 
             // btnRelatorio
             // 
@@ -397,22 +397,22 @@
             Controls.Add(panel9);
             Controls.Add(panel7);
             Controls.Add(panel6);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pnlRelatorio);
+            Controls.Add(pnlFolhaPagamento);
+            Controls.Add(pnlEmpresas);
+            Controls.Add(pnlColaborador);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             Load += frmMenu_Load;
-            panel1.ResumeLayout(false);
+            pnlColaborador.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel4.ResumeLayout(false);
+            pnlEmpresas.ResumeLayout(false);
+            pnlFolhaPagamento.ResumeLayout(false);
+            pnlRelatorio.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -429,11 +429,11 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlColaborador;
         private Panel panel5;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
+        private Panel pnlEmpresas;
+        private Panel pnlFolhaPagamento;
+        private Panel pnlRelatorio;
         private Panel panel8;
         private Panel panel6;
         private Panel panel7;

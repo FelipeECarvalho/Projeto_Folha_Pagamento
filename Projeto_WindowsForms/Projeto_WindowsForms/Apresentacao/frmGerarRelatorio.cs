@@ -1,13 +1,17 @@
 ﻿using Projeto_WindowsForms.Controle;
-using System.Windows.Forms;
+using Projeto_WindowsForms.Modelo;
+using Projeto_WindowsForms.Modelo.Enum;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmGerarRelatorio : Form
     {
+        readonly Colaborador colaboradorLogado;
+
         public frmGerarRelatorio()
         {
             InitializeComponent();
+            colaboradorLogado = Program.colaboradorLogado;
         }
 
         private void frmGerarRelatorio_Load(object sender, EventArgs e)
@@ -43,6 +47,12 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnFolhaPagamento_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             SetButtonActive(btnFolhaPagamento);
         }
 

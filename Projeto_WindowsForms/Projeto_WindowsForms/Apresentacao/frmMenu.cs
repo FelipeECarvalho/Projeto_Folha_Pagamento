@@ -1,11 +1,16 @@
-﻿using System.Windows.Forms;
+﻿using Projeto_WindowsForms.Modelo;
+using Projeto_WindowsForms.Modelo.Enum;
+using System.Windows.Forms;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmMenu : Form
     {
+        readonly Colaborador colaboradorLogado;
+
         public frmMenu()
         {
+            colaboradorLogado = Program.colaboradorLogado;
             InitializeComponent();
         }
 
@@ -16,12 +21,24 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnColaborador_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var frmCadastroColaborador = new frmCadastroColaborador();
             OpenForm(frmCadastroColaborador);
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             var frmCadastroEmpresa = new frmCadastroEmpresa();
             OpenForm(frmCadastroEmpresa);
@@ -29,6 +46,12 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnFolha_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var frmGerarFolhaPagamento = new frmGerarFolhaPagamento();
             OpenForm(frmGerarFolhaPagamento);
         }

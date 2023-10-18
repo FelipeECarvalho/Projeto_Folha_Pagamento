@@ -604,6 +604,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             btnBuscar.BackColor = Color.FromArgb(50, 130, 184);
             btnBuscar.Cursor = Cursors.Hand;
+            btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
@@ -620,6 +621,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             btnCalcular.BackColor = Color.FromArgb(50, 130, 184);
             btnCalcular.Cursor = Cursors.Hand;
+            btnCalcular.FlatAppearance.BorderSize = 0;
             btnCalcular.FlatStyle = FlatStyle.Flat;
             btnCalcular.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnCalcular.ForeColor = SystemColors.ButtonHighlight;
@@ -636,6 +638,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             btnGerarFolha.BackColor = Color.FromArgb(50, 130, 184);
             btnGerarFolha.Cursor = Cursors.Hand;
+            btnGerarFolha.FlatAppearance.BorderSize = 0;
             btnGerarFolha.FlatStyle = FlatStyle.Flat;
             btnGerarFolha.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnGerarFolha.ForeColor = SystemColors.ButtonHighlight;
