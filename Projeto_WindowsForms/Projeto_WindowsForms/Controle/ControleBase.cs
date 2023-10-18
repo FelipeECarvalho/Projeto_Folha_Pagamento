@@ -6,10 +6,15 @@ namespace Projeto_WindowsForms.Controle
     public class ControleBase
     {
         // Atributos
-        public string? mensagem = default;
         public int i;
 
+        public string mensagem = "";
+
         //Construtor
+        public ControleBase() 
+        {
+            mensagem = "";
+        }
 
         //Métodos
         public int ValidarColaboradores(List<Colaborador> colaboradores, List<string> nomesColaboradores)
@@ -55,20 +60,24 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
-        public void cadastrarEmpresa(List<string> listaDadosEmpresa)
+        public void cadastrarEmpresa(Empresa empresa)
         {
-            Validacao validacao = new Validacao();
-            validacao.validarDadosEmpresa(listaDadosEmpresa);
-            if (validacao.mensagem.Equals(""))
+            var validacao = new Validacao();
+
+            validacao.validarDadosEmpresa(empresa);
+
+            if (string.IsNullOrEmpty(validacao.mensagem))
             {
-                Empresa empresa = new Empresa();
-                empresa.CNPJ = listaDadosEmpresa[0];
-                empresa.RazaoSocial = listaDadosEmpresa[1];
-                empresa.NomeFantasia = listaDadosEmpresa[2];
-                EmpresaDAO empresaDAO = new EmpresaDAO();
-                empresaDAO.cadastrarEmpresa(empresa);
-                this.mensagem = empresaDAO.mensagem;
-                this.mensagem = "Cadastro com sucesso";
+                try
+                {
+                    var empresaDAO = new EmpresaDAO();
+
+                    empresaDAO.cadastrarEmpresa(empresa);
+                } 
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
             }
             else
             {

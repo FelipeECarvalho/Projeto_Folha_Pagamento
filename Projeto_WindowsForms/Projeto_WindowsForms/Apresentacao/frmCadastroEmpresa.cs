@@ -1,4 +1,5 @@
 using Projeto_WindowsForms.Controle;
+using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -12,21 +13,28 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            List<string> listaDadosEmpresa = new()
+            Empresa empresa = new()
             {
-                txbCnpj.Text.Trim(),
-                txbRazaoSocial.Text.Trim(),
-                txbNomeFantasia.Text.Trim()
+                Cnpj = txbCnpj.Text.Trim(),
+                NomeFantasia = txbNomeFantasia.Text.Trim(),
+                RazaoSocial = txbRazaoSocial.Text.Trim()
             };
 
             var controle = new ControleBase();
-            controle.cadastrarEmpresa(listaDadosEmpresa);
+            controle.cadastrarEmpresa(empresa);
 
-            txbCnpj.Clear();
-            txbNomeFantasia.Clear();
-            txbRazaoSocial.Clear();
+            if (string.IsNullOrEmpty(controle.mensagem))
+            {
+                MessageBox.Show("Empresa cadastrada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show(controle.mensagem);
+                txbCnpj.Clear();
+                txbNomeFantasia.Clear();
+                txbRazaoSocial.Clear();
+            } 
+            else
+            {
+                MessageBox.Show(controle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

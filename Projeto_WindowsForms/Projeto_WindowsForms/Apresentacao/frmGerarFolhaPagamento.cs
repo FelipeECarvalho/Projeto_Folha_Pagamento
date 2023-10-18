@@ -46,7 +46,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // Pega o índice correspondido e atribui às labels
             if (i != -1 && i != 0)
             {
-                lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
+                lblResultadoNomeColaborador.Text = listaColaboradores[i].NomeCompleto;
                 lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
                 lblHorasExtrasVencimentos.Text = "0";
                 lblIRPFDesconto.Text = "";
@@ -113,7 +113,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // Pega o índice correspondido e atribui às labels
             if (i != -1 && i != 0)
             {
-                lblResultadoNomeColaborador.Text = listaColaboradores[i].Nome;
+                lblResultadoNomeColaborador.Text = listaColaboradores[i].NomeCompleto;
                 //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
                 //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
                 //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;

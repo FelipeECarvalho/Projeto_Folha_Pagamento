@@ -5,51 +5,61 @@ namespace Projeto_WindowsForms.DAL
 {
     public class EmpresaDAO
     {
-        Conexao con = new Conexao();
-        SqlDataReader dr;
-        public string mensagem;
+        private SqlDataReader dr;
+        private readonly Conexao conexao;
+
+        public EmpresaDAO()
+        {
+            conexao = new Conexao();
+        }
 
         public void cadastrarEmpresa(Empresa empresa)
         {
-            this.mensagem = "";
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = @"insert into empresas (cnpj, razaosocial, nomefantasia) 
-                            values (@cnpj, @razaosocial, @nomefantasia)";
-            cmd.Parameters.AddWithValue("@cnpj", empresa.CNPJ);
+            var cmd = new SqlCommand
+            {
+                CommandText = @"insert into empresa (cnpj, razao_social, nome_fantasia) values (@cnpj, @razaosocial, @nomefantasia)"
+            };
+
+            cmd.Parameters.AddWithValue("@cnpj", empresa.Cnpj);
             cmd.Parameters.AddWithValue("@razaosocial", empresa.RazaoSocial);
             cmd.Parameters.AddWithValue("@nomefantasia", empresa.NomeFantasia);
+
             try
             {
-                cmd.Connection = con.conectar();
+                cmd.Connection = conexao.conectar();
+
                 cmd.ExecuteNonQuery();
-                con.desconectar();
-                this.mensagem = "Empresa cadastrada!";
+
+                conexao.desconectar();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this.mensagem = "Erro de Banco de Dados";
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
             }
 
         }
         public List<Empresa> listarEmpresa()
         {
-            this.mensagem = "";
             SqlCommand cmd = new SqlCommand();
-            SqlDataReader dr;
             cmd.CommandText = @"select * from empresas";
             List<Empresa> listaEmpresa = new List<Empresa>();
 
             try
             {
-                cmd.Connection = con.conectar();
+                cmd.Connection = conexao.conectar();
                 dr = cmd.ExecuteReader();
+
                 if (dr.HasRows)
                 {
 
                     while (dr.Read())
                     {
                         var empresa = new Empresa();
-                        empresa.CNPJ = dr["cnpj"].ToString();
+                        empresa.Cnpj = dr["cnpj"].ToString();
                         empresa.RazaoSocial = dr["razaosocial"].ToString();
                         empresa.NomeFantasia = dr["nomefantasia"].ToString();
 
@@ -59,19 +69,19 @@ namespace Projeto_WindowsForms.DAL
                 }
                 else
                 {
-                    this.mensagem = "Não existe este ID";
                 }
 
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                this.mensagem = "Erro de BD";
+                throw;
             }
             finally
             {
-                con.desconectar();
+                conexao.desconectar();
             }
+
             return listaEmpresa;
         }
 

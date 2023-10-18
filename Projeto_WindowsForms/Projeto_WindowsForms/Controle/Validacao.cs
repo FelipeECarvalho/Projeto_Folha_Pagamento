@@ -20,7 +20,7 @@ namespace Projeto_WindowsForms.Controle
                 foreach (string nome in nomesColaboradores)
                 {
                     // Se o valor for encontrado com o nome ou com o ID..
-                    if (colaboradores[i].Nome.Equals(nome, StringComparison.OrdinalIgnoreCase))
+                    if (colaboradores[i].NomeCompleto.Equals(nome, StringComparison.OrdinalIgnoreCase))
                     {
                         this.mensagem = "Colaborador encontrado!";
                         this.indice = i;
@@ -71,23 +71,26 @@ namespace Projeto_WindowsForms.Controle
 
         }
 
-        public void validarDadosEmpresa(List<string> listaDadosEmpresa)
+        public void validarDadosEmpresa(Empresa empresa)
         {
             this.mensagem = "";
 
-            if (listaDadosEmpresa[0].Length == 0)
-                this.mensagem += "Cnpj obrigatório\n";
+            if (string.IsNullOrEmpty(empresa.Cnpj))
+                this.mensagem += "O Cnpj é obrigatório\n";
 
-            if (listaDadosEmpresa[0].Length > 15)
+            if (empresa.Cnpj.Length > 15)
                 this.mensagem += "O CNPJ não pode exceder de 14 caracteres\n";
 
-            if (listaDadosEmpresa[1].Length == 0)
-                this.mensagem += "Razão social obrigatório\n";
+            if (string.IsNullOrEmpty(empresa.RazaoSocial))
+                this.mensagem += "A Razão social é obrigatória\n";
 
-            if (listaDadosEmpresa[1].Length > 100)
+            if (empresa.RazaoSocial.Length > 100)
                 this.mensagem += "A Razão Social não pode exceder 100 caracteres.\n";
 
-            if (listaDadosEmpresa[2].Length > 50)
+            if (string.IsNullOrEmpty(empresa.NomeFantasia))
+                this.mensagem += "O Nome Fantasia é obrigatório.\n";
+
+            if (empresa.NomeFantasia.Length > 50)
                 this.mensagem += "O Nome Fantasia não pode exceder 50 caracteres.\n";
         }
     }

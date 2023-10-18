@@ -19,7 +19,7 @@ namespace Projeto_WindowsForms.DAL
                             values (@nome, @cargo, @empresa, @salario, @dataadmissao)"
             };
 
-            cmd.Parameters.AddWithValue("@nome", colaborador.Nome);
+            cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto);
             cmd.Parameters.AddWithValue("@cargo", colaborador.Cargo);
             cmd.Parameters.AddWithValue("@empresa", colaborador.Empresa);
             cmd.Parameters.AddWithValue("@salario", colaborador.Salario);

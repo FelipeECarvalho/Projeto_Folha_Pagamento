@@ -6,8 +6,7 @@ namespace Projeto_WindowsForms.DAL
     public class Conexao
     {
         private readonly SqlConnection connection;
-
-        private readonly string stringConexao = "server = localhost; database = folhadepagamentoteste; uid = root; password = unlimitedwaifuworks139#";
+        private readonly string stringConexao = "server = localhost; database = recursos_humanos_db; uid = sa; password = unip@123456";
 
         public Conexao()
         {
@@ -19,14 +18,13 @@ namespace Projeto_WindowsForms.DAL
             try
             {
                 if (connection.State == ConnectionState.Closed)
-                {
                     connection.Open();
-                }
+
                 return connection;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return null;
+                throw;
             }
         }
 
@@ -34,15 +32,14 @@ namespace Projeto_WindowsForms.DAL
         {
             try
             {
-                if (connection.State == System.Data.ConnectionState.Open)
-                {
+                if (connection.State == ConnectionState.Open)
                     connection.Close();
-                }
-                return true;
+
+                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return false;
+                throw;
             }
         }
     }
