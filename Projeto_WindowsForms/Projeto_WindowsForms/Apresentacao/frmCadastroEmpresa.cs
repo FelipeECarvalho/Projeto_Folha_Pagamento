@@ -30,7 +30,7 @@ namespace Projeto_WindowsForms.Apresentacao
                 txbCnpj.Clear();
                 txbNomeFantasia.Clear();
                 txbRazaoSocial.Clear();
-            } 
+            }
             else
             {
                 MessageBox.Show(controle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);

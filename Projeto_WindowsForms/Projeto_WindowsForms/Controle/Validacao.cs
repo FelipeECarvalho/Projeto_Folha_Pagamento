@@ -67,7 +67,7 @@ namespace Projeto_WindowsForms.Controle
             if (string.IsNullOrEmpty(empresa.Cnpj))
                 this.mensagem += "O Cnpj é obrigatório\n";
 
-            if (empresa.Cnpj.Length > 15)
+            if (empresa.Cnpj.Length > 20)
                 this.mensagem += "O CNPJ não pode exceder de 14 caracteres\n";
 
             if (string.IsNullOrEmpty(empresa.RazaoSocial))

@@ -22,7 +22,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
             foreach (var empresa in listaEmpresas)
             {
-                dgvEmpresas.Rows.Add(empresa.Id, Convert.ToUInt64(empresa.Cnpj).ToString(@"00\.000\.000\/0000\-00"), empresa.RazaoSocial, empresa.NomeFantasia);
+                dgvEmpresas.Rows.Add(empresa.Id, empresa.Cnpj, empresa.RazaoSocial, empresa.NomeFantasia);
             }
 
             btnRelatorio_Click(sender, e);

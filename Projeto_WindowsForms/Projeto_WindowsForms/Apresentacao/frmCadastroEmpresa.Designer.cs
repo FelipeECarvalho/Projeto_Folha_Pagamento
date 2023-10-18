@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txbCnpj = new TextBox();
             txbNomeFantasia = new TextBox();
             txbRazaoSocial = new TextBox();
             lblCnpj = new Label();
@@ -41,17 +40,12 @@
             panel9 = new Panel();
             label9 = new Label();
             btnVoltar = new PictureBox();
+            txbCnpj = new MaskedTextBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             SuspendLayout();
-            // 
-            // txbCnpj
-            // 
-            txbCnpj.Location = new Point(83, 194);
-            txbCnpj.Name = "txbCnpj";
-            txbCnpj.Size = new Size(306, 23);
-            txbCnpj.TabIndex = 1;
             // 
             // txbNomeFantasia
             // 
@@ -135,6 +129,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(txbCnpj);
             panel2.Location = new Point(50, 149);
             panel2.Name = "panel2";
             panel2.Size = new Size(703, 180);
@@ -174,6 +169,14 @@
             btnVoltar.TabStop = false;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // txbCnpj
+            // 
+            txbCnpj.Location = new Point(32, 44);
+            txbCnpj.Mask = "00\\.000\\.000\\/0000\\-00";
+            txbCnpj.Name = "txbCnpj";
+            txbCnpj.Size = new Size(306, 23);
+            txbCnpj.TabIndex = 0;
+            // 
             // frmCadastroEmpresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,7 +190,6 @@
             Controls.Add(lblCnpj);
             Controls.Add(txbRazaoSocial);
             Controls.Add(txbNomeFantasia);
-            Controls.Add(txbCnpj);
             Controls.Add(panel2);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -197,6 +199,8 @@
             Load += frmCadastroEmpresa_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ResumeLayout(false);
@@ -204,8 +208,6 @@
         }
 
         #endregion
-
-        private TextBox txbCnpj;
         private TextBox txbNomeFantasia;
         private TextBox txbRazaoSocial;
         private Label lblCnpj;
@@ -218,5 +220,6 @@
         private Panel panel9;
         private Label label9;
         private PictureBox btnVoltar;
+        private MaskedTextBox txbCnpj;
     }
 }
