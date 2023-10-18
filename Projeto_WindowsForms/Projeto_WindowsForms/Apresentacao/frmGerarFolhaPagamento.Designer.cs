@@ -56,15 +56,15 @@ namespace Projeto_WindowsForms.Apresentacao
             lblCOD03 = new Label();
             lblINSS = new Label();
             lblRefInss = new Label();
-            lblIRPF = new Label();
-            lblRefIrrf = new Label();
             lblSalarioBaseVencimentos = new Label();
             lblINSSDesconto = new Label();
             lblIRPFDesconto = new Label();
             gbxHorasExtras = new GroupBox();
             cbxHorasExtras = new ComboBox();
-            lblRefHorasExtras = new Label();
             lblHorasExtrasVencimentos = new Label();
+            lblRefIrrf = new Label();
+            lblRefHorasExtras = new Label();
+            lblIRPF = new Label();
             tblResultadoFolhaPagamento = new TableLayoutPanel();
             lblResultadoValorLiquido = new Label();
             lblResultadoDescontosTotais = new Label();
@@ -366,23 +366,6 @@ namespace Projeto_WindowsForms.Apresentacao
             lblRefInss.Size = new Size(0, 15);
             lblRefInss.TabIndex = 27;
             // 
-            // lblIRPF
-            // 
-            lblIRPF.AutoSize = true;
-            lblIRPF.Location = new Point(88, 124);
-            lblIRPF.Name = "lblIRPF";
-            lblIRPF.Size = new Size(30, 15);
-            lblIRPF.TabIndex = 29;
-            lblIRPF.Text = "IRRF";
-            // 
-            // lblRefIrrf
-            // 
-            lblRefIrrf.AutoSize = true;
-            lblRefIrrf.Location = new Point(296, 124);
-            lblRefIrrf.Name = "lblRefIrrf";
-            lblRefIrrf.Size = new Size(29, 15);
-            lblRefIrrf.TabIndex = 30;
-            // 
             // lblSalarioBaseVencimentos
             // 
             lblSalarioBaseVencimentos.AutoSize = true;
@@ -432,14 +415,6 @@ namespace Projeto_WindowsForms.Apresentacao
             cbxHorasExtras.TabIndex = 1;
             cbxHorasExtras.Text = "0";
             // 
-            // lblRefHorasExtras
-            // 
-            lblRefHorasExtras.AutoSize = true;
-            lblRefHorasExtras.Location = new Point(360, 124);
-            lblRefHorasExtras.Name = "lblRefHorasExtras";
-            lblRefHorasExtras.Size = new Size(0, 15);
-            lblRefHorasExtras.TabIndex = 24;
-            // 
             // lblHorasExtrasVencimentos
             // 
             lblHorasExtrasVencimentos.AutoSize = true;
@@ -448,6 +423,31 @@ namespace Projeto_WindowsForms.Apresentacao
             lblHorasExtrasVencimentos.Size = new Size(13, 15);
             lblHorasExtrasVencimentos.TabIndex = 42;
             lblHorasExtrasVencimentos.Text = "0";
+            // 
+            // lblRefIrrf
+            // 
+            lblRefIrrf.AutoSize = true;
+            lblRefIrrf.Location = new Point(296, 124);
+            lblRefIrrf.Name = "lblRefIrrf";
+            lblRefIrrf.Size = new Size(0, 15);
+            lblRefIrrf.TabIndex = 30;
+            // 
+            // lblRefHorasExtras
+            // 
+            lblRefHorasExtras.AutoSize = true;
+            lblRefHorasExtras.Location = new Point(360, 124);
+            lblRefHorasExtras.Name = "lblRefHorasExtras";
+            lblRefHorasExtras.Size = new Size(0, 15);
+            lblRefHorasExtras.TabIndex = 24;
+            // 
+            // lblIRPF
+            // 
+            lblIRPF.AutoSize = true;
+            lblIRPF.Location = new Point(88, 124);
+            lblIRPF.Name = "lblIRPF";
+            lblIRPF.Size = new Size(30, 15);
+            lblIRPF.TabIndex = 29;
+            lblIRPF.Text = "IRRF";
             // 
             // tblResultadoFolhaPagamento
             // 

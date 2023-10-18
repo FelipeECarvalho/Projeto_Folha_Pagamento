@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel2 = new Panel();
             label5 = new Label();
             btnRelatorio = new Button();
@@ -57,12 +59,21 @@
             Cnpj = new DataGridViewTextBoxColumn();
             razao_social = new DataGridViewTextBoxColumn();
             nome_fantasia = new DataGridViewTextBoxColumn();
+            dgvFolhaPagamento = new DataGridView();
+            id_folha = new DataGridViewTextBoxColumn();
+            salario_folha = new DataGridViewTextBoxColumn();
+            desconto = new DataGridViewTextBoxColumn();
+            irrf = new DataGridViewTextBoxColumn();
+            inss = new DataGridViewTextBoxColumn();
+            subtotal = new DataGridViewTextBoxColumn();
+            colaborador = new DataGridViewTextBoxColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRelatorio).BeginInit();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvEmpresas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFolhaPagamento).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -374,12 +385,101 @@
             nome_fantasia.Name = "nome_fantasia";
             nome_fantasia.ReadOnly = true;
             // 
+            // dgvFolhaPagamento
+            // 
+            dgvFolhaPagamento.AllowUserToAddRows = false;
+            dgvFolhaPagamento.AllowUserToDeleteRows = false;
+            dgvFolhaPagamento.AllowUserToResizeColumns = false;
+            dgvFolhaPagamento.AllowUserToResizeRows = false;
+            dgvFolhaPagamento.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvFolhaPagamento.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvFolhaPagamento.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvFolhaPagamento.BackgroundColor = SystemColors.Window;
+            dgvFolhaPagamento.BorderStyle = BorderStyle.None;
+            dgvFolhaPagamento.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvFolhaPagamento.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvFolhaPagamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvFolhaPagamento.ColumnHeadersHeight = 40;
+            dgvFolhaPagamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvFolhaPagamento.Columns.AddRange(new DataGridViewColumn[] { id_folha, salario_folha, desconto, irrf, inss, subtotal, colaborador });
+            dgvFolhaPagamento.EnableHeadersVisualStyles = false;
+            dgvFolhaPagamento.GridColor = Color.FromArgb(50, 130, 184);
+            dgvFolhaPagamento.Location = new Point(11, 252);
+            dgvFolhaPagamento.Name = "dgvFolhaPagamento";
+            dgvFolhaPagamento.ReadOnly = true;
+            dgvFolhaPagamento.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle6.SelectionForeColor = Color.White;
+            dgvFolhaPagamento.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgvFolhaPagamento.RowTemplate.Height = 25;
+            dgvFolhaPagamento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvFolhaPagamento.Size = new Size(890, 307);
+            dgvFolhaPagamento.TabIndex = 35;
+            // 
+            // id_folha
+            // 
+            id_folha.FillWeight = 30F;
+            id_folha.HeaderText = "ID";
+            id_folha.Name = "id_folha";
+            id_folha.ReadOnly = true;
+            id_folha.Resizable = DataGridViewTriState.False;
+            // 
+            // salario_folha
+            // 
+            salario_folha.FillWeight = 75F;
+            salario_folha.HeaderText = "Salário (=)";
+            salario_folha.Name = "salario_folha";
+            salario_folha.ReadOnly = true;
+            // 
+            // desconto
+            // 
+            desconto.HeaderText = "Desconto (-)";
+            desconto.Name = "desconto";
+            desconto.ReadOnly = true;
+            // 
+            // irrf
+            // 
+            irrf.FillWeight = 101.725891F;
+            irrf.HeaderText = "IRRF (-)";
+            irrf.Name = "irrf";
+            irrf.ReadOnly = true;
+            // 
+            // inss
+            // 
+            inss.HeaderText = "INSS (-)";
+            inss.Name = "inss";
+            inss.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            subtotal.HeaderText = "Subtotal (=)";
+            subtotal.Name = "subtotal";
+            subtotal.ReadOnly = true;
+            // 
+            // colaborador
+            // 
+            colaborador.HeaderText = "Colaborador";
+            colaborador.Name = "colaborador";
+            colaborador.ReadOnly = true;
+            // 
             // frmGerarRelatorio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(914, 571);
+            Controls.Add(dgvFolhaPagamento);
             Controls.Add(dgvEmpresas);
             Controls.Add(panel9);
             Controls.Add(dgvRelatorio);
@@ -402,6 +502,7 @@
             panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvEmpresas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvFolhaPagamento).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -433,5 +534,13 @@
         private DataGridViewTextBoxColumn Cnpj;
         private DataGridViewTextBoxColumn razao_social;
         private DataGridViewTextBoxColumn nome_fantasia;
+        private DataGridView dgvFolhaPagamento;
+        private DataGridViewTextBoxColumn id_folha;
+        private DataGridViewTextBoxColumn salario_folha;
+        private DataGridViewTextBoxColumn desconto;
+        private DataGridViewTextBoxColumn irrf;
+        private DataGridViewTextBoxColumn inss;
+        private DataGridViewTextBoxColumn subtotal;
+        private DataGridViewTextBoxColumn colaborador;
     }
 }

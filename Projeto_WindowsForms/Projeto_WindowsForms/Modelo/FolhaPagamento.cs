@@ -2,16 +2,16 @@
 {
     public class FolhaPagamento
     {
+        public int Id { get; set; }
         public decimal Inss { get; set; }
         public decimal Irrf { get; set; }
         public int HorasExtras { get; set; }
-        public decimal ValorTotalHorasExtras { get; set; }
+        public decimal ValorHorasExtras { get; set; }
         public decimal ValorLiquido { get; set; }
         public decimal DescontosTotais { get; set; }
         public decimal VencimentosTotais { get; set; }
         public decimal AliquotaInss {  get; set; }
         public decimal AliquotaIrrf { get; set; }
-
         public Colaborador Colaborador { get; set; }
 
         public void CalcularSalarioLiquido()
@@ -69,12 +69,12 @@
             var salarioHora = Colaborador.Salario / 30 / 8;
             var valorHorasExtras = salarioHora + (salarioHora * 0.5m);
 
-            ValorTotalHorasExtras = Math.Round(HorasExtras * valorHorasExtras, 2);
+            ValorHorasExtras = Math.Round(HorasExtras * valorHorasExtras, 2);
         }
 
         private void CalcularVencimentosTotais()
         {
-            VencimentosTotais = Colaborador.Salario + ValorTotalHorasExtras;
+            VencimentosTotais = Colaborador.Salario + ValorHorasExtras;
             VencimentosTotais = Math.Round(VencimentosTotais, 2);
         }
 

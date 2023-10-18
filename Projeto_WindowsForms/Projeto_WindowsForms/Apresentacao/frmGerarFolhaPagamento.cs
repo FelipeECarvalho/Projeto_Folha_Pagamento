@@ -55,7 +55,7 @@ namespace Projeto_WindowsForms.Apresentacao
             lblResultadoValorLiquido.Text = folhaPagamento.ValorLiquido.ToString();
             lblResultadoDescontosTotais.Text = folhaPagamento.DescontosTotais.ToString();
             lblResultadoVencimentosTotais.Text = folhaPagamento.VencimentosTotais.ToString();
-            lblHorasExtrasVencimentos.Text = folhaPagamento.ValorTotalHorasExtras.ToString();
+            lblHorasExtrasVencimentos.Text = folhaPagamento.ValorHorasExtras.ToString();
 
             folhaPagamentoCalculo = folhaPagamento;
         }
@@ -77,7 +77,44 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnGerarFolha_Click(object sender, EventArgs e)
         {
+            if (colaboradorBusca == null)
+            {
+                MessageBox.Show("Selecione um colaborador e tente novamente.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (folhaPagamentoCalculo == null)
+            {
+                MessageBox.Show("Faça o cálculo da folha de pagamento primeiro e tente novamente.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var controle = new ControleBase();
+            controle.cadastrarFolhaPagamento(folhaPagamentoCalculo);
+
+            if (string.IsNullOrEmpty(controle.mensagem))
+            {
+                MessageBox.Show("Folha de pagamento gerada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                lblMensagemCalculo.Text = "";
+
+                lblIRPFDesconto.Text = "";
+                lblINSSDesconto.Text = "";
+
+                lblRefIrrf.Text = "";
+                lblRefInss.Text = "";
+
+                lblResultadoValorLiquido.Text = "";
+                lblResultadoDescontosTotais.Text = "";
+                lblResultadoVencimentosTotais.Text = "";
+                lblHorasExtrasVencimentos.Text = "";
+
+                folhaPagamentoCalculo = null;
+            } 
+            else
+            {
+                MessageBox.Show(controle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void ColorirCabecalho(TableLayoutCellPaintEventArgs e)

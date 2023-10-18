@@ -82,5 +82,19 @@ namespace Projeto_WindowsForms.Controle
             if (empresa.NomeFantasia.Length > 50)
                 this.mensagem += "O Nome Fantasia não pode exceder 50 caracteres.\n";
         }
+
+        public void validarDadosFolhaPagamento(FolhaPagamento folhaPagamento)
+        {
+            this.mensagem = "";
+
+            if (folhaPagamento.ValorLiquido == 0)
+                this.mensagem += "Valor líquido é obrigatório\n";
+
+            if (folhaPagamento.VencimentosTotais == 0)
+                this.mensagem += "Vencimentos totais é obrigatório\n";
+
+            if (folhaPagamento.Colaborador == null || folhaPagamento.Colaborador.Id == 0)
+                this.mensagem += "Colaborador é obrigatório\n";
+        }
     }
 }

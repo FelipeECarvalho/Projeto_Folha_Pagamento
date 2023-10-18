@@ -19,6 +19,7 @@ namespace Projeto_WindowsForms.Apresentacao
             var controle = new ControleBase();
             var listaColaborador = controle.listarColaborador();
             var listaEmpresas = controle.listarEmpresas();
+            var listaFolhaPagamento = controle.listarFolhaPagamento();
 
             foreach (var colaborador in listaColaborador)
             {
@@ -28,6 +29,11 @@ namespace Projeto_WindowsForms.Apresentacao
             foreach (var empresa in listaEmpresas)
             {
                 dgvEmpresas.Rows.Add(empresa.Id, empresa.Cnpj, empresa.RazaoSocial, empresa.NomeFantasia);
+            }
+
+            foreach (var folhaPagamento in listaFolhaPagamento)
+            {
+                dgvFolhaPagamento.Rows.Add(folhaPagamento.Id, folhaPagamento.Colaborador.Salario.ToString("c"), folhaPagamento.DescontosTotais.ToString("c"), string.Format("{0} (REF: {1})", folhaPagamento.Irrf.ToString("c"), folhaPagamento.AliquotaIrrf), string.Format("{0} (REF: {1})", folhaPagamento.Inss.ToString("c"), folhaPagamento.AliquotaInss), folhaPagamento.ValorLiquido.ToString("c"), folhaPagamento.Colaborador.NomeCompleto);
             }
 
             btnRelatorio_Click(sender, e);
@@ -54,12 +60,14 @@ namespace Projeto_WindowsForms.Apresentacao
             }
 
             SetButtonActive(btnFolhaPagamento);
+            dgvFolhaPagamento.Show();
         }
 
         private void SetButtonActive(Button btn)
         {
             dgvRelatorio.Hide();
             dgvEmpresas.Hide();
+            dgvFolhaPagamento.Hide();
 
             var buttonList = new List<Button>
             {

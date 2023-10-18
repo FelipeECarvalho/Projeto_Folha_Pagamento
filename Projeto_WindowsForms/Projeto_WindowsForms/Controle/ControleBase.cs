@@ -137,6 +137,29 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
+        public void cadastrarFolhaPagamento(FolhaPagamento folhaPagamento)
+        {
+            var validacao = new Validacao();
+            validacao.validarDadosFolhaPagamento(folhaPagamento);
+
+            if (string.IsNullOrEmpty(validacao.mensagem))
+            {
+                try
+                {
+                    var folhaPagamentoDAO = new FolhaPagamentoDAO();
+                    folhaPagamentoDAO.cadastrarFolhaPagamento(folhaPagamento);
+                }
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
         public List<Empresa> listarEmpresas()
         {
             try
@@ -167,6 +190,22 @@ namespace Projeto_WindowsForms.Controle
             }
 
             return new List<Colaborador>();
+        }
+
+        public List<FolhaPagamento> listarFolhaPagamento()
+        {
+            try
+            {
+                var folhaPagamentoDAO = new FolhaPagamentoDAO();
+
+                return folhaPagamentoDAO.listarFolhaPagamento();
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+
+            return new List<FolhaPagamento>();
         }
 
         private static string GerarSenha()
