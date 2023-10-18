@@ -32,7 +32,7 @@ namespace Projeto_WindowsForms.Apresentacao
                 Sexo = sexo,
                 Cargo = cargo,
                 NomeCompleto = txbNomeColaborador.Text,
-                Salario = decimal.Parse(txbSalario.Text),
+                Salario = decimal.Parse(txbSalario.Text.Replace("R$", "")),
                 DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
                 Empresa = new Empresa
                 {

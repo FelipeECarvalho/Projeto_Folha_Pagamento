@@ -6,38 +6,16 @@ namespace Projeto_WindowsForms.Controle
     {
         // Atributos
         public string mensagem;
-        public int indice;
-        public int IndiceColaboradorEncontrado = -1;
 
         // Construtor
 
         //Métodos
-        public int ValidarColaboradores(List<Colaborador> colaboradores, List<string> nomesColaboradores)
+        public void ValidarBuscaColaborador(string idNome)
         {
-            // Looping para validar a lista de coboradores com o valor inserido na TextBox
-            for (int i = 0; i < colaboradores.Count; i++)
-            {
-                foreach (string nome in nomesColaboradores)
-                {
-                    // Se o valor for encontrado com o nome ou com o ID..
-                    if (colaboradores[i].NomeCompleto.Equals(nome, StringComparison.OrdinalIgnoreCase))
-                    {
-                        this.mensagem = "Colaborador encontrado!";
-                        this.indice = i;
-                        return indice; // Retorna o índice do colaborador encontrado
-                    }
-                    else if (colaboradores[i].Id.ToString().Equals(nome, StringComparison.OrdinalIgnoreCase))
-                    {
-                        this.mensagem = "Colaborador encontrado!";
-                        this.indice = i;
-                        return indice; // Retorna o índice do colaborador encontrado
-                    }
-                }
-            }
+            this.mensagem = "";
 
-            // Se o valor não corresponder à nenhum colaborador da lista de colaboradores
-            this.mensagem = "Colaborador não encontrado!";
-            return -1; // Retorna -1 se o colaborador não for encontrado
+            if (string.IsNullOrEmpty(idNome))
+                this.mensagem = "Id ou nome inválido, revise e tente novamente.";
         }
 
         public void ValidarCalculo(string horasExtrasText)

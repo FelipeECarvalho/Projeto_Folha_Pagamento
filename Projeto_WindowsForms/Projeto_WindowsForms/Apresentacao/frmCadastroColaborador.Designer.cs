@@ -31,13 +31,13 @@
             lblNomeColaborador = new Label();
             txbNomeColaborador = new TextBox();
             lblEmpresa = new Label();
-            txbSalario = new TextBox();
             lblSalario = new Label();
             lblDataAdmissao = new Label();
             btnCadastrar = new Button();
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
+            txbSalario = new MaskedTextBox();
             cmbSexo = new ComboBox();
             lblSexo = new Label();
             cmbCargo = new ComboBox();
@@ -77,13 +77,6 @@
             lblEmpresa.Size = new Size(52, 15);
             lblEmpresa.TabIndex = 4;
             lblEmpresa.Text = "Empresa";
-            // 
-            // txbSalario
-            // 
-            txbSalario.Location = new Point(389, 113);
-            txbSalario.Name = "txbSalario";
-            txbSalario.Size = new Size(274, 23);
-            txbSalario.TabIndex = 3;
             // 
             // lblSalario
             // 
@@ -143,6 +136,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(txbSalario);
             panel2.Controls.Add(cmbSexo);
             panel2.Controls.Add(lblSexo);
             panel2.Controls.Add(cmbCargo);
@@ -153,12 +147,21 @@
             panel2.Controls.Add(txbNomeColaborador);
             panel2.Controls.Add(lblDataAdmissao);
             panel2.Controls.Add(lblEmpresa);
-            panel2.Controls.Add(txbSalario);
             panel2.Controls.Add(lblSalario);
             panel2.Location = new Point(49, 137);
             panel2.Name = "panel2";
             panel2.Size = new Size(703, 240);
             panel2.TabIndex = 0;
+            // 
+            // txbSalario
+            // 
+            txbSalario.HideSelection = false;
+            txbSalario.Location = new Point(389, 113);
+            txbSalario.Mask = "$9999,00";
+            txbSalario.Name = "txbSalario";
+            txbSalario.Size = new Size(274, 23);
+            txbSalario.TabIndex = 13;
+            txbSalario.ValidatingType = typeof(int);
             // 
             // cmbSexo
             // 
@@ -271,7 +274,6 @@
         private Label lblNomeColaborador;
         private TextBox txbNomeColaborador;
         private Label lblEmpresa;
-        private TextBox txbSalario;
         private Label lblSalario;
         private Label lblDataAdmissao;
         private Button btnCadastrar;
@@ -287,5 +289,6 @@
         private Label lblCargo;
         private ComboBox cmbSexo;
         private Label lblSexo;
+        private MaskedTextBox txbSalario;
     }
 }

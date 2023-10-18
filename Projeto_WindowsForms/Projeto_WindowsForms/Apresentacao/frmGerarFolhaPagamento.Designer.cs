@@ -269,7 +269,6 @@ namespace Projeto_WindowsForms.Apresentacao
             cbxHorasExtras.Size = new Size(40, 23);
             cbxHorasExtras.TabIndex = 1;
             cbxHorasExtras.Text = "0";
-            cbxHorasExtras.SelectedIndexChanged += cbxHorasExtras_SelectedIndexChanged;
             // 
             // lblHorasExtrasVencimentos
             // 

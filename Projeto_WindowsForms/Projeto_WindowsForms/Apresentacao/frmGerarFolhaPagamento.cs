@@ -5,72 +5,24 @@ namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmGerarFolhaPagamento : Form
     {
-        private List<Colaborador> listaColaboradores; // Uma lista fictícia de colaboradores
-
-        public frmGerarFolhaPagamento() // Construtor
+        public frmGerarFolhaPagamento()
         {
             InitializeComponent();
-            listaColaboradores = new List<Colaborador>
-            {
-                //new Colaborador(0, "", "", "", "", ""),
-                //new Colaborador(1, "José", "Gerente", "Pardal & Cia Ltda.", "3000", DateTime.Now.ToString()),
-                //new Colaborador(2, "Maria", "Analista", "Pardal & Cia Ltda.", "4000", DateTime.Now.ToString()),
-                //new Colaborador(3, "Pedro", "Desenvolvedor", "Águia Incorporações Ltda.", "3200", DateTime.Now.ToString()),
-                //new Colaborador(4, "Ana", "Designer", "Águia Incorporações Ltda.", "2200", DateTime.Now.ToString()),
-                //new Colaborador(5, "Carlos", "Analista de Vendas", "Colibri Engenharia S.A.", "3500", DateTime.Now.ToString()),
-                //new Colaborador(6, "Isabel", "Engenheiro de Software", "Colibri Engenharia S.A.", "4400", DateTime.Now.ToString()),
-                //new Colaborador(7, "Paulo", "Analista de Marketing", "Falcão Comércio de Tecnologia Ltda.", "2500", DateTime.Now.ToString()),
-                //new Colaborador(8, "Letícia","Contadora", "Falcão Comércio de Tecnologia Ltda.", "2400",  DateTime.Now.ToString()),
-                //new Colaborador(9, "Ricardo", "Analista Financeiro", "Terra Elementar Consultoria Ambiental Ltda.", "4700", DateTime.Now.ToString()),
-                //new Colaborador(10, "Juliana", "Engenheiro de Produção", "Terra Elementar Consultoria Ambiental Ltda.", "5000", DateTime.Now.ToString())
-            };
         }
 
-        // Métodos
+        private void frmGerarFolhaPagamento_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Cria uma lista com o conteúdo o TextBox 'Nome ou ID'
-            List<string> nomesColaboradores = new()
-            {
-                txbNomeID.Text
-            };
+            BuscarColaborador();
+        }
 
-            // Instancia a Classe Controle que irá validar se o valor inserido corresponde com o nome ou o ID da lista de Colaboradores
-            ControleBase controle = new();
-            controle.ValidarColaboradores(this.listaColaboradores, nomesColaboradores);
-
-            // Pega a mensagem da classe controle após a validação do valor inserido
-            lblMensagem.Text = controle.mensagem;
-            int i = controle.i;
-
-            // Pega o índice correspondido e atribui às labels
-            if (i != -1 && i != 0)
-            {
-                lblResultadoNomeColaborador.Text = listaColaboradores[i].NomeCompleto;
-                lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
-                lblHorasExtrasVencimentos.Text = "0";
-                lblIRPFDesconto.Text = "";
-                lblINSSDesconto.Text = "";
-                lblResultadoVencimentosTotais.Text = "";
-                lblResultadoDescontosTotais.Text = "";
-                lblResultadoValorLiquido.Text = "";
-
-            }
-            else
-            {
-                lblMensagem.Text = "Colaborador não encontrado!";
-                lblResultadoNomeColaborador.Text = "";
-                lblResultadoFuncao.Text = "";
-                lblResultadoNomeEmpresa.Text = "";
-                lblResultadoCNPJ.Text = "";
-                lblSalarioBaseVencimentos.Text = "0";
-                lblHorasExtrasVencimentos.Text = "0";
-                lblIRPFDesconto.Text = "";
-                lblINSSDesconto.Text = "";
-                lblResultadoVencimentosTotais.Text = "";
-                lblResultadoDescontosTotais.Text = "";
-                lblResultadoValorLiquido.Text = "";
-            }
+        private void imgLupa_Click(object sender, EventArgs e)
+        {
+            BuscarColaborador();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -94,93 +46,23 @@ namespace Projeto_WindowsForms.Apresentacao
 
         }
 
-        private void imgLupa_Click(object sender, EventArgs e)
-        {
-            // Cria uma lista com o conteúdo o TextBox 'Nome ou ID'
-            List<string> nomesColaboradores = new()
-            {
-                txbNomeID.Text
-            };
-
-            // Instancia a Classe Controle que irá validar se o valor inserido corresponde com o nome ou o ID da lista de Colaboradores
-            ControleBase controle = new();
-            controle.ValidarColaboradores(this.listaColaboradores, nomesColaboradores);
-
-            // Pega a mensagem da classe controle após a validação do valor inserido
-            lblMensagem.Text = controle.mensagem;
-            int i = controle.i;
-
-            // Pega o índice correspondido e atribui às labels
-            if (i != -1 && i != 0)
-            {
-                lblResultadoNomeColaborador.Text = listaColaboradores[i].NomeCompleto;
-                //lblResultadoFuncao.Text = listaColaboradores[i].Funcao;
-                //lblResultadoNomeEmpresa.Text = listaColaboradores[i].NomeEmpresa;
-                //lblResultadoCNPJ.Text = listaColaboradores[i].CNPJEmpresa;
-                lblSalarioBaseVencimentos.Text = listaColaboradores[i].Salario.ToString();
-                lblHorasExtrasVencimentos.Text = "0";
-                lblIRPFDesconto.Text = "";
-                lblINSSDesconto.Text = "";
-                lblResultadoVencimentosTotais.Text = "";
-                lblResultadoDescontosTotais.Text = "";
-                lblResultadoValorLiquido.Text = "";
-
-            }
-            else
-            {
-                lblMensagem.Text = "Colaborador não encontrado!";
-                lblResultadoNomeColaborador.Text = "";
-                lblResultadoFuncao.Text = "";
-                lblResultadoNomeEmpresa.Text = "";
-                lblResultadoCNPJ.Text = "";
-                lblSalarioBaseVencimentos.Text = "0";
-                lblHorasExtrasVencimentos.Text = "0";
-                lblIRPFDesconto.Text = "";
-                lblINSSDesconto.Text = "";
-                lblResultadoVencimentosTotais.Text = "";
-                lblResultadoDescontosTotais.Text = "";
-                lblResultadoValorLiquido.Text = "";
-            }
-        }
-
-        private void imgLupa_MouseEnter(object sender, EventArgs e)
-        {
-            imgLupa.Width = (int)(imgLupa.Width * 1.2);
-            imgLupa.Height = (int)(imgLupa.Height * 1.2);
-        }
-
-        private void imgLupa_MouseLeave(object sender, EventArgs e)
-        {
-            imgLupa.Width = (int)(imgLupa.Width / 1.2);
-            imgLupa.Height = (int)(imgLupa.Height / 1.2);
-        }
-
-        private void frmGerarFolhaPagamento_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void cbxHorasExtras_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedOption = cbxHorasExtras.SelectedItem.ToString();
         }
 
         private void tblDadosFolhaPagamento_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
-            if (e.Row == 0)
-            {
-                using SolidBrush brush = new(Color.FromArgb(50, 130, 184));
-                e.Graphics.FillRectangle(brush, e.CellBounds);
-            }
+            ColorirCabecalho(e);
         }
 
         private void tblResultadoFolhaPagamento_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
+            ColorirCabecalho(e);
+        }
+
+        private void ColorirCabecalho(TableLayoutCellPaintEventArgs e)
+        {
             if (e.Row == 0)
             {
                 using SolidBrush brush = new(Color.FromArgb(50, 130, 184));
@@ -188,9 +70,36 @@ namespace Projeto_WindowsForms.Apresentacao
             }
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void BuscarColaborador() 
         {
-            this.Close();
+            var idNomeColaborador = txbNomeID.Text.ToString().Trim();
+
+            var controle = new ControleBase();
+            var colaborador = controle.buscarColaborador(idNomeColaborador);
+
+            if (colaborador != null)
+            {
+                lblResultadoCNPJ.Text = colaborador.Empresa.Cnpj;
+                lblResultadoFuncao.Text = colaborador.Cargo.ToString();
+                lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
+                lblResultadoNomeEmpresa.Text = colaborador.Empresa.NomeFantasia;
+                lblSalarioBaseVencimentos.Text = colaborador.Salario.ToString();
+            }
+            else
+            {
+                lblResultadoCNPJ.Text = "";
+                lblResultadoFuncao.Text = "";
+                lblResultadoNomeEmpresa.Text = "";
+                lblSalarioBaseVencimentos.Text = "0";
+                lblMensagem.Text = controle.mensagem;
+                lblResultadoNomeColaborador.Text = "";
+            }
+
+            lblIRPFDesconto.Text = "";
+            lblINSSDesconto.Text = "";
+            lblResultadoValorLiquido.Text = "";
+            lblResultadoDescontosTotais.Text = "";
+            lblResultadoVencimentosTotais.Text = "";
         }
     }
 }
