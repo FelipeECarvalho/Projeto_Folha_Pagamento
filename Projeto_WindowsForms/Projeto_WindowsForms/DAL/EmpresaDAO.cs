@@ -71,9 +71,8 @@ namespace Projeto_WindowsForms.DAL
 
                         listaEmpresa.Add(empresa);
                     }
-
-                    dr.Close();
                 }
+                dr.Close();
             }
             catch (Exception)
             {
@@ -86,7 +85,5 @@ namespace Projeto_WindowsForms.DAL
 
             return listaEmpresa;
         }
-
-
     }
 }

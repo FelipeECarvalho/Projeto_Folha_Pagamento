@@ -80,14 +80,13 @@ namespace Projeto_WindowsForms.DAL
                 
                 if (dr.Read())
                 {
-                    Enum.TryParse<TipoSexo>(dr["sexo"].ToString(), out var sexo);
                     Enum.TryParse<TipoCargo>(dr["cargo"].ToString(), out var cargo);
 
                     colaborador = new Colaborador
                     {
                         Id = int.Parse(dr["id"].ToString()),
                         NomeCompleto = dr["nome_completo"].ToString(),
-                        Sexo = sexo,
+                        Sexo = (TipoSexo)char.Parse(dr["sexo"].ToString()),
                         Cargo = cargo,
                         Salario = decimal.Parse(dr["salario"].ToString()),
                         DataAdmissao = DateTime.Parse(dr["data_admissao"].ToString()),
@@ -115,6 +114,64 @@ namespace Projeto_WindowsForms.DAL
             }
 
             return colaborador;
+        }
+
+        public List<Colaborador> listarColaborador()
+        {
+            var cmd = new SqlCommand
+            {
+                CommandText = @"SELECT c.id, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, e.id as id_empresa, e.cnpj, e.razao_social, e.nome_fantasia
+                                FROM colaborador c 
+                                INNER JOIN empresa e 
+                                ON c.id_empresa = e.id"
+            };
+
+            var listaColaborador = new List<Colaborador>();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Enum.TryParse<TipoCargo>(dr["cargo"].ToString(), out var cargo);
+
+                        var colaborador = new Colaborador
+                        {
+                            Id = int.Parse(dr["id"].ToString()),
+                            NomeCompleto = dr["nome_completo"].ToString(),
+                            Sexo = (TipoSexo)char.Parse(dr["sexo"].ToString()),
+                            Cargo = cargo,
+                            Salario = decimal.Parse(dr["salario"].ToString()),
+                            DataAdmissao = DateTime.Parse(dr["data_admissao"].ToString()),
+                            Empresa = new Empresa
+                            {
+                                Id = int.Parse(dr["id_empresa"].ToString()),
+                                Cnpj = dr["cnpj"].ToString(),
+                                RazaoSocial = dr["razao_social"].ToString(),
+                                NomeFantasia = dr["nome_fantasia"].ToString()
+                            }
+                        };
+
+                        listaColaborador.Add(colaborador);
+                    }
+                }
+                dr.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+
+            return listaColaborador;
         }
     }
 }

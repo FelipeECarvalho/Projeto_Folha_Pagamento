@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel2 = new Panel();
             label5 = new Label();
             btnRelatorio = new Button();
@@ -41,9 +41,12 @@
             btnBuscar = new Button();
             dgvRelatorio = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
-            data = new DataGridViewTextBoxColumn();
+            data_admissao = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
-            Relatórios = new DataGridViewTextBoxColumn();
+            Sexo = new DataGridViewTextBoxColumn();
+            salario = new DataGridViewTextBoxColumn();
+            cargo = new DataGridViewTextBoxColumn();
+            Empresa = new DataGridViewTextBoxColumn();
             panel9 = new Panel();
             label9 = new Label();
             btnVoltar = new PictureBox();
@@ -181,29 +184,30 @@
             dgvRelatorio.BorderStyle = BorderStyle.None;
             dgvRelatorio.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvRelatorio.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvRelatorio.ColumnHeadersHeight = 35;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRelatorio.ColumnHeadersHeight = 40;
             dgvRelatorio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { ID, data, Nome, Relatórios });
+            dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { ID, data_admissao, Nome, Sexo, salario, cargo, Empresa });
             dgvRelatorio.EnableHeadersVisualStyles = false;
             dgvRelatorio.GridColor = Color.FromArgb(50, 130, 184);
             dgvRelatorio.Location = new Point(11, 252);
             dgvRelatorio.Name = "dgvRelatorio";
             dgvRelatorio.ReadOnly = true;
             dgvRelatorio.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvRelatorio.RowTemplate.Height = 25;
             dgvRelatorio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRelatorio.Size = new Size(890, 307);
@@ -211,28 +215,52 @@
             // 
             // ID
             // 
+            ID.FillWeight = 30F;
             ID.HeaderText = "ID";
             ID.Name = "ID";
             ID.ReadOnly = true;
             ID.Resizable = DataGridViewTriState.False;
             // 
-            // data
+            // data_admissao
             // 
-            data.HeaderText = "Data";
-            data.Name = "data";
-            data.ReadOnly = true;
+            data_admissao.FillWeight = 70F;
+            data_admissao.HeaderText = "Data Admissão";
+            data_admissao.Name = "data_admissao";
+            data_admissao.ReadOnly = true;
             // 
             // Nome
             // 
+            Nome.FillWeight = 101.725891F;
             Nome.HeaderText = "Nome";
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
             // 
-            // Relatórios
+            // Sexo
             // 
-            Relatórios.HeaderText = "Relatórios";
-            Relatórios.Name = "Relatórios";
-            Relatórios.ReadOnly = true;
+            Sexo.FillWeight = 50F;
+            Sexo.HeaderText = "Sexo";
+            Sexo.Name = "Sexo";
+            Sexo.ReadOnly = true;
+            // 
+            // salario
+            // 
+            salario.FillWeight = 75F;
+            salario.HeaderText = "Salario";
+            salario.Name = "salario";
+            salario.ReadOnly = true;
+            // 
+            // cargo
+            // 
+            cargo.HeaderText = "Cargo";
+            cargo.Name = "cargo";
+            cargo.ReadOnly = true;
+            // 
+            // Empresa
+            // 
+            Empresa.FillWeight = 101.725891F;
+            Empresa.HeaderText = "Empresa";
+            Empresa.Name = "Empresa";
+            Empresa.ReadOnly = true;
             // 
             // panel9
             // 
@@ -287,7 +315,7 @@
             Name = "frmGerarRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatórios";
-            Load += frmGerarRelatorio_Load_1;
+            Load += frmGerarRelatorio_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
@@ -310,12 +338,15 @@
         private TextBox txbID;
         private Button btnBuscar;
         private DataGridView dgvRelatorio;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn data;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Relatórios;
         private Panel panel9;
         private Label label9;
         private PictureBox btnVoltar;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn data_admissao;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Sexo;
+        private DataGridViewTextBoxColumn salario;
+        private DataGridViewTextBoxColumn Empresa;
+        private DataGridViewTextBoxColumn cargo;
     }
 }

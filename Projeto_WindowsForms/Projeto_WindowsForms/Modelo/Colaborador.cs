@@ -4,7 +4,6 @@ namespace Projeto_WindowsForms.Modelo
 {
     public class Colaborador
     {
-        // Atributos
         public int Id { get; set; }
         public string NomeCompleto { get; set; }
         public TipoSexo Sexo { get; set; }

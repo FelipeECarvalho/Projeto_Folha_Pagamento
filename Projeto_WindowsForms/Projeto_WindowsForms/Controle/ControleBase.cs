@@ -92,9 +92,9 @@ namespace Projeto_WindowsForms.Controle
 
                     var acesso = new Acesso
                     {
-                        Usuario = colaborador.NomeCompleto.Replace(" ", "_").ToLower(),
                         Senha = GerarSenha(),
-                        Colaborador = colaborador
+                        Colaborador = colaborador,
+                        Usuario = string.Format("{0}_{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(0, 9))
                     };
 
                     colaboradorDAO.cadastrarColaborador(colaborador, acesso);
@@ -151,6 +151,22 @@ namespace Projeto_WindowsForms.Controle
             }
 
             return new List<Empresa>();
+        }
+
+        public List<Colaborador> listarColaborador()
+        {
+            try
+            {
+                var colaboradorDAO = new ColaboradorDAO();
+
+                return colaboradorDAO.listarColaborador();
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+
+            return new List<Colaborador>();
         }
 
         private static string GerarSenha()

@@ -1,5 +1,4 @@
-﻿using Projeto_WindowsForms.Modelo;
-using System.Windows.Forms;
+﻿using Projeto_WindowsForms.Controle;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -12,7 +11,13 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void frmGerarRelatorio_Load(object sender, EventArgs e)
         {
-            dgvRelatorio.Rows.Add(("qwe", "qwe"));
+            var controle = new ControleBase();
+            var listaColaborador = controle.listarColaborador();
+
+            foreach (var colaborador in listaColaborador)
+            {
+                dgvRelatorio.Rows.Add(colaborador.Id, colaborador.DataAdmissao.ToShortDateString(), colaborador.NomeCompleto, colaborador.Sexo, colaborador.Salario.ToString("c"), colaborador.Cargo, colaborador.Empresa.NomeFantasia);
+            }
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -53,11 +58,6 @@ namespace Projeto_WindowsForms.Apresentacao
         }
 
         private void imgLupa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmGerarRelatorio_Load_1(object sender, EventArgs e)
         {
 
         }
