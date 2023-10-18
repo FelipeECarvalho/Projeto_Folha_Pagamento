@@ -29,7 +29,7 @@ namespace Projeto_WindowsForms.DAL
             };
 
             cmd.Parameters.AddWithValue("@usuario", usuario.ToLower());
-            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@senha", senha + "_!@#$");
 
             try
             {

@@ -1,4 +1,5 @@
 ﻿using Projeto_WindowsForms.Controle;
+using System.Windows.Forms;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -67,17 +68,62 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            BuscarRelatorio();
         }
-
         private void imgLupa_Click(object sender, EventArgs e)
         {
-
+            BuscarRelatorio();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BuscarRelatorio()
+        {
+            DataGridView dgv = null;
+
+            if (btnRelatorio.ForeColor == SystemColors.Window)
+                dgv = dgvRelatorio;
+
+            if (btnEmpresa.ForeColor == SystemColors.Window)
+                dgv = dgvEmpresas;
+
+            if (btnFolhaPagamento.ForeColor == SystemColors.Window)
+                dgv = dgvEmpresas;
+
+            string searchValue = txbID.Text.ToLower().Trim();
+            try
+            {
+                bool valueResult = false;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    for (int i = 0; i < row.Cells.Count; i++)
+                    {
+                        dgv.Rows[row.Index].Selected = false;
+
+                        var rowCell = row.Cells[i].Value;
+
+                        if (rowCell != null && rowCell.ToString().ToLower().Trim().Equals(searchValue))
+                        {
+                            dgv.Rows[row.Index].Selected = true;
+                            valueResult = true;
+                            break;
+                        }
+                    }
+
+                }
+                if (!valueResult)
+                {
+                    MessageBox.Show("Não foi possível encontrar: " + txbID.Text);
+                    return;
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
     }
 }

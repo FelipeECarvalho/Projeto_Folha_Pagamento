@@ -32,7 +32,7 @@ namespace Projeto_WindowsForms.DAL
             cmd.Parameters.AddWithValue("@id_empresa", colaborador.Empresa.Id);
 
             cmd.Parameters.AddWithValue("@usuario", acesso.Usuario);
-            cmd.Parameters.AddWithValue("@senha", acesso.Senha);
+            cmd.Parameters.AddWithValue("@senha", acesso.Senha + "_!@#$");
 
             try
             {
