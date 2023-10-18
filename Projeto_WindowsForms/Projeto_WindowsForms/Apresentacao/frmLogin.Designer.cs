@@ -58,7 +58,6 @@
             txbUsuario.Name = "txbUsuario";
             txbUsuario.Size = new Size(402, 25);
             txbUsuario.TabIndex = 0;
-            txbUsuario.TextChanged += txbUsuario_TextChanged;
             // 
             // txbSenha
             // 
@@ -96,7 +95,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // panel1
             // 

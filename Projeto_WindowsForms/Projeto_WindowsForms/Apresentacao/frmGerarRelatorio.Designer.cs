@@ -91,6 +91,7 @@
             // btnEmpresa
             // 
             btnEmpresa.BackColor = SystemColors.Window;
+            btnEmpresa.FlatAppearance.BorderSize = 0;
             btnEmpresa.FlatStyle = FlatStyle.Flat;
             btnEmpresa.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnEmpresa.ForeColor = SystemColors.ControlText;
@@ -105,6 +106,7 @@
             // btnFolhaPagamento
             // 
             btnFolhaPagamento.BackColor = SystemColors.Window;
+            btnFolhaPagamento.FlatAppearance.BorderSize = 0;
             btnFolhaPagamento.FlatStyle = FlatStyle.Flat;
             btnFolhaPagamento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnFolhaPagamento.ForeColor = SystemColors.ControlText;
@@ -128,6 +130,7 @@
             // 
             // imgLupa
             // 
+            imgLupa.Cursor = Cursors.Hand;
             imgLupa.Image = Properties.Resources.search_button;
             imgLupa.Location = new Point(308, 3);
             imgLupa.Name = "imgLupa";
@@ -254,6 +257,7 @@
             // 
             // btnVoltar
             // 
+            btnVoltar.Cursor = Cursors.Hand;
             btnVoltar.Image = Properties.Resources.voltar1;
             btnVoltar.Location = new Point(11, 10);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);

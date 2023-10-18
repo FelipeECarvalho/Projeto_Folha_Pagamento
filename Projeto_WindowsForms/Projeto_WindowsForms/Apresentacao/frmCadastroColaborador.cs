@@ -40,6 +40,8 @@ namespace Projeto_WindowsForms.Apresentacao
             {
                 cmbEmpresa.Items.Add(empresa.NomeFantasia);
             }
+
+            this.AcceptButton = btnCadastrar;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

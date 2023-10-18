@@ -163,6 +163,7 @@
             // 
             // btnVoltar
             // 
+            btnVoltar.Cursor = Cursors.Hand;
             btnVoltar.Image = Properties.Resources.voltar;
             btnVoltar.Location = new Point(11, 10);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);
@@ -193,6 +194,7 @@
             Name = "frmCadastroEmpresa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de empresa";
+            Load += frmCadastroEmpresa_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel9.ResumeLayout(false);

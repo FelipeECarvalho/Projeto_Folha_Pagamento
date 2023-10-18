@@ -1,4 +1,6 @@
-﻿namespace Projeto_WindowsForms.Apresentacao
+﻿using System.Windows.Forms;
+
+namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmMenu : Form
     {
@@ -48,6 +50,15 @@
 
             form.Closed += (s, args) => this.Show();
             form.Show();
+        }
+
+        private void lblSair_Click(object sender, EventArgs e)
+        {
+            var frmLogin = new frmLogin();
+            this.Hide();
+
+            frmLogin.Closed += (s, args) => this.Close();
+            frmLogin.Show();
         }
     }
 }

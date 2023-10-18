@@ -210,6 +210,7 @@
             // 
             // btnVoltar
             // 
+            btnVoltar.Cursor = Cursors.Hand;
             btnVoltar.Image = Properties.Resources.voltar;
             btnVoltar.Location = new Point(11, 10);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);

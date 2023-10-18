@@ -589,6 +589,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             // btnVoltar
             // 
+            btnVoltar.Cursor = Cursors.Hand;
             btnVoltar.Image = Properties.Resources.voltar;
             btnVoltar.Location = new Point(11, 8);
             btnVoltar.Margin = new Padding(3, 2, 3, 2);
@@ -629,6 +630,7 @@ namespace Projeto_WindowsForms.Apresentacao
             btnCalcular.TabIndex = 23;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
+            btnCalcular.Click += btnCalcular_Click;
             // 
             // btnGerarFolha
             // 
@@ -657,6 +659,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             // imgLupa
             // 
+            imgLupa.Cursor = Cursors.Hand;
             imgLupa.Image = Properties.Resources.search_button;
             imgLupa.Location = new Point(308, 3);
             imgLupa.Name = "imgLupa";

@@ -53,9 +53,9 @@
             pictureBox3 = new PictureBox();
             label3 = new Label();
             panel9 = new Panel();
+            lblSair = new Label();
             label9 = new Label();
             pictureBox5 = new PictureBox();
-            label10 = new Label();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -347,13 +347,26 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(50, 130, 184);
-            panel9.Controls.Add(label10);
+            panel9.Controls.Add(lblSair);
             panel9.Controls.Add(label9);
             panel9.Controls.Add(pictureBox5);
             panel9.Location = new Point(0, 1);
             panel9.Name = "panel9";
             panel9.Size = new Size(966, 78);
             panel9.TabIndex = 4;
+            // 
+            // lblSair
+            // 
+            lblSair.Cursor = Cursors.Hand;
+            lblSair.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSair.ForeColor = SystemColors.Window;
+            lblSair.Location = new Point(853, 25);
+            lblSair.Name = "lblSair";
+            lblSair.Size = new Size(33, 32);
+            lblSair.TabIndex = 9;
+            lblSair.Text = "Sair";
+            lblSair.TextAlign = ContentAlignment.MiddleRight;
+            lblSair.Click += lblSair_Click;
             // 
             // label9
             // 
@@ -375,17 +388,6 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
-            // 
-            // label10
-            // 
-            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = SystemColors.Window;
-            label10.Location = new Point(853, 25);
-            label10.Name = "label10";
-            label10.Size = new Size(33, 32);
-            label10.TabIndex = 9;
-            label10.Text = "Sair";
-            label10.TextAlign = ContentAlignment.MiddleRight;
             // 
             // frmMenu
             // 
@@ -454,6 +456,6 @@
         private Panel panel9;
         private PictureBox pictureBox5;
         private Label label9;
-        private Label label10;
+        private Label lblSair;
     }
 }

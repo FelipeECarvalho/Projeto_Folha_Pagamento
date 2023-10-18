@@ -22,26 +22,6 @@ namespace Projeto_WindowsForms.Apresentacao
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txbUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSenha_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmLogin_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btnAcessar;
