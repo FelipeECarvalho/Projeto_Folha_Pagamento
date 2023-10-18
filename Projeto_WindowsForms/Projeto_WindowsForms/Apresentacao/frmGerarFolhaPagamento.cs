@@ -48,6 +48,10 @@ namespace Projeto_WindowsForms.Apresentacao
 
             lblIRPFDesconto.Text = folhaPagamento.Irrf.ToString();
             lblINSSDesconto.Text = folhaPagamento.Inss.ToString();
+
+            lblRefIrrf.Text = folhaPagamento.AliquotaIrrf.ToString();
+            lblRefInss.Text = folhaPagamento.AliquotaInss.ToString();
+
             lblResultadoValorLiquido.Text = folhaPagamento.ValorLiquido.ToString();
             lblResultadoDescontosTotais.Text = folhaPagamento.DescontosTotais.ToString();
             lblResultadoVencimentosTotais.Text = folhaPagamento.VencimentosTotais.ToString();

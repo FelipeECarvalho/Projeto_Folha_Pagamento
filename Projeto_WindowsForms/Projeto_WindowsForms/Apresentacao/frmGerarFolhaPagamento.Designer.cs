@@ -42,11 +42,6 @@ namespace Projeto_WindowsForms.Apresentacao
             lblFuncao = new Label();
             lblResultadoFuncao = new Label();
             tblDadosFolhaPagamento = new TableLayoutPanel();
-            gbxHorasExtras = new GroupBox();
-            label2 = new Label();
-            label1 = new Label();
-            cbxHorasExtras = new ComboBox();
-            lblHorasExtrasVencimentos = new Label();
             lblCOD04 = new Label();
             lblVencimentos = new Label();
             lblREF = new Label();
@@ -55,18 +50,21 @@ namespace Projeto_WindowsForms.Apresentacao
             lblDescontos = new Label();
             lblCOD01 = new Label();
             lblSalarioBase = new Label();
-            lblREF536 = new Label();
+            lblRefSalario = new Label();
             lblCOD02 = new Label();
             lblHorasExtras = new Label();
-            lblREF382 = new Label();
             lblCOD03 = new Label();
             lblINSS = new Label();
-            lblREF617 = new Label();
+            lblRefInss = new Label();
             lblIRPF = new Label();
-            lblREF194 = new Label();
+            lblRefIrrf = new Label();
             lblSalarioBaseVencimentos = new Label();
             lblINSSDesconto = new Label();
             lblIRPFDesconto = new Label();
+            gbxHorasExtras = new GroupBox();
+            cbxHorasExtras = new ComboBox();
+            lblRefHorasExtras = new Label();
+            lblHorasExtrasVencimentos = new Label();
             tblResultadoFolhaPagamento = new TableLayoutPanel();
             lblResultadoValorLiquido = new Label();
             lblResultadoDescontosTotais = new Label();
@@ -194,7 +192,6 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 63F));
             tblDadosFolhaPagamento.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 202F));
             tblDadosFolhaPagamento.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 128F));
-            tblDadosFolhaPagamento.Controls.Add(gbxHorasExtras, 3, 2);
             tblDadosFolhaPagamento.Controls.Add(lblCOD04, 0, 4);
             tblDadosFolhaPagamento.Controls.Add(lblVencimentos, 3, 0);
             tblDadosFolhaPagamento.Controls.Add(lblREF, 2, 0);
@@ -203,18 +200,20 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.Controls.Add(lblDescontos, 4, 0);
             tblDadosFolhaPagamento.Controls.Add(lblCOD01, 0, 1);
             tblDadosFolhaPagamento.Controls.Add(lblSalarioBase, 1, 1);
-            tblDadosFolhaPagamento.Controls.Add(lblREF536, 2, 1);
+            tblDadosFolhaPagamento.Controls.Add(lblRefSalario, 2, 1);
             tblDadosFolhaPagamento.Controls.Add(lblCOD02, 0, 2);
             tblDadosFolhaPagamento.Controls.Add(lblHorasExtras, 1, 2);
-            tblDadosFolhaPagamento.Controls.Add(lblREF382, 2, 2);
             tblDadosFolhaPagamento.Controls.Add(lblCOD03, 0, 3);
             tblDadosFolhaPagamento.Controls.Add(lblINSS, 1, 3);
-            tblDadosFolhaPagamento.Controls.Add(lblREF617, 2, 3);
-            tblDadosFolhaPagamento.Controls.Add(lblIRPF, 1, 4);
-            tblDadosFolhaPagamento.Controls.Add(lblREF194, 2, 4);
+            tblDadosFolhaPagamento.Controls.Add(lblRefInss, 2, 3);
             tblDadosFolhaPagamento.Controls.Add(lblSalarioBaseVencimentos, 3, 1);
             tblDadosFolhaPagamento.Controls.Add(lblINSSDesconto, 4, 3);
             tblDadosFolhaPagamento.Controls.Add(lblIRPFDesconto, 4, 4);
+            tblDadosFolhaPagamento.Controls.Add(gbxHorasExtras, 2, 2);
+            tblDadosFolhaPagamento.Controls.Add(lblHorasExtrasVencimentos, 3, 2);
+            tblDadosFolhaPagamento.Controls.Add(lblRefIrrf, 2, 4);
+            tblDadosFolhaPagamento.Controls.Add(lblRefHorasExtras, 3, 4);
+            tblDadosFolhaPagamento.Controls.Add(lblIRPF, 1, 4);
             tblDadosFolhaPagamento.Location = new Point(82, 293);
             tblDadosFolhaPagamento.Name = "tblDadosFolhaPagamento";
             tblDadosFolhaPagamento.RowCount = 5;
@@ -226,58 +225,6 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.Size = new Size(690, 152);
             tblDadosFolhaPagamento.TabIndex = 13;
             tblDadosFolhaPagamento.CellPaint += tblDadosFolhaPagamento_CellPaint;
-            // 
-            // gbxHorasExtras
-            // 
-            gbxHorasExtras.BackColor = SystemColors.Control;
-            gbxHorasExtras.BackgroundImageLayout = ImageLayout.None;
-            gbxHorasExtras.Controls.Add(label2);
-            gbxHorasExtras.Controls.Add(label1);
-            gbxHorasExtras.Controls.Add(cbxHorasExtras);
-            gbxHorasExtras.Controls.Add(lblHorasExtrasVencimentos);
-            gbxHorasExtras.ForeColor = SystemColors.ControlText;
-            gbxHorasExtras.Location = new Point(360, 67);
-            gbxHorasExtras.Name = "gbxHorasExtras";
-            gbxHorasExtras.Size = new Size(196, 23);
-            gbxHorasExtras.TabIndex = 22;
-            gbxHorasExtras.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(125, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(36, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Valor:";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(-4, 5);
-            label1.Name = "label1";
-            label1.Size = new Size(75, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Horas extras:";
-            // 
-            // cbxHorasExtras
-            // 
-            cbxHorasExtras.FormattingEnabled = true;
-            cbxHorasExtras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" });
-            cbxHorasExtras.Location = new Point(72, 0);
-            cbxHorasExtras.Name = "cbxHorasExtras";
-            cbxHorasExtras.Size = new Size(40, 23);
-            cbxHorasExtras.TabIndex = 1;
-            cbxHorasExtras.Text = "0";
-            // 
-            // lblHorasExtrasVencimentos
-            // 
-            lblHorasExtrasVencimentos.AutoSize = true;
-            lblHorasExtrasVencimentos.Location = new Point(160, 5);
-            lblHorasExtrasVencimentos.Name = "lblHorasExtrasVencimentos";
-            lblHorasExtrasVencimentos.Size = new Size(13, 15);
-            lblHorasExtrasVencimentos.TabIndex = 0;
-            lblHorasExtrasVencimentos.Text = "0";
             // 
             // lblCOD04
             // 
@@ -366,14 +313,14 @@ namespace Projeto_WindowsForms.Apresentacao
             lblSalarioBase.TabIndex = 20;
             lblSalarioBase.Text = "Salário Base";
             // 
-            // lblREF536
+            // lblRefSalario
             // 
-            lblREF536.AutoSize = true;
-            lblREF536.Location = new Point(296, 34);
-            lblREF536.Name = "lblREF536";
-            lblREF536.Size = new Size(25, 15);
-            lblREF536.TabIndex = 21;
-            lblREF536.Text = "536";
+            lblRefSalario.AutoSize = true;
+            lblRefSalario.Location = new Point(296, 34);
+            lblRefSalario.Name = "lblRefSalario";
+            lblRefSalario.Size = new Size(19, 15);
+            lblRefSalario.TabIndex = 21;
+            lblRefSalario.Text = "30";
             // 
             // lblCOD02
             // 
@@ -393,15 +340,6 @@ namespace Projeto_WindowsForms.Apresentacao
             lblHorasExtras.TabIndex = 23;
             lblHorasExtras.Text = "Horas Extras";
             // 
-            // lblREF382
-            // 
-            lblREF382.AutoSize = true;
-            lblREF382.Location = new Point(296, 64);
-            lblREF382.Name = "lblREF382";
-            lblREF382.Size = new Size(25, 15);
-            lblREF382.TabIndex = 24;
-            lblREF382.Text = "382";
-            // 
             // lblCOD03
             // 
             lblCOD03.AutoSize = true;
@@ -420,32 +358,30 @@ namespace Projeto_WindowsForms.Apresentacao
             lblINSS.TabIndex = 26;
             lblINSS.Text = "INSS";
             // 
-            // lblREF617
+            // lblRefInss
             // 
-            lblREF617.AutoSize = true;
-            lblREF617.Location = new Point(296, 94);
-            lblREF617.Name = "lblREF617";
-            lblREF617.Size = new Size(25, 15);
-            lblREF617.TabIndex = 27;
-            lblREF617.Text = "617";
+            lblRefInss.AutoSize = true;
+            lblRefInss.Location = new Point(296, 94);
+            lblRefInss.Name = "lblRefInss";
+            lblRefInss.Size = new Size(0, 15);
+            lblRefInss.TabIndex = 27;
             // 
             // lblIRPF
             // 
             lblIRPF.AutoSize = true;
             lblIRPF.Location = new Point(88, 124);
             lblIRPF.Name = "lblIRPF";
-            lblIRPF.Size = new Size(29, 15);
+            lblIRPF.Size = new Size(30, 15);
             lblIRPF.TabIndex = 29;
-            lblIRPF.Text = "IRFF";
+            lblIRPF.Text = "IRRF";
             // 
-            // lblREF194
+            // lblRefIrrf
             // 
-            lblREF194.AutoSize = true;
-            lblREF194.Location = new Point(296, 124);
-            lblREF194.Name = "lblREF194";
-            lblREF194.Size = new Size(25, 15);
-            lblREF194.TabIndex = 30;
-            lblREF194.Text = "194";
+            lblRefIrrf.AutoSize = true;
+            lblRefIrrf.Location = new Point(296, 124);
+            lblRefIrrf.Name = "lblRefIrrf";
+            lblRefIrrf.Size = new Size(29, 15);
+            lblRefIrrf.TabIndex = 30;
             // 
             // lblSalarioBaseVencimentos
             // 
@@ -473,6 +409,45 @@ namespace Projeto_WindowsForms.Apresentacao
             lblIRPFDesconto.Size = new Size(12, 15);
             lblIRPFDesconto.TabIndex = 41;
             lblIRPFDesconto.Text = "-";
+            // 
+            // gbxHorasExtras
+            // 
+            gbxHorasExtras.BackColor = SystemColors.Control;
+            gbxHorasExtras.BackgroundImageLayout = ImageLayout.None;
+            gbxHorasExtras.Controls.Add(cbxHorasExtras);
+            gbxHorasExtras.ForeColor = SystemColors.ControlText;
+            gbxHorasExtras.Location = new Point(296, 67);
+            gbxHorasExtras.Name = "gbxHorasExtras";
+            gbxHorasExtras.Size = new Size(43, 23);
+            gbxHorasExtras.TabIndex = 22;
+            gbxHorasExtras.TabStop = false;
+            // 
+            // cbxHorasExtras
+            // 
+            cbxHorasExtras.FormattingEnabled = true;
+            cbxHorasExtras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24" });
+            cbxHorasExtras.Location = new Point(0, 0);
+            cbxHorasExtras.Name = "cbxHorasExtras";
+            cbxHorasExtras.Size = new Size(40, 23);
+            cbxHorasExtras.TabIndex = 1;
+            cbxHorasExtras.Text = "0";
+            // 
+            // lblRefHorasExtras
+            // 
+            lblRefHorasExtras.AutoSize = true;
+            lblRefHorasExtras.Location = new Point(360, 124);
+            lblRefHorasExtras.Name = "lblRefHorasExtras";
+            lblRefHorasExtras.Size = new Size(0, 15);
+            lblRefHorasExtras.TabIndex = 24;
+            // 
+            // lblHorasExtrasVencimentos
+            // 
+            lblHorasExtrasVencimentos.AutoSize = true;
+            lblHorasExtrasVencimentos.Location = new Point(360, 64);
+            lblHorasExtrasVencimentos.Name = "lblHorasExtrasVencimentos";
+            lblHorasExtrasVencimentos.Size = new Size(13, 15);
+            lblHorasExtrasVencimentos.TabIndex = 42;
+            lblHorasExtrasVencimentos.Text = "0";
             // 
             // tblResultadoFolhaPagamento
             // 
@@ -738,7 +713,6 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.ResumeLayout(false);
             tblDadosFolhaPagamento.PerformLayout();
             gbxHorasExtras.ResumeLayout(false);
-            gbxHorasExtras.PerformLayout();
             tblResultadoFolhaPagamento.ResumeLayout(false);
             tblResultadoFolhaPagamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
@@ -765,15 +739,15 @@ namespace Projeto_WindowsForms.Apresentacao
         private Label lblCOD04;
         private Label lblCOD01;
         private Label lblSalarioBase;
-        private Label lblREF536;
+        private Label lblRefSalario;
         private Label lblCOD02;
         private Label lblHorasExtras;
-        private Label lblREF382;
+        private Label lblRefHorasExtras;
         private Label lblCOD03;
         private Label lblINSS;
-        private Label lblREF617;
+        private Label lblRefInss;
         private Label lblIRPF;
-        private Label lblREF194;
+        private Label lblRefIrrf;
         private TableLayoutPanel tblResultadoFolhaPagamento;
         private Label lblResultadoValorLiquido;
         private Label lblResultadoDescontosTotais;
@@ -791,9 +765,6 @@ namespace Projeto_WindowsForms.Apresentacao
         private PictureBox btnVoltar;
         private GroupBox gbxHorasExtras;
         private ComboBox cbxHorasExtras;
-        private Label lblHorasExtrasVencimentos;
-        private Label label1;
-        private Label label2;
         private Button btnBuscar;
         private Button btnCalcular;
         private Button button1;
@@ -807,5 +778,6 @@ namespace Projeto_WindowsForms.Apresentacao
         private TextBox txbNomeID;
         private Panel panel9;
         private Label label9;
+        private Label lblHorasExtrasVencimentos;
     }
 }

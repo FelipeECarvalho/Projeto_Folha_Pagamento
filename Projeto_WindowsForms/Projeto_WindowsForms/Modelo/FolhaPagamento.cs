@@ -9,6 +9,9 @@
         public decimal ValorLiquido { get; set; }
         public decimal DescontosTotais { get; set; }
         public decimal VencimentosTotais { get; set; }
+        public decimal AliquotaInss {  get; set; }
+        public decimal AliquotaIrrf { get; set; }
+
         public Colaborador Colaborador { get; set; }
 
         public void CalcularSalarioLiquido()
@@ -28,17 +31,16 @@
             var salario = Colaborador.Salario;
 
             // Calcula a alíquota do INSS
-            decimal aliquota;
-            if (salario <= 1320) 
-                aliquota = 7.5m;
-            else if (salario <=  2571) 
-                aliquota = 9.0m;
-            else if (salario <= 3865) 
-                aliquota = 12m;
+            if (salario <= 1320)
+                AliquotaInss = 7.5m;
+            else if (salario <=  2571)
+                AliquotaInss = 9.0m;
+            else if (salario <= 3865)
+                AliquotaInss = 12m;
             else
-                aliquota = 14m;
+                AliquotaInss = 14m;
 
-            Inss = Colaborador.Salario * (aliquota / 100);
+            Inss = Colaborador.Salario * (AliquotaInss / 100);
             Inss = Math.Round(Inss, 2);
         }
 
@@ -47,20 +49,18 @@
             var salario = Colaborador.Salario;
 
             // Calcula a alíquota do IRRF
-            decimal aliquota;
-
             if (salario <= 1903)
-                aliquota = 0.01m;
+                AliquotaIrrf = 0.01m;
             else if (salario <= 2826)
-                aliquota = 7.5m;
+                AliquotaIrrf = 7.5m;
             else if (salario <= 3751)
-                aliquota = 15m;
+                AliquotaIrrf = 15m;
             else if (salario <= 4664)
-                aliquota = 22.5m;
+                AliquotaIrrf = 22.5m;
             else
-                aliquota = 27.5m;
+                AliquotaIrrf = 27.5m;
 
-            Irrf = (Colaborador.Salario * (aliquota / 100)); // 5% de desconto fictício
+            Irrf = (Colaborador.Salario * (AliquotaIrrf / 100)); // 5% de desconto fictício
             Irrf = Math.Round(Irrf, 2);
         }
 
