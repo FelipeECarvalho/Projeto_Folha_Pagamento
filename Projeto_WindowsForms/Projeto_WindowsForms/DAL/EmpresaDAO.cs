@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms.DAL
@@ -6,13 +6,13 @@ namespace Projeto_WindowsForms.DAL
     public class EmpresaDAO
     {
         Conexao con = new Conexao();
-        MySqlDataReader dr;
+        SqlDataReader dr;
         public string mensagem;
 
         public void cadastrarEmpresa(Empresa empresa)
         {
             this.mensagem = "";
-            MySqlCommand cmd = new MySqlCommand();
+            SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"insert into empresas (cnpj, razaosocial, nomefantasia) 
                             values (@cnpj, @razaosocial, @nomefantasia)";
             cmd.Parameters.AddWithValue("@cnpj", empresa.CNPJ);
@@ -34,8 +34,8 @@ namespace Projeto_WindowsForms.DAL
         public List<Empresa> listarEmpresa()
         {
             this.mensagem = "";
-            MySqlCommand cmd = new MySqlCommand();
-            MySqlDataReader dr;
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
             cmd.CommandText = @"select * from empresas";
             List<Empresa> listaEmpresa = new List<Empresa>();
 

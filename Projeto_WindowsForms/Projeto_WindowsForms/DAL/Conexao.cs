@@ -1,20 +1,20 @@
-﻿using MySql.Data.MySqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
 
 namespace Projeto_WindowsForms.DAL
 {
     public class Conexao
     {
-        private readonly MySqlConnection connection;
-        private readonly string stringConexao = "server = localhost;" +
-            "database = folhadepagamentoteste; uid = root; password = unlimitedwaifuworks139#";
+        private readonly SqlConnection connection;
+
+        private readonly string stringConexao = "server = localhost; database = folhadepagamentoteste; uid = root; password = unlimitedwaifuworks139#";
 
         public Conexao()
         {
-            connection = new MySqlConnection(stringConexao);
+            connection = new SqlConnection(stringConexao);
         }
 
-        public MySqlConnection conectar()
+        public SqlConnection conectar()
         {
             try
             {
