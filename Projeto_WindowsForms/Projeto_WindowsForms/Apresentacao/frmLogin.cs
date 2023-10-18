@@ -41,5 +41,10 @@ namespace Projeto_WindowsForms.Apresentacao
         {
 
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnAcessar;
+        }
     }
 }

@@ -13,29 +13,38 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            List<string> listaDadosColaborador = new List<string>();
-            listaDadosColaborador.Add(txbNomeColaborador.Text);
-            listaDadosColaborador.Add(txbCargo.Text);
-            listaDadosColaborador.Add(cmbEmpresa.Text);
-            listaDadosColaborador.Add(txbSalario.Text);
-            //listaDadosColaborador.Add(dtbDataAdmissao.Text);
-            ControleBase controle = new ControleBase();
+            List<string> listaDadosColaborador = new()
+            {
+                txbNomeColaborador.Text,
+                txbCargo.Text,
+                cmbEmpresa.Text,
+                txbSalario.Text
+            };
+
+            var controle = new ControleBase();
             controle.cadastrarColaborador(listaDadosColaborador);
-            txbNomeColaborador.Clear();
+
             txbCargo.Clear();
             txbSalario.Clear();
+            txbNomeColaborador.Clear();
+
             MessageBox.Show(controle.mensagem);
         }
 
         private void frmCadastroColaborador_Load(object sender, EventArgs e)
         {
-            ControleBase controle = new ControleBase();
-            List<Empresa> listaEmpresa = controle.listarEmpresas();
-            foreach (Empresa empresa in listaEmpresa)
+            var controle = new ControleBase();
+            var listaEmpresa = controle.listarEmpresas();
+
+            foreach (var empresa in listaEmpresa)
             {
                 cmbEmpresa.Items.Add(empresa.NomeFantasia);
             }
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

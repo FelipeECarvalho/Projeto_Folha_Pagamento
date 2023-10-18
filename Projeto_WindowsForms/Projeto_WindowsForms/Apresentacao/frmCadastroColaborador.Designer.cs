@@ -37,14 +37,18 @@
             lblSalario = new Label();
             lblDataAdmissao = new Label();
             btnCadastrar = new Button();
-            lblCadastroDeColaborador = new Label();
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
             dtpDataAdmissao = new DateTimePicker();
             cmbEmpresa = new ComboBox();
+            panel9 = new Panel();
+            label9 = new Label();
+            btnVoltar = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             SuspendLayout();
             // 
             // lblNomeColaborador
@@ -61,7 +65,7 @@
             txbNomeColaborador.Location = new Point(30, 56);
             txbNomeColaborador.Name = "txbNomeColaborador";
             txbNomeColaborador.Size = new Size(274, 23);
-            txbNomeColaborador.TabIndex = 1;
+            txbNomeColaborador.TabIndex = 0;
             // 
             // lblCargo
             // 
@@ -77,7 +81,7 @@
             txbCargo.Location = new Point(30, 113);
             txbCargo.Name = "txbCargo";
             txbCargo.Size = new Size(274, 23);
-            txbCargo.TabIndex = 5;
+            txbCargo.TabIndex = 2;
             // 
             // lblEmpresa
             // 
@@ -93,7 +97,7 @@
             txbSalario.Location = new Point(389, 113);
             txbSalario.Name = "txbSalario";
             txbSalario.Size = new Size(274, 23);
-            txbSalario.TabIndex = 7;
+            txbSalario.TabIndex = 3;
             // 
             // lblSalario
             // 
@@ -117,26 +121,17 @@
             // 
             btnCadastrar.BackColor = Color.FromArgb(50, 130, 184);
             btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(566, 385);
+            btnCadastrar.Location = new Point(565, 404);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(148, 35);
-            btnCadastrar.TabIndex = 10;
+            btnCadastrar.TabIndex = 0;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
-            // 
-            // lblCadastroDeColaborador
-            // 
-            lblCadastroDeColaborador.AutoSize = true;
-            lblCadastroDeColaborador.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCadastroDeColaborador.Location = new Point(226, 18);
-            lblCadastroDeColaborador.Name = "lblCadastroDeColaborador";
-            lblCadastroDeColaborador.Size = new Size(356, 41);
-            lblCadastroDeColaborador.TabIndex = 11;
-            lblCadastroDeColaborador.Text = "Cadastro de colaborador";
             // 
             // panel1
             // 
@@ -144,7 +139,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label2);
             panel1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(50, 81);
+            panel1.Location = new Point(49, 100);
             panel1.Name = "panel1";
             panel1.Size = new Size(703, 40);
             panel1.TabIndex = 12;
@@ -172,17 +167,17 @@
             panel2.Controls.Add(lblEmpresa);
             panel2.Controls.Add(txbSalario);
             panel2.Controls.Add(lblSalario);
-            panel2.Location = new Point(50, 118);
+            panel2.Location = new Point(49, 137);
             panel2.Name = "panel2";
             panel2.Size = new Size(703, 240);
-            panel2.TabIndex = 13;
+            panel2.TabIndex = 0;
             // 
             // dtpDataAdmissao
             // 
             dtpDataAdmissao.Location = new Point(389, 171);
             dtpDataAdmissao.Name = "dtpDataAdmissao";
             dtpDataAdmissao.Size = new Size(274, 23);
-            dtpDataAdmissao.TabIndex = 11;
+            dtpDataAdmissao.TabIndex = 4;
             // 
             // cmbEmpresa
             // 
@@ -190,27 +185,62 @@
             cmbEmpresa.Location = new Point(389, 56);
             cmbEmpresa.Name = "cmbEmpresa";
             cmbEmpresa.Size = new Size(274, 23);
-            cmbEmpresa.TabIndex = 10;
+            cmbEmpresa.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(50, 130, 184);
+            panel9.Controls.Add(label9);
+            panel9.Controls.Add(btnVoltar);
+            panel9.Location = new Point(0, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(801, 57);
+            panel9.TabIndex = 28;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.Window;
+            label9.Location = new Point(273, 9);
+            label9.Name = "label9";
+            label9.Size = new Size(253, 43);
+            label9.TabIndex = 8;
+            label9.Text = "Cadastro de colaborador";
+            label9.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.Image = Properties.Resources.voltar;
+            btnVoltar.Location = new Point(11, 10);
+            btnVoltar.Margin = new Padding(3, 2, 3, 2);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(45, 39);
+            btnVoltar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnVoltar.TabIndex = 21;
+            btnVoltar.TabStop = false;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // frmCadastroColaborador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(799, 467);
+            Controls.Add(panel9);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            Controls.Add(lblCadastroDeColaborador);
             Controls.Add(btnCadastrar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmCadastroColaborador";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de colaborador";
             Load += frmCadastroColaborador_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -224,11 +254,13 @@
         private Label lblSalario;
         private Label lblDataAdmissao;
         private Button btnCadastrar;
-        private Label lblCadastroDeColaborador;
         private Panel panel1;
         private Label label2;
         private Panel panel2;
         private DateTimePicker dtpDataAdmissao;
         private ComboBox cmbEmpresa;
+        private Panel panel9;
+        private Label label9;
+        private PictureBox btnVoltar;
     }
 }

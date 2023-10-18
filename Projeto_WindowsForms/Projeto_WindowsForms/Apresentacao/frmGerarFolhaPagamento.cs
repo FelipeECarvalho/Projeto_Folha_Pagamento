@@ -160,11 +160,6 @@ namespace Projeto_WindowsForms.Apresentacao
 
         }
 
-        private void imgSetaEsquerda_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -191,6 +186,11 @@ namespace Projeto_WindowsForms.Apresentacao
                 using SolidBrush brush = new(Color.FromArgb(50, 130, 184));
                 e.Graphics.FillRectangle(brush, e.CellBounds);
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -35,11 +35,15 @@
             lblNomeFantasia = new Label();
             lblRazaoSocial = new Label();
             btnCadastrar = new Button();
-            label1 = new Label();
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
+            panel9 = new Panel();
+            label9 = new Label();
+            btnVoltar = new PictureBox();
             panel1.SuspendLayout();
+            panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             SuspendLayout();
             // 
             // txbCnpj
@@ -47,21 +51,21 @@
             txbCnpj.Location = new Point(83, 194);
             txbCnpj.Name = "txbCnpj";
             txbCnpj.Size = new Size(306, 23);
-            txbCnpj.TabIndex = 0;
+            txbCnpj.TabIndex = 1;
             // 
             // txbNomeFantasia
             // 
             txbNomeFantasia.Location = new Point(408, 194);
             txbNomeFantasia.Name = "txbNomeFantasia";
             txbNomeFantasia.Size = new Size(306, 23);
-            txbNomeFantasia.TabIndex = 1;
+            txbNomeFantasia.TabIndex = 2;
             // 
             // txbRazaoSocial
             // 
             txbRazaoSocial.Location = new Point(83, 266);
             txbRazaoSocial.Name = "txbRazaoSocial";
             txbRazaoSocial.Size = new Size(306, 23);
-            txbRazaoSocial.TabIndex = 2;
+            txbRazaoSocial.TabIndex = 3;
             // 
             // lblCnpj
             // 
@@ -94,6 +98,7 @@
             // 
             btnCadastrar.BackColor = Color.FromArgb(50, 130, 184);
             btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
@@ -101,19 +106,10 @@
             btnCadastrar.Margin = new Padding(0);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(145, 34);
-            btnCadastrar.TabIndex = 6;
+            btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(251, 40);
-            label1.Name = "label1";
-            label1.Size = new Size(307, 41);
-            label1.TabIndex = 7;
-            label1.Text = "Cadastro de empresa";
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // panel1
             // 
@@ -142,15 +138,48 @@
             panel2.Location = new Point(50, 149);
             panel2.Name = "panel2";
             panel2.Size = new Size(703, 180);
-            panel2.TabIndex = 9;
+            panel2.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(50, 130, 184);
+            panel9.Controls.Add(label9);
+            panel9.Controls.Add(btnVoltar);
+            panel9.Location = new Point(1, 0);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(801, 57);
+            panel9.TabIndex = 29;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.Window;
+            label9.Location = new Point(292, 9);
+            label9.Name = "label9";
+            label9.Size = new Size(218, 43);
+            label9.TabIndex = 8;
+            label9.Text = "Cadastro de empresa";
+            label9.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // btnVoltar
+            // 
+            btnVoltar.Image = Properties.Resources.voltar;
+            btnVoltar.Location = new Point(11, 10);
+            btnVoltar.Margin = new Padding(3, 2, 3, 2);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(45, 39);
+            btnVoltar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnVoltar.TabIndex = 21;
+            btnVoltar.TabStop = false;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // frmCadastroEmpresa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 447);
+            Controls.Add(panel9);
             Controls.Add(panel1);
-            Controls.Add(label1);
             Controls.Add(btnCadastrar);
             Controls.Add(lblRazaoSocial);
             Controls.Add(lblNomeFantasia);
@@ -162,9 +191,12 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmCadastroEmpresa";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de empresa";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,9 +210,11 @@
         private Label lblNomeFantasia;
         private Label lblRazaoSocial;
         private Button btnCadastrar;
-        private Label label1;
         private Panel panel1;
         private Label label2;
         private Panel panel2;
+        private Panel panel9;
+        private Label label9;
+        private PictureBox btnVoltar;
     }
 }

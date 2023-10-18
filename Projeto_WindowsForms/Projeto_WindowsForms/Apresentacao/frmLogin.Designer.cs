@@ -57,7 +57,7 @@
             txbUsuario.MinimumSize = new Size(400, 25);
             txbUsuario.Name = "txbUsuario";
             txbUsuario.Size = new Size(402, 25);
-            txbUsuario.TabIndex = 3;
+            txbUsuario.TabIndex = 0;
             txbUsuario.TextChanged += txbUsuario_TextChanged;
             // 
             // txbSenha
@@ -70,7 +70,7 @@
             txbSenha.Name = "txbSenha";
             txbSenha.PasswordChar = '*';
             txbSenha.Size = new Size(402, 25);
-            txbSenha.TabIndex = 4;
+            txbSenha.TabIndex = 1;
             // 
             // btnAcessar
             // 
@@ -81,7 +81,7 @@
             btnAcessar.Margin = new Padding(3, 2, 3, 2);
             btnAcessar.Name = "btnAcessar";
             btnAcessar.Size = new Size(159, 38);
-            btnAcessar.TabIndex = 5;
+            btnAcessar.TabIndex = 2;
             btnAcessar.Text = "Acessar";
             btnAcessar.UseVisualStyleBackColor = false;
             btnAcessar.Click += btnAcessar_Click;
@@ -139,7 +139,7 @@
             panel2.Location = new Point(377, 224);
             panel2.Name = "panel2";
             panel2.Size = new Size(458, 30);
-            panel2.TabIndex = 8;
+            panel2.TabIndex = 1;
             // 
             // pictureBox4
             // 
@@ -159,7 +159,7 @@
             panel3.Location = new Point(377, 188);
             panel3.Name = "panel3";
             panel3.Size = new Size(458, 30);
-            panel3.TabIndex = 9;
+            panel3.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -194,7 +194,9 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += frmLogin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

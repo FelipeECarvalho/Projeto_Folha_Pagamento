@@ -55,6 +55,7 @@
             panel9 = new Panel();
             label9 = new Label();
             pictureBox5 = new PictureBox();
+            label10 = new Label();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -78,7 +79,7 @@
             panel1.Controls.Add(btnColaborador);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(panel5);
-            panel1.Location = new Point(74, 133);
+            panel1.Location = new Point(74, 125);
             panel1.Name = "panel1";
             panel1.Size = new Size(333, 200);
             panel1.TabIndex = 0;
@@ -145,7 +146,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnEmpresa);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(553, 133);
+            panel2.Location = new Point(553, 125);
             panel2.Name = "panel2";
             panel2.Size = new Size(333, 200);
             panel2.TabIndex = 1;
@@ -283,7 +284,7 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(pictureBox2);
             panel6.Controls.Add(label2);
-            panel6.Location = new Point(553, 133);
+            panel6.Location = new Point(553, 125);
             panel6.Name = "panel6";
             panel6.Size = new Size(332, 70);
             panel6.TabIndex = 1;
@@ -346,18 +347,19 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(50, 130, 184);
+            panel9.Controls.Add(label10);
             panel9.Controls.Add(label9);
             panel9.Controls.Add(pictureBox5);
             panel9.Location = new Point(0, 1);
             panel9.Name = "panel9";
-            panel9.Size = new Size(966, 94);
+            panel9.Size = new Size(966, 78);
             panel9.TabIndex = 4;
             // 
             // label9
             // 
             label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.Window;
-            label9.Location = new Point(155, 33);
+            label9.Location = new Point(176, 17);
             label9.Name = "label9";
             label9.Size = new Size(283, 43);
             label9.TabIndex = 8;
@@ -367,12 +369,23 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.logo_empresa;
-            pictureBox5.Location = new Point(3, 8);
+            pictureBox5.Location = new Point(74, 0);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(146, 83);
+            pictureBox5.Size = new Size(86, 72);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = SystemColors.Window;
+            label10.Location = new Point(853, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(33, 32);
+            label10.TabIndex = 9;
+            label10.Text = "Sair";
+            label10.TextAlign = ContentAlignment.MiddleRight;
             // 
             // frmMenu
             // 
@@ -389,6 +402,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -440,5 +454,6 @@
         private Panel panel9;
         private PictureBox pictureBox5;
         private Label label9;
+        private Label label10;
     }
 }

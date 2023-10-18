@@ -77,20 +77,22 @@ namespace Projeto_WindowsForms.Apresentacao
             lblMensagem = new Label();
             lblMensagemCalculo = new Label();
             gpbLinha = new GroupBox();
-            pictureBox1 = new PictureBox();
+            btnVoltar = new PictureBox();
             btnBuscar = new Button();
             btnCalcular = new Button();
             btnGerarFolha = new Button();
-            label3 = new Label();
             panel3 = new Panel();
             imgLupa = new PictureBox();
             txbNomeID = new TextBox();
+            panel9 = new Panel();
+            label9 = new Label();
             tblDadosFolhaPagamento.SuspendLayout();
             gbxHorasExtras.SuspendLayout();
             tblResultadoFolhaPagamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // imageList1
@@ -102,16 +104,17 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblSelecionarColaborador
             // 
             lblSelecionarColaborador.AutoSize = true;
-            lblSelecionarColaborador.Location = new Point(159, 111);
+            lblSelecionarColaborador.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSelecionarColaborador.Location = new Point(83, 107);
             lblSelecionarColaborador.Name = "lblSelecionarColaborador";
-            lblSelecionarColaborador.Size = new Size(131, 15);
+            lblSelecionarColaborador.Size = new Size(159, 20);
             lblSelecionarColaborador.TabIndex = 2;
-            lblSelecionarColaborador.Text = "Selecionar colaborador:";
+            lblSelecionarColaborador.Text = "Pesquisar colaborador:";
             // 
             // lblNomeEmpresa
             // 
             lblNomeEmpresa.AutoSize = true;
-            lblNomeEmpresa.Location = new Point(82, 157);
+            lblNomeEmpresa.Location = new Point(82, 169);
             lblNomeEmpresa.Name = "lblNomeEmpresa";
             lblNomeEmpresa.Size = new Size(107, 15);
             lblNomeEmpresa.TabIndex = 5;
@@ -120,7 +123,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblResultadoNomeEmpresa
             // 
             lblResultadoNomeEmpresa.AutoSize = true;
-            lblResultadoNomeEmpresa.Location = new Point(195, 157);
+            lblResultadoNomeEmpresa.Location = new Point(195, 169);
             lblResultadoNomeEmpresa.Name = "lblResultadoNomeEmpresa";
             lblResultadoNomeEmpresa.Size = new Size(12, 15);
             lblResultadoNomeEmpresa.TabIndex = 6;
@@ -129,7 +132,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblCNPJ
             // 
             lblCNPJ.AutoSize = true;
-            lblCNPJ.Location = new Point(82, 178);
+            lblCNPJ.Location = new Point(82, 190);
             lblCNPJ.Name = "lblCNPJ";
             lblCNPJ.Size = new Size(37, 15);
             lblCNPJ.TabIndex = 7;
@@ -138,7 +141,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblResultadoCNPJ
             // 
             lblResultadoCNPJ.AutoSize = true;
-            lblResultadoCNPJ.Location = new Point(125, 178);
+            lblResultadoCNPJ.Location = new Point(125, 190);
             lblResultadoCNPJ.Name = "lblResultadoCNPJ";
             lblResultadoCNPJ.Size = new Size(12, 15);
             lblResultadoCNPJ.TabIndex = 8;
@@ -147,7 +150,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblNomeColaborador
             // 
             lblNomeColaborador.AutoSize = true;
-            lblNomeColaborador.Location = new Point(82, 221);
+            lblNomeColaborador.Location = new Point(82, 233);
             lblNomeColaborador.Name = "lblNomeColaborador";
             lblNomeColaborador.Size = new Size(129, 15);
             lblNomeColaborador.TabIndex = 12;
@@ -157,7 +160,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             lblResultadoNomeColaborador.AutoSize = true;
             lblResultadoNomeColaborador.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblResultadoNomeColaborador.Location = new Point(217, 221);
+            lblResultadoNomeColaborador.Location = new Point(217, 233);
             lblResultadoNomeColaborador.Name = "lblResultadoNomeColaborador";
             lblResultadoNomeColaborador.Size = new Size(12, 15);
             lblResultadoNomeColaborador.TabIndex = 11;
@@ -166,7 +169,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblFuncao
             // 
             lblFuncao.AutoSize = true;
-            lblFuncao.Location = new Point(82, 245);
+            lblFuncao.Location = new Point(82, 257);
             lblFuncao.Name = "lblFuncao";
             lblFuncao.Size = new Size(49, 15);
             lblFuncao.TabIndex = 10;
@@ -175,7 +178,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblResultadoFuncao
             // 
             lblResultadoFuncao.AutoSize = true;
-            lblResultadoFuncao.Location = new Point(137, 245);
+            lblResultadoFuncao.Location = new Point(137, 257);
             lblResultadoFuncao.Name = "lblResultadoFuncao";
             lblResultadoFuncao.Size = new Size(12, 15);
             lblResultadoFuncao.TabIndex = 9;
@@ -212,7 +215,7 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.Controls.Add(lblSalarioBaseVencimentos, 3, 1);
             tblDadosFolhaPagamento.Controls.Add(lblINSSDesconto, 4, 3);
             tblDadosFolhaPagamento.Controls.Add(lblIRPFDesconto, 4, 4);
-            tblDadosFolhaPagamento.Location = new Point(82, 281);
+            tblDadosFolhaPagamento.Location = new Point(82, 293);
             tblDadosFolhaPagamento.Name = "tblDadosFolhaPagamento";
             tblDadosFolhaPagamento.RowCount = 5;
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
@@ -561,7 +564,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
-            lblMensagem.Location = new Point(303, 137);
+            lblMensagem.Location = new Point(268, 148);
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(0, 15);
             lblMensagem.TabIndex = 16;
@@ -569,7 +572,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblMensagemCalculo
             // 
             lblMensagemCalculo.AutoSize = true;
-            lblMensagemCalculo.Location = new Point(485, 437);
+            lblMensagemCalculo.Location = new Point(485, 449);
             lblMensagemCalculo.Name = "lblMensagemCalculo";
             lblMensagemCalculo.Size = new Size(0, 15);
             lblMensagemCalculo.TabIndex = 19;
@@ -578,23 +581,23 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             gpbLinha.BackColor = SystemColors.Control;
             gpbLinha.ForeColor = SystemColors.ControlLight;
-            gpbLinha.Location = new Point(82, 200);
+            gpbLinha.Location = new Point(82, 212);
             gpbLinha.Name = "gpbLinha";
             gpbLinha.Size = new Size(709, 11);
             gpbLinha.TabIndex = 20;
             gpbLinha.TabStop = false;
             // 
-            // pictureBox1
+            // btnVoltar
             // 
-            pictureBox1.Image = Properties.Resources.voltar;
-            pictureBox1.Location = new Point(21, 11);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(45, 39);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 21;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            btnVoltar.Image = Properties.Resources.voltar;
+            btnVoltar.Location = new Point(11, 8);
+            btnVoltar.Margin = new Padding(3, 2, 3, 2);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.Size = new Size(45, 39);
+            btnVoltar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnVoltar.TabIndex = 21;
+            btnVoltar.TabStop = false;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // btnBuscar
             // 
@@ -603,13 +606,14 @@ namespace Projeto_WindowsForms.Apresentacao
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
-            btnBuscar.Location = new Point(674, 103);
+            btnBuscar.Location = new Point(620, 102);
             btnBuscar.Margin = new Padding(0);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(98, 31);
             btnBuscar.TabIndex = 22;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnCalcular
             // 
@@ -618,7 +622,7 @@ namespace Projeto_WindowsForms.Apresentacao
             btnCalcular.FlatStyle = FlatStyle.Flat;
             btnCalcular.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnCalcular.ForeColor = SystemColors.ButtonHighlight;
-            btnCalcular.Location = new Point(656, 448);
+            btnCalcular.Location = new Point(656, 460);
             btnCalcular.Margin = new Padding(0);
             btnCalcular.Name = "btnCalcular";
             btnCalcular.Size = new Size(116, 32);
@@ -641,22 +645,12 @@ namespace Projeto_WindowsForms.Apresentacao
             btnGerarFolha.Text = "Gerar folha";
             btnGerarFolha.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(256, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(382, 41);
-            label3.TabIndex = 25;
-            label3.Text = "Gerar Folha de Pagamento";
-            // 
             // panel3
             // 
             panel3.BackColor = SystemColors.Window;
             panel3.Controls.Add(imgLupa);
             panel3.Controls.Add(txbNomeID);
-            panel3.Location = new Point(303, 104);
+            panel3.Location = new Point(249, 103);
             panel3.Name = "panel3";
             panel3.Size = new Size(345, 30);
             panel3.TabIndex = 26;
@@ -684,17 +678,37 @@ namespace Projeto_WindowsForms.Apresentacao
             txbNomeID.Size = new Size(299, 25);
             txbNomeID.TabIndex = 3;
             // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(50, 130, 184);
+            panel9.Controls.Add(label9);
+            panel9.Controls.Add(btnVoltar);
+            panel9.Location = new Point(1, 1);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(874, 57);
+            panel9.TabIndex = 27;
+            // 
+            // label9
+            // 
+            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = SystemColors.Window;
+            label9.Location = new Point(283, 8);
+            label9.Name = "label9";
+            label9.Size = new Size(267, 43);
+            label9.TabIndex = 8;
+            label9.Text = "Gerar folha de pagamento";
+            label9.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // frmGerarFolhaPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(876, 630);
+            Controls.Add(panel9);
             Controls.Add(panel3);
-            Controls.Add(label3);
             Controls.Add(btnGerarFolha);
             Controls.Add(btnCalcular);
             Controls.Add(btnBuscar);
-            Controls.Add(pictureBox1);
             Controls.Add(gpbLinha);
             Controls.Add(lblMensagemCalculo);
             Controls.Add(lblMensagem);
@@ -711,6 +725,7 @@ namespace Projeto_WindowsForms.Apresentacao
             Controls.Add(lblSelecionarColaborador);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGerarFolhaPagamento";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerar Folha de Pagamento";
             Load += frmGerarFolhaPagamento_Load;
             tblDadosFolhaPagamento.ResumeLayout(false);
@@ -719,10 +734,11 @@ namespace Projeto_WindowsForms.Apresentacao
             gbxHorasExtras.PerformLayout();
             tblResultadoFolhaPagamento.ResumeLayout(false);
             tblResultadoFolhaPagamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -765,7 +781,7 @@ namespace Projeto_WindowsForms.Apresentacao
         private Label lblIRPFDesconto;
         private Label lblMensagemCalculo;
         private GroupBox gpbLinha;
-        private PictureBox pictureBox1;
+        private PictureBox btnVoltar;
         private GroupBox gbxHorasExtras;
         private ComboBox cbxHorasExtras;
         private Label lblHorasExtrasVencimentos;
@@ -779,9 +795,10 @@ namespace Projeto_WindowsForms.Apresentacao
         private Label lblCOD;
         private Label lblDescricao;
         private Label lblDescontos;
-        private Label label3;
         private Panel panel3;
         private PictureBox imgLupa;
         private TextBox txbNomeID;
+        private Panel panel9;
+        private Label label9;
     }
 }
