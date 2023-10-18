@@ -60,5 +60,10 @@ namespace Projeto_WindowsForms.Apresentacao
             frmLogin.Closed += (s, args) => this.Close();
             frmLogin.Show();
         }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            lblMenu.Text = $"Olá, {Program.colaboradorLogado.NomeCompleto}! Seja Bem-vindo.";
+        }
     }
 }

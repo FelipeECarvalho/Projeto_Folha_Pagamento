@@ -28,7 +28,7 @@ namespace Projeto_WindowsForms.DAL
                                 WHERE a.usuario = @usuario AND a.senha = @senha"
             };
 
-            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@usuario", usuario.ToLower());
             cmd.Parameters.AddWithValue("@senha", senha);
 
             try

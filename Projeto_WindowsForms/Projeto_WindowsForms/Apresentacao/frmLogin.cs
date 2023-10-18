@@ -14,11 +14,11 @@ namespace Projeto_WindowsForms.Apresentacao
             var controleBase = new ControleBase();
             var acesso = controleBase.buscarAcesso(txbUsuario.Text, txbSenha.Text);
 
-            if (string.IsNullOrEmpty(controleBase.mensagem) || true)
+            if (string.IsNullOrEmpty(controleBase.mensagem))
             {
                 this.Hide();
 
-                //Program.colaboradorLogado = acesso.Colaborador;
+                Program.colaboradorLogado = acesso.Colaborador;
 
                 frmMenu frmMenu = new();
                 frmMenu.Closed += (s, args) => this.Close();

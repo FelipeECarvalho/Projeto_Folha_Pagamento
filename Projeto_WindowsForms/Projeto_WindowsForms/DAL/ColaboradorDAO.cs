@@ -20,7 +20,8 @@ namespace Projeto_WindowsForms.DAL
             {
                 CommandText = @"insert into colaborador (nome_completo, sexo, cargo, salario, data_admissao, id_empresa) 
                                     values (@nome, @sexo, @cargo, @salario, @dataadmissao, @id_empresa);
-                                insert into acesso (usuario, senha, id_colaborador) values (@usuario, @senha, SELECT SCOPE_IDENTITY())"
+                                insert into acesso (usuario, senha, id_colaborador) 
+                                    values (@usuario, @senha, SCOPE_IDENTITY())"
             };
 
             cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto);

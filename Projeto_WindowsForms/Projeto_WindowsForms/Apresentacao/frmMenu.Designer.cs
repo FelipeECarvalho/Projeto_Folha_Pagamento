@@ -54,7 +54,7 @@
             label3 = new Label();
             panel9 = new Panel();
             lblSair = new Label();
-            label9 = new Label();
+            lblMenu = new Label();
             pictureBox5 = new PictureBox();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
@@ -348,7 +348,7 @@
             // 
             panel9.BackColor = Color.FromArgb(50, 130, 184);
             panel9.Controls.Add(lblSair);
-            panel9.Controls.Add(label9);
+            panel9.Controls.Add(lblMenu);
             panel9.Controls.Add(pictureBox5);
             panel9.Location = new Point(0, 1);
             panel9.Name = "panel9";
@@ -368,16 +368,15 @@
             lblSair.TextAlign = ContentAlignment.MiddleRight;
             lblSair.Click += lblSair_Click;
             // 
-            // label9
+            // lblMenu
             // 
-            label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.ForeColor = SystemColors.Window;
-            label9.Location = new Point(176, 17);
-            label9.Name = "label9";
-            label9.Size = new Size(283, 43);
-            label9.TabIndex = 8;
-            label9.Text = "Olá, Felipe! Seja Bem-vindo.";
-            label9.TextAlign = ContentAlignment.MiddleRight;
+            lblMenu.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMenu.ForeColor = SystemColors.Window;
+            lblMenu.Location = new Point(176, 17);
+            lblMenu.Name = "lblMenu";
+            lblMenu.Size = new Size(631, 43);
+            lblMenu.TabIndex = 8;
+            lblMenu.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pictureBox5
             // 
@@ -406,6 +405,7 @@
             Name = "frmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            Load += frmMenu_Load;
             panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -455,7 +455,7 @@
         private Button btnRelatorio;
         private Panel panel9;
         private PictureBox pictureBox5;
-        private Label label9;
+        private Label lblMenu;
         private Label lblSair;
     }
 }
