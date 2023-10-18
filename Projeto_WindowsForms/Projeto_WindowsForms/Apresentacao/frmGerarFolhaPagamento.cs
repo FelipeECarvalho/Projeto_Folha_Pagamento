@@ -6,6 +6,7 @@ namespace Projeto_WindowsForms.Apresentacao
     public partial class frmGerarFolhaPagamento : Form
     {
         private Colaborador colaboradorBusca;
+        private FolhaPagamento folhaPagamentoCalculo;
 
         public frmGerarFolhaPagamento()
         {
@@ -35,24 +36,24 @@ namespace Projeto_WindowsForms.Apresentacao
                 return;
             }
 
-            var salarioBase = colaboradorBusca.Salario;
-            var HorasExtras = int.Parse(cbxHorasExtras.Text);
-
             var folhaPagamento = new FolhaPagamento
             {
-                Colaborador = colaboradorBusca
+                Colaborador = colaboradorBusca,
+                HorasExtras = int.Parse(cbxHorasExtras.Text)
             };
-            // Instancia a Classe calculo e atribui os valores dos calculos para as labels
-            var calculo = new Calculo();
-            calculo.CalcularSalarioLiquido(salarioBase, HorasExtras);
 
-            lblHorasExtrasVencimentos.Text = calculo.ResultadoHorasExtras.ToString();
-            lblIRPFDesconto.Text = calculo.Irpf.ToString();
-            lblINSSDesconto.Text = calculo.Inss.ToString();
-            lblResultadoVencimentosTotais.Text = calculo.VencimentosTotais.ToString();
-            lblResultadoDescontosTotais.Text = calculo.DescontosTotais.ToString();
-            lblResultadoValorLiquido.Text = calculo.ValorLiquido.ToString();
+            folhaPagamento.CalcularSalarioLiquido();
+
             lblMensagemCalculo.Text = "";
+
+            lblIRPFDesconto.Text = folhaPagamento.Irrf.ToString();
+            lblINSSDesconto.Text = folhaPagamento.Inss.ToString();
+            lblResultadoValorLiquido.Text = folhaPagamento.ValorLiquido.ToString();
+            lblResultadoDescontosTotais.Text = folhaPagamento.DescontosTotais.ToString();
+            lblResultadoVencimentosTotais.Text = folhaPagamento.VencimentosTotais.ToString();
+            lblHorasExtrasVencimentos.Text = folhaPagamento.ValorTotalHorasExtras.ToString();
+
+            folhaPagamentoCalculo = folhaPagamento;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
