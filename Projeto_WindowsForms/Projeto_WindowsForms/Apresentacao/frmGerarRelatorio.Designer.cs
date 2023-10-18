@@ -30,6 +30,8 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel2 = new Panel();
             label5 = new Label();
             btnRelatorio = new Button();
@@ -50,11 +52,17 @@
             panel9 = new Panel();
             label9 = new Label();
             btnVoltar = new PictureBox();
+            dgvEmpresas = new DataGridView();
+            id_empresa = new DataGridViewTextBoxColumn();
+            Cnpj = new DataGridViewTextBoxColumn();
+            razao_social = new DataGridViewTextBoxColumn();
+            nome_fantasia = new DataGridViewTextBoxColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRelatorio).BeginInit();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresas).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -151,7 +159,6 @@
             txbID.Margin = new Padding(3, 2, 3, 2);
             txbID.MinimumSize = new Size(100, 25);
             txbID.Name = "txbID";
-            txbID.PlaceholderText = "ID";
             txbID.Size = new Size(299, 25);
             txbID.TabIndex = 3;
             // 
@@ -159,6 +166,7 @@
             // 
             btnBuscar.BackColor = Color.FromArgb(50, 130, 184);
             btnBuscar.Cursor = Cursors.Hand;
+            btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
@@ -296,12 +304,83 @@
             btnVoltar.TabStop = false;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // dgvEmpresas
+            // 
+            dgvEmpresas.AllowUserToAddRows = false;
+            dgvEmpresas.AllowUserToDeleteRows = false;
+            dgvEmpresas.AllowUserToResizeColumns = false;
+            dgvEmpresas.AllowUserToResizeRows = false;
+            dgvEmpresas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEmpresas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEmpresas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvEmpresas.BackgroundColor = SystemColors.Window;
+            dgvEmpresas.BorderStyle = BorderStyle.None;
+            dgvEmpresas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvEmpresas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvEmpresas.ColumnHeadersHeight = 40;
+            dgvEmpresas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvEmpresas.Columns.AddRange(new DataGridViewColumn[] { id_empresa, Cnpj, razao_social, nome_fantasia });
+            dgvEmpresas.EnableHeadersVisualStyles = false;
+            dgvEmpresas.GridColor = Color.FromArgb(50, 130, 184);
+            dgvEmpresas.Location = new Point(11, 252);
+            dgvEmpresas.Name = "dgvEmpresas";
+            dgvEmpresas.ReadOnly = true;
+            dgvEmpresas.RowHeadersVisible = false;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dgvEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvEmpresas.RowTemplate.Height = 25;
+            dgvEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmpresas.Size = new Size(890, 307);
+            dgvEmpresas.TabIndex = 34;
+            // 
+            // id_empresa
+            // 
+            id_empresa.FillWeight = 30F;
+            id_empresa.HeaderText = "ID";
+            id_empresa.Name = "id_empresa";
+            id_empresa.ReadOnly = true;
+            id_empresa.Resizable = DataGridViewTriState.False;
+            // 
+            // Cnpj
+            // 
+            Cnpj.FillWeight = 75F;
+            Cnpj.HeaderText = "CNPJ";
+            Cnpj.Name = "Cnpj";
+            Cnpj.ReadOnly = true;
+            // 
+            // razao_social
+            // 
+            razao_social.HeaderText = "Razão social";
+            razao_social.Name = "razao_social";
+            razao_social.ReadOnly = true;
+            // 
+            // nome_fantasia
+            // 
+            nome_fantasia.FillWeight = 101.725891F;
+            nome_fantasia.HeaderText = "Nome fantasia";
+            nome_fantasia.Name = "nome_fantasia";
+            nome_fantasia.ReadOnly = true;
+            // 
             // frmGerarRelatorio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(914, 571);
+            Controls.Add(dgvEmpresas);
             Controls.Add(panel9);
             Controls.Add(dgvRelatorio);
             Controls.Add(panel3);
@@ -322,6 +401,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvRelatorio).EndInit();
             panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpresas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -348,5 +428,10 @@
         private DataGridViewTextBoxColumn salario;
         private DataGridViewTextBoxColumn Empresa;
         private DataGridViewTextBoxColumn cargo;
+        private DataGridView dgvEmpresas;
+        private DataGridViewTextBoxColumn id_empresa;
+        private DataGridViewTextBoxColumn Cnpj;
+        private DataGridViewTextBoxColumn razao_social;
+        private DataGridViewTextBoxColumn nome_fantasia;
     }
 }
