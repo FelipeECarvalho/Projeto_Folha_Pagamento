@@ -1,9 +1,12 @@
 using Projeto_WindowsForms.Apresentacao;
+using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms
 {
     internal static class Program
     {
+        public static Colaborador colaboradorLogado;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

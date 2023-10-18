@@ -41,14 +41,14 @@ namespace Projeto_WindowsForms.Apresentacao
             };
 
             var controle = new ControleBase();
-            controle.cadastrarColaborador(colaborador);
+            var acesso = controle.cadastrarColaborador(colaborador);
 
             if (string.IsNullOrEmpty(controle.mensagem))
             {
                 txbSalario.Clear();
                 txbNomeColaborador.Clear();
 
-                MessageBox.Show("Colaborador cadastrado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Colaborador cadastrado com sucesso!\n Importante! anote seus dados de acesso:\n Usuário: {acesso.Usuario}, Senha: {acesso.Senha}", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

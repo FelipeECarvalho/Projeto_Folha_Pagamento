@@ -5,12 +5,10 @@ namespace Projeto_WindowsForms.Controle
     public class Validacao
     {
         // Atributos
-        public string mensagem;
-
-        // Construtor
+        public string mensagem = "";
 
         //Métodos
-        public void ValidarBuscaColaborador(string idNome)
+        public void validarBuscaColaborador(string idNome)
         {
             this.mensagem = "";
 
@@ -18,7 +16,18 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem = "Id ou nome inválido, revise e tente novamente.";
         }
 
-        public void ValidarCalculo(string horasExtrasText)
+        public void validarBuscaAcesso(string usuario, string senha)
+        {
+            this.mensagem = "";
+
+            if (string.IsNullOrEmpty(usuario))
+                this.mensagem += "Usuário inválido, revise e tente novamente.\n";
+
+            if (string.IsNullOrEmpty(senha))
+                this.mensagem += "Senha inválida, revise e tente novamente.\n";
+        }
+
+        public void validarCalculo(string horasExtrasText)
         {
             // Validação: Tenta converter o valor inserido em double
             if (double.TryParse(horasExtrasText, out double horasExtras))
@@ -42,7 +51,7 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem += "Nome do colaborador não pode exceder de 50 caracteres\n";
 
             if (colaborador.Empresa == null || colaborador.Empresa.Id == 0)
-                this.mensagem += "Empresa obrigatório\n";
+                this.mensagem += "Empresa obrigatória\n";
 
             if (colaborador.Salario == default)
                 this.mensagem += "Salário obrigatório\n";

@@ -14,12 +14,13 @@ namespace Projeto_WindowsForms.DAL
             conexao = new Conexao();
         }
 
-        public void cadastrarColaborador(Colaborador colaborador)
+        public void cadastrarColaborador(Colaborador colaborador, Acesso acesso)
         {
             SqlCommand cmd = new()
             {
                 CommandText = @"insert into colaborador (nome_completo, sexo, cargo, salario, data_admissao, id_empresa) 
-                                values (@nome, @sexo, @cargo, @salario, @dataadmissao, @id_empresa)"
+                                    values (@nome, @sexo, @cargo, @salario, @dataadmissao, @id_empresa);
+                                insert into acesso (usuario, senha, id_colaborador) values (@usuario, @senha, SELECT SCOPE_IDENTITY())"
             };
 
             cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto);
@@ -28,6 +29,9 @@ namespace Projeto_WindowsForms.DAL
             cmd.Parameters.AddWithValue("@salario", colaborador.Salario);
             cmd.Parameters.AddWithValue("@dataadmissao", colaborador.DataAdmissao);
             cmd.Parameters.AddWithValue("@id_empresa", colaborador.Empresa.Id);
+
+            cmd.Parameters.AddWithValue("@usuario", acesso.Usuario);
+            cmd.Parameters.AddWithValue("@senha", acesso.Senha);
 
             try
             {

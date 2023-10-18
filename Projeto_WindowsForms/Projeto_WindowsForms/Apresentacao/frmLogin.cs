@@ -1,3 +1,5 @@
+using Projeto_WindowsForms.Controle;
+
 namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmLogin : Form
@@ -9,16 +11,22 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            if (txbUsuario.Text == "admin" && txbSenha.Text == "admin")
+            var controleBase = new ControleBase();
+            var acesso = controleBase.buscarAcesso(txbUsuario.Text, txbSenha.Text);
+
+            if (string.IsNullOrEmpty(controleBase.mensagem) || true)
             {
                 this.Hide();
+
+                //Program.colaboradorLogado = acesso.Colaborador;
+
                 frmMenu frmMenu = new();
                 frmMenu.Closed += (s, args) => this.Close();
                 frmMenu.Show();
-            }
+            } 
             else
             {
-                MessageBox.Show("Usuário ou senha incorretos", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(controleBase.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

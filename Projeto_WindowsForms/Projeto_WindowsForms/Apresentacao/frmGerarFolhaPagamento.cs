@@ -27,12 +27,11 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            // Instancia a Classe calculo e atribui os valores dos calculos para as labels
-            var calculo = new Calculo();
-            
             var salarioBase = Convert.ToDouble(lblSalarioBaseVencimentos.Text);
             var HorasExtras = Convert.ToDouble(cbxHorasExtras.Text);
 
+            // Instancia a Classe calculo e atribui os valores dos calculos para as labels
+            var calculo = new Calculo();
             calculo.CalcularSalarioLiquido(salarioBase, HorasExtras);
 
             lblHorasExtrasVencimentos.Text = calculo.ResultadoHorasExtras.ToString();
@@ -68,7 +67,7 @@ namespace Projeto_WindowsForms.Apresentacao
             }
         }
 
-        private void BuscarColaborador() 
+        private void BuscarColaborador()
         {
             var idNomeColaborador = txbNomeID.Text.ToString().Trim();
 

@@ -563,6 +563,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
+            lblMensagem.ForeColor = Color.Red;
             lblMensagem.Location = new Point(268, 148);
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(0, 15);
