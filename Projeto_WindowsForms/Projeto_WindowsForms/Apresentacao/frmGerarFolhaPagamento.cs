@@ -27,13 +27,13 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-
             // Instancia a Classe calculo e atribui os valores dos calculos para as labels
-            Calculo calculo = new Calculo();
-            string salarioBase = lblSalarioBaseVencimentos.Text;
-            string HorasExtras = cbxHorasExtras.Text;
+            var calculo = new Calculo();
+            
+            var salarioBase = Convert.ToDouble(lblSalarioBaseVencimentos.Text);
+            var HorasExtras = Convert.ToDouble(cbxHorasExtras.Text);
 
-            calculo.CalcularSalarioLiquido(Convert.ToDouble(salarioBase), Convert.ToDouble(HorasExtras));
+            calculo.CalcularSalarioLiquido(salarioBase, HorasExtras);
 
             lblHorasExtrasVencimentos.Text = calculo.ResultadoHorasExtras.ToString();
             lblIRPFDesconto.Text = calculo.Irpf.ToString();
@@ -41,9 +41,7 @@ namespace Projeto_WindowsForms.Apresentacao
             lblResultadoVencimentosTotais.Text = calculo.VencimentosTotais.ToString();
             lblResultadoDescontosTotais.Text = calculo.DescontosTotais.ToString();
             lblResultadoValorLiquido.Text = calculo.ValorLiquido.ToString();
-
             lblMensagemCalculo.Text = "";
-
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

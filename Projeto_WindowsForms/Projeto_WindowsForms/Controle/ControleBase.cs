@@ -40,6 +40,9 @@ namespace Projeto_WindowsForms.Controle
                     var colaboradorDAO = new ColaboradorDAO();
                     var colaborador = colaboradorDAO.buscarColaborador(idNome);
 
+                    if (colaborador == null)
+                        mensagem = "Colaborador não encontrado.";
+
                     return colaborador;
                 }
                 catch (Exception e)
