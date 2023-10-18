@@ -5,6 +5,8 @@ namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmGerarFolhaPagamento : Form
     {
+        private Colaborador colaboradorBusca;
+
         public frmGerarFolhaPagamento()
         {
             InitializeComponent();
@@ -27,9 +29,19 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            var salarioBase = Convert.ToDouble(lblSalarioBaseVencimentos.Text);
-            var HorasExtras = Convert.ToDouble(cbxHorasExtras.Text);
+            if (colaboradorBusca == null)
+            {
+                MessageBox.Show("Selecione um colaborador e tente novamente.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            var salarioBase = colaboradorBusca.Salario;
+            var HorasExtras = int.Parse(cbxHorasExtras.Text);
+
+            var folhaPagamento = new FolhaPagamento
+            {
+                Colaborador = colaboradorBusca
+            };
             // Instancia a Classe calculo e atribui os valores dos calculos para as labels
             var calculo = new Calculo();
             calculo.CalcularSalarioLiquido(salarioBase, HorasExtras);
@@ -58,6 +70,11 @@ namespace Projeto_WindowsForms.Apresentacao
             ColorirCabecalho(e);
         }
 
+        private void btnGerarFolha_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ColorirCabecalho(TableLayoutCellPaintEventArgs e)
         {
             if (e.Row == 0)
@@ -81,6 +98,8 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
                 lblResultadoNomeEmpresa.Text = colaborador.Empresa.NomeFantasia;
                 lblSalarioBaseVencimentos.Text = colaborador.Salario.ToString();
+
+                colaboradorBusca = colaborador;
             }
             else
             {
@@ -90,6 +109,8 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblSalarioBaseVencimentos.Text = "0";
                 lblMensagem.Text = controle.mensagem;
                 lblResultadoNomeColaborador.Text = "";
+
+                colaboradorBusca = null;
             }
 
             lblIRPFDesconto.Text = "";

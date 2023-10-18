@@ -649,6 +649,7 @@ namespace Projeto_WindowsForms.Apresentacao
             btnGerarFolha.TabIndex = 24;
             btnGerarFolha.Text = "Gerar folha";
             btnGerarFolha.UseVisualStyleBackColor = false;
+            btnGerarFolha.Click += btnGerarFolha_Click;
             // 
             // panel3
             // 
