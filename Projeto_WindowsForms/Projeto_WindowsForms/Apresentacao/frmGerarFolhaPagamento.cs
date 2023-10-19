@@ -46,16 +46,11 @@ namespace Projeto_WindowsForms.Apresentacao
 
             lblMensagemCalculo.Text = "";
 
-            lblIRPFDesconto.Text = folhaPagamento.Irrf.ToString();
-            lblINSSDesconto.Text = folhaPagamento.Inss.ToString();
+            lblTblUserIRRF.Text = folhaPagamento.Irrf.ToString();
+            lblTblUserINSS.Text = folhaPagamento.Inss.ToString();
 
-            lblRefIrrf.Text = folhaPagamento.AliquotaIrrf.ToString();
-            lblRefInss.Text = folhaPagamento.AliquotaInss.ToString();
-
-            lblResultadoValorLiquido.Text = folhaPagamento.ValorLiquido.ToString();
-            lblResultadoDescontosTotais.Text = folhaPagamento.DescontosTotais.ToString();
-            lblResultadoVencimentosTotais.Text = folhaPagamento.VencimentosTotais.ToString();
-            lblHorasExtrasVencimentos.Text = folhaPagamento.ValorHorasExtras.ToString();
+            lblTblUserTotal.Text = folhaPagamento.ValorLiquido.ToString();
+            lblTblUserHorasExtras.Text = folhaPagamento.ValorHorasExtras.ToString();
 
             folhaPagamentoCalculo = folhaPagamento;
         }
@@ -98,19 +93,14 @@ namespace Projeto_WindowsForms.Apresentacao
 
                 lblMensagemCalculo.Text = "";
 
-                lblIRPFDesconto.Text = "";
-                lblINSSDesconto.Text = "";
+                lblTblUserIRRF.Text = "";
+                lblTblUserINSS.Text = "";
 
-                lblRefIrrf.Text = "";
-                lblRefInss.Text = "";
-
-                lblResultadoValorLiquido.Text = "";
-                lblResultadoDescontosTotais.Text = "";
-                lblResultadoVencimentosTotais.Text = "";
-                lblHorasExtrasVencimentos.Text = "";
+                lblTblUserTotal.Text = "";
+                lblTblUserHorasExtras.Text = "";
 
                 folhaPagamentoCalculo = null;
-            } 
+            }
             else
             {
                 MessageBox.Show(controle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -139,7 +129,12 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblResultadoFuncao.Text = colaborador.Cargo.ToString();
                 lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
                 lblResultadoNomeEmpresa.Text = colaborador.Empresa.NomeFantasia;
-                lblSalarioBaseVencimentos.Text = colaborador.Salario.ToString();
+                lblTblUserSalarioBase.Text = colaborador.Salario.ToString();
+
+                lblResultadoSalarioBase.Text = colaborador.Salario.ToString();
+
+                lblTblUserNome.Text = colaborador.NomeCompleto;
+                lblTblUserID.Text = colaborador.Id.ToString();
 
                 colaboradorBusca = colaborador;
             }
@@ -148,18 +143,16 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblResultadoCNPJ.Text = "";
                 lblResultadoFuncao.Text = "";
                 lblResultadoNomeEmpresa.Text = "";
-                lblSalarioBaseVencimentos.Text = "0";
+                lblTblUserSalarioBase.Text = "0";
                 lblMensagem.Text = controle.mensagem;
                 lblResultadoNomeColaborador.Text = "";
 
                 colaboradorBusca = null;
             }
 
-            lblIRPFDesconto.Text = "";
-            lblINSSDesconto.Text = "";
-            lblResultadoValorLiquido.Text = "";
-            lblResultadoDescontosTotais.Text = "";
-            lblResultadoVencimentosTotais.Text = "";
+            lblTblUserIRRF.Text = "";
+            lblTblUserINSS.Text = "";
+            lblTblUserTotal.Text = "";
         }
     }
 }
