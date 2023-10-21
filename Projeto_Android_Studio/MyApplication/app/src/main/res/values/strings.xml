@@ -31,4 +31,5 @@
     <string name="txvNomeEmpresa">Nome da Empresa</string>
     <string name="txvCNPJ">CNPJ</string>
     <string name="txvRazaoSocial">Razão Social</string>
+    <string name="txvEsqueciSenha">Caso tenha esquecido sua senha envie seus dados para: esquecisenha@pirh.com</string>
 </resources>

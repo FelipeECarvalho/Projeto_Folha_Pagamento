@@ -3539,6 +3539,7 @@ id txvEmpresaRow7
 id txvEmpresaRow8
 id txvEmpresaRow9
 id txvEmpresas
+id txvEsqueciSenha
 id txvFolhaPagamento
 id txvId
 id txvIdRow1
@@ -3989,6 +3990,7 @@ string txvData
 string txvDataAdmissao
 string txvEmpresa
 string txvEmpresas
+string txvEsqueciSenha
 string txvFolhaPagamento
 string txvId
 string txvLupa

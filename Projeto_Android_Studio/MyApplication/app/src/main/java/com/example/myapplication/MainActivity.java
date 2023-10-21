@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import static android.app.ProgressDialog.show;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -8,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.myapplication.modelo.Controle;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -15,7 +20,6 @@ public class MainActivity extends AppCompatActivity
     EditText edtLogin;
     EditText edtSenha;
     Button btnAcessar;
-
     Context context;
 
 
@@ -45,8 +49,23 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+
+                Controle controle = new Controle();
+                controle.validarLogin(edtLogin.getText().toString(), edtSenha.getText().toString());
+
+                if (controle.mensagem.equals("Login bem-sucedido!"))
+                {
+                    Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, Tela_Menu.class);
                     startActivity(intent);
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),
+                            controle.mensagem, Toast.LENGTH_LONG).show();
+                }
+
+
             }
         });
     }

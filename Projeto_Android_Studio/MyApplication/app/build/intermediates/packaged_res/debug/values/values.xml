@@ -17,6 +17,7 @@
     <string name="txvDataAdmissao">Data de Admissão</string>
     <string name="txvEmpresa">Empresa</string>
     <string name="txvEmpresas">Empresas</string>
+    <string name="txvEsqueciSenha">Caso tenha esquecido sua senha envie seus dados para: esquecisenha@pirh.com</string>
     <string name="txvFolhaPagamento">Folha de Pagamento</string>
     <string name="txvId">ID</string>
     <string name="txvLupa">🔍</string>
