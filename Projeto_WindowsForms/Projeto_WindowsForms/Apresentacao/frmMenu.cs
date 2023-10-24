@@ -14,11 +14,6 @@ namespace Projeto_WindowsForms.Apresentacao
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnColaborador_Click(object sender, EventArgs e)
         {
             if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
@@ -33,7 +28,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
-            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
             {
                 MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

@@ -41,12 +41,24 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnRelatorio_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             SetButtonActive(btnRelatorio);
             dgvRelatorio.Show();
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            {
+                MessageBox.Show("Você não tem permissão para acessar essa área", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             SetButtonActive(btnEmpresa);
             dgvEmpresas.Show();
         }
