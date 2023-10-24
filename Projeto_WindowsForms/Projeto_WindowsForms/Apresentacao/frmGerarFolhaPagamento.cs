@@ -38,6 +38,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
             var folhaPagamento = new FolhaPagamento
             {
+                Ativo = true,
                 Colaborador = colaboradorBusca,
                 HorasExtras = int.Parse(cbxHorasExtras.Text)
             };

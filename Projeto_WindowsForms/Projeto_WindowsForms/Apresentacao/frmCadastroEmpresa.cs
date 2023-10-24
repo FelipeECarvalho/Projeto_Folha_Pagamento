@@ -15,6 +15,7 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             Empresa empresa = new()
             {
+                Ativo = true,
                 Cnpj = txbCnpj.Text.Trim(),
                 NomeFantasia = txbNomeFantasia.Text.Trim(),
                 RazaoSocial = txbRazaoSocial.Text.Trim()

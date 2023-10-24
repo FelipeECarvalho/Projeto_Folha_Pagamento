@@ -17,12 +17,13 @@ namespace Projeto_WindowsForms.DAL
         {
             var cmd = new SqlCommand
             {
-                CommandText = @"insert into empresa (cnpj, razao_social, nome_fantasia) values (@cnpj, @razaosocial, @nomefantasia)"
+                CommandText = @"insert into empresa (cnpj, razao_social, nome_fantasia, ativo) values (@cnpj, @razaosocial, @nomefantasia, @ativo)"
             };
 
             cmd.Parameters.AddWithValue("@cnpj", empresa.Cnpj);
             cmd.Parameters.AddWithValue("@razaosocial", empresa.RazaoSocial);
             cmd.Parameters.AddWithValue("@nomefantasia", empresa.NomeFantasia);
+            cmd.Parameters.AddWithValue("@ativo", empresa.Ativo);
 
             try
             {
@@ -46,7 +47,7 @@ namespace Projeto_WindowsForms.DAL
         {
             var cmd = new SqlCommand
             {
-                CommandText = @"select id, cnpj, nome_fantasia, razao_social from empresa"
+                CommandText = @"SELECT id, cnpj, nome_fantasia, razao_social, ativo FROM empresa WHERE ativo = 1"
             };
 
             var listaEmpresa = new List<Empresa>();
@@ -66,7 +67,8 @@ namespace Projeto_WindowsForms.DAL
                             Id = int.Parse(dr["id"].ToString()),
                             Cnpj = dr["cnpj"].ToString(),
                             NomeFantasia = dr["nome_fantasia"].ToString(),
-                            RazaoSocial = dr["razao_social"].ToString()
+                            RazaoSocial = dr["razao_social"].ToString(),
+                            Ativo = bool.Parse(dr["ativo"].ToString())
                         };
 
                         listaEmpresa.Add(empresa);

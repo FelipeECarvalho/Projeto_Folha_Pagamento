@@ -18,8 +18,8 @@ namespace Projeto_WindowsForms.DAL
         {
             var cmd = new SqlCommand
             {
-                CommandText = @"insert into folha_pagamento (inss, irrf, horas_extras, valor_horas_extras, valor_liquido, descontos_totais, vencimentos_totais, aliquota_inss, aliquota_irrf, id_colaborador)
-                                values (@inss, @irrf, @horas_extras, @valor_horas_extras, @valor_liquido, @descontos_totais, @vencimentos_totais, @aliquota_inss, @aliquota_irrf, @id_colaborador)"
+                CommandText = @"insert into folha_pagamento (inss, irrf, horas_extras, valor_horas_extras, valor_liquido, descontos_totais, vencimentos_totais, aliquota_inss, aliquota_irrf, ativo, id_colaborador)
+                                values (@inss, @irrf, @horas_extras, @valor_horas_extras, @valor_liquido, @descontos_totais, @vencimentos_totais, @aliquota_inss, @aliquota_irrf, @ativo, @id_colaborador)"
             };
 
             cmd.Parameters.AddWithValue("@inss", folhaPagamento.Inss);
@@ -31,6 +31,7 @@ namespace Projeto_WindowsForms.DAL
             cmd.Parameters.AddWithValue("@vencimentos_totais", folhaPagamento.VencimentosTotais);
             cmd.Parameters.AddWithValue("@aliquota_inss", folhaPagamento.AliquotaInss);
             cmd.Parameters.AddWithValue("@aliquota_irrf", folhaPagamento.AliquotaIrrf);
+            cmd.Parameters.AddWithValue("@ativo", folhaPagamento.Ativo);
             cmd.Parameters.AddWithValue("@id_colaborador", folhaPagamento.Colaborador.Id);
 
             try
@@ -55,10 +56,13 @@ namespace Projeto_WindowsForms.DAL
         {
             var cmd = new SqlCommand
             {
-                CommandText = @"SELECT f.id, f.inss, f.irrf, f.horas_extras, f.valor_horas_extras, f.valor_liquido, f.descontos_totais, f.vencimentos_totais, f.aliquota_inss, f.aliquota_irrf, c.id as id_colaborador, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.id_empresa
+                CommandText = @"SELECT f.id, f.inss, f.irrf, f.horas_extras, f.valor_horas_extras, f.valor_liquido, f.descontos_totais, f.vencimentos_totais, f.aliquota_inss, f.aliquota_irrf, f.ativo, c.id as id_colaborador, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.ativo as c_ativo c.id_empresa
                                 FROM folha_pagamento f
-                                INNER JOIN colaborador c
-                                ON f.id_colaborador = c.id"
+                                    INNER JOIN colaborador c
+                                    ON f.id_colaborador = c.id
+                                WHERE
+                                    f.ativo = 1 AND
+                                    c.ativo = 1"
             };
 
             var listaFolhaPagamento = new List<FolhaPagamento>();
@@ -87,6 +91,7 @@ namespace Projeto_WindowsForms.DAL
                             VencimentosTotais = decimal.Parse(dr["vencimentos_totais"].ToString()),
                             AliquotaInss = decimal.Parse(dr["aliquota_inss"].ToString()),
                             AliquotaIrrf = decimal.Parse(dr["aliquota_irrf"].ToString()),
+                            Ativo = bool.Parse(dr["ativo"].ToString()),
                             Colaborador = new Colaborador
                             {
                                 Id = int.Parse(dr["id_colaborador"].ToString()),
@@ -95,6 +100,7 @@ namespace Projeto_WindowsForms.DAL
                                 Cargo = cargo,
                                 Salario = decimal.Parse(dr["salario"].ToString()),
                                 DataAdmissao = DateTime.Parse(dr["data_admissao"].ToString()),
+                                Ativo = bool.Parse(dr["c_ativo"].ToString()),
                                 Empresa = new Empresa
                                 {
                                     Id = int.Parse(dr["id_empresa"].ToString()),
