@@ -11,6 +11,7 @@
         public decimal VencimentosTotais { get; set; }
         public decimal AliquotaInss {  get; set; }
         public decimal AliquotaIrrf { get; set; }
+        public DateTime DataCriacao { get; set; }
         public Colaborador Colaborador { get; set; }
 
         public void CalcularSalarioLiquido()
