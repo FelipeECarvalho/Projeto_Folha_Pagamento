@@ -209,6 +209,22 @@ namespace Projeto_WindowsForms.Controle
             return new List<FolhaPagamento>();
         }
 
+        public FolhaPagamento buscarFolhaPagamentoPorColaborador(Colaborador colaborador)
+        {
+            try
+            {
+                var folhaPagamentoDAO = new FolhaPagamentoDAO();
+
+                return folhaPagamentoDAO.buscarPorColaborador(colaborador);
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+
+            return null;
+        }
+
         private static string GerarSenha()
         {
             var rnd = new Random();

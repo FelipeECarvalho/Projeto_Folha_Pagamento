@@ -138,6 +138,8 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblTblUserNome.Text = colaborador.NomeCompleto;
                 lblTblUserID.Text = colaborador.Id.ToString();
 
+                lblMensagem.Text = "";
+
                 colaboradorBusca = colaborador;
             }
             else
@@ -146,8 +148,8 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblResultadoFuncao.Text = "";
                 lblResultadoNomeEmpresa.Text = "";
                 lblTblUserSalarioBase.Text = "0";
-                lblMensagem.Text = controle.mensagem;
                 lblResultadoNomeColaborador.Text = "";
+                lblMensagem.Text = controle.mensagem;
 
                 colaboradorBusca = null;
             }
