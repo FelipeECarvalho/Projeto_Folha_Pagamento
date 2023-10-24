@@ -1,8 +1,6 @@
 using Projeto_WindowsForms.Controle;
 using Projeto_WindowsForms.Modelo;
 using Projeto_WindowsForms.Modelo.Enum;
-using System.Net.NetworkInformation;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -49,7 +47,7 @@ namespace Projeto_WindowsForms.Apresentacao
                 txbSalario.Clear();
                 txbNomeColaborador.Clear();
 
-                MessageBox.Show($"Colaborador cadastrado com sucesso! \n Importante! anote seus dados de acesso: \n Usuário: {acesso.Usuario}, \n Senha: {acesso.Senha}", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Colaborador cadastrado com sucesso! \n\n Importante! anote seus dados de acesso: \n\n Usuário: {acesso.Usuario} \n\n Senha: {acesso.SenhaOriginal}", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

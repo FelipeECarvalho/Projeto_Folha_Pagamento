@@ -1,5 +1,7 @@
 ﻿using Projeto_WindowsForms.DAL;
 using Projeto_WindowsForms.Modelo;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Projeto_WindowsForms.Controle
 {
@@ -29,7 +31,9 @@ namespace Projeto_WindowsForms.Controle
                 try
                 {
                     var acessoDAO = new AcessoDAO();
-                    var acesso = acessoDAO.buscarAcesso(usuario, senha);
+
+                    var senhaCriptografada = GerarHashMd5(senha);
+                    var acesso = acessoDAO.buscarAcesso(usuario, senhaCriptografada);
 
                     if (acesso == null)
                         mensagem = "Usuário ou senha inválidos, revise e tente novamente.";
@@ -93,10 +97,12 @@ namespace Projeto_WindowsForms.Controle
                     var acesso = new Acesso
                     {
                         Ativo = true,
-                        Senha = GerarSenha(),
                         Colaborador = colaborador,
-                        Usuario = string.Format("{0}_{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(0, 9))
+                        SenhaOriginal = GerarSenha(),
+                        Usuario = string.Format("{0}{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(0, 9))
                     };
+
+                    acesso.Senha = GerarHashMd5(acesso.SenhaOriginal);
 
                     colaboradorDAO.cadastrarColaborador(colaborador, acesso);
 
@@ -225,19 +231,46 @@ namespace Projeto_WindowsForms.Controle
             return null;
         }
 
+        /// <summary>
+        /// Método responsável por gerar uma nova senha númerica de seis digitos
+        /// </summary>
+        /// <returns></returns>
         private static string GerarSenha()
         {
             var rnd = new Random();
-
+            
+            // Instanciação de um array de int
             var randomNumbers = new int[6];
+
             for (int i = 0; i < randomNumbers.Length; i++)
             {
+                // É gerado aleatoriamente um número inteiro e inserido no array
                 randomNumbers[i] = rnd.Next(0, 9);
             }
 
+            // É convertido o array de inteiro em uma string
             var randomString = string.Join("", randomNumbers);
 
             return randomString;
+        }
+
+        public static string GerarHashMd5(string input)
+        {
+            var md5Hash = MD5.Create();
+
+            // Converter a String para array de bytes, que é como a biblioteca trabalha.
+            var data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+
+            // Cria-se um StringBuilder para recompôr a string.
+            var sBuilder = new StringBuilder();
+
+            // Loop para formatar cada byte como uma String em hexadecimal
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            return sBuilder.ToString();
         }
     }
 }

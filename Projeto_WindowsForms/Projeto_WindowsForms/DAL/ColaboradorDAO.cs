@@ -34,7 +34,7 @@ namespace Projeto_WindowsForms.DAL
 
             cmd.Parameters.AddWithValue("@acesso_ativo", acesso.Ativo);
             cmd.Parameters.AddWithValue("@usuario", acesso.Usuario);
-            cmd.Parameters.AddWithValue("@senha", acesso.Senha + "_!@#$");
+            cmd.Parameters.AddWithValue("@senha", acesso.Senha);
 
             try
             {
