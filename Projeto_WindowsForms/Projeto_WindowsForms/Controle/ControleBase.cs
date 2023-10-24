@@ -92,6 +92,7 @@ namespace Projeto_WindowsForms.Controle
 
                     var acesso = new Acesso
                     {
+                        Ativo = true,
                         Senha = GerarSenha(),
                         Colaborador = colaborador,
                         Usuario = string.Format("{0}_{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(0, 9))

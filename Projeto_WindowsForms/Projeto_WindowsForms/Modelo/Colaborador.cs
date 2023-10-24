@@ -2,9 +2,8 @@
 
 namespace Projeto_WindowsForms.Modelo
 {
-    public class Colaborador
+    public class Colaborador : ModeloBase
     {
-        public int Id { get; set; }
         public string NomeCompleto { get; set; }
         public TipoSexo Sexo { get; set; }
         public TipoCargo Cargo { get; set; }

@@ -29,6 +29,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
             var colaborador = new Colaborador
             {
+                Ativo = true,
                 Sexo = sexo,
                 Cargo = cargo,
                 NomeCompleto = txbNomeColaborador.Text,

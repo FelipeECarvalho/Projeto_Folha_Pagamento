@@ -1,8 +1,7 @@
 ﻿namespace Projeto_WindowsForms.Modelo
 {
-    public class FolhaPagamento
+    public class FolhaPagamento : ModeloBase
     {
-        public int Id { get; set; }
         public decimal Inss { get; set; }
         public decimal Irrf { get; set; }
         public int HorasExtras { get; set; }
