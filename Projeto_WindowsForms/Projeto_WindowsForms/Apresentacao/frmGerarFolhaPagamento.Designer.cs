@@ -58,7 +58,6 @@ namespace Projeto_WindowsForms.Apresentacao
             lblTblUserSalarioBase = new Label();
             lblSalarioBase = new Label();
             lblHorasExtras = new Label();
-            cbxHorasExtras = new ComboBox();
             lblMensagem = new Label();
             lblMensagemCalculo = new Label();
             gpbLinha = new GroupBox();
@@ -74,11 +73,13 @@ namespace Projeto_WindowsForms.Apresentacao
             groupBox1 = new GroupBox();
             lblDadosColaborador = new Label();
             lblResultadoSalarioBase = new Label();
+            txbHorasExtras = new NumericUpDown();
             tblDadosFolhaPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).BeginInit();
             panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txbHorasExtras).BeginInit();
             SuspendLayout();
             // 
             // imageList1
@@ -196,7 +197,7 @@ namespace Projeto_WindowsForms.Apresentacao
             tblDadosFolhaPagamento.Controls.Add(lblTblUserHorasExtras, 3, 1);
             tblDadosFolhaPagamento.Controls.Add(lblTblSalarioBaseMensal, 2, 0);
             tblDadosFolhaPagamento.Controls.Add(lblTblUserSalarioBase, 2, 1);
-            tblDadosFolhaPagamento.Location = new Point(46, 319);
+            tblDadosFolhaPagamento.Location = new Point(46, 352);
             tblDadosFolhaPagamento.Name = "tblDadosFolhaPagamento";
             tblDadosFolhaPagamento.RowCount = 3;
             tblDadosFolhaPagamento.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
@@ -371,16 +372,6 @@ namespace Projeto_WindowsForms.Apresentacao
             lblHorasExtras.TabIndex = 23;
             lblHorasExtras.Text = "Horas Extras:";
             // 
-            // cbxHorasExtras
-            // 
-            cbxHorasExtras.FormattingEnabled = true;
-            cbxHorasExtras.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60" });
-            cbxHorasExtras.Location = new Point(165, 233);
-            cbxHorasExtras.Name = "cbxHorasExtras";
-            cbxHorasExtras.Size = new Size(40, 23);
-            cbxHorasExtras.TabIndex = 1;
-            cbxHorasExtras.Text = "0";
-            // 
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
@@ -393,7 +384,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // lblMensagemCalculo
             // 
             lblMensagemCalculo.AutoSize = true;
-            lblMensagemCalculo.Location = new Point(485, 449);
+            lblMensagemCalculo.Location = new Point(485, 482);
             lblMensagemCalculo.Name = "lblMensagemCalculo";
             lblMensagemCalculo.Size = new Size(0, 15);
             lblMensagemCalculo.TabIndex = 19;
@@ -402,7 +393,7 @@ namespace Projeto_WindowsForms.Apresentacao
             // 
             gpbLinha.BackColor = SystemColors.Control;
             gpbLinha.ForeColor = SystemColors.ControlLight;
-            gpbLinha.Location = new Point(82, 273);
+            gpbLinha.Location = new Point(83, 320);
             gpbLinha.Name = "gpbLinha";
             gpbLinha.Size = new Size(709, 11);
             gpbLinha.TabIndex = 20;
@@ -463,7 +454,7 @@ namespace Projeto_WindowsForms.Apresentacao
             btnGerarFolha.FlatStyle = FlatStyle.Flat;
             btnGerarFolha.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnGerarFolha.ForeColor = SystemColors.ButtonHighlight;
-            btnGerarFolha.Location = new Point(701, 430);
+            btnGerarFolha.Location = new Point(701, 463);
             btnGerarFolha.Margin = new Padding(0);
             btnGerarFolha.Name = "btnGerarFolha";
             btnGerarFolha.Size = new Size(116, 34);
@@ -556,13 +547,20 @@ namespace Projeto_WindowsForms.Apresentacao
             lblResultadoSalarioBase.TabIndex = 29;
             lblResultadoSalarioBase.Text = "-";
             // 
+            // txbHorasExtras
+            // 
+            txbHorasExtras.Location = new Point(164, 233);
+            txbHorasExtras.Name = "txbHorasExtras";
+            txbHorasExtras.Size = new Size(47, 23);
+            txbHorasExtras.TabIndex = 30;
+            // 
             // frmGerarFolhaPagamento
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(876, 541);
+            Controls.Add(txbHorasExtras);
             Controls.Add(lblResultadoSalarioBase);
-            Controls.Add(cbxHorasExtras);
             Controls.Add(lblDadosColaborador);
             Controls.Add(groupBox1);
             Controls.Add(panel9);
@@ -597,6 +595,7 @@ namespace Projeto_WindowsForms.Apresentacao
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)imgLupa).EndInit();
             panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)txbHorasExtras).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -631,7 +630,6 @@ namespace Projeto_WindowsForms.Apresentacao
         private Label lblMensagemCalculo;
         private GroupBox gpbLinha;
         private PictureBox btnVoltar;
-        private ComboBox cbxHorasExtras;
         private Button btnBuscar;
         private Button btnCalcular;
         private Button button1;
@@ -653,5 +651,6 @@ namespace Projeto_WindowsForms.Apresentacao
         private Label lblTblUserNome;
         private Label lblTblUserID;
         private Label lblResultadoSalarioBase;
+        private NumericUpDown txbHorasExtras;
     }
 }

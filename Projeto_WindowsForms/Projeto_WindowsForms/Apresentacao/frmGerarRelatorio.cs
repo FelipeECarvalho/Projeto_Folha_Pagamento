@@ -7,6 +7,7 @@ namespace Projeto_WindowsForms.Apresentacao
     public partial class frmGerarRelatorio : Form
     {
         readonly Colaborador colaboradorLogado;
+        private DataGridView dataGridViewSelecionado;
 
         public frmGerarRelatorio()
         {
@@ -17,6 +18,7 @@ namespace Projeto_WindowsForms.Apresentacao
         private void frmGerarRelatorio_Load(object sender, EventArgs e)
         {
             var controle = new ControleBase();
+            
             var listaColaborador = controle.listarColaborador();
             var listaEmpresas = controle.listarEmpresas();
             var listaFolhaPagamento = controle.listarFolhaPagamento();
@@ -35,8 +37,6 @@ namespace Projeto_WindowsForms.Apresentacao
             {
                 dgvFolhaPagamento.Rows.Add(folhaPagamento.Id, folhaPagamento.Colaborador.Salario.ToString("c"), folhaPagamento.DescontosTotais.ToString("c"), string.Format("{0} (REF: {1})", folhaPagamento.Irrf.ToString("c"), folhaPagamento.AliquotaIrrf), string.Format("{0} (REF: {1})", folhaPagamento.Inss.ToString("c"), folhaPagamento.AliquotaInss), folhaPagamento.ValorLiquido.ToString("c"), folhaPagamento.Colaborador.NomeCompleto);
             }
-
-            btnRelatorio_Click(sender, e);
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -49,6 +49,8 @@ namespace Projeto_WindowsForms.Apresentacao
 
             SetButtonActive(btnRelatorio);
             dgvRelatorio.Show();
+
+            dataGridViewSelecionado = dgvRelatorio;
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
@@ -61,6 +63,8 @@ namespace Projeto_WindowsForms.Apresentacao
 
             SetButtonActive(btnEmpresa);
             dgvEmpresas.Show();
+
+            dataGridViewSelecionado = dgvEmpresas;
         }
 
         private void btnFolhaPagamento_Click(object sender, EventArgs e)
@@ -73,6 +77,8 @@ namespace Projeto_WindowsForms.Apresentacao
 
             SetButtonActive(btnFolhaPagamento);
             dgvFolhaPagamento.Show();
+
+            dataGridViewSelecionado = dgvFolhaPagamento;
         }
 
         private void SetButtonActive(Button btn)
@@ -112,38 +118,30 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void BuscarRelatorio()
         {
-            DataGridView dgv = null;
+            var searchValue = txbID.Text.ToLower().Trim();
 
-            if (btnRelatorio.ForeColor == SystemColors.Window)
-                dgv = dgvRelatorio;
-
-            if (btnEmpresa.ForeColor == SystemColors.Window)
-                dgv = dgvEmpresas;
-
-            if (btnFolhaPagamento.ForeColor == SystemColors.Window)
-                dgv = dgvEmpresas;
-
-            string searchValue = txbID.Text.ToLower().Trim();
             try
             {
-                bool valueResult = false;
-                foreach (DataGridViewRow row in dgv.Rows)
+                var valueResult = false;
+
+                foreach (DataGridViewRow row in dataGridViewSelecionado.Rows)
                 {
                     for (int i = 0; i < row.Cells.Count; i++)
                     {
-                        dgv.Rows[row.Index].Selected = false;
+                        dataGridViewSelecionado.Rows[row.Index].Selected = false;
 
                         var rowCell = row.Cells[i].Value;
 
                         if (rowCell != null && rowCell.ToString().ToLower().Trim().Equals(searchValue))
                         {
-                            dgv.Rows[row.Index].Selected = true;
+                            dataGridViewSelecionado.Rows[row.Index].Selected = true;
                             valueResult = true;
                             break;
                         }
                     }
 
                 }
+
                 if (!valueResult)
                 {
                     MessageBox.Show("Não foi possível encontrar: " + txbID.Text);
@@ -153,6 +151,20 @@ namespace Projeto_WindowsForms.Apresentacao
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
+            }
+        }
+
+        private void MostrarFormularioInicial(object sender, EventArgs e)
+        {
+            if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+            {
+                btnFolhaPagamento_Click(sender, e);
+                return;
+            } 
+            else
+            {
+                btnRelatorio_Click(sender, e);
+                return;
             }
         }
     }

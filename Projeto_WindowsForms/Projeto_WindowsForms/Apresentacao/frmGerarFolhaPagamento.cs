@@ -41,7 +41,7 @@ namespace Projeto_WindowsForms.Apresentacao
                 Ativo = true,
                 DataCriacao = DateTime.Now,
                 Colaborador = colaboradorBusca,
-                HorasExtras = int.Parse(cbxHorasExtras.Text)
+                HorasExtras = int.Parse(txbHorasExtras.Text)
             };
 
             folhaPagamento.CalcularSalarioLiquido();
@@ -100,6 +100,8 @@ namespace Projeto_WindowsForms.Apresentacao
 
                 lblTblUserTotal.Text = "";
                 lblTblUserHorasExtras.Text = "";
+
+                txbHorasExtras.Text = "";
 
                 folhaPagamentoCalculo = null;
             }

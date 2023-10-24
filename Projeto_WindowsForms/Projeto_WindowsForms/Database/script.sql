@@ -50,4 +50,7 @@ CREATE TABLE folha_pagamento (
 
 INSERT INTO empresa (cnpj, nome_fantasia, razao_social, ativo) VALUES ('65.509.378/0001-60', 'Unip', 'Unip', 1);
 INSERT INTO colaborador (nome_completo, sexo, cargo, salario, data_admissao, ativo, id_empresa) VALUES ('Admin 1', 'M', 0, 2000, '2023-10-17', 1, 1);
-INSERT INTO acesso (usuario, senha, ativo, id_colaborador) VALUES ('admin_1', '123456_!@#$', 1, 1);
+INSERT INTO acesso (usuario, senha, ativo, id_colaborador) VALUES ('admin1', 'fd74d745ead59ab6a9117c2141ae1964', 1, 1);
+
+-- Login: admin1
+-- Senha: 563224
