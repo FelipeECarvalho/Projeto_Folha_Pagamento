@@ -6,7 +6,7 @@ namespace Projeto_WindowsForms.DAL
 {
     public class ColaboradorDAO
     {
-        private Conexao conexao;
+        private readonly Conexao conexao;
         private SqlDataReader dr;
 
         public ColaboradorDAO()
@@ -64,7 +64,10 @@ namespace Projeto_WindowsForms.DAL
                                 FROM colaborador c 
                                     INNER JOIN empresa e 
                                     ON c.id_empresa = e.id 
-                                WHERE c.ativo = 1 AND "
+                                WHERE 
+                                    c.ativo = 1 AND 
+                                    e.ativo = 1
+                                    AND "
             };
 
             // Verifica se é número (id) ou string (Nome)
@@ -129,7 +132,9 @@ namespace Projeto_WindowsForms.DAL
                                 FROM colaborador c 
                                     INNER JOIN empresa e 
                                     ON c.id_empresa = e.id
-                                WHERE c.ativo = 1"
+                                WHERE 
+                                    c.ativo = 1 AND
+                                    e.ativo = 1"
             };
 
             var listaColaborador = new List<Colaborador>();

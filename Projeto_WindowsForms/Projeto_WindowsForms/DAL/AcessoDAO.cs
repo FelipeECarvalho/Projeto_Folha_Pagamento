@@ -21,11 +21,15 @@ namespace Projeto_WindowsForms.DAL
 
             SqlCommand cmd = new()
             {
-                CommandText = @"SELECT a.id, a.usuario, a.senha, c.id as id_colaborador, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.id_empresa
+                CommandText = @"SELECT a.id, a.usuario, a.senha, a.ativo, c.id as id_colaborador, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.ativo as c_ativo, c.id_empresa
                                 FROM acesso a 
-                                INNER JOIN colaborador c 
-                                ON a.id_colaborador = c.id 
-                                WHERE a.usuario = @usuario AND a.senha = @senha"
+                                    INNER JOIN colaborador c 
+                                    ON a.id_colaborador = c.id 
+                                WHERE
+                                    a.ativo = 1 AND
+                                    c.ativo = 1 AND
+                                    a.usuario = @usuario AND 
+                                    a.senha = @senha"
             };
 
             cmd.Parameters.AddWithValue("@usuario", usuario.ToLower());
@@ -44,6 +48,7 @@ namespace Projeto_WindowsForms.DAL
 
                     acesso = new Acesso
                     {
+                        Ativo = bool.Parse(dr["ativo"].ToString()),
                         Id = int.Parse(dr["id"].ToString()),
                         Usuario = dr["usuario"].ToString(),
                         Senha = dr["senha"].ToString(),
@@ -55,6 +60,7 @@ namespace Projeto_WindowsForms.DAL
                             Cargo = cargo,
                             Salario = decimal.Parse(dr["salario"].ToString()),
                             DataAdmissao = DateTime.Parse(dr["data_admissao"].ToString()),
+                            Ativo = bool.Parse(dr["c_ativo"].ToString()),
                             Empresa = new Empresa
                             {
                                 Id = int.Parse(dr["id_empresa"].ToString())
