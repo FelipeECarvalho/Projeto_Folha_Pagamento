@@ -18,7 +18,7 @@ namespace Projeto_WindowsForms.Apresentacao
         private void frmGerarRelatorio_Load(object sender, EventArgs e)
         {
             var controle = new ControleBase();
-            
+
             var listaColaborador = controle.listarColaborador();
             var listaEmpresas = controle.listarEmpresas();
             var listaFolhaPagamento = controle.listarFolhaPagamento();
@@ -37,6 +37,8 @@ namespace Projeto_WindowsForms.Apresentacao
             {
                 dgvFolhaPagamento.Rows.Add(folhaPagamento.Id, folhaPagamento.Colaborador.Salario.ToString("c"), folhaPagamento.DescontosTotais.ToString("c"), string.Format("{0} (REF: {1})", folhaPagamento.Irrf.ToString("c"), folhaPagamento.AliquotaIrrf), string.Format("{0} (REF: {1})", folhaPagamento.Inss.ToString("c"), folhaPagamento.AliquotaInss), folhaPagamento.ValorLiquido.ToString("c"), folhaPagamento.Colaborador.NomeCompleto);
             }
+
+            MostrarFormularioInicial(sender, e);
         }
 
         private void btnRelatorio_Click(object sender, EventArgs e)
@@ -160,12 +162,9 @@ namespace Projeto_WindowsForms.Apresentacao
             {
                 btnFolhaPagamento_Click(sender, e);
                 return;
-            } 
-            else
-            {
-                btnRelatorio_Click(sender, e);
-                return;
             }
+
+            btnRelatorio_Click(sender, e);
         }
     }
 }

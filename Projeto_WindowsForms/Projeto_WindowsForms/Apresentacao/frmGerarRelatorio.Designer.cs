@@ -96,12 +96,12 @@
             // 
             // btnRelatorio
             // 
-            btnRelatorio.BackColor = Color.FromArgb(50, 130, 184);
+            btnRelatorio.BackColor = SystemColors.Window;
             btnRelatorio.FlatAppearance.BorderColor = Color.FromArgb(255, 255, 192);
             btnRelatorio.FlatAppearance.BorderSize = 0;
             btnRelatorio.FlatStyle = FlatStyle.Flat;
             btnRelatorio.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRelatorio.ForeColor = SystemColors.Window;
+            btnRelatorio.ForeColor = SystemColors.ControlText;
             btnRelatorio.Location = new Point(12, 91);
             btnRelatorio.Name = "btnRelatorio";
             btnRelatorio.Size = new Size(269, 39);
