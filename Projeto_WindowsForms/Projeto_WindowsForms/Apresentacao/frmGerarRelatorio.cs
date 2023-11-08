@@ -209,6 +209,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void dgvEmpresas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var empresaControle = new EmpresaControle();
             var coluna = dgvEmpresas.Columns[e.ColumnIndex];
 
             // Caso o usuário tenha clicado em uma imagem do DataGridView
@@ -222,7 +223,9 @@ namespace Projeto_WindowsForms.Apresentacao
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    var id = (int)dgvEmpresas[0, e.RowIndex].Value;
 
+                    empresaControle.desativarEmpresa(id);
                 }
             }
         }

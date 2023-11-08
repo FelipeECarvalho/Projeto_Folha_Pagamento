@@ -43,6 +43,7 @@ namespace Projeto_WindowsForms.DAL
             }
 
         }
+
         public List<Empresa> listarEmpresa()
         {
             var cmd = new SqlCommand
@@ -86,6 +87,33 @@ namespace Projeto_WindowsForms.DAL
             }
 
             return listaEmpresa;
+        }
+
+        public void desativarEmpresa(int id)
+        {
+            var cmd = new SqlCommand
+            {
+                CommandText = @"update empresa set ativo = 0 where id = @id"
+            };
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                cmd.ExecuteNonQuery();
+
+                conexao.desconectar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
         }
     }
 }

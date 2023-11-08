@@ -42,5 +42,19 @@ namespace Projeto_WindowsForms.Controle
 
             return new List<Empresa>();
         }
+
+        public void desativarEmpresa(int id)
+        {
+            try
+            {
+                var empresaDao = new EmpresaDAO();
+
+                empresaDao.desativarEmpresa(id);
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+        }
     }
 }
