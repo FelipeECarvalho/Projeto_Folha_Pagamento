@@ -168,15 +168,71 @@ namespace Projeto_WindowsForms.Apresentacao
             btnRelatorio_Click(sender, e);
         }
 
-        private void dgvRelatorio_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void MudarCursorDataGrid(DataGridView dgv, DataGridViewCellEventArgs e)
         {
-            var nomeColuna = dgvRelatorio.Columns[e.ColumnIndex].Name;
-            
+            var nomeColuna = dgv.Columns[e.ColumnIndex].Name;
+
             // caso o usuário passe o mouse sobre uma coluna que contenha o nome btn
             if (nomeColuna.Contains("btn"))
-                dgvRelatorio.Cursor = Cursors.Hand;
+                dgv.Cursor = Cursors.Hand;
             else
-                dgvRelatorio.Cursor = Cursors.Default;
+                dgv.Cursor = Cursors.Default;
+        }
+
+        private void dgvRelatorio_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            MudarCursorDataGrid(dgvRelatorio, e);
+        }
+
+        private void dgvEmpresas_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            MudarCursorDataGrid(dgvEmpresas, e);
+        }
+
+        private void dgvRelatorio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var coluna = dgvRelatorio.Columns[e.ColumnIndex];
+
+            // Caso o usuário teha clicado em uma imagem do DataGridView
+            if (coluna is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                // Verificando se é exclusão ou edição
+                if (coluna.Name == "btnEditarColaborador")
+                {
+                } 
+                else
+                {
+                    if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                        MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void dgvEmpresas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var coluna = dgvEmpresas.Columns[e.ColumnIndex];
+
+            // Caso o usuário tenha clicado em uma imagem do DataGridView
+            if (coluna is DataGridViewImageColumn && e.RowIndex >= 0)
+            {
+                // Verificando se é exclusão ou edição
+                if (coluna.Name == "btnEditarEmpresa")
+                {
+                }
+                else
+                {
+                    if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                        MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                    {
+
+                    }
+                }
+            }
         }
     }
 }

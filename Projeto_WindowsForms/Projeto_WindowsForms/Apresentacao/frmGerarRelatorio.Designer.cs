@@ -236,6 +236,7 @@
             dgvRelatorio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRelatorio.Size = new Size(890, 307);
             dgvRelatorio.TabIndex = 32;
+            dgvRelatorio.CellContentClick += dgvRelatorio_CellContentClick;
             dgvRelatorio.CellMouseEnter += dgvRelatorio_CellMouseEnter;
             // 
             // ID
@@ -375,6 +376,8 @@
             dgvEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmpresas.Size = new Size(890, 307);
             dgvEmpresas.TabIndex = 34;
+            dgvEmpresas.CellContentClick += dgvEmpresas_CellContentClick;
+            dgvEmpresas.CellMouseEnter += dgvEmpresas_CellMouseEnter;
             // 
             // id_empresa
             // 
@@ -534,9 +537,9 @@
             Controls.Add(btnRelatorio);
             Controls.Add(label5);
             Controls.Add(panel2);
+            Controls.Add(dgvEmpresas);
             Controls.Add(dgvRelatorio);
             Controls.Add(dgvFolhaPagamento);
-            Controls.Add(dgvEmpresas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGerarRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
