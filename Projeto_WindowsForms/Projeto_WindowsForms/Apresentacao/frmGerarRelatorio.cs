@@ -1,7 +1,6 @@
 ﻿using Projeto_WindowsForms.Controle;
 using Projeto_WindowsForms.Modelo;
 using Projeto_WindowsForms.Modelo.Enum;
-using System.Windows.Forms;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -9,6 +8,10 @@ namespace Projeto_WindowsForms.Apresentacao
     {
         readonly Colaborador colaboradorLogado;
         private DataGridView dataGridViewSelecionado;
+
+        // Atributos que irão fazer a comunicação entre esse formulário e o formulário de edição
+        public static int idEmpresa;
+        public static int idColaborador;
 
         public frmGerarRelatorio()
         {
@@ -101,11 +104,11 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void BuscarRelatorio()
         {
-            var searchValue = txbID.Text.ToLower().Trim();
+            var valorBuscado = txbID.Text.ToLower().Trim();
 
             try
             {
-                var valueResult = false;
+                var achou = false;
 
                 foreach (DataGridViewRow row in dataGridViewSelecionado.Rows)
                 {
@@ -115,17 +118,17 @@ namespace Projeto_WindowsForms.Apresentacao
 
                         var rowCell = row.Cells[i].Value;
 
-                        if (rowCell != null && rowCell.ToString().ToLower().Trim().Equals(searchValue))
+                        if (rowCell != null && rowCell.ToString().ToLower().Trim().Equals(valorBuscado))
                         {
                             dataGridViewSelecionado.Rows[row.Index].Selected = true;
-                            valueResult = true;
+                            achou = true;
                             break;
                         }
                     }
 
                 }
 
-                if (!valueResult)
+                if (!achou)
                 {
                     MessageBox.Show("Não foi possível encontrar: " + txbID.Text);
                     return;
@@ -198,12 +201,14 @@ namespace Projeto_WindowsForms.Apresentacao
         private void dgvRelatorio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var colaboradorControle = new ColaboradorControle();
-
             var coluna = dgvRelatorio.Columns[e.ColumnIndex];
 
             // Caso o usuário teha clicado em uma imagem do DataGridView
             if (coluna is DataGridViewImageColumn && e.RowIndex >= 0)
             {
+                // Pegando o id do colaborador
+                idColaborador = (int)dgvRelatorio[0, e.RowIndex].Value;
+
                 // Verificando se é exclusão ou edição
                 if (coluna.Name == "btnEditarColaborador")
                 {
@@ -212,8 +217,6 @@ namespace Projeto_WindowsForms.Apresentacao
                         MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
-
 
                 } 
                 else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
@@ -226,15 +229,11 @@ namespace Projeto_WindowsForms.Apresentacao
                         return;
                     }
 
-                    // Pegando o id da empresa
-                    var id = (int)dgvRelatorio[0, e.RowIndex].Value;
-
-                    colaboradorControle.desativarColaborador(id);
-
+                    colaboradorControle.desativarColaborador(idColaborador);
                     MessageBox.Show("Colaborador excluido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    PopularTabelas();
                 }
+
+                PopularTabelas();
             }
         }
 
@@ -246,35 +245,44 @@ namespace Projeto_WindowsForms.Apresentacao
             // Caso o usuário tenha clicado em uma imagem do DataGridView
             if (coluna is DataGridViewImageColumn && e.RowIndex >= 0)
             {
+                // Pegando o id da empresa
+                idEmpresa = (int)dgvEmpresas[0, e.RowIndex].Value;
+
                 // Verificando se é exclusão ou edição
                 if (coluna.Name == "btnEditarEmpresa")
                 {
+                    // Caso o colaborador não tenha permissão
                     if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
                     {
                         MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
+                    var frmEditarEmpresa = new frmEditarEmpresa();
+
+                    // É verificado o retorno do form de edição para ver o resultado
+                    if (frmEditarEmpresa.ShowDialog() == DialogResult.OK)
+                        MessageBox.Show("Empresa atualizada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (frmEditarEmpresa.ShowDialog() == DialogResult.Abort)
+                        MessageBox.Show("Não foi possível atualizar a empresa, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 }
                 else if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    // Caso o colaborador não tenha permissão
                     if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
                     {
                         MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
-                    // Pegando o id da empresa
-                    var id = (int)dgvEmpresas[0, e.RowIndex].Value;
-
-                    empresaControle.desativarEmpresa(id);
-
+                    empresaControle.desativarEmpresa(idEmpresa);
                     MessageBox.Show("Empresa excluida com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    PopularTabelas();
                 }
+
+                PopularTabelas();
             }
         }
     }

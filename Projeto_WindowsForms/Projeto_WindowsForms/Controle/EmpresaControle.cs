@@ -56,5 +56,21 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem = e.Message;
             }
         }
+
+        public Empresa buscarEmpresa(int id)
+        {
+            try
+            {
+                var empresaDao = new EmpresaDAO();
+
+                return empresaDao.buscarEmpresa(id);
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+
+            return null;
+        }
     }
 }

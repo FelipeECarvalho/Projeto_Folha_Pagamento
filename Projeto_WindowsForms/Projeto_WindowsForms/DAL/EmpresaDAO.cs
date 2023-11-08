@@ -114,6 +114,49 @@ namespace Projeto_WindowsForms.DAL
             {
                 conexao.desconectar();
             }
+        } 
+
+        public Empresa buscarEmpresa(int id)
+        {
+            var cmd = new SqlCommand
+            {
+                CommandText = @"SELECT id, cnpj, nome_fantasia, razao_social, ativo FROM empresa WHERE ativo = 1 AND id = @id"
+            };
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            Empresa empresa = null;
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    empresa = new Empresa
+                    {
+                        Id = int.Parse(dr["id"].ToString()),
+                        Cnpj = dr["cnpj"].ToString(),
+                        NomeFantasia = dr["nome_fantasia"].ToString(),
+                        RazaoSocial = dr["razao_social"].ToString(),
+                        Ativo = bool.Parse(dr["ativo"].ToString())
+                    };
+                }
+
+                dr.Close();
+
+                return empresa;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
         }
     }
 }
