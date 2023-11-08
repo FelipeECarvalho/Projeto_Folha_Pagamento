@@ -212,17 +212,27 @@ namespace Projeto_WindowsForms.Apresentacao
                 // Verificando se é exclusão ou edição
                 if (coluna.Name == "btnEditarColaborador")
                 {
+                    // Caso o colaborador não tenha permissão
                     if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
                     {
                         MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
 
+                    var frmEditarColaborador = new frmEditarColaborador();
+                    var resultadoForm = frmEditarColaborador.ShowDialog();
+
+                    // É verificado o retorno do form de edição para ver o resultado
+                    if (resultadoForm == DialogResult.OK)
+                        MessageBox.Show("Colaborador atualizado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (resultadoForm == DialogResult.Abort)
+                        MessageBox.Show("Não foi possível atualizar o colaborador, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 } 
                 else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    // Caso o colaborador não tenha permissão
                     if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
                     {
                         MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -259,7 +269,6 @@ namespace Projeto_WindowsForms.Apresentacao
                     }
 
                     var frmEditarEmpresa = new frmEditarEmpresa();
-
                     var resultadoForm = frmEditarEmpresa.ShowDialog();
 
                     // É verificado o retorno do form de edição para ver o resultado

@@ -66,8 +66,7 @@ namespace Projeto_WindowsForms.DAL
                                     ON c.id_empresa = e.id 
                                 WHERE 
                                     c.ativo = 1 AND 
-                                    e.ativo = 1
-                                    AND "
+                                    e.ativo = 1 AND "
             };
 
             // Verifica se é número (id) ou string (Nome)

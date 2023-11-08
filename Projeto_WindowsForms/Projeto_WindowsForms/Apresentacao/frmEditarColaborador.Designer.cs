@@ -1,6 +1,6 @@
 ﻿namespace Projeto_WindowsForms.Apresentacao
 {
-    partial class frmCadastroColaborador
+    partial class frmEditarColaborador
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,7 +33,7 @@
             lblEmpresa = new Label();
             lblSalario = new Label();
             lblDataAdmissao = new Label();
-            btnCadastrar = new Button();
+            btnEditar = new Button();
             panel1 = new Panel();
             label2 = new Label();
             panel2 = new Panel();
@@ -96,21 +96,21 @@
             lblDataAdmissao.TabIndex = 8;
             lblDataAdmissao.Text = "Data de admissão";
             // 
-            // btnCadastrar
+            // btnEditar
             // 
-            btnCadastrar.BackColor = Color.FromArgb(50, 130, 184);
-            btnCadastrar.Cursor = Cursors.Hand;
-            btnCadastrar.FlatAppearance.BorderSize = 0;
-            btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCadastrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCadastrar.Location = new Point(565, 404);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(148, 35);
-            btnCadastrar.TabIndex = 0;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = false;
-            btnCadastrar.Click += btnCadastrar_Click;
+            btnEditar.BackColor = Color.FromArgb(50, 130, 184);
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEditar.ForeColor = SystemColors.ButtonHighlight;
+            btnEditar.Location = new Point(565, 404);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(148, 35);
+            btnEditar.TabIndex = 0;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // panel1
             // 
@@ -226,11 +226,11 @@
             // 
             label9.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.Window;
-            label9.Location = new Point(273, 9);
+            label9.Location = new Point(247, 6);
             label9.Name = "label9";
             label9.Size = new Size(253, 43);
             label9.TabIndex = 8;
-            label9.Text = "Cadastro de colaborador";
+            label9.Text = "Editar colaborador";
             label9.TextAlign = ContentAlignment.MiddleRight;
             // 
             // btnVoltar
@@ -246,7 +246,7 @@
             btnVoltar.TabStop = false;
             btnVoltar.Click += btnVoltar_Click;
             // 
-            // frmCadastroColaborador
+            // frmEditarColaborador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -254,12 +254,12 @@
             Controls.Add(panel9);
             Controls.Add(panel1);
             Controls.Add(panel2);
-            Controls.Add(btnCadastrar);
+            Controls.Add(btnEditar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "frmCadastroColaborador";
+            Name = "frmEditarColaborador";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de colaborador";
-            Load += frmCadastroColaborador_Load;
+            Load += frmEditarColaborador_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -276,7 +276,7 @@
         private Label lblEmpresa;
         private Label lblSalario;
         private Label lblDataAdmissao;
-        private Button btnCadastrar;
+        private Button btnEditar;
         private Panel panel1;
         private Label label2;
         private Panel panel2;
