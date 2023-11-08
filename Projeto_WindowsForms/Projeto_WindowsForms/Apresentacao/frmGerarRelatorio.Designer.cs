@@ -537,9 +537,9 @@
             Controls.Add(btnRelatorio);
             Controls.Add(label5);
             Controls.Add(panel2);
-            Controls.Add(dgvEmpresas);
             Controls.Add(dgvRelatorio);
             Controls.Add(dgvFolhaPagamento);
+            Controls.Add(dgvEmpresas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGerarRelatorio";
             StartPosition = FormStartPosition.CenterScreen;

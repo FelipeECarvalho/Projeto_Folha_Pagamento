@@ -7,6 +7,7 @@ namespace Projeto_WindowsForms.Apresentacao
     {
         private Colaborador colaboradorBusca;
         private FolhaPagamento folhaPagamentoCalculo;
+        public static List<Colaborador> listaColaboradorSelecionar;
 
         public frmGerarFolhaPagamento()
         {
@@ -129,34 +130,33 @@ namespace Projeto_WindowsForms.Apresentacao
 
             // Verificando se foi digitado um ID ou um nome
             if (int.TryParse(idNomeColaborador, out var id))
+            {
                 listaColaborador.Add(colaboradorControle.buscarColaborador(id));
+            }
             else
+            {
                 listaColaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
+            }
 
             // Caso tenha encontrado apenas um colaborador
             if (listaColaborador != null && listaColaborador.Count == 1)
             {
                 var colaborador = listaColaborador[0];
 
-                lblResultadoCNPJ.Text = colaborador.Empresa.Cnpj;
-                lblResultadoFuncao.Text = colaborador.Cargo.ToString();
-                lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
-                lblResultadoNomeEmpresa.Text = colaborador.Empresa.NomeFantasia;
-                lblTblUserSalarioBase.Text = colaborador.Salario.ToString();
-
-                lblResultadoSalarioBase.Text = colaborador.Salario.ToString();
-
-                lblTblUserNome.Text = colaborador.NomeCompleto;
-                lblTblUserID.Text = colaborador.Id.ToString();
-
-                lblMensagem.Text = "";
-
-                colaboradorBusca = colaborador;
+                SelecionarColaborador(colaborador);
             }
             // Caso tenha encontrado mais de um colaborador com o mesmo nome
             else if (listaColaborador != null && listaColaborador.Count > 1)
             {
+                listaColaboradorSelecionar = listaColaborador;
 
+                var frmSelecionarColaborador = new frmSelecionarColaborador();
+                var resultado = frmSelecionarColaborador.ShowDialog();
+
+                if (resultado == DialogResult.OK)
+                {
+                    SelecionarColaborador(frmSelecionarColaborador.colaboradorSelecionado);
+                }
             }
             // Caso não tenha encontrado nenhum colaborador
             else
@@ -174,6 +174,24 @@ namespace Projeto_WindowsForms.Apresentacao
             lblTblUserIRRF.Text = "";
             lblTblUserINSS.Text = "";
             lblTblUserTotal.Text = "";
+        }
+
+        private void SelecionarColaborador(Colaborador colaborador)
+        {
+            lblResultadoCNPJ.Text = colaborador.Empresa.Cnpj;
+            lblResultadoFuncao.Text = colaborador.Cargo.ToString();
+            lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
+            lblResultadoNomeEmpresa.Text = colaborador.Empresa.NomeFantasia;
+            lblTblUserSalarioBase.Text = colaborador.Salario.ToString();
+
+            lblResultadoSalarioBase.Text = colaborador.Salario.ToString();
+
+            lblTblUserNome.Text = colaborador.NomeCompleto;
+            lblTblUserID.Text = colaborador.Id.ToString();
+
+            lblMensagem.Text = "";
+
+            colaboradorBusca = colaborador;
         }
     }
 }

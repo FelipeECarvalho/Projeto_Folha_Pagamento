@@ -5,6 +5,11 @@ namespace Projeto_WindowsForms.Controle
 {
     public class ColaboradorControle : ControleBase
     {
+        /// <summary>
+        /// Método responsável por buscar colaboradores pelo nome
+        /// </summary>
+        /// <param name="nome">nome do colaborador</param>
+        /// <returns>Uma lista de colaboradores contendo o nome informado</returns>
         public List<Colaborador> buscarColaborador(string nome)
         {
             validacao.validarBuscaColaborador(nome);
@@ -34,6 +39,11 @@ namespace Projeto_WindowsForms.Controle
             return new List<Colaborador>();
         }
 
+        /// <summary>
+        /// Método responsável por buscar um colaborador pelo ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Colaborador buscarColaborador(int id)
         {
             validacao.validarBuscaColaborador(id);

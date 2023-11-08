@@ -227,7 +227,7 @@ namespace Projeto_WindowsForms.Apresentacao
                         MessageBox.Show("Colaborador atualizado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else if (resultadoForm == DialogResult.Abort)
                         MessageBox.Show("Não foi possível atualizar o colaborador, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                } 
+                }
                 else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -276,7 +276,7 @@ namespace Projeto_WindowsForms.Apresentacao
                         MessageBox.Show("Empresa atualizada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else if (resultadoForm == DialogResult.Abort)
                         MessageBox.Show("Não foi possível atualizar a empresa, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
                 }
                 else if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,

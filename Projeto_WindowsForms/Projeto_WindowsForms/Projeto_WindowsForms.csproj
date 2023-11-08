@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Apresentacao\frmSelecionarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Apresentacao\frmEditarColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
