@@ -86,10 +86,10 @@ namespace Projeto_WindowsForms.Apresentacao
                 return;
             }
 
-            var controle = new ControleBase();
-            controle.cadastrarFolhaPagamento(folhaPagamentoCalculo);
+            var folhaPagamentoControle = new FolhaPagamentoControle();
+            folhaPagamentoControle.cadastrarFolhaPagamento(folhaPagamentoCalculo);
 
-            if (string.IsNullOrEmpty(controle.mensagem))
+            if (string.IsNullOrEmpty(folhaPagamentoControle.mensagem))
             {
                 MessageBox.Show("Folha de pagamento gerada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -107,7 +107,7 @@ namespace Projeto_WindowsForms.Apresentacao
             }
             else
             {
-                MessageBox.Show(controle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(folhaPagamentoControle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -124,8 +124,8 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             var idNomeColaborador = txbNomeID.Text.ToString().Trim();
 
-            var controle = new ControleBase();
-            var colaborador = controle.buscarColaborador(idNomeColaborador);
+            var colaboradorControle = new ColaboradorControle();
+            var colaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
 
             if (colaborador != null)
             {
@@ -151,7 +151,7 @@ namespace Projeto_WindowsForms.Apresentacao
                 lblResultadoNomeEmpresa.Text = "";
                 lblTblUserSalarioBase.Text = "0";
                 lblResultadoNomeColaborador.Text = "";
-                lblMensagem.Text = controle.mensagem;
+                lblMensagem.Text = colaboradorControle.mensagem;
 
                 colaboradorBusca = null;
             }

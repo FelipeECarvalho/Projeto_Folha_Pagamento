@@ -21,10 +21,10 @@ namespace Projeto_WindowsForms.Apresentacao
                 RazaoSocial = txbRazaoSocial.Text.Trim()
             };
 
-            var controle = new ControleBase();
-            controle.cadastrarEmpresa(empresa);
+            var empresaControle = new EmpresaControle();
+            empresaControle.cadastrarEmpresa(empresa);
 
-            if (string.IsNullOrEmpty(controle.mensagem))
+            if (string.IsNullOrEmpty(empresaControle.mensagem))
             {
                 MessageBox.Show("Empresa cadastrada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -34,7 +34,7 @@ namespace Projeto_WindowsForms.Apresentacao
             }
             else
             {
-                MessageBox.Show(controle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(empresaControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -39,10 +39,10 @@ namespace Projeto_WindowsForms.Apresentacao
                 }
             };
 
-            var controle = new ControleBase();
-            var acesso = controle.cadastrarColaborador(colaborador);
+            var colaboradorControle = new ColaboradorControle();
+            var acesso = colaboradorControle.cadastrarColaborador(colaborador);
 
-            if (string.IsNullOrEmpty(controle.mensagem))
+            if (string.IsNullOrEmpty(colaboradorControle.mensagem))
             {
                 txbSalario.Clear();
                 txbNomeColaborador.Clear();
@@ -51,7 +51,7 @@ namespace Projeto_WindowsForms.Apresentacao
             }
             else
             {
-                MessageBox.Show(controle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(colaboradorControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -62,8 +62,8 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void carregarComboBox()
         {
-            var controle = new ControleBase();
-            var listaEmpresa = controle.listarEmpresas();
+            var empresaControle = new EmpresaControle();
+            var listaEmpresa = empresaControle.listarEmpresas();
 
             foreach (var empresa in listaEmpresa)
             {

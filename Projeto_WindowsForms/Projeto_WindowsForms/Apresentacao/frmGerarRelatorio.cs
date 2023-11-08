@@ -18,11 +18,13 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void frmGerarRelatorio_Load(object sender, EventArgs e)
         {
-            var controle = new ControleBase();
+            var colaboradorControle = new ColaboradorControle();
+            var empresaControle = new EmpresaControle();
+            var folhaPagamentoControle = new FolhaPagamentoControle();
 
-            var listaColaborador = controle.listarColaborador();
-            var listaEmpresas = controle.listarEmpresas();
-            var listaFolhaPagamento = controle.listarFolhaPagamento();
+            var listaColaborador = colaboradorControle.listarColaborador();
+            var listaEmpresas = empresaControle.listarEmpresas();
+            var listaFolhaPagamento = folhaPagamentoControle.listarFolhaPagamento();
 
             foreach (var colaborador in listaColaborador)
             {
@@ -173,10 +175,7 @@ namespace Projeto_WindowsForms.Apresentacao
             var nomeColuna = dgv.Columns[e.ColumnIndex].Name;
 
             // caso o usuário passe o mouse sobre uma coluna que contenha o nome btn
-            if (nomeColuna.Contains("btn"))
-                dgv.Cursor = Cursors.Hand;
-            else
-                dgv.Cursor = Cursors.Default;
+            dgv.Cursor = nomeColuna.Contains("btn") ? Cursors.Hand : Cursors.Default;
         }
 
         private void dgvRelatorio_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -200,14 +199,10 @@ namespace Projeto_WindowsForms.Apresentacao
                 if (coluna.Name == "btnEditarColaborador")
                 {
                 } 
-                else
-                {
-                    if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
+                else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                    {
-
-                    }
+                {
                 }
             }
         }
@@ -223,14 +218,11 @@ namespace Projeto_WindowsForms.Apresentacao
                 if (coluna.Name == "btnEditarEmpresa")
                 {
                 }
-                else
-                {
-                    if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
+                else if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                    {
+                {
 
-                    }
                 }
             }
         }

@@ -11,10 +11,10 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            var controleBase = new ControleBase();
-            var acesso = controleBase.buscarAcesso(txbUsuario.Text, txbSenha.Text);
+            var acessoControle = new AcessoControle();
+            var acesso = acessoControle.buscarAcesso(txbUsuario.Text, txbSenha.Text);
 
-            if (string.IsNullOrEmpty(controleBase.mensagem))
+            if (string.IsNullOrEmpty(acessoControle.mensagem))
             {
                 this.Hide();
 
@@ -26,7 +26,7 @@ namespace Projeto_WindowsForms.Apresentacao
             } 
             else
             {
-                MessageBox.Show(controleBase.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(acessoControle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

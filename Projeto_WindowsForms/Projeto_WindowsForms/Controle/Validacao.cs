@@ -86,7 +86,7 @@ namespace Projeto_WindowsForms.Controle
         public void validarDadosFolhaPagamento(FolhaPagamento folhaPagamento)
         {
             this.mensagem = "";
-            ControleBase controle = new();
+            var folhaPagamentoControle = new FolhaPagamentoControle();
 
             if (folhaPagamento.ValorLiquido == 0)
                 this.mensagem += "Valor líquido é obrigatório\n";
@@ -97,7 +97,7 @@ namespace Projeto_WindowsForms.Controle
             if (folhaPagamento.Colaborador == null || folhaPagamento.Colaborador.Id == 0)
                 this.mensagem += "Colaborador é obrigatório\n";
 
-            var folhaPagamentoValidacao = controle.buscarFolhaPagamentoPorColaborador(folhaPagamento.Colaborador);
+            var folhaPagamentoValidacao = folhaPagamentoControle.buscarFolhaPagamentoPorColaborador(folhaPagamento.Colaborador);
 
             if (folhaPagamentoValidacao != null)
                 this.mensagem += "Já existe uma folha de pagamento cadastrada para este colaborador nesse mês\n";
