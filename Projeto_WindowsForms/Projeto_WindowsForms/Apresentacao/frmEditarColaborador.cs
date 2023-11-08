@@ -25,7 +25,7 @@ namespace Projeto_WindowsForms.Apresentacao
             var colaboradorControle = new ColaboradorControle();
             var acessoControle = new AcessoControle();
 
-            colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador.ToString());
+            colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador);
             acessoSelecionado = acessoControle.buscarAcesso(colaboradorSelecionado.Id);
 
             if (colaboradorSelecionado == null || acessoSelecionado == null)

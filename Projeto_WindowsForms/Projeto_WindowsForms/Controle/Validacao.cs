@@ -16,6 +16,14 @@ namespace Projeto_WindowsForms.Controle
                 this.mensagem = "Id ou nome inválido, revise e tente novamente.";
         }
 
+        public void validarBuscaColaborador(int id)
+        {
+            this.mensagem = "";
+
+            if (id <= 0)
+                this.mensagem = "Id inválido, revise e tente novamente.";
+        }
+
         public void validarBuscaAcesso(string usuario, string senha)
         {
             this.mensagem = "";

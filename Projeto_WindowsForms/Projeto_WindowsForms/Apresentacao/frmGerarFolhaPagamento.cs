@@ -122,13 +122,22 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void BuscarColaborador()
         {
-            var idNomeColaborador = txbNomeID.Text.ToString().Trim();
+            var idNomeColaborador = txbNomeID.Text.Trim();
 
             var colaboradorControle = new ColaboradorControle();
-            var colaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
+            var listaColaborador = new List<Colaborador>();
 
-            if (colaborador != null)
+            // Verificando se foi digitado um ID ou um nome
+            if (int.TryParse(idNomeColaborador, out var id))
+                listaColaborador.Add(colaboradorControle.buscarColaborador(id));
+            else
+                listaColaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
+
+            // Caso tenha encontrado apenas um colaborador
+            if (listaColaborador != null && listaColaborador.Count == 1)
             {
+                var colaborador = listaColaborador[0];
+
                 lblResultadoCNPJ.Text = colaborador.Empresa.Cnpj;
                 lblResultadoFuncao.Text = colaborador.Cargo.ToString();
                 lblResultadoNomeColaborador.Text = colaborador.NomeCompleto;
@@ -144,6 +153,12 @@ namespace Projeto_WindowsForms.Apresentacao
 
                 colaboradorBusca = colaborador;
             }
+            // Caso tenha encontrado mais de um colaborador com o mesmo nome
+            else if (listaColaborador != null && listaColaborador.Count > 1)
+            {
+
+            }
+            // Caso não tenha encontrado nenhum colaborador
             else
             {
                 lblResultadoCNPJ.Text = "";

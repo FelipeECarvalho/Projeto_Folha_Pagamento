@@ -93,10 +93,8 @@ namespace Projeto_WindowsForms.DAL
             }
         }
 
-        public Colaborador buscarColaborador(string idNome)
+        public List<Colaborador> buscarColaborador(string nome)
         {
-            Colaborador colaborador = null;
-
             SqlCommand cmd = new()
             {
                 CommandText = @"SELECT c.id, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.ativo, e.id as id_empresa, e.cnpj, e.razao_social, e.nome_fantasia, e.ativo as e_ativo
@@ -105,23 +103,87 @@ namespace Projeto_WindowsForms.DAL
                                     ON c.id_empresa = e.id 
                                 WHERE 
                                     c.ativo = 1 AND 
-                                    e.ativo = 1 AND "
+                                    e.ativo = 1 AND
+                                    c.nome_completo LIKE @nome"
             };
 
-            // Verifica se é número (id) ou string (Nome)
-            if (int.TryParse(idNome, out _))
-                cmd.CommandText += "c.id = @idNome";
-            else
-                cmd.CommandText += "c.nome_completo = @idNome";
+            cmd.Parameters.AddWithValue("@nome", string.Format("%{0}%", nome));
 
-            cmd.Parameters.AddWithValue("@idNome", idNome);
+            var listaColaborador = new List<Colaborador>();
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Enum.TryParse<TipoCargo>(dr["cargo"].ToString(), out var cargo);
+
+                        var colaborador = new Colaborador
+                        {
+                            Ativo = bool.Parse(dr["ativo"].ToString()),
+                            Id = int.Parse(dr["id"].ToString()),
+                            NomeCompleto = dr["nome_completo"].ToString(),
+                            Sexo = (TipoSexo)char.Parse(dr["sexo"].ToString()),
+                            Cargo = cargo,
+                            Salario = decimal.Parse(dr["salario"].ToString()),
+                            DataAdmissao = DateTime.Parse(dr["data_admissao"].ToString()),
+                            Empresa = new Empresa
+                            {
+                                Id = int.Parse(dr["id_empresa"].ToString()),
+                                Cnpj = dr["cnpj"].ToString(),
+                                RazaoSocial = dr["razao_social"].ToString(),
+                                NomeFantasia = dr["nome_fantasia"].ToString(),
+                                Ativo = bool.Parse(dr["e_ativo"].ToString())
+                            }
+                        };
+
+                        listaColaborador.Add(colaborador);
+                    }
+                }
+
+                dr.Close();
+
+                conexao.desconectar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+
+            return listaColaborador;
+        }
+
+        public Colaborador buscarColaborador(int id)
+        {
+            SqlCommand cmd = new()
+            {
+                CommandText = @"SELECT c.id, c.nome_completo, c.sexo, c.cargo, c.salario, c.data_admissao, c.ativo, e.id as id_empresa, e.cnpj, e.razao_social, e.nome_fantasia, e.ativo as e_ativo
+                                FROM colaborador c 
+                                    INNER JOIN empresa e 
+                                    ON c.id_empresa = e.id 
+                                WHERE 
+                                    c.ativo = 1 AND 
+                                    e.ativo = 1 AND
+                                    c.id = @id"
+            };
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            Colaborador colaborador = null;
 
             try
             {
                 cmd.Connection = conexao.conectar();
 
                 dr = cmd.ExecuteReader();
-                
+
                 if (dr.Read())
                 {
                     Enum.TryParse<TipoCargo>(dr["cargo"].ToString(), out var cargo);
@@ -142,7 +204,7 @@ namespace Projeto_WindowsForms.DAL
                             RazaoSocial = dr["razao_social"].ToString(),
                             NomeFantasia = dr["nome_fantasia"].ToString(),
                             Ativo = bool.Parse(dr["e_ativo"].ToString())
-                        } 
+                        }
                     };
                 }
 

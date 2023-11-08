@@ -5,16 +5,45 @@ namespace Projeto_WindowsForms.Controle
 {
     public class ColaboradorControle : ControleBase
     {
-        public Colaborador buscarColaborador(string idNome)
+        public List<Colaborador> buscarColaborador(string nome)
         {
-            validacao.validarBuscaColaborador(idNome);
+            validacao.validarBuscaColaborador(nome);
 
             if (string.IsNullOrEmpty(validacao.mensagem))
             {
                 try
                 {
                     var colaboradorDAO = new ColaboradorDAO();
-                    var colaborador = colaboradorDAO.buscarColaborador(idNome);
+                    var listaColaborador = colaboradorDAO.buscarColaborador(nome);
+
+                    if (listaColaborador == null || listaColaborador.Count == 0)
+                        mensagem = "Colaborador não encontrado.";
+
+                    return listaColaborador;
+                }
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+
+            return new List<Colaborador>();
+        }
+
+        public Colaborador buscarColaborador(int id)
+        {
+            validacao.validarBuscaColaborador(id);
+
+            if (string.IsNullOrEmpty(validacao.mensagem))
+            {
+                try
+                {
+                    var colaboradorDAO = new ColaboradorDAO();
+                    var colaborador = colaboradorDAO.buscarColaborador(id);
 
                     if (colaborador == null)
                         mensagem = "Colaborador não encontrado.";
