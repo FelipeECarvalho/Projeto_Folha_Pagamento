@@ -54,6 +54,45 @@ namespace Projeto_WindowsForms.DAL
             }
         }
 
+        public void editarColaborador(Colaborador colaborador, Acesso acesso)
+        {
+            SqlCommand cmd = new()
+            {
+                CommandText = @"UPDATE colaborador SET nome_completo = @nome, sexo = @sexo, cargo = @cargo, salario = @salario, data_admissao = @dataadmissao, id_empresa = @id_empresa
+                                    WHERE id = @id
+                                UPDATE acesso SET senha = @senha
+                                    WHERE id = @idAcesso"
+            };
+
+            cmd.Parameters.AddWithValue("@nome", colaborador.NomeCompleto);
+            cmd.Parameters.AddWithValue("@sexo", (char)colaborador.Sexo);
+            cmd.Parameters.AddWithValue("@cargo", colaborador.Cargo);
+            cmd.Parameters.AddWithValue("@salario", colaborador.Salario);
+            cmd.Parameters.AddWithValue("@dataadmissao", colaborador.DataAdmissao);
+            cmd.Parameters.AddWithValue("@id_empresa", colaborador.Empresa.Id);
+            cmd.Parameters.AddWithValue("@id", colaborador.Id);
+
+            cmd.Parameters.AddWithValue("@senha", acesso.Senha);
+            cmd.Parameters.AddWithValue("@idAcesso", acesso.Id);
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                cmd.ExecuteNonQuery();
+
+                conexao.desconectar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
+
         public Colaborador buscarColaborador(string idNome)
         {
             Colaborador colaborador = null;

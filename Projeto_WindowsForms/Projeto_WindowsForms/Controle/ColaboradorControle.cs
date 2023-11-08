@@ -71,6 +71,31 @@ namespace Projeto_WindowsForms.Controle
             return null;
         }
 
+        public void editarColaborador(Colaborador colaborador, Acesso acesso)
+        {
+            validacao.validarDadosColaborador(colaborador, acesso);
+
+            if (validacao.mensagem.Equals(""))
+            {
+                try
+                {
+                    var colaboradorDAO = new ColaboradorDAO();
+
+                    acesso.Senha = GerarHashMd5(acesso.SenhaOriginal);
+
+                    colaboradorDAO.editarColaborador(colaborador, acesso);
+                }
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
         public List<Colaborador> listarColaborador()
         {
             try

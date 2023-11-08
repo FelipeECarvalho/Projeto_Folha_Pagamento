@@ -7,7 +7,7 @@ namespace Projeto_WindowsForms.Apresentacao
     public partial class frmEditarColaborador : Form
     {
         private Colaborador colaboradorSelecionado;
-        private Acesso acesso;
+        private Acesso acessoSelecionado;
 
         public frmEditarColaborador()
         {
@@ -26,9 +26,9 @@ namespace Projeto_WindowsForms.Apresentacao
             var acessoControle = new AcessoControle();
 
             colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador.ToString());
-            acesso = acessoControle.buscarAcesso(colaboradorSelecionado.Id);
+            acessoSelecionado = acessoControle.buscarAcesso(colaboradorSelecionado.Id);
 
-            if (colaboradorSelecionado == null || acesso == null)
+            if (colaboradorSelecionado == null || acessoSelecionado == null)
             {
                 this.DialogResult = DialogResult.Abort;
                 this.Close();
@@ -43,8 +43,8 @@ namespace Projeto_WindowsForms.Apresentacao
                 cmbCargo.SelectedIndex = cmbCargo.FindStringExact(colaboradorSelecionado.Cargo.ToString());
                 cmbSexo.SelectedIndex = cmbSexo.FindStringExact(colaboradorSelecionado.Sexo.ToString());
 
-                txbUsuario.Text = acesso.Usuario;
-                txbSenha.Text = acesso.Senha;
+                txbUsuario.Text = acessoSelecionado.Usuario;
+                txbSenha.Text = acessoSelecionado.Senha;
             }
         }
 
@@ -55,7 +55,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
             var colaborador = new Colaborador
             {
-                Ativo = true,
+                Id = colaboradorSelecionado.Id,
                 Sexo = sexo,
                 Cargo = cargo,
                 NomeCompleto = txbNomeColaborador.Text,
@@ -67,15 +67,19 @@ namespace Projeto_WindowsForms.Apresentacao
                 }
             };
 
+            var acesso = new Acesso
+            {
+                Id = acessoSelecionado.Id,
+                SenhaOriginal = txbSenha.Text
+            };
+
             var colaboradorControle = new ColaboradorControle();
-            var acesso = colaboradorControle.cadastrarColaborador(colaborador);
+            colaboradorControle.editarColaborador(colaborador, acesso);
 
             if (string.IsNullOrEmpty(colaboradorControle.mensagem))
             {
-                txbSalario.Clear();
-                txbNomeColaborador.Clear();
-
-                MessageBox.Show($"Colaborador cadastrado com sucesso! \n\n Importante! anote seus dados de acesso: \n\n Usuário: {acesso.Usuario} \n\n Senha: {acesso.SenhaOriginal}", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {

@@ -40,7 +40,7 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
-        public void validarDadosColaborador(Colaborador colaborador)
+        public void validarDadosColaborador(Colaborador colaborador, Acesso acesso = null)
         {
             this.mensagem = "";
 
@@ -58,6 +58,15 @@ namespace Projeto_WindowsForms.Controle
 
             if (colaborador.DataAdmissao == default)
                 this.mensagem += "Data de admissão obrigatório\n";
+
+            if (acesso != null)
+            {
+                if (string.IsNullOrEmpty(acesso.SenhaOriginal))
+                    this.mensagem += "Senha obrigatória\n";
+
+                if (acesso.SenhaOriginal.Length > 50)
+                    this.mensagem += "A senha não pode exceder de 50 caracteres\n";
+            }
         }
 
         public void validarDadosEmpresa(Empresa empresa)
