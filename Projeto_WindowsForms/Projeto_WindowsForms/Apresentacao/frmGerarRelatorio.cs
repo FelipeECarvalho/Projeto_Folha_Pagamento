@@ -207,11 +207,25 @@ namespace Projeto_WindowsForms.Apresentacao
                 // Verificando se é exclusão ou edição
                 if (coluna.Name == "btnEditarColaborador")
                 {
+                    if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP))
+                    {
+                        MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+
+
                 } 
                 else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
+                    {
+                        MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     // Pegando o id da empresa
                     var id = (int)dgvRelatorio[0, e.RowIndex].Value;
 
@@ -235,11 +249,23 @@ namespace Projeto_WindowsForms.Apresentacao
                 // Verificando se é exclusão ou edição
                 if (coluna.Name == "btnEditarEmpresa")
                 {
+                    if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
+                    {
+                        MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                 }
                 else if (MessageBox.Show("Deseja realmente excluir a empresa?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    if (colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaDP) || colaboradorLogado.Cargo.Equals(TipoCargo.AnalistaRH))
+                    {
+                        MessageBox.Show("Você não tem permissão para realizar essa ação!", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     // Pegando o id da empresa
                     var id = (int)dgvEmpresas[0, e.RowIndex].Value;
 
