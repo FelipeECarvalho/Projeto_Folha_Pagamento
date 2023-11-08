@@ -44,6 +44,37 @@ namespace Projeto_WindowsForms.DAL
 
         }
 
+        public void editarEmpresa(Empresa empresa)
+        {
+            var cmd = new SqlCommand
+            {
+                CommandText = @"UPDATE empresa SET cnpj = @cnpj, razao_social = @razaosocial, nome_fantasia = @nomefantasia WHERE id = @id"
+            };
+
+            cmd.Parameters.AddWithValue("@id", empresa.Id);
+            cmd.Parameters.AddWithValue("@cnpj", empresa.Cnpj);
+            cmd.Parameters.AddWithValue("@razaosocial", empresa.RazaoSocial);
+            cmd.Parameters.AddWithValue("@nomefantasia", empresa.NomeFantasia);
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                cmd.ExecuteNonQuery();
+
+                conexao.desconectar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+
+        }
+
         public List<Empresa> listarEmpresa()
         {
             var cmd = new SqlCommand

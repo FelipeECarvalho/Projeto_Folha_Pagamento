@@ -16,26 +16,24 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             Empresa empresa = new()
             {
-                Ativo = true,
+                Id = empresaSelecionada.Id,
                 Cnpj = txbCnpj.Text.Trim(),
                 NomeFantasia = txbNomeFantasia.Text.Trim(),
                 RazaoSocial = txbRazaoSocial.Text.Trim()
             };
 
             var empresaControle = new EmpresaControle();
-            empresaControle.cadastrarEmpresa(empresa);
+            empresaControle.editarEmpresa(empresa);
 
             if (string.IsNullOrEmpty(empresaControle.mensagem))
             {
-                MessageBox.Show("Empresa cadastrada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                txbCnpj.Clear();
-                txbNomeFantasia.Clear();
-                txbRazaoSocial.Clear();
+                DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                MessageBox.Show(empresaControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult = DialogResult.Abort;
+                this.Close();
             }
         }
 

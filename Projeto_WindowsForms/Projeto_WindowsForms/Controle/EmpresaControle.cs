@@ -27,6 +27,28 @@ namespace Projeto_WindowsForms.Controle
             }
         }
 
+        public void editarEmpresa(Empresa empresa)
+        {
+            validacao.validarDadosEmpresa(empresa);
+
+            if (string.IsNullOrEmpty(validacao.mensagem))
+            {
+                try
+                {
+                    var empresaDAO = new EmpresaDAO();
+                    empresaDAO.editarEmpresa(empresa);
+                }
+                catch (Exception e)
+                {
+                    this.mensagem = e.Message;
+                }
+            }
+            else
+            {
+                this.mensagem = validacao.mensagem;
+            }
+        }
+
         public List<Empresa> listarEmpresas()
         {
             try
