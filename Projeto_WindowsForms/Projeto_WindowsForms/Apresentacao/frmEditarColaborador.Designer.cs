@@ -47,10 +47,19 @@
             panel9 = new Panel();
             label9 = new Label();
             btnVoltar = new PictureBox();
+            panel3 = new Panel();
+            label1 = new Label();
+            label7 = new Label();
+            txbUsuario = new TextBox();
+            label5 = new Label();
+            panel4 = new Panel();
+            txbSenha = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnVoltar).BeginInit();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // lblNomeColaborador
@@ -104,7 +113,7 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditar.ForeColor = SystemColors.ButtonHighlight;
-            btnEditar.Location = new Point(565, 404);
+            btnEditar.Location = new Point(565, 607);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(148, 35);
             btnEditar.TabIndex = 0;
@@ -246,11 +255,80 @@
             btnVoltar.TabStop = false;
             btnVoltar.Click += btnVoltar_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(217, 217, 217);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label1);
+            panel3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            panel3.Location = new Point(49, 426);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(703, 40);
+            panel3.TabIndex = 14;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(33, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(112, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Dados de acesso";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(389, 28);
+            label7.Name = "label7";
+            label7.Size = new Size(39, 15);
+            label7.TabIndex = 4;
+            label7.Text = "Senha";
+            // 
+            // txbUsuario
+            // 
+            txbUsuario.Location = new Point(30, 49);
+            txbUsuario.Name = "txbUsuario";
+            txbUsuario.ReadOnly = true;
+            txbUsuario.Size = new Size(274, 23);
+            txbUsuario.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(30, 31);
+            label5.Name = "label5";
+            label5.Size = new Size(47, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Usuário";
+            // 
+            // panel4
+            // 
+            panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(txbSenha);
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(txbUsuario);
+            panel4.Controls.Add(label7);
+            panel4.Location = new Point(49, 463);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(703, 103);
+            panel4.TabIndex = 13;
+            // 
+            // txbSenha
+            // 
+            txbSenha.Location = new Point(389, 49);
+            txbSenha.Name = "txbSenha";
+            txbSenha.PasswordChar = '*';
+            txbSenha.Size = new Size(274, 23);
+            txbSenha.TabIndex = 5;
+            // 
             // frmEditarColaborador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(799, 467);
+            ClientSize = new Size(799, 686);
+            Controls.Add(panel3);
+            Controls.Add(panel4);
             Controls.Add(panel9);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -266,6 +344,10 @@
             panel2.PerformLayout();
             panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnVoltar).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -290,5 +372,12 @@
         private ComboBox cmbSexo;
         private Label lblSexo;
         private MaskedTextBox txbSalario;
+        private Panel panel3;
+        private Label label1;
+        private Label label7;
+        private TextBox txbUsuario;
+        private Label label5;
+        private Panel panel4;
+        private TextBox txbSenha;
     }
 }

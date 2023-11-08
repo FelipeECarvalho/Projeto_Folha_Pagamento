@@ -7,6 +7,7 @@ namespace Projeto_WindowsForms.Apresentacao
     public partial class frmEditarColaborador : Form
     {
         private Colaborador colaboradorSelecionado;
+        private Acesso acesso;
 
         public frmEditarColaborador()
         {
@@ -22,9 +23,12 @@ namespace Projeto_WindowsForms.Apresentacao
             carregarComboBox();
 
             var colaboradorControle = new ColaboradorControle();
-            colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador.ToString());
+            var acessoControle = new AcessoControle();
 
-            if (colaboradorSelecionado == null)
+            colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador.ToString());
+            acesso = acessoControle.buscarAcesso(colaboradorSelecionado.Id);
+
+            if (colaboradorSelecionado == null || acesso == null)
             {
                 this.DialogResult = DialogResult.Abort;
                 this.Close();
@@ -34,9 +38,13 @@ namespace Projeto_WindowsForms.Apresentacao
                 txbSalario.Text = colaboradorSelecionado.Salario.ToString();
                 txbNomeColaborador.Text = colaboradorSelecionado.NomeCompleto;
                 dtpDataAdmissao.Text = colaboradorSelecionado.DataAdmissao.ToString();
+                
                 cmbEmpresa.SelectedIndex = cmbEmpresa.FindStringExact(colaboradorSelecionado.Empresa.NomeFantasia);
                 cmbCargo.SelectedIndex = cmbCargo.FindStringExact(colaboradorSelecionado.Cargo.ToString());
                 cmbSexo.SelectedIndex = cmbSexo.FindStringExact(colaboradorSelecionado.Sexo.ToString());
+
+                txbUsuario.Text = acesso.Usuario;
+                txbSenha.Text = acesso.Senha;
             }
         }
 

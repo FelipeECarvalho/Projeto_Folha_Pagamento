@@ -49,7 +49,7 @@ namespace Projeto_WindowsForms.Controle
                         Ativo = true,
                         Colaborador = colaborador,
                         SenhaOriginal = GerarSenha(),
-                        Usuario = string.Format("{0}{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(0, 9))
+                        Usuario = string.Format("{0}{1}", colaborador.NomeCompleto.Replace(" ", "_").ToLower(), new Random().Next(9, 99))
                     };
 
                     acesso.Senha = GerarHashMd5(acesso.SenhaOriginal);
