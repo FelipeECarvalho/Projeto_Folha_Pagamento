@@ -115,6 +115,8 @@ namespace Projeto_WindowsForms.DAL
             {
                 cmd.Connection = conexao.conectar();
 
+                dr = cmd.ExecuteReader();
+
                 if (dr.HasRows)
                 {
                     while (dr.Read())

@@ -1,3 +1,4 @@
+using Projeto_WindowsForms.Controle;
 using Projeto_WindowsForms.Modelo;
 
 namespace Projeto_WindowsForms.Apresentacao
@@ -26,7 +27,23 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            var idColaborador = (int)dgvRelatorio[0, dgvRelatorio.CurrentCell.RowIndex].Value;
+            SelecionarColaborador(idColaborador);
+        }
 
+        private void dgvRelatorio_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var idColaborador = (int)dgvRelatorio[0, e.RowIndex].Value;
+            SelecionarColaborador(idColaborador);
+        }
+
+        private void SelecionarColaborador(int id)
+        {
+            var colaboradorControle = new ColaboradorControle();
+            colaboradorSelecionado = colaboradorControle.buscarColaborador(id);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

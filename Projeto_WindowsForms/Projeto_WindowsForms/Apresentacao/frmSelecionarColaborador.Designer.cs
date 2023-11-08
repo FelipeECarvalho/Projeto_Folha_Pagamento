@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnSelecionar = new Button();
             panel9 = new Panel();
             label9 = new Label();
@@ -109,14 +109,14 @@
             dgvRelatorio.BorderStyle = BorderStyle.None;
             dgvRelatorio.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvRelatorio.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRelatorio.ColumnHeadersHeight = 40;
             dgvRelatorio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { ID, data_admissao, Nome, salario, cargo, Empresa });
@@ -126,17 +126,18 @@
             dgvRelatorio.Name = "dgvRelatorio";
             dgvRelatorio.ReadOnly = true;
             dgvRelatorio.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dgvRelatorio.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvRelatorio.RowTemplate.Height = 25;
             dgvRelatorio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRelatorio.Size = new Size(775, 307);
             dgvRelatorio.TabIndex = 33;
+            dgvRelatorio.CellContentDoubleClick += dgvRelatorio_CellContentDoubleClick;
             // 
             // ID
             // 

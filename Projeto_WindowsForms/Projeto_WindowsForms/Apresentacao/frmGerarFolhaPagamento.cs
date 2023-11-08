@@ -130,13 +130,9 @@ namespace Projeto_WindowsForms.Apresentacao
 
             // Verificando se foi digitado um ID ou um nome
             if (int.TryParse(idNomeColaborador, out var id))
-            {
                 listaColaborador.Add(colaboradorControle.buscarColaborador(id));
-            }
             else
-            {
                 listaColaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
-            }
 
             // Caso tenha encontrado apenas um colaborador
             if (listaColaborador != null && listaColaborador.Count == 1)

@@ -213,3 +213,4 @@ Z:\DOWNLOADS\PROJETOS\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Windo
 Z:\DOWNLOADS\PROJETOS\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_WindowsForms\obj\Debug\net6.0-windows\ref\Projeto_WindowsForms.dll
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.Apresentacao.frmEditarEmpresa.resources
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.Apresentacao.frmEditarColaborador.resources
+C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.Apresentacao.frmSelecionarColaborador.resources
