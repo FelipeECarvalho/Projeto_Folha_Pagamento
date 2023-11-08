@@ -31,9 +31,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerarRelatorio));
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             panel2 = new Panel();
             label5 = new Label();
             btnRelatorio = new Button();
@@ -47,10 +49,11 @@
             ID = new DataGridViewTextBoxColumn();
             data_admissao = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
-            Sexo = new DataGridViewTextBoxColumn();
             salario = new DataGridViewTextBoxColumn();
             cargo = new DataGridViewTextBoxColumn();
             Empresa = new DataGridViewTextBoxColumn();
+            btnEditarColaborador = new DataGridViewImageColumn();
+            btnExcluirColaborador = new DataGridViewImageColumn();
             panel9 = new Panel();
             label9 = new Label();
             btnVoltar = new PictureBox();
@@ -59,6 +62,8 @@
             Cnpj = new DataGridViewTextBoxColumn();
             razao_social = new DataGridViewTextBoxColumn();
             nome_fantasia = new DataGridViewTextBoxColumn();
+            btnEditarEmpresa = new DataGridViewImageColumn();
+            btnExcluirEmpresa = new DataGridViewImageColumn();
             dgvFolhaPagamento = new DataGridView();
             id_folha = new DataGridViewTextBoxColumn();
             salario_folha = new DataGridViewTextBoxColumn();
@@ -213,7 +218,7 @@
             dgvRelatorio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRelatorio.ColumnHeadersHeight = 40;
             dgvRelatorio.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { ID, data_admissao, Nome, Sexo, salario, cargo, Empresa });
+            dgvRelatorio.Columns.AddRange(new DataGridViewColumn[] { ID, data_admissao, Nome, salario, cargo, Empresa, btnEditarColaborador, btnExcluirColaborador });
             dgvRelatorio.EnableHeadersVisualStyles = false;
             dgvRelatorio.GridColor = Color.FromArgb(50, 130, 184);
             dgvRelatorio.Location = new Point(11, 252);
@@ -231,6 +236,7 @@
             dgvRelatorio.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRelatorio.Size = new Size(890, 307);
             dgvRelatorio.TabIndex = 32;
+            dgvRelatorio.CellMouseEnter += dgvRelatorio_CellMouseEnter;
             // 
             // ID
             // 
@@ -254,13 +260,6 @@
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
             // 
-            // Sexo
-            // 
-            Sexo.FillWeight = 50F;
-            Sexo.HeaderText = "Sexo";
-            Sexo.Name = "Sexo";
-            Sexo.ReadOnly = true;
-            // 
             // salario
             // 
             salario.FillWeight = 75F;
@@ -280,6 +279,26 @@
             Empresa.HeaderText = "Empresa";
             Empresa.Name = "Empresa";
             Empresa.ReadOnly = true;
+            // 
+            // btnEditarColaborador
+            // 
+            btnEditarColaborador.FillWeight = 35F;
+            btnEditarColaborador.HeaderText = "Editar";
+            btnEditarColaborador.Image = Properties.Resources.botao_editar;
+            btnEditarColaborador.Name = "btnEditarColaborador";
+            btnEditarColaborador.ReadOnly = true;
+            btnEditarColaborador.Resizable = DataGridViewTriState.False;
+            btnEditarColaborador.ToolTipText = "Editar registro";
+            // 
+            // btnExcluirColaborador
+            // 
+            btnExcluirColaborador.FillWeight = 35F;
+            btnExcluirColaborador.HeaderText = "Excluir";
+            btnExcluirColaborador.Image = Properties.Resources.botao_excluir;
+            btnExcluirColaborador.Name = "btnExcluirColaborador";
+            btnExcluirColaborador.ReadOnly = true;
+            btnExcluirColaborador.Resizable = DataGridViewTriState.False;
+            btnExcluirColaborador.ToolTipText = "Excluir registro";
             // 
             // panel9
             // 
@@ -338,20 +357,20 @@
             dgvEmpresas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvEmpresas.ColumnHeadersHeight = 40;
             dgvEmpresas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvEmpresas.Columns.AddRange(new DataGridViewColumn[] { id_empresa, Cnpj, razao_social, nome_fantasia });
+            dgvEmpresas.Columns.AddRange(new DataGridViewColumn[] { id_empresa, Cnpj, razao_social, nome_fantasia, btnEditarEmpresa, btnExcluirEmpresa });
             dgvEmpresas.EnableHeadersVisualStyles = false;
             dgvEmpresas.GridColor = Color.FromArgb(50, 130, 184);
             dgvEmpresas.Location = new Point(11, 252);
             dgvEmpresas.Name = "dgvEmpresas";
             dgvEmpresas.ReadOnly = true;
             dgvEmpresas.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dgvEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dgvEmpresas.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvEmpresas.RowTemplate.Height = 25;
             dgvEmpresas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmpresas.Size = new Size(890, 307);
@@ -385,6 +404,30 @@
             nome_fantasia.Name = "nome_fantasia";
             nome_fantasia.ReadOnly = true;
             // 
+            // btnEditarEmpresa
+            // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = resources.GetObject("dataGridViewCellStyle4.NullValue");
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            btnEditarEmpresa.DefaultCellStyle = dataGridViewCellStyle4;
+            btnEditarEmpresa.FillWeight = 30F;
+            btnEditarEmpresa.HeaderText = "Editar";
+            btnEditarEmpresa.Image = Properties.Resources.botao_editar1;
+            btnEditarEmpresa.Name = "btnEditarEmpresa";
+            btnEditarEmpresa.ReadOnly = true;
+            btnEditarEmpresa.Resizable = DataGridViewTriState.False;
+            btnEditarEmpresa.ToolTipText = "Editar registro";
+            // 
+            // btnExcluirEmpresa
+            // 
+            btnExcluirEmpresa.FillWeight = 30F;
+            btnExcluirEmpresa.HeaderText = "Excluir";
+            btnExcluirEmpresa.Image = Properties.Resources.botao_excluir;
+            btnExcluirEmpresa.Name = "btnExcluirEmpresa";
+            btnExcluirEmpresa.ReadOnly = true;
+            btnExcluirEmpresa.Resizable = DataGridViewTriState.False;
+            btnExcluirEmpresa.ToolTipText = "Excluir registro";
+            // 
             // dgvFolhaPagamento
             // 
             dgvFolhaPagamento.AllowUserToAddRows = false;
@@ -398,14 +441,14 @@
             dgvFolhaPagamento.BorderStyle = BorderStyle.None;
             dgvFolhaPagamento.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvFolhaPagamento.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvFolhaPagamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dgvFolhaPagamento.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             dgvFolhaPagamento.ColumnHeadersHeight = 40;
             dgvFolhaPagamento.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvFolhaPagamento.Columns.AddRange(new DataGridViewColumn[] { id_folha, salario_folha, desconto, irrf, inss, subtotal, colaborador });
@@ -415,13 +458,13 @@
             dgvFolhaPagamento.Name = "dgvFolhaPagamento";
             dgvFolhaPagamento.ReadOnly = true;
             dgvFolhaPagamento.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(50, 130, 184);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dgvFolhaPagamento.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(50, 130, 184);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            dgvFolhaPagamento.RowsDefaultCellStyle = dataGridViewCellStyle7;
             dgvFolhaPagamento.RowTemplate.Height = 25;
             dgvFolhaPagamento.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvFolhaPagamento.Size = new Size(890, 307);
@@ -429,7 +472,7 @@
             // 
             // id_folha
             // 
-            id_folha.FillWeight = 30F;
+            id_folha.FillWeight = 27.8731213F;
             id_folha.HeaderText = "ID";
             id_folha.Name = "id_folha";
             id_folha.ReadOnly = true;
@@ -437,38 +480,42 @@
             // 
             // salario_folha
             // 
-            salario_folha.FillWeight = 75F;
+            salario_folha.FillWeight = 69.6828F;
             salario_folha.HeaderText = "Salário (=)";
             salario_folha.Name = "salario_folha";
             salario_folha.ReadOnly = true;
             // 
             // desconto
             // 
+            desconto.FillWeight = 92.9104F;
             desconto.HeaderText = "Desconto (-)";
             desconto.Name = "desconto";
             desconto.ReadOnly = true;
             // 
             // irrf
             // 
-            irrf.FillWeight = 101.725891F;
+            irrf.FillWeight = 94.51394F;
             irrf.HeaderText = "IRRF (-)";
             irrf.Name = "irrf";
             irrf.ReadOnly = true;
             // 
             // inss
             // 
+            inss.FillWeight = 92.9104F;
             inss.HeaderText = "INSS (-)";
             inss.Name = "inss";
             inss.ReadOnly = true;
             // 
             // subtotal
             // 
+            subtotal.FillWeight = 92.9104F;
             subtotal.HeaderText = "Subtotal (=)";
             subtotal.Name = "subtotal";
             subtotal.ReadOnly = true;
             // 
             // colaborador
             // 
+            colaborador.FillWeight = 92.9104F;
             colaborador.HeaderText = "Colaborador";
             colaborador.Name = "colaborador";
             colaborador.ReadOnly = true;
@@ -479,10 +526,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(914, 571);
-            Controls.Add(dgvFolhaPagamento);
-            Controls.Add(dgvEmpresas);
             Controls.Add(panel9);
-            Controls.Add(dgvRelatorio);
             Controls.Add(panel3);
             Controls.Add(btnBuscar);
             Controls.Add(btnFolhaPagamento);
@@ -490,6 +534,9 @@
             Controls.Add(btnRelatorio);
             Controls.Add(label5);
             Controls.Add(panel2);
+            Controls.Add(dgvRelatorio);
+            Controls.Add(dgvFolhaPagamento);
+            Controls.Add(dgvEmpresas);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGerarRelatorio";
             StartPosition = FormStartPosition.CenterScreen;
@@ -522,18 +569,7 @@
         private Panel panel9;
         private Label label9;
         private PictureBox btnVoltar;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn data_admissao;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Sexo;
-        private DataGridViewTextBoxColumn salario;
-        private DataGridViewTextBoxColumn Empresa;
-        private DataGridViewTextBoxColumn cargo;
         private DataGridView dgvEmpresas;
-        private DataGridViewTextBoxColumn id_empresa;
-        private DataGridViewTextBoxColumn Cnpj;
-        private DataGridViewTextBoxColumn razao_social;
-        private DataGridViewTextBoxColumn nome_fantasia;
         private DataGridView dgvFolhaPagamento;
         private DataGridViewTextBoxColumn id_folha;
         private DataGridViewTextBoxColumn salario_folha;
@@ -542,5 +578,19 @@
         private DataGridViewTextBoxColumn inss;
         private DataGridViewTextBoxColumn subtotal;
         private DataGridViewTextBoxColumn colaborador;
+        private DataGridViewTextBoxColumn id_empresa;
+        private DataGridViewTextBoxColumn Cnpj;
+        private DataGridViewTextBoxColumn razao_social;
+        private DataGridViewTextBoxColumn nome_fantasia;
+        private DataGridViewImageColumn btnEditarEmpresa;
+        private DataGridViewImageColumn btnExcluirEmpresa;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn data_admissao;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn salario;
+        private DataGridViewTextBoxColumn cargo;
+        private DataGridViewTextBoxColumn Empresa;
+        private DataGridViewImageColumn btnEditarColaborador;
+        private DataGridViewImageColumn btnExcluirColaborador;
     }
 }

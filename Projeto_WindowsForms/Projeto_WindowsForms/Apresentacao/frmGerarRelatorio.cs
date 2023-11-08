@@ -1,6 +1,7 @@
 ﻿using Projeto_WindowsForms.Controle;
 using Projeto_WindowsForms.Modelo;
 using Projeto_WindowsForms.Modelo.Enum;
+using System.Windows.Forms;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -25,7 +26,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
             foreach (var colaborador in listaColaborador)
             {
-                dgvRelatorio.Rows.Add(colaborador.Id, colaborador.DataAdmissao.ToShortDateString(), colaborador.NomeCompleto, colaborador.Sexo, colaborador.Salario.ToString("c"), colaborador.Cargo, colaborador.Empresa.NomeFantasia);
+                dgvRelatorio.Rows.Add(colaborador.Id, colaborador.DataAdmissao.ToShortDateString(), colaborador.NomeCompleto, colaborador.Salario.ToString("c"), colaborador.Cargo, colaborador.Empresa.NomeFantasia);
             }
 
             foreach (var empresa in listaEmpresas)
@@ -165,6 +166,17 @@ namespace Projeto_WindowsForms.Apresentacao
             }
 
             btnRelatorio_Click(sender, e);
+        }
+
+        private void dgvRelatorio_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var nomeColuna = dgvRelatorio.Columns[e.ColumnIndex].Name;
+            
+            // caso o usuário passe o mouse sobre uma coluna que contenha o nome btn
+            if (nomeColuna.Contains("btn"))
+                dgvRelatorio.Cursor = Cursors.Hand;
+            else
+                dgvRelatorio.Cursor = Cursors.Default;
         }
     }
 }
