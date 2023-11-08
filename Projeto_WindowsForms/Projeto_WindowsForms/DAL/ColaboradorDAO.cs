@@ -186,5 +186,32 @@ namespace Projeto_WindowsForms.DAL
 
             return listaColaborador;
         }
+
+        public void desativarColaborador(int id)
+        {
+            var cmd = new SqlCommand
+            {
+                CommandText = @"update colaborador set ativo = 0 where id = @id"
+            };
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                cmd.ExecuteNonQuery();
+
+                conexao.desconectar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conexao.desconectar();
+            }
+        }
     }
 }

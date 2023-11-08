@@ -86,5 +86,19 @@ namespace Projeto_WindowsForms.Controle
 
             return new List<Colaborador>();
         }
+
+        public void desativarColaborador(int id)
+        {
+            try
+            {
+                var colaboradorDAO = new ColaboradorDAO();
+
+                colaboradorDAO.desativarColaborador(id);
+            }
+            catch (Exception e)
+            {
+                this.mensagem = e.Message;
+            }
+        }
     }
 }
