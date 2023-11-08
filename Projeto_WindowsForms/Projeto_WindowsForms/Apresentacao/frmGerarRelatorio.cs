@@ -260,10 +260,12 @@ namespace Projeto_WindowsForms.Apresentacao
 
                     var frmEditarEmpresa = new frmEditarEmpresa();
 
+                    var resultadoForm = frmEditarEmpresa.ShowDialog();
+
                     // É verificado o retorno do form de edição para ver o resultado
-                    if (frmEditarEmpresa.ShowDialog() == DialogResult.OK)
+                    if (resultadoForm == DialogResult.OK)
                         MessageBox.Show("Empresa atualizada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else if (frmEditarEmpresa.ShowDialog() == DialogResult.Abort)
+                    else if (resultadoForm == DialogResult.Abort)
                         MessageBox.Show("Não foi possível atualizar a empresa, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 }

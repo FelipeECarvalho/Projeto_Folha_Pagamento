@@ -32,8 +32,7 @@ namespace Projeto_WindowsForms.Apresentacao
             }
             else
             {
-                DialogResult = DialogResult.Abort;
-                this.Close();
+                MessageBox.Show(empresaControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
