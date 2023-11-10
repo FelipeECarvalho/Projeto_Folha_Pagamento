@@ -1,12 +1,12 @@
 ﻿using System.Text;
 using System.Security.Cryptography;
 
-namespace Projeto_Api
+namespace Projeto_Api.Utils
 {
     /// <summary>
     /// Classe reponsável por conter métodos para facilitar o desenvolvimento
     /// </summary>
-    public static class Utils
+    public static class Senha
     {
         /// <summary>
         /// Método responsável por gerar uma nova senha númerica de seis digitos

@@ -1,7 +1,8 @@
 using DAL;
 using Modelo;
 using Microsoft.AspNetCore.Mvc;
-using static Projeto_Api.ViewModels.ResultadoViewModel;
+using Projeto_Api.Utils;
+using Projeto_Api.ViewModels;
 
 namespace Projeto_Api.Controllers
 {
@@ -25,13 +26,13 @@ namespace Projeto_Api.Controllers
                 {
                     var acessoDAO = new AcessoDAO();
 
-                    var senhaCriptografada = Utils.GerarHashMd5(senha);
+                    var senhaCriptografada = Senha.GerarHashMd5(senha);
                     var acesso = acessoDAO.BuscarAcesso(usuario, senhaCriptografada);
 
                     if (acesso == null)
-                        return StatusCode(500, new ResultViewModel<Acesso>("Usuário ou senha inválidos, revise e tente novamente."));
+                        return StatusCode(500, new ResultadoViewModel<Acesso>("Usuário ou senha inválidos, revise e tente novamente."));
 
-                    return Ok(new ResultViewModel<Acesso>(acesso));
+                    return Ok(new ResultadoViewModel<Acesso>(acesso));
                 }
                 catch (Exception e)
                 {
@@ -40,7 +41,7 @@ namespace Projeto_Api.Controllers
             }
             else
             {
-                return StatusCode(500, new ResultViewModel<Acesso>(validacao.Mensagem));
+                return StatusCode(500, new ResultadoViewModel<Acesso>(validacao.Mensagem));
             }
         }
 
@@ -58,9 +59,9 @@ namespace Projeto_Api.Controllers
                 var acesso = acessoDAO.BuscarAcesso(id);
 
                 if (acesso == null)
-                    return StatusCode(500, new ResultViewModel<Acesso>("Acesso não encontrado, revise e tente novamente."));
+                    return StatusCode(500, new ResultadoViewModel<Acesso>("Acesso não encontrado, revise e tente novamente."));
 
-                return Ok(new ResultViewModel<Acesso>(acesso));
+                return Ok(new ResultadoViewModel<Acesso>(acesso));
             }
             catch (Exception e)
             {
