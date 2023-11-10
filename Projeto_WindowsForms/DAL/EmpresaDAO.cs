@@ -1,19 +1,11 @@
-﻿using System.Data.SqlClient;
-using Projeto_WindowsForms.Modelo;
+﻿using Modelo;
+using System.Data.SqlClient;
 
-namespace Projeto_WindowsForms.DAL
+namespace DAL
 {
-    public class EmpresaDAO
+    public class EmpresaDAO : BaseDAO
     {
-        private SqlDataReader dr;
-        private readonly Conexao conexao;
-
-        public EmpresaDAO()
-        {
-            conexao = new Conexao();
-        }
-
-        public void cadastrarEmpresa(Empresa empresa)
+        public void CadastrarEmpresa(Empresa empresa)
         {
             var cmd = new SqlCommand
             {
@@ -27,11 +19,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -39,12 +31,12 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
         }
 
-        public void editarEmpresa(Empresa empresa)
+        public void EditarEmpresa(Empresa empresa)
         {
             var cmd = new SqlCommand
             {
@@ -58,11 +50,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -70,12 +62,12 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
         }
 
-        public List<Empresa> listarEmpresa()
+        public List<Empresa> ListarEmpresa()
         {
             var cmd = new SqlCommand
             {
@@ -86,7 +78,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -114,13 +106,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return listaEmpresa;
         }
 
-        public void desativarEmpresa(int id)
+        public void DesativarEmpresa(int id)
         {
             var cmd = new SqlCommand
             {
@@ -131,11 +123,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -143,11 +135,11 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
         } 
 
-        public Empresa buscarEmpresa(int id)
+        public Empresa BuscarEmpresa(int id)
         {
             var cmd = new SqlCommand
             {
@@ -160,7 +152,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -186,7 +178,7 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
         }
     }

@@ -1,20 +1,12 @@
-﻿using System.Data.SqlClient;
-using Projeto_WindowsForms.Modelo;
-using Projeto_WindowsForms.Modelo.Enum;
+﻿using Modelo;
+using Modelo.Enum;
+using System.Data.SqlClient;
 
-namespace Projeto_WindowsForms.DAL
+namespace DAL
 {
-    public class FolhaPagamentoDAO
+    public class FolhaPagamentoDAO : BaseDAO
     {
-        private SqlDataReader dr;
-        private readonly Conexao conexao;
-
-        public FolhaPagamentoDAO()
-        {
-            conexao = new Conexao();
-        }
-
-        public void cadastrarFolhaPagamento(FolhaPagamento folhaPagamento)
+        public void CadastrarFolhaPagamento(FolhaPagamento folhaPagamento)
         {
             var cmd = new SqlCommand
             {
@@ -37,11 +29,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -49,12 +41,12 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
         }
 
-        public List<FolhaPagamento> listarFolhaPagamento()
+        public List<FolhaPagamento> ListarFolhaPagamento()
         {
             var cmd = new SqlCommand
             {
@@ -71,7 +63,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -122,13 +114,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return listaFolhaPagamento;
         }
 
-        public FolhaPagamento buscarPorColaborador(Colaborador colaborador)
+        public FolhaPagamento BuscarPorColaborador(Colaborador colaborador)
         {
             var cmd = new SqlCommand
             {
@@ -149,7 +141,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -198,7 +190,7 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return null;

@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 
-namespace Projeto_WindowsForms.DAL
+namespace DAL
 {
     public class Conexao
     {
@@ -13,7 +13,7 @@ namespace Projeto_WindowsForms.DAL
             connection = new SqlConnection(stringConexao);
         }
 
-        public SqlConnection conectar()
+        public SqlConnection Conectar()
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Projeto_WindowsForms.DAL
             }
         }
 
-        public bool desconectar()
+        public bool Desconectar()
         {
             try
             {

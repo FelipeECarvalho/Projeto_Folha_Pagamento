@@ -1,20 +1,12 @@
-﻿using Projeto_WindowsForms.Modelo;
-using Projeto_WindowsForms.Modelo.Enum;
+﻿using Modelo;
+using Modelo.Enum;
 using System.Data.SqlClient;
 
-namespace Projeto_WindowsForms.DAL
+namespace DAL
 {
-    public class ColaboradorDAO
+    public class ColaboradorDAO : BaseDAO
     {
-        private readonly Conexao conexao;
-        private SqlDataReader dr;
-
-        public ColaboradorDAO()
-        {
-            conexao = new Conexao();
-        }
-
-        public void cadastrarColaborador(Colaborador colaborador, Acesso acesso)
+        public void CadastrarColaborador(Colaborador colaborador, Acesso acesso)
         {
             SqlCommand cmd = new()
             {
@@ -38,11 +30,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -50,11 +42,11 @@ namespace Projeto_WindowsForms.DAL
             }
             finally 
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
         }
 
-        public void editarColaborador(Colaborador colaborador, Acesso acesso)
+        public void EditarColaborador(Colaborador colaborador, Acesso acesso)
         {
             SqlCommand cmd = new()
             {
@@ -77,11 +69,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -89,11 +81,11 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
         }
 
-        public List<Colaborador> buscarColaborador(string nome)
+        public List<Colaborador> BuscarColaborador(string nome)
         {
             SqlCommand cmd = new()
             {
@@ -113,7 +105,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -148,7 +140,7 @@ namespace Projeto_WindowsForms.DAL
 
                 dr.Close();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -156,13 +148,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return listaColaborador;
         }
 
-        public Colaborador buscarColaborador(int id)
+        public Colaborador BuscarColaborador(int id)
         {
             SqlCommand cmd = new()
             {
@@ -182,7 +174,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -212,7 +204,7 @@ namespace Projeto_WindowsForms.DAL
 
                 dr.Close();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -220,13 +212,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return colaborador;
         }
 
-        public List<Colaborador> listarColaborador()
+        public List<Colaborador> ListarColaborador()
         {
             var cmd = new SqlCommand
             {
@@ -243,7 +235,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -283,13 +275,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return listaColaborador;
         }
 
-        public void desativarColaborador(int id)
+        public void DesativarColaborador(int id)
         {
             var cmd = new SqlCommand
             {
@@ -300,11 +292,11 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 cmd.ExecuteNonQuery();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -312,7 +304,7 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
         }
     }

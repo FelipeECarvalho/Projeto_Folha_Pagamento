@@ -1,21 +1,12 @@
-﻿using Projeto_WindowsForms.Controle;
-using Projeto_WindowsForms.Modelo;
-using Projeto_WindowsForms.Modelo.Enum;
+﻿using Modelo;
+using Modelo.Enum;
 using System.Data.SqlClient;
 
-namespace Projeto_WindowsForms.DAL
+namespace DAL
 {
-    public class AcessoDAO
+    public class AcessoDAO : BaseDAO
     {
-        private readonly Conexao conexao;
-        private SqlDataReader dr;
-
-        public AcessoDAO()
-        {
-            conexao = new Conexao();
-        }
-
-        public Acesso buscarAcesso(string usuario, string senha)
+        public Acesso BuscarAcesso(string usuario, string senha)
         {
             Acesso acesso = null;
 
@@ -37,7 +28,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
                 
@@ -71,7 +62,7 @@ namespace Projeto_WindowsForms.DAL
 
                 dr.Close();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -79,13 +70,13 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return acesso;
         }
 
-        public Acesso buscarAcesso(int idColaborador)
+        public Acesso BuscarAcesso(int idColaborador)
         {
             Acesso acesso = null;
 
@@ -105,7 +96,7 @@ namespace Projeto_WindowsForms.DAL
 
             try
             {
-                cmd.Connection = conexao.conectar();
+                cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
 
@@ -139,7 +130,7 @@ namespace Projeto_WindowsForms.DAL
 
                 dr.Close();
 
-                conexao.desconectar();
+                conexao.Desconectar();
             }
             catch (Exception)
             {
@@ -147,7 +138,7 @@ namespace Projeto_WindowsForms.DAL
             }
             finally
             {
-                conexao.desconectar();
+                conexao.Desconectar();
             }
 
             return acesso;
