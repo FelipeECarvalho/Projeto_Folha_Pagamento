@@ -36,7 +36,7 @@ namespace Projeto_Api.Controllers
                 }
                 catch (Exception e)
                 {
-                    return StatusCode(500, e.Message);
+                    return StatusCode(500, new ResultadoViewModel<Colaborador>(e.Message));
                 }
             }
             else
@@ -65,7 +65,7 @@ namespace Projeto_Api.Controllers
             }
             catch (Exception e)
             {
-                return StatusCode(500, e.Message);
+                return StatusCode(500, new ResultadoViewModel<Colaborador>(e.Message));
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using DAL;
+using Modelo;
 
 namespace Projeto_Api.Utils
 {
@@ -100,24 +101,24 @@ namespace Projeto_Api.Utils
                 Mensagem += "O Nome Fantasia não pode exceder 50 caracteres.\n";
         }
 
-        //public void validarDadosFolhaPagamento(FolhaPagamento folhaPagamento)
-        //{
-        //    this.mensagem = "";
-        //    var folhaPagamentoControle = new FolhaPagamentoControle();
+        public void ValidarDadosFolhaPagamento(FolhaPagamento folhaPagamento)
+        {
+            this.Mensagem = "";
+            var folhaPagamentoDAO = new FolhaPagamentoDAO();
 
-        //    if (folhaPagamento.ValorLiquido == 0)
-        //        this.mensagem += "Valor líquido é obrigatório\n";
+            if (folhaPagamento.ValorLiquido == 0)
+                this.Mensagem += "Valor líquido é obrigatório\n";
 
-        //    if (folhaPagamento.VencimentosTotais == 0)
-        //        this.mensagem += "Vencimentos totais é obrigatório\n";
+            if (folhaPagamento.VencimentosTotais == 0)
+                this.Mensagem += "Vencimentos totais é obrigatório\n";
 
-        //    if (folhaPagamento.Colaborador == null || folhaPagamento.Colaborador.Id == 0)
-        //        this.mensagem += "Colaborador é obrigatório\n";
+            if (folhaPagamento.Colaborador == null || folhaPagamento.Colaborador.Id == 0)
+                this.Mensagem += "Colaborador é obrigatório\n";
 
-        //    var folhaPagamentoValidacao = folhaPagamentoControle.buscarFolhaPagamentoPorColaborador(folhaPagamento.Colaborador);
+            var folhaPagamentoValidacao = folhaPagamentoDAO.BuscarPorColaborador(folhaPagamento.Colaborador);
 
-        //    if (folhaPagamentoValidacao != null)
-        //        this.mensagem += "Já existe uma folha de pagamento cadastrada para este colaborador nesse mês\n";
-        //}
+            if (folhaPagamentoValidacao != null)
+                this.Mensagem += "Já existe uma folha de pagamento cadastrada para este colaborador nesse mês\n";
+        }
     }
 }
