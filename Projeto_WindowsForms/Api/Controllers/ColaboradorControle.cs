@@ -15,6 +15,7 @@ namespace Projeto_Api.Controllers
         /// </summary>
         /// <param name="nome">nome do colaborador</param>
         /// <returns>Uma lista de colaboradores contendo o nome informado</returns>
+        [HttpGet]
         public ActionResult Get([FromHeader] string nome)
         {
             validacao.ValidarBuscaColaborador(nome);
@@ -78,7 +79,7 @@ namespace Projeto_Api.Controllers
         /// Método responsável por listar todos os colaboradores cadastrados
         /// </summary>
         /// <returns>Lista contendo todos os colaboradores</returns>
-        [HttpGet]
+        [HttpGet("listar")]
         public ActionResult Get()
         {
             try
@@ -141,18 +142,18 @@ namespace Projeto_Api.Controllers
         /// <param name="acesso"></param>
         /// <returns></returns>
         [HttpPut]
-        public ActionResult Put([FromBody]Colaborador colaborador, [FromBody]Acesso acesso)
+        public ActionResult Put([FromBody]EdicaoColaboradorViewModel model)
         {
-            validacao.ValidarDadosColaborador(colaborador, acesso);
+            validacao.ValidarDadosColaborador(model.Colaborador, model.Acesso);
 
             if (string.IsNullOrEmpty(validacao.Mensagem))
             {
                 try
                 {
-                    acesso.Senha = Senha.GerarHashMd5(acesso.SenhaOriginal);
+                    model.Acesso.Senha = Senha.GerarHashMd5(model.Acesso.SenhaOriginal);
                     
                     var colaboradorDAO = new ColaboradorDAO();
-                    colaboradorDAO.EditarColaborador(colaborador, acesso);
+                    colaboradorDAO.EditarColaborador(model.Colaborador, model.Acesso);
 
                     return Ok();
                 }
