@@ -16,8 +16,6 @@ namespace Projeto_Web.Controllers
 
         public IActionResult Index()
         {
-            var acessoServico = new AcessoServico();
-            acessoServico.BuscarAcesso("admin1", "12345");
             return View();
         }
 
