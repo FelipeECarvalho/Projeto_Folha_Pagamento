@@ -49,14 +49,14 @@ namespace Projeto_Api.Controllers
         /// Método resposável por buscar o acesso por meio do ID de um colaborador
         /// </summary>
         /// <param name="id">ID do colaborador</param>
-        [HttpGet("{id:int}")]
-        public ActionResult Get([FromRoute] int id)
+        [HttpGet("{idColaborador:int}")]
+        public ActionResult Get([FromRoute] int idColaborador)
         {
             try
             {
                 var acessoDAO = new AcessoDAO();
 
-                var acesso = acessoDAO.BuscarAcesso(id);
+                var acesso = acessoDAO.BuscarAcesso(idColaborador);
 
                 if (acesso == null)
                     return StatusCode(500, new ResultadoViewModel<Acesso>("Acesso não encontrado, revise e tente novamente."));
