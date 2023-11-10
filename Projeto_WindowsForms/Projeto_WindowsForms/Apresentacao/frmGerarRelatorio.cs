@@ -1,6 +1,5 @@
-﻿using Projeto_WindowsForms.Controle;
-using Projeto_WindowsForms.Modelo;
-using Projeto_WindowsForms.Modelo.Enum;
+﻿using Modelo;
+using Modelo.Enum;
 
 namespace Projeto_WindowsForms.Apresentacao
 {

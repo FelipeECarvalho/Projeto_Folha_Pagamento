@@ -1,5 +1,3 @@
-using Projeto_WindowsForms.Controle;
-
 namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmLogin : Form
