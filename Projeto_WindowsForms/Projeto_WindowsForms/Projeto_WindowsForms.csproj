@@ -37,6 +37,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj" />
+    <ProjectReference Include="..\Servico\Servico.csproj" />
   </ItemGroup>
 
 </Project>

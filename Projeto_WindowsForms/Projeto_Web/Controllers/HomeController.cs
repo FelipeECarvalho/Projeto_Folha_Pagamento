@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto_Web.Models;
+using Servico;
 using System.Diagnostics;
 
 namespace Projeto_Web.Controllers
@@ -15,6 +16,8 @@ namespace Projeto_Web.Controllers
 
         public IActionResult Index()
         {
+            var acessoServico = new AcessoServico();
+            acessoServico.BuscarAcesso("admin1", "12345");
             return View();
         }
 
