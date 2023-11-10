@@ -1,4 +1,4 @@
-﻿namespace Projeto_WindowsForms.Modelo
+﻿namespace Modelo
 {
     public class ModeloBase
     {

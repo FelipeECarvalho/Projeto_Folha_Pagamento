@@ -1,6 +1,6 @@
-﻿using Projeto_WindowsForms.Modelo.Enum;
+﻿using Modelo.Enum;
 
-namespace Projeto_WindowsForms.Modelo
+namespace Modelo
 {
     public class Colaborador : ModeloBase
     {

@@ -88,6 +88,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Modelo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Modelo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelo.dll": {}
+        }
       }
     }
   },
@@ -429,10 +439,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Modelo/1.0.0": {
+      "type": "project",
+      "path": "../Modelo/Modelo.csproj",
+      "msbuildProject": "../Modelo/Modelo.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Modelo >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -467,7 +483,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj": {
+              "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

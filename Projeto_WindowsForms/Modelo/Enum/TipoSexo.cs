@@ -1,4 +1,4 @@
-﻿namespace Projeto_WindowsForms.Modelo.Enum
+﻿namespace Modelo.Enum
 {
     public enum TipoSexo
     {

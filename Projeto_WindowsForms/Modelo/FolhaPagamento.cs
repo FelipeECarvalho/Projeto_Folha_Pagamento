@@ -1,4 +1,4 @@
-﻿namespace Projeto_WindowsForms.Modelo
+﻿namespace Modelo
 {
     public class FolhaPagamento : ModeloBase
     {
@@ -9,7 +9,7 @@
         public decimal ValorLiquido { get; set; }
         public decimal DescontosTotais { get; set; }
         public decimal VencimentosTotais { get; set; }
-        public decimal AliquotaInss {  get; set; }
+        public decimal AliquotaInss { get; set; }
         public decimal AliquotaIrrf { get; set; }
         public DateTime DataCriacao { get; set; }
         public Colaborador Colaborador { get; set; }
@@ -21,7 +21,7 @@
             CalcularHorasExtras();
             CalcularVencimentosTotais();
             CalcularDescontosTotais();
- 
+
             ValorLiquido = VencimentosTotais - DescontosTotais;
             ValorLiquido = Math.Round(ValorLiquido, 2);
         }
@@ -33,7 +33,7 @@
             // Calcula a alíquota do INSS
             if (salario <= 1320)
                 AliquotaInss = 7.5m;
-            else if (salario <=  2571)
+            else if (salario <= 2571)
                 AliquotaInss = 9.0m;
             else if (salario <= 3865)
                 AliquotaInss = 12m;
@@ -60,14 +60,14 @@
             else
                 AliquotaIrrf = 27.5m;
 
-            Irrf = (Colaborador.Salario * (AliquotaIrrf / 100)); // 5% de desconto fictício
+            Irrf = Colaborador.Salario * (AliquotaIrrf / 100); // 5% de desconto fictício
             Irrf = Math.Round(Irrf, 2);
         }
 
         private void CalcularHorasExtras()
         {
             var salarioHora = Colaborador.Salario / 30 / 8;
-            var valorHorasExtras = salarioHora + (salarioHora * 0.5m);
+            var valorHorasExtras = salarioHora + salarioHora * 0.5m;
 
             ValorHorasExtras = Math.Round(HorasExtras * valorHorasExtras, 2);
         }

@@ -1,5 +1,4 @@
-﻿using Projeto_WindowsForms.DAL;
-using Projeto_WindowsForms.Modelo;
+﻿using Modelo;
 
 namespace Projeto_WindowsForms.Controle
 {

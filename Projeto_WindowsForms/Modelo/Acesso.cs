@@ -1,6 +1,6 @@
-﻿namespace Projeto_WindowsForms.Modelo
+﻿namespace Modelo
 {
-    public  class Acesso : ModeloBase
+    public class Acesso : ModeloBase
     {
         public string Usuario { get; set; }
         public string Senha { get; set; }

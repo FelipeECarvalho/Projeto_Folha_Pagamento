@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
-      "Modelo/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Modelo.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Modelo.dll": {}
-        }
-      }
-    }
+    "net6.0": {}
   },
-  "libraries": {
-    "Modelo/1.0.0": {
-      "type": "project",
-      "path": "../Modelo/Modelo.csproj",
-      "msbuildProject": "../Modelo/Modelo.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "Modelo >= 1.0.0"
-    ]
+    "net6.0": []
   },
   "packageFolders": {
     "C:\\Users\\felip\\.nuget\\packages\\": {},
@@ -33,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\Projeto_Web.csproj",
-      "projectName": "Projeto_Web",
-      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\Projeto_Web.csproj",
+      "projectUniqueName": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj",
+      "projectName": "Modelo",
+      "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj",
       "packagesPath": "C:\\Users\\felip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\obj\\",
+      "outputPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,11 +38,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj": {
-              "projectPath": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Modelo\\Modelo.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -85,9 +62,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
