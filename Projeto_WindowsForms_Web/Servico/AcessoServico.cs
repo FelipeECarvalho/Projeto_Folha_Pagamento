@@ -51,7 +51,7 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                return GetData<Acesso>(response); 
+                return GetData<Acesso>(response);
             }
             else
             {

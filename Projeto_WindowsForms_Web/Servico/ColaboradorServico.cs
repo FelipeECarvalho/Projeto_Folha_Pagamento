@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Servico
 {
-    public  class ColaboradorServico : BaseServico
+    public class ColaboradorServico : BaseServico
     {
         /// <summary>
         /// Método reponsável por cadastrar um colaborador por meio da api
@@ -19,7 +19,7 @@ namespace Servico
             var json = JsonConvert.SerializeObject(colaborador);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var request = new HttpRequestMessage(HttpMethod.Post, url) 
+            var request = new HttpRequestMessage(HttpMethod.Post, url)
             {
                 Content = data
             };

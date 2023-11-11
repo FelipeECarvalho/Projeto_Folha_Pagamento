@@ -137,7 +137,7 @@ namespace DAL
             {
                 conexao.Desconectar();
             }
-        } 
+        }
 
         public Empresa BuscarEmpresa(int id)
         {

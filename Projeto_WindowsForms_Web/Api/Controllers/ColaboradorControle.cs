@@ -1,8 +1,8 @@
 ﻿using DAL;
-using Modelo;
-using Projeto_Api.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Modelo;
 using Projeto_Api.Utils;
+using Projeto_Api.ViewModels;
 
 namespace Projeto_Api.Controllers
 {
@@ -48,7 +48,7 @@ namespace Projeto_Api.Controllers
         /// </summary>
         /// <param name="id">Id do colaborador</param>
         [HttpGet("{id:int}")]
-        public ActionResult Get([FromRoute]int id)
+        public ActionResult Get([FromRoute] int id)
         {
             validacao.ValidarBuscaColaborador(id);
 
@@ -101,7 +101,7 @@ namespace Projeto_Api.Controllers
         /// <param name="colaborador"></param>
         /// <returns>Retorna o acesso vinculado ao colaborador</returns>
         [HttpPost]
-        public ActionResult Post([FromBody]Colaborador colaborador)
+        public ActionResult Post([FromBody] Colaborador colaborador)
         {
             validacao.ValidarDadosColaborador(colaborador);
 
@@ -142,7 +142,7 @@ namespace Projeto_Api.Controllers
         /// <param name="acesso"></param>
         /// <returns></returns>
         [HttpPut]
-        public ActionResult Put([FromBody]EdicaoColaboradorViewModel model)
+        public ActionResult Put([FromBody] EdicaoColaboradorViewModel model)
         {
             validacao.ValidarDadosColaborador(model.Colaborador, model.Acesso);
 
@@ -151,7 +151,7 @@ namespace Projeto_Api.Controllers
                 try
                 {
                     model.Acesso.Senha = Senha.GerarHashMd5(model.Acesso.SenhaOriginal);
-                    
+
                     var colaboradorDAO = new ColaboradorDAO();
                     colaboradorDAO.EditarColaborador(model.Colaborador, model.Acesso);
 
@@ -173,7 +173,7 @@ namespace Projeto_Api.Controllers
         /// </summary>
         /// <param name="id">Id do colaborador</param>
         [HttpDelete("{id:int}")]
-        public ActionResult Delete([FromRoute]int id)
+        public ActionResult Delete([FromRoute] int id)
         {
             try
             {

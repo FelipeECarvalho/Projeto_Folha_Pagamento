@@ -1,5 +1,5 @@
-﻿using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -35,7 +35,7 @@ namespace DAL
                 if (connection.State == ConnectionState.Open)
                     connection.Close();
 
-                 return true;
+                return true;
             }
             catch (Exception)
             {

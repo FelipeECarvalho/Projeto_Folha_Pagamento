@@ -40,7 +40,7 @@ namespace DAL
             {
                 throw;
             }
-            finally 
+            finally
             {
                 conexao.Desconectar();
             }

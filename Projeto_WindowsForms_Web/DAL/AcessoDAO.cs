@@ -31,7 +31,7 @@ namespace DAL
                 cmd.Connection = conexao.Conectar();
 
                 dr = cmd.ExecuteReader();
-                
+
                 if (dr.Read())
                 {
                     Enum.TryParse<TipoSexo>(dr["sexo"].ToString(), out var sexo);

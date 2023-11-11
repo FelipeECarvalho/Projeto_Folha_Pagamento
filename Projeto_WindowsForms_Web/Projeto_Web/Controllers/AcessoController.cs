@@ -21,8 +21,8 @@ namespace Projeto_Web.Controllers
                 var acessoBd = acessoServico.BuscarAcesso(acesso.Usuario, acesso.SenhaOriginal);
 
                 return RedirectToAction("Index", "Menu", new { id = acessoBd.Colaborador.Id });
-            } 
-            catch (Exception ex) 
+            }
+            catch (Exception ex)
             {
                 ViewBag.Mensagem = ex.Message;
 

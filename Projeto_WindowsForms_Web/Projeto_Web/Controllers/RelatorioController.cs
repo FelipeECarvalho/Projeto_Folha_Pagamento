@@ -1,7 +1,7 @@
-﻿using Servico;
-using Projeto_Web.ViewModel;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Modelo.Enum;
+using Projeto_Web.ViewModel;
+using Servico;
 
 namespace Projeto_Web.Controllers
 {

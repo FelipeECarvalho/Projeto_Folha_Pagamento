@@ -1,7 +1,7 @@
 ﻿using DAL;
+using Microsoft.AspNetCore.Mvc;
 using Modelo;
 using Projeto_Api.ViewModels;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Projeto_Api.Controllers
 {
@@ -14,7 +14,7 @@ namespace Projeto_Api.Controllers
         /// </summary>
         /// <param name="folhaPagamento"></param>
         [HttpPost]
-        public ActionResult Post([FromBody]FolhaPagamento folhaPagamento)
+        public ActionResult Post([FromBody] FolhaPagamento folhaPagamento)
         {
             validacao.ValidarDadosFolhaPagamento(folhaPagamento);
 

@@ -1,6 +1,6 @@
 using DAL;
-using Modelo;
 using Microsoft.AspNetCore.Mvc;
+using Modelo;
 using Projeto_Api.Utils;
 using Projeto_Api.ViewModels;
 

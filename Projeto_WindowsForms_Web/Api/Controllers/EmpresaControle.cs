@@ -1,6 +1,6 @@
 ﻿using DAL;
-using Modelo;
 using Microsoft.AspNetCore.Mvc;
+using Modelo;
 using Projeto_Api.ViewModels;
 
 namespace Projeto_Api.Controllers
@@ -14,7 +14,7 @@ namespace Projeto_Api.Controllers
         /// </summary>
         /// <param name="empresa"></param>
         [HttpPost]
-        public ActionResult Post([FromBody]Empresa empresa)
+        public ActionResult Post([FromBody] Empresa empresa)
         {
             validacao.ValidarDadosEmpresa(empresa);
 
@@ -79,7 +79,7 @@ namespace Projeto_Api.Controllers
             {
                 var empresaDao = new EmpresaDAO();
                 var listaEmpresas = empresaDao.ListarEmpresa();
-                
+
                 return Ok(new ResultadoViewModel<List<Empresa>>(listaEmpresas));
             }
             catch (Exception e)
