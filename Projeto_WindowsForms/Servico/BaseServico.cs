@@ -5,7 +5,7 @@ using System.Configuration;
 
 namespace Servico
 {
-    public abstract class BaseServico<T>
+    public abstract class BaseServico
     {
         protected readonly string _urlBase;
 
@@ -19,7 +19,7 @@ namespace Servico
         /// </summary>
         /// <param name="resposta"></param>
         /// <returns></returns>
-        protected T GetData(HttpResponseMessage resposta)
+        protected T GetData<T>(HttpResponseMessage resposta)
         {
             // Lendo o conteúdo que foi retornado da api
             var conteudo = new StreamReader(resposta.Content.ReadAsStream());
@@ -47,7 +47,7 @@ namespace Servico
             var jsonObjeto = JObject.Parse(conteudo.ReadToEnd());
 
             // Convertendo o Json object em uma lista de string
-            var listaDeErros = JsonConvert.DeserializeObject<List<string>>(jsonObjeto["error"].ToString());
+            var listaDeErros = JsonConvert.DeserializeObject<List<string>>(jsonObjeto["errors"].ToString());
 
             return string.Join(",", listaDeErros);
         }

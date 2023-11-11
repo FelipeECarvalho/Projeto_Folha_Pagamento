@@ -2,7 +2,7 @@
 
 namespace Servico
 {
-    public class AcessoServico : BaseServico<Acesso>
+    public class AcessoServico : BaseServico
     {
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                return GetData(response); ;
+                return GetData<Acesso>(response); ;
             }
             else
             {
@@ -51,7 +51,7 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                return GetData(response); 
+                return GetData<Acesso>(response); 
             }
             else
             {
