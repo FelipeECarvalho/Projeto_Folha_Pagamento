@@ -1,4 +1,3 @@
-C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Servico\bin\Debug\net6.0\Servico.dll.config
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Servico\bin\Debug\net6.0\Servico.deps.json
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Servico\bin\Debug\net6.0\Servico.dll
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Servico\bin\Debug\net6.0\Servico.pdb

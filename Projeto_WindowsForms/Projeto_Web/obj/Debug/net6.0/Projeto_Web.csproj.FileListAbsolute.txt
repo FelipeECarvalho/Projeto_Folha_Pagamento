@@ -45,7 +45,6 @@ C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\bin\Debug\net6.0\Servico.dll
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\bin\Debug\net6.0\Modelo.pdb
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\bin\Debug\net6.0\Servico.pdb
-C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\bin\Debug\net6.0\Servico.dll.config
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\obj\Debug\net6.0\Projeto_Web.csproj.AssemblyReference.cache
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\obj\Debug\net6.0\Projeto_Web.csproj.CopyComplete
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms\Projeto_Web\bin\Debug\net6.0\Projeto_Web.dll.config

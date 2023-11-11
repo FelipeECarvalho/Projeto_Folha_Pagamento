@@ -1,10 +1,17 @@
 ﻿using Modelo;
-using Newtonsoft.Json;
 
 namespace Servico
 {
-    public class AcessoServico : BaseServico
+    public class AcessoServico : BaseServico<Acesso>
     {
+
+        /// <summary>
+        /// Método responsável buscar o acesso por um usuário e senha.
+        /// </summary>
+        /// <param name="usuario">usuario</param>
+        /// <param name="senha">senha</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Acesso BuscarAcesso(string usuario, string senha)
         {
             var url = _urlBase + "acesso";
@@ -19,17 +26,20 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                var content = new StreamReader(response.Content.ReadAsStream());
-                var jsonString = content.ReadToEnd();
-
-                return JsonConvert.DeserializeObject<Acesso>(jsonString);
+                return GetData(response); ;
             }
             else
             {
-                throw new Exception("Não foi possível obter o produto: " + response.StatusCode);
+                throw new Exception(GetError(response));
             }
         }
 
+        /// <summary>
+        /// Método responsável buscar o acesso pelo id do colaborador.
+        /// </summary>
+        /// <param name="idColaborador"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Acesso BuscarAcesso(int idColaborador)
         {
             var url = _urlBase + "acesso/" + idColaborador;
@@ -41,14 +51,11 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                var content = new StreamReader(response.Content.ReadAsStream());
-                var jsonString = content.ReadToEnd();
-
-                return JsonConvert.DeserializeObject<Acesso>(jsonString);
+                return GetData(response); 
             }
             else
             {
-                throw new Exception("Não foi possível obter o produto: " + response.StatusCode);
+                throw new Exception(GetError(response));
             }
         }
     }
