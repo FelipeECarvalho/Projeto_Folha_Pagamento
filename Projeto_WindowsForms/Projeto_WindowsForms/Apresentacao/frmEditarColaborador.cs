@@ -57,31 +57,31 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Enum.TryParse<TipoSexo>(cmbSexo.SelectedValue.ToString(), out var sexo);
-            Enum.TryParse<TipoCargo>(cmbCargo.SelectedValue.ToString(), out var cargo);
-
-            var colaborador = new Colaborador
-            {
-                Id = colaboradorSelecionado.Id,
-                Sexo = sexo,
-                Cargo = cargo,
-                NomeCompleto = txbNomeColaborador.Text,
-                Salario = decimal.Parse(txbSalario.Text.Replace("R$", "")),
-                DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
-                Empresa = new Empresa
-                {
-                    Id = (int)(cmbEmpresa.SelectedItem as dynamic).Value
-                }
-            };
-
-            var acesso = new Acesso
-            {
-                Id = acessoSelecionado.Id,
-                SenhaOriginal = txbSenha.Text
-            };
-
             try
             {
+                Enum.TryParse<TipoSexo>(cmbSexo.SelectedValue.ToString(), out var sexo);
+                Enum.TryParse<TipoCargo>(cmbCargo.SelectedValue.ToString(), out var cargo);
+
+                var colaborador = new Colaborador
+                {
+                    Id = colaboradorSelecionado.Id,
+                    Sexo = sexo,
+                    Cargo = cargo,
+                    NomeCompleto = txbNomeColaborador.Text,
+                    Salario = decimal.Parse(txbSalario.Text.Replace("R$", "")),
+                    DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
+                    Empresa = new Empresa
+                    {
+                        Id = (int)(cmbEmpresa.SelectedItem as dynamic).Value
+                    }
+                };
+
+                var acesso = new Acesso
+                {
+                    Id = acessoSelecionado.Id,
+                    SenhaOriginal = txbSenha.Text
+                };
+
                 var colaboradorServico = new ColaboradorServico();
                 colaboradorServico.EditarColaborador(colaborador, acesso);
 

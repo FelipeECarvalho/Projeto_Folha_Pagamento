@@ -14,16 +14,16 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            Empresa empresa = new()
-            {
-                Id = empresaSelecionada.Id,
-                Cnpj = txbCnpj.Text.Trim(),
-                NomeFantasia = txbNomeFantasia.Text.Trim(),
-                RazaoSocial = txbRazaoSocial.Text.Trim()
-            };
-
             try
             {
+                Empresa empresa = new()
+                {
+                    Id = empresaSelecionada.Id,
+                    Cnpj = txbCnpj.Text.Trim(),
+                    NomeFantasia = txbNomeFantasia.Text.Trim(),
+                    RazaoSocial = txbRazaoSocial.Text.Trim()
+                };
+
                 var empresaServico = new EmpresaServico();
                 empresaServico.EditarEmpresa(empresa);
 

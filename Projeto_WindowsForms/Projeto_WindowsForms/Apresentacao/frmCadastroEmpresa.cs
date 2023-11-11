@@ -13,16 +13,16 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Empresa empresa = new()
-            {
-                Ativo = true,
-                Cnpj = txbCnpj.Text.Trim(),
-                NomeFantasia = txbNomeFantasia.Text.Trim(),
-                RazaoSocial = txbRazaoSocial.Text.Trim()
-            };
-
             try
             {
+                Empresa empresa = new()
+                {
+                    Ativo = true,
+                    Cnpj = txbCnpj.Text.Trim(),
+                    NomeFantasia = txbNomeFantasia.Text.Trim(),
+                    RazaoSocial = txbRazaoSocial.Text.Trim()
+                };
+
                 var empresaServico = new EmpresaServico();
                 empresaServico.CadastrarEmpresa(empresa);
 

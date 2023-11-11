@@ -22,25 +22,25 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Enum.TryParse<TipoSexo>(cmbSexo.SelectedValue.ToString(), out var sexo);
-            Enum.TryParse<TipoCargo>(cmbCargo.SelectedValue.ToString(), out var cargo);
-
-            var colaborador = new Colaborador
-            {
-                Ativo = true,
-                Sexo = sexo,
-                Cargo = cargo,
-                NomeCompleto = txbNomeColaborador.Text,
-                Salario = decimal.Parse(txbSalario.Text.Replace("R$", "")),
-                DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
-                Empresa = new Empresa
-                {
-                    Id = (int)(cmbEmpresa.SelectedItem as dynamic).Value
-                }
-            };
-
             try
             {
+                Enum.TryParse<TipoSexo>(cmbSexo.SelectedValue.ToString(), out var sexo);
+                Enum.TryParse<TipoCargo>(cmbCargo.SelectedValue.ToString(), out var cargo);
+
+                var colaborador = new Colaborador
+                {
+                    Ativo = true,
+                    Sexo = sexo,
+                    Cargo = cargo,
+                    NomeCompleto = txbNomeColaborador.Text,
+                    Salario = decimal.Parse(txbSalario.Text.Replace("R$", "")),
+                    DataAdmissao = DateTime.Parse(dtpDataAdmissao.Text),
+                    Empresa = new Empresa
+                    {
+                        Id = (int)(cmbEmpresa.SelectedItem as dynamic).Value
+                    }
+                };
+
                 var colaboradorServico = new ColaboradorServico();
                 var acesso = colaboradorServico.CadastrarColaborador(colaborador);
 
