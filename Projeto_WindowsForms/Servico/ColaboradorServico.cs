@@ -12,7 +12,7 @@ namespace Servico
         /// <param name="colaborador"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public void CadastrarColaborador(Colaborador colaborador)
+        public Acesso CadastrarColaborador(Colaborador colaborador)
         {
             var url = _urlBase + "colaborador";
 
@@ -27,7 +27,11 @@ namespace Servico
             using var client = new HttpClient();
             using var response = client.Send(request);
 
-            if (!response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
+            {
+                return GetData<Acesso>(response);
+            }
+            else
             {
                 throw new Exception(GetError(response));
             }
@@ -64,7 +68,7 @@ namespace Servico
         /// <param name="id"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public IList<Colaborador> BuscarColaborador(string nome)
+        public List<Colaborador> BuscarColaborador(string nome)
         {
             var url = _urlBase + "colaborador";
 
@@ -76,7 +80,7 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                return GetData<IList<Colaborador>>(response);
+                return GetData<List<Colaborador>>(response);
             }
             else
             {
@@ -89,7 +93,7 @@ namespace Servico
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public IList<Colaborador> ListarColaborador()
+        public List<Colaborador> ListarColaborador()
         {
             var url = _urlBase + "colaborador/listar";
 
@@ -100,7 +104,7 @@ namespace Servico
 
             if (response.IsSuccessStatusCode)
             {
-                return GetData<IList<Colaborador>>(response);
+                return GetData<List<Colaborador>>(response);
             }
             else
             {

@@ -1,5 +1,6 @@
 using Modelo;
 using Modelo.Enum;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -38,19 +39,19 @@ namespace Projeto_WindowsForms.Apresentacao
                 }
             };
 
-            var colaboradorControle = new ColaboradorControle();
-            var acesso = colaboradorControle.cadastrarColaborador(colaborador);
-
-            if (string.IsNullOrEmpty(colaboradorControle.mensagem))
+            try
             {
+                var colaboradorServico = new ColaboradorServico();
+                var acesso = colaboradorServico.CadastrarColaborador(colaborador);
+
                 txbSalario.Clear();
                 txbNomeColaborador.Clear();
 
                 MessageBox.Show($"Colaborador cadastrado com sucesso! \n\n Importante! anote seus dados de acesso: \n\n Usuário: {acesso.Usuario} \n\n Senha: {acesso.SenhaOriginal}", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(colaboradorControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,16 +62,23 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void carregarComboBox()
         {
-            var empresaControle = new EmpresaControle();
-            var listaEmpresa = empresaControle.listarEmpresas();
-
-            foreach (var empresa in listaEmpresa)
+            try
             {
-                cmbEmpresa.Items.Add(new { Text = empresa.NomeFantasia, Value = empresa.Id });
-            }
+                var empresaServico = new EmpresaServico();
+                var listaEmpresa = empresaServico.ListarEmpresa();
 
-            cmbCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
-            cmbSexo.DataSource = Enum.GetValues(typeof(TipoSexo));
+                foreach (var empresa in listaEmpresa)
+                {
+                    cmbEmpresa.Items.Add(new { Text = empresa.NomeFantasia, Value = empresa.Id });
+                }
+
+                cmbCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
+                cmbSexo.DataSource = Enum.GetValues(typeof(TipoSexo));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

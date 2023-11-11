@@ -1,3 +1,5 @@
+using Servico;
+
 namespace Projeto_WindowsForms.Apresentacao
 {
     public partial class frmLogin : Form
@@ -9,22 +11,24 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void btnAcessar_Click(object sender, EventArgs e)
         {
-            var acessoControle = new AcessoControle();
-            var acesso = acessoControle.buscarAcesso(txbUsuario.Text, txbSenha.Text);
-
-            if (string.IsNullOrEmpty(acessoControle.mensagem))
+            try
             {
+                var acessoServico = new AcessoServico();
+                var acesso = acessoServico.BuscarAcesso(txbUsuario.Text, txbSenha.Text);
+
                 this.Hide();
 
+                // Setando o colaborador logado
                 Program.colaboradorLogado = acesso.Colaborador;
 
+                // Configuração para fechar esse formulário e abrir o menu
                 frmMenu frmMenu = new();
                 frmMenu.Closed += (s, args) => this.Close();
                 frmMenu.Show();
-            } 
-            else
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(acessoControle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

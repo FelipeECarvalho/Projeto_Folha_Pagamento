@@ -36,7 +36,7 @@ namespace Servico
         /// <param name="folhaPagamento"></param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public void CadastrarFolhaPagameto(FolhaPagamento folhaPagamento)
+        public void CadastrarFolhaPagamento(FolhaPagamento folhaPagamento)
         {
             var url = _urlBase + "folha-pagamento";
 

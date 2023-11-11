@@ -1,4 +1,5 @@
 using Modelo;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -86,11 +87,12 @@ namespace Projeto_WindowsForms.Apresentacao
                 return;
             }
 
-            var folhaPagamentoControle = new FolhaPagamentoControle();
-            folhaPagamentoControle.cadastrarFolhaPagamento(folhaPagamentoCalculo);
-
-            if (string.IsNullOrEmpty(folhaPagamentoControle.mensagem))
+            try
             {
+
+                var folhaPagamentoServico = new FolhaPagamentoServico();
+                folhaPagamentoServico.CadastrarFolhaPagamento(folhaPagamentoCalculo);
+
                 MessageBox.Show("Folha de pagamento gerada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 lblMensagemCalculo.Text = "";
@@ -105,9 +107,9 @@ namespace Projeto_WindowsForms.Apresentacao
 
                 folhaPagamentoCalculo = null;
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(folhaPagamentoControle.mensagem, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -124,51 +126,54 @@ namespace Projeto_WindowsForms.Apresentacao
         {
             var idNomeColaborador = txbNomeID.Text.Trim();
 
-            var colaboradorControle = new ColaboradorControle();
-            var listaColaborador = new List<Colaborador>();
-
-            // Verificando se foi digitado um ID ou um nome
-            if (int.TryParse(idNomeColaborador, out var id))
-                listaColaborador.Add(colaboradorControle.buscarColaborador(id));
-            else
-                listaColaborador = colaboradorControle.buscarColaborador(idNomeColaborador);
-
-            // Caso tenha encontrado apenas um colaborador
-            if (listaColaborador != null && listaColaborador.Count == 1)
+            try
             {
-                var colaborador = listaColaborador[0];
+                var colaboradorServico = new ColaboradorServico();
+                var listaColaborador = new List<Colaborador>();
 
-                SelecionarColaborador(colaborador);
-            }
-            // Caso tenha encontrado mais de um colaborador com o mesmo nome
-            else if (listaColaborador != null && listaColaborador.Count > 1)
-            {
-                listaColaboradorSelecionar = listaColaborador;
+                // Verificando se foi digitado um ID ou um nome
+                if (int.TryParse(idNomeColaborador, out var id))
+                    listaColaborador.Add(colaboradorServico.BuscarColaborador(id));
+                else
+                    listaColaborador = colaboradorServico.BuscarColaborador(idNomeColaborador);
 
-                var frmSelecionarColaborador = new frmSelecionarColaborador();
-                var resultado = frmSelecionarColaborador.ShowDialog();
-
-                if (resultado == DialogResult.OK)
+                // Caso tenha encontrado apenas um colaborador
+                if (listaColaborador != null && listaColaborador.Count == 1)
                 {
-                    SelecionarColaborador(frmSelecionarColaborador.colaboradorSelecionado);
+                    var colaborador = listaColaborador[0];
+
+                    SelecionarColaborador(colaborador);
                 }
+                // Caso tenha encontrado mais de um colaborador com o mesmo nome
+                else if (listaColaborador != null && listaColaborador.Count > 1)
+                {
+                    listaColaboradorSelecionar = listaColaborador;
+
+                    var frmSelecionarColaborador = new frmSelecionarColaborador();
+                    var resultado = frmSelecionarColaborador.ShowDialog();
+
+                    if (resultado == DialogResult.OK)
+                    {
+                        SelecionarColaborador(frmSelecionarColaborador.colaboradorSelecionado);
+                    }
+                }
+
+                lblTblUserIRRF.Text = "";
+                lblTblUserINSS.Text = "";
+                lblTblUserTotal.Text = "";
             }
-            // Caso não tenha encontrado nenhum colaborador
-            else
+            catch (Exception ex)
             {
+                // Caso não tenha encontrado nenhum colaborador
                 lblResultadoCNPJ.Text = "";
                 lblResultadoFuncao.Text = "";
                 lblResultadoNomeEmpresa.Text = "";
                 lblTblUserSalarioBase.Text = "0";
                 lblResultadoNomeColaborador.Text = "";
-                lblMensagem.Text = colaboradorControle.mensagem;
+                lblMensagem.Text = ex.Message;
 
                 colaboradorBusca = null;
             }
-
-            lblTblUserIRRF.Text = "";
-            lblTblUserINSS.Text = "";
-            lblTblUserTotal.Text = "";
         }
 
         private void SelecionarColaborador(Colaborador colaborador)

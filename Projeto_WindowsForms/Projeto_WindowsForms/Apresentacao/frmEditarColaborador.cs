@@ -1,5 +1,6 @@
 using Modelo;
 using Modelo.Enum;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -21,29 +22,36 @@ namespace Projeto_WindowsForms.Apresentacao
 
             carregarComboBox();
 
-            var colaboradorControle = new ColaboradorControle();
-            var acessoControle = new AcessoControle();
+            var colaboradorServico = new ColaboradorServico();
+            var acessoServico = new AcessoServico();
 
-            colaboradorSelecionado = colaboradorControle.buscarColaborador(frmGerarRelatorio.idColaborador);
-            acessoSelecionado = acessoControle.buscarAcesso(colaboradorSelecionado.Id);
-
-            if (colaboradorSelecionado == null || acessoSelecionado == null)
+            try
             {
-                this.DialogResult = DialogResult.Abort;
-                this.Close();
+                colaboradorSelecionado = colaboradorServico.BuscarColaborador(frmGerarRelatorio.idColaborador);
+                acessoSelecionado = acessoServico.BuscarAcesso(colaboradorSelecionado.Id);
+
+                if (colaboradorSelecionado == null || acessoSelecionado == null)
+                {
+                    this.DialogResult = DialogResult.Abort;
+                    this.Close();
+                }
+                else
+                {
+                    txbSalario.Text = colaboradorSelecionado.Salario.ToString();
+                    txbNomeColaborador.Text = colaboradorSelecionado.NomeCompleto;
+                    dtpDataAdmissao.Text = colaboradorSelecionado.DataAdmissao.ToString();
+
+                    cmbEmpresa.SelectedIndex = cmbEmpresa.FindStringExact(colaboradorSelecionado.Empresa.NomeFantasia);
+                    cmbCargo.SelectedIndex = cmbCargo.FindStringExact(colaboradorSelecionado.Cargo.ToString());
+                    cmbSexo.SelectedIndex = cmbSexo.FindStringExact(colaboradorSelecionado.Sexo.ToString());
+
+                    txbUsuario.Text = acessoSelecionado.Usuario;
+                    txbSenha.Text = acessoSelecionado.Senha;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                txbSalario.Text = colaboradorSelecionado.Salario.ToString();
-                txbNomeColaborador.Text = colaboradorSelecionado.NomeCompleto;
-                dtpDataAdmissao.Text = colaboradorSelecionado.DataAdmissao.ToString();
-                
-                cmbEmpresa.SelectedIndex = cmbEmpresa.FindStringExact(colaboradorSelecionado.Empresa.NomeFantasia);
-                cmbCargo.SelectedIndex = cmbCargo.FindStringExact(colaboradorSelecionado.Cargo.ToString());
-                cmbSexo.SelectedIndex = cmbSexo.FindStringExact(colaboradorSelecionado.Sexo.ToString());
-
-                txbUsuario.Text = acessoSelecionado.Usuario;
-                txbSenha.Text = acessoSelecionado.Senha;
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,17 +80,17 @@ namespace Projeto_WindowsForms.Apresentacao
                 SenhaOriginal = txbSenha.Text
             };
 
-            var colaboradorControle = new ColaboradorControle();
-            colaboradorControle.editarColaborador(colaborador, acesso);
-
-            if (string.IsNullOrEmpty(colaboradorControle.mensagem))
+            try
             {
+                var colaboradorServico = new ColaboradorServico();
+                colaboradorServico.EditarColaborador(colaborador, acesso);
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(colaboradorControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -93,16 +101,23 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void carregarComboBox()
         {
-            var empresaControle = new EmpresaControle();
-            var listaEmpresa = empresaControle.listarEmpresas();
-
-            foreach (var empresa in listaEmpresa)
+            try
             {
-                cmbEmpresa.Items.Add(new { Text = empresa.NomeFantasia, Value = empresa.Id });
-            }
+                var empresaServico = new EmpresaServico();
+                var listaEmpresa = empresaServico.ListarEmpresa();
 
-            cmbCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
-            cmbSexo.DataSource = Enum.GetValues(typeof(TipoSexo));
+                foreach (var empresa in listaEmpresa)
+                {
+                    cmbEmpresa.Items.Add(new { Text = empresa.NomeFantasia, Value = empresa.Id });
+                }
+
+                cmbCargo.DataSource = Enum.GetValues(typeof(TipoCargo));
+                cmbSexo.DataSource = Enum.GetValues(typeof(TipoSexo));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

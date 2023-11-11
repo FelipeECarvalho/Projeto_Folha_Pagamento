@@ -1,5 +1,6 @@
 ﻿using Modelo;
 using Modelo.Enum;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -141,30 +142,37 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void PopularTabelas()
         {
-            var colaboradorControle = new ColaboradorControle();
-            var empresaControle = new EmpresaControle();
-            var folhaPagamentoControle = new FolhaPagamentoControle();
+            var colaboradorServico = new ColaboradorServico();
+            var empresaServico = new EmpresaServico();
+            var folhaPagamentoServico = new FolhaPagamentoServico();
 
-            var listaColaborador = colaboradorControle.listarColaborador();
-            var listaEmpresas = empresaControle.listarEmpresas();
-            var listaFolhaPagamento = folhaPagamentoControle.listarFolhaPagamento();
-
-            dgvRelatorio.Rows.Clear();
-            foreach (var colaborador in listaColaborador)
+            try
             {
-                dgvRelatorio.Rows.Add(colaborador.Id, colaborador.DataAdmissao.ToShortDateString(), colaborador.NomeCompleto, colaborador.Salario.ToString("c"), colaborador.Cargo, colaborador.Empresa.NomeFantasia);
+                var listaColaborador = colaboradorServico.ListarColaborador();
+                var listaEmpresas = empresaServico.ListarEmpresa();
+                var listaFolhaPagamento = folhaPagamentoServico.ListarFolhaPagamento();
+
+                dgvRelatorio.Rows.Clear();
+                foreach (var colaborador in listaColaborador)
+                {
+                    dgvRelatorio.Rows.Add(colaborador.Id, colaborador.DataAdmissao.ToShortDateString(), colaborador.NomeCompleto, colaborador.Salario.ToString("c"), colaborador.Cargo, colaborador.Empresa.NomeFantasia);
+                }
+
+                dgvEmpresas.Rows.Clear();
+                foreach (var empresa in listaEmpresas)
+                {
+                    dgvEmpresas.Rows.Add(empresa.Id, empresa.Cnpj, empresa.RazaoSocial, empresa.NomeFantasia);
+                }
+
+                dgvFolhaPagamento.Rows.Clear();
+                foreach (var folhaPagamento in listaFolhaPagamento)
+                {
+                    dgvFolhaPagamento.Rows.Add(folhaPagamento.Id, folhaPagamento.Colaborador.Salario.ToString("c"), folhaPagamento.DescontosTotais.ToString("c"), string.Format("{0} (REF: {1})", folhaPagamento.Irrf.ToString("c"), folhaPagamento.AliquotaIrrf), string.Format("{0} (REF: {1})", folhaPagamento.Inss.ToString("c"), folhaPagamento.AliquotaInss), folhaPagamento.ValorLiquido.ToString("c"), folhaPagamento.Colaborador.NomeCompleto);
+                }
             }
-
-            dgvEmpresas.Rows.Clear();
-            foreach (var empresa in listaEmpresas)
+            catch (Exception ex)
             {
-                dgvEmpresas.Rows.Add(empresa.Id, empresa.Cnpj, empresa.RazaoSocial, empresa.NomeFantasia);
-            }
-
-            dgvFolhaPagamento.Rows.Clear();
-            foreach (var folhaPagamento in listaFolhaPagamento)
-            {
-                dgvFolhaPagamento.Rows.Add(folhaPagamento.Id, folhaPagamento.Colaborador.Salario.ToString("c"), folhaPagamento.DescontosTotais.ToString("c"), string.Format("{0} (REF: {1})", folhaPagamento.Irrf.ToString("c"), folhaPagamento.AliquotaIrrf), string.Format("{0} (REF: {1})", folhaPagamento.Inss.ToString("c"), folhaPagamento.AliquotaInss), folhaPagamento.ValorLiquido.ToString("c"), folhaPagamento.Colaborador.NomeCompleto);
+                MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -199,7 +207,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void dgvRelatorio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var colaboradorControle = new ColaboradorControle();
+            var colaboradorServico = new ColaboradorServico();
             var coluna = dgvRelatorio.Columns[e.ColumnIndex];
 
             // Caso o usuário teha clicado em uma imagem do DataGridView
@@ -223,10 +231,15 @@ namespace Projeto_WindowsForms.Apresentacao
 
                     // É verificado o retorno do form de edição para ver o resultado
                     if (resultadoForm == DialogResult.OK)
+                    {
                         MessageBox.Show("Colaborador atualizado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     else if (resultadoForm == DialogResult.Abort)
+                    {
                         MessageBox.Show("Não foi possível atualizar o colaborador, verifique os dados e tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+                // Confirmacao se deseja realmente excluir
                 else if (MessageBox.Show("Deseja realmente excluir o colaborador?", "Atenção!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1) == DialogResult.Yes)
@@ -238,8 +251,15 @@ namespace Projeto_WindowsForms.Apresentacao
                         return;
                     }
 
-                    colaboradorControle.desativarColaborador(idColaborador);
-                    MessageBox.Show("Colaborador excluido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        colaboradorServico.DesativarColaborador(idColaborador);
+                        MessageBox.Show("Colaborador excluido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
 
                 PopularTabelas();
@@ -248,7 +268,7 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void dgvEmpresas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var empresaControle = new EmpresaControle();
+            var empresaServico = new EmpresaServico();
             var coluna = dgvEmpresas.Columns[e.ColumnIndex];
 
             // Caso o usuário tenha clicado em uma imagem do DataGridView
@@ -288,8 +308,15 @@ namespace Projeto_WindowsForms.Apresentacao
                         return;
                     }
 
-                    empresaControle.desativarEmpresa(idEmpresa);
-                    MessageBox.Show("Empresa excluida com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        empresaServico.DesativarEmpresa(idEmpresa);
+                        MessageBox.Show("Empresa excluida com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
 
                 PopularTabelas();

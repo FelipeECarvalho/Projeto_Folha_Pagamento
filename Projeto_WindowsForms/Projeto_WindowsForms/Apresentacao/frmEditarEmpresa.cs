@@ -1,4 +1,5 @@
 using Modelo;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -21,17 +22,17 @@ namespace Projeto_WindowsForms.Apresentacao
                 RazaoSocial = txbRazaoSocial.Text.Trim()
             };
 
-            var empresaControle = new EmpresaControle();
-            empresaControle.editarEmpresa(empresa);
-
-            if (string.IsNullOrEmpty(empresaControle.mensagem))
+            try
             {
+                var empresaServico = new EmpresaServico();
+                empresaServico.EditarEmpresa(empresa);
+
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(empresaControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -42,19 +43,26 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void frmEditarEmpresa_Load(object sender, EventArgs e)
         {
-            var empresaControle = new EmpresaControle();
-            empresaSelecionada = empresaControle.buscarEmpresa(frmGerarRelatorio.idEmpresa);
+            try
+            {
+                var empresaServico = new EmpresaServico();
+                empresaSelecionada = empresaServico.BuscarEmpresa(frmGerarRelatorio.idEmpresa);
 
-            if (empresaSelecionada == null)
-            {
-                this.DialogResult = DialogResult.Abort;
-                this.Close();
+                if (empresaSelecionada == null)
+                {
+                    this.DialogResult = DialogResult.Abort;
+                    this.Close();
+                }
+                else
+                {
+                    txbCnpj.Text = empresaSelecionada.Cnpj;
+                    txbNomeFantasia.Text = empresaSelecionada.NomeFantasia;
+                    txbRazaoSocial.Text = empresaSelecionada.RazaoSocial;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                txbCnpj.Text = empresaSelecionada.Cnpj;
-                txbNomeFantasia.Text = empresaSelecionada.NomeFantasia;
-                txbRazaoSocial.Text = empresaSelecionada.RazaoSocial;
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             this.AcceptButton = btnEditar;

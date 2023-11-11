@@ -1,4 +1,5 @@
 using Modelo;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -38,11 +39,18 @@ namespace Projeto_WindowsForms.Apresentacao
 
         private void SelecionarColaborador(int id)
         {
-            var colaboradorControle = new ColaboradorControle();
-            colaboradorSelecionado = colaboradorControle.buscarColaborador(id);
+            try
+            {
+                var colaboradorServico = new ColaboradorServico();
+                colaboradorSelecionado = colaboradorServico.BuscarColaborador(id);
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

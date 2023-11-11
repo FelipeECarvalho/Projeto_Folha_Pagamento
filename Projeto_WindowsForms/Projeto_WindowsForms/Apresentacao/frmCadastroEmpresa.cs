@@ -1,4 +1,5 @@
 using Modelo;
+using Servico;
 
 namespace Projeto_WindowsForms.Apresentacao
 {
@@ -20,21 +21,22 @@ namespace Projeto_WindowsForms.Apresentacao
                 RazaoSocial = txbRazaoSocial.Text.Trim()
             };
 
-            var empresaControle = new EmpresaControle();
-            empresaControle.cadastrarEmpresa(empresa);
-
-            if (string.IsNullOrEmpty(empresaControle.mensagem))
+            try
             {
+                var empresaServico = new EmpresaServico();
+                empresaServico.CadastrarEmpresa(empresa);
+
                 MessageBox.Show("Empresa cadastrada com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 txbCnpj.Clear();
                 txbNomeFantasia.Clear();
                 txbRazaoSocial.Clear();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(empresaControle.mensagem, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
