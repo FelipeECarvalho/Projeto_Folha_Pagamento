@@ -1,21 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Modelo;
+using Servico;
 
 namespace Projeto_Web.Controllers
 {
     public class AcessoController : Controller
     {
-        public AcessoController()
-        {
-        }
-
         public IActionResult Index()
         {
-            return View();
+            var acesso = new Acesso();
+            return View(acesso);
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult Acessar(Acesso acesso)
         {
-            return View();
+            try
+            {
+                var acessoServico = new AcessoServico();
+                var acessoBd = acessoServico.BuscarAcesso(acesso.Usuario, acesso.SenhaOriginal);
+
+                ViewBag.Colaborador = acessoBd.Colaborador;
+
+                return RedirectToAction("");
+            } 
+            catch (Exception ex) 
+            {
+                ViewBag.Mensagem = ex.Message;
+
+                return View("Index");
+            }
         }
     }
 }
