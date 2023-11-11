@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Projeto_Web.ViewModel.RelatorioViewModel
+
+@{
     Layout = "_Layout";
 }
 
@@ -9,6 +11,7 @@
     </form>
 
     <h1 class="fw-normal h6">Relatórios de colaboradores</h1>
+
     <div class="table-responsive" style="max-height: 50vh; overflow-y: auto;">
         <table class="table table-hover">
             <thead class="table-dark">
@@ -17,102 +20,22 @@
                     <th>Nome</th>
                     <th>Empresa</th>
                     <th>Cargo</th>
-                    <th>Sexo</th>
                     <th>Sálario</th>
                     <th>Data de admissão</th>
                 </tr>
             </thead>
             <tbody id="tabelaRelatorios">
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>user_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_nome</td>
-                    <td>User_empresa</td>
-                    <td>User_cargo</td>
-                    <td>User_sexo</td>
-                    <td>User_salario</td>
-                    <td>User_data de admissão</td>
-                </tr>
+                @foreach(var colaborador in Model.Colaboradores)
+                {
+                    <tr>
+                        <td>@colaborador.Id</td>
+                        <td>@colaborador.NomeCompleto</td>
+                        <td>@colaborador.Empresa.NomeFantasia</td>
+                        <td>@colaborador.Cargo.ToString()</td>
+                        <td>@colaborador.Salario.ToString("c")</td>
+                        <td>@colaborador.DataAdmissao.ToString("dd/MM/AAAA")</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

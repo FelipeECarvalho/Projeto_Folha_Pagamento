@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Projeto_Web.ViewModel.RelatorioViewModel
+
+@{
     Layout = "_Layout";
 }
 
@@ -14,110 +16,29 @@
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
+                    <th>Data Emissão</th>
+                    <th>Valor Liquido +</th>
+                    <th>Horas Extras</th>
+                    <th>Desconto -</th>
+                    <th>IRRF -</th>
+                    <th>INSS -</th>
                     <th>Colaborador</th>
-                    <th>Sálario</th>
-                    <th>Desconto</th>
-                    <th>IRRF</th>
-                    <th>INSS</th>
                 </tr>
             </thead>
             <tbody id="tabelaRelatorios">
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_colaborador</td>
-                    <td>User_salario</td>
-                    <td>User_desconto</td>
-                    <td>User_irrf</td>
-                    <td>User_inss</td>
-                </tr>
+                @foreach (var folhaPagamento in Model.FolhasPagamento)
+                {
+                    <tr>
+                        <td>@folhaPagamento.Id</td>
+                        <td>@folhaPagamento.DataCriacao.ToString("dd/MM/AAAA")</td>
+                        <td>@folhaPagamento.ValorLiquido</td>
+                        <td>@folhaPagamento.HorasExtras</td>
+                        <td>@folhaPagamento.DescontosTotais</td>
+                        <td>@folhaPagamento.Irrf</td>
+                        <td>@folhaPagamento.Inss</td>
+                        <td>@folhaPagamento.Colaborador.NomeCompleto</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Projeto_Web.ViewModel.RelatorioViewModel
+
+@{
     Layout = "_Layout";
 }
 
@@ -17,69 +19,19 @@
                     <th>ID</th>
                     <th>CNPJ</th>
                     <th>Razão Social</th>
+                    <th>Nome Fantasia</th>
                 </tr>
             </thead>
             <tbody id="tabelaRelatorios">
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
-                <tr>
-                    <td>User_id</td>
-                    <td>User_cnpj</td>
-                    <td>User_razão social</td>
-                </tr>
+                @foreach(var empresa in Model.Empresas)
+                {
+                    <tr>
+                        <td>@empresa.Id</td>
+                        <td>@empresa.Cnpj</td>
+                        <td>@empresa.RazaoSocial</td>
+                        <td>@empresa.NomeFantasia</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
