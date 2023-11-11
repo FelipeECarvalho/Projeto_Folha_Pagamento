@@ -4,8 +4,9 @@ const inputUsuario = document.querySelector("#Usuario");
 const inputSenha = document.querySelector("#SenhaOriginal");
 
 window.onload = function () {
-    if ($("#msgValidacao")) {
-        $('#modal').modal('show');
+    // caso tenha dado algum erro de login
+    if ($("#msgValidacao").val()) {
+        $('#mensagem-validacao').show();
     }
 };
 
@@ -31,10 +32,14 @@ form.addEventListener('submit', function(event) {
     if (inputUsuario.value === "") {
         inputError(inputUsuario, "Preencha o campo de nome de usuário.");
         inputUsuario.focus();
+
+        event.preventDefault();
     }
 
     if (inputSenha.value === "") {
         inputError(inputSenha, "Preencha o campo de senha");
+
+        event.preventDefault();
     }
 });
 

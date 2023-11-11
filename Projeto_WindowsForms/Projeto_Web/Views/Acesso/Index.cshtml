@@ -55,18 +55,10 @@
 </body>
 </html>
 
-<div class="modal" tabindex="-1" id="modal" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Erro!</h5>
-            </div>
-            <div class="modal-body">
-                <p>@ViewBag.Mensagem</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-            </div>
+<div class="toast align-items-center text-white bg-danger bg-gradient bg-opacity-75 border-0 p-3 bottom-0 start-50 translate-middle-x" style="position: absolute;" id="mensagem-validacao" role="alert" aria-live="assertive" aria-atomic="true" autohide="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            @ViewBag.Mensagem
         </div>
     </div>
 </div>
