@@ -1,8 +1,17 @@
-
-.border-custom-gray{
+.border-custom-gray {
     border: 5px solid #E9ECEF;
 }
 
-td{
+td {
     white-space: nowrap;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(248, 249, 250, 1) !important;
+}
+
+.bg-body-secondary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(233, 236, 239, 1) !important;
 }

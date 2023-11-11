@@ -8,9 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="javascript/index.js" defer></script>
-
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 
     <title>Acessar</title>
 </head>
@@ -23,7 +22,6 @@
             <div class="col-md-6 bg-white d-flex justify-content-center align-items-center">
                     
                 <form class="d-flex flex-column align-items-center w-50" novalidate id="form">
-    
                     <h1 class="mb-3">Login</h1>
                     <div class="mb-3 w-100">
                         <label for="usuario" class="form-label">Usuario</label>
@@ -44,11 +42,13 @@
             </div>
     
             <div class="col-6 bg-body-tertiary d-none d-md-flex d-flex justify-content-center align-items-center">
-                <img src="img/logo.png" alt="logo empresa" class="img-fluid p-5">
+                <img src="~/img/logo.png" alt="logo empresa" class="img-fluid p-5">
             </div>
         </div>
     </div>
     
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/index.js" asp-append-version="true"></script>
 </body>
 </html>

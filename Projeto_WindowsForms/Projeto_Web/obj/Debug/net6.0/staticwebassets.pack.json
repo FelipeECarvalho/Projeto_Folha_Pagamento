@@ -5,16 +5,44 @@
       "PackagePath": "staticwebassets\\Projeto_Web.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
       "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\img\\arrow-right.png",
+      "PackagePath": "staticwebassets\\img\\arrow-right.png"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\img\\companies.png",
+      "PackagePath": "staticwebassets\\img\\companies.png"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\img\\employe.png",
+      "PackagePath": "staticwebassets\\img\\employe.png"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\img\\payroll.png",
+      "PackagePath": "staticwebassets\\img\\payroll.png"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\logout.js",
+      "PackagePath": "staticwebassets\\js\\logout.js"
+    },
+    {
+      "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\relatorios.js",
+      "PackagePath": "staticwebassets\\js\\relatorios.js"
     },
     {
       "Id": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\lib\\bootstrap\\LICENSE",
