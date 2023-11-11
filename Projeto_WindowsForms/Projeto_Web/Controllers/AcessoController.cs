@@ -20,8 +20,7 @@ namespace Projeto_Web.Controllers
                 var acessoServico = new AcessoServico();
                 var acessoBd = acessoServico.BuscarAcesso(acesso.Usuario, acesso.SenhaOriginal);
 
-                ViewBag.Colaborador = acessoBd.Colaborador;
-                return RedirectToAction("Index", "Menu");
+                return RedirectToAction("Index", "Menu", new { id = acesso.Colaborador.Id });
             } 
             catch (Exception ex) 
             {

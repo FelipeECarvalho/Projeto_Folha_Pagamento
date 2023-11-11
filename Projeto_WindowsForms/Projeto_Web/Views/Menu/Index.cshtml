@@ -1,19 +1,19 @@
 ﻿@using Modelo
 @using Modelo.Enum
+@model Modelo.Colaborador
 
 @{
     Layout = "_Layout";
-    var colaborador = (Colaborador)ViewBag.Colaborador;
 }
 
 <div class="container mt-4">
     <div class="row" style="height: 80vh;">
         
         <div class="col-md-4 bg-body-tertiary border-custom-gray  rounded-4 p-5">
-            <h2 class="text-center h1">Bem vindo(a), @colaborador.NomeCompleto!</h2>
+            <h2 class="text-center h1">Bem vindo(a), @Model.NomeCompleto!</h2>
             <div class="mt-5">
-                <p><span class="fw-bold">Nome: </span>@colaborador.NomeCompleto</p>
-                <p><span class="fw-bold">Cargo: </span>@colaborador.Cargo.ToString()</p>
+                <p><span class="fw-bold">Nome: </span>@Model.NomeCompleto</p>
+                <p><span class="fw-bold">Cargo: </span>@Model.Cargo.ToString()</p>
             </div>
         </div>
 
@@ -22,7 +22,7 @@
 
             <div class="w-100 h-auto h-75 py-5">
 
-                @if (colaborador.Cargo != TipoCargo.AnalistaRH)
+                @if (Model.Cargo != TipoCargo.AnalistaRH)
                 {
                     <div class="bg-white py-4 px-3 px-md-5 d-flex justify-content-between align-items-center rounded-4 w-md-75 m-auto shadow-sm">
                         <div class="bg-primary rounded-2 p-2">
@@ -36,7 +36,7 @@
                     </div>
                 }
 
-                @if (colaborador.Cargo != TipoCargo.AnalistaRH && colaborador.Cargo != TipoCargo.AnalistaDP)
+                @if (Model.Cargo != TipoCargo.AnalistaRH && Model.Cargo != TipoCargo.AnalistaDP)
                 {
                     <div class="bg-white py-4 px-3 px-md-5 d-flex justify-content-between align-items-center rounded-4 w-md-75 m-auto mt-3 shadow-sm">
                         <div class="bg-primary rounded-2 p-2">
@@ -51,7 +51,7 @@
                     </div>
                 }
 
-                @if (colaborador.Cargo != TipoCargo.AnalistaRH)
+                @if (Model.Cargo != TipoCargo.AnalistaRH)
                 {
                     <div class="bg-white py-4 px-3 px-md-5 d-flex justify-content-between align-items-center rounded-4 w-md-75 m-auto mt-3 shadow-sm">
                         <div class="bg-primary rounded-2 p-2">
