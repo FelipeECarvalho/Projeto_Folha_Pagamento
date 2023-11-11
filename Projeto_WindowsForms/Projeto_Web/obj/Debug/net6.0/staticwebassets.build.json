@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wWWj/GY2Wqq+wS9AgDU4doFmj1mbsW/AbpD/SacbuPg=",
+  "Hash": "Ow/OL1dQa38ET0nOPyTF9ckKruC0SnwiGqFEPFdKKts=",
   "Source": "Projeto_Web",
   "BasePath": "_content/Projeto_Web",
   "Mode": "Default",
@@ -185,23 +185,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\index.js"
-    },
-    {
-      "Identity": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\logout.js",
-      "SourceId": "Projeto_Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\",
-      "BasePath": "_content/Projeto_Web",
-      "RelativePath": "js/logout.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\logout.js"
     },
     {
       "Identity": "C:\\Users\\felip\\OneDrive\\Documentos\\Estudos\\Unip\\PIM\\PIM4\\Projeto_Folha_Pagamento\\Projeto_WindowsForms\\Projeto_Web\\wwwroot\\js\\relatorios.js",

@@ -24,6 +24,8 @@ namespace Projeto_Web.Controllers
                 Colaboradores = listaColaborador
             };
 
+            ViewBag.Id = id;
+
             return View(viewModel);
         }
 
@@ -40,6 +42,8 @@ namespace Projeto_Web.Controllers
                 Colaborador = colaborador,
                 Empresas = listaEmpresa
             };
+
+            ViewBag.Id = id;
 
             return View(viewModel);
         }
@@ -60,6 +64,8 @@ namespace Projeto_Web.Controllers
                 Colaborador = colaborador,
                 FolhasPagamento = listaFolhaPagamento
             };
+
+            ViewBag.Id = id;
 
             return View(viewModel);
         }

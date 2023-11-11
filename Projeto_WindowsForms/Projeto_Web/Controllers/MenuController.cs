@@ -10,6 +10,8 @@ namespace Projeto_Web.Controllers
             var colaboradorServico = new ColaboradorServico();
             var colaborador = colaboradorServico.BuscarColaborador(id);
 
+            ViewBag.Id = id;
+
             return View(colaborador);
         }
     }

@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Página principal</a>
+                        <a class="nav-link active" aria-current="page" href="@Url.Action("Index", "Menu", new { id = ViewBag.Id })">Página principal</a>
                     </li>
 
                     <li class="nav-item dropdown ms-3">
@@ -32,16 +32,16 @@
                             Relatórios
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioColaborador", "Relatorio")">Colaborador</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioEmpresa", "Relatorio")">Empresa</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioFolhaPagamento", "Relatorio")">Folha de pagamento</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioColaborador", "Relatorio", new { id = ViewBag.Id })">Colaborador</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioEmpresa", "Relatorio", new { id = ViewBag.Id })">Empresa</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioFolhaPagamento", "Relatorio", new { id = ViewBag.Id })">Folha de pagamento</a></li>
                         </ul>
                     </li>
 
                 </ul>
 
                 <div class="d-flex align-items-center">
-                    <a class="btn btn-danger px-3 fw-bold" href="@Url.Action("Acesso", "Index")">Sair</a>
+                    <a class="btn btn-danger px-3 fw-bold" href="@Url.Action("Index", "Acesso")">Sair</a>
                 </div>
             </div>
         </div>

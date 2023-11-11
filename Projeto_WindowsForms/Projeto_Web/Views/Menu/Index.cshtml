@@ -30,7 +30,7 @@
                         </div>
                         <h3 class="fs-4 mx-4">Relatorios de colaboradores</h3>
 
-                        <a href="@Url.Action("RelatorioColaborador", "Relatorio")">
+                        <a href="@Url.Action("RelatorioColaborador", "Relatorio", new { id = ViewBag.Id })">
                             <img src="~/img/arrow-right.png" alt="link seta" width="40px" height="40px">
                         </a>
                     </div>
@@ -45,7 +45,7 @@
 
                         <h3 class="fs-4 mx-4">Relatorios de empresas</h3>
 
-                        <a href="@Url.Action("RelatorioEmpresa", "Relatorio")">
+                        <a href="@Url.Action("RelatorioEmpresa", "Relatorio", new { id = ViewBag.Id })">
                             <img src="~/img/arrow-right.png" alt="link seta" width="40px" height="40px">
                         </a>
                     </div>
@@ -60,7 +60,7 @@
 
                         <h3 class="fs-4 mx-4">Relatorios de folha de pagamento</h3>
 
-                        <a href="@Url.Action("RelatorioFolhaPagamento", "Relatorio")">
+                        <a href="@Url.Action("RelatorioFolhaPagamento", "Relatorio", new { id = ViewBag.Id })">
                             <img src="~/img/arrow-right.png" width="40px" height="40px">
                         </a>
                     </div>
