@@ -11,9 +11,9 @@ namespace Servico
         /// </summary>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
-        public IList<FolhaPagamento> ListarFolhaPagameto()
+        public IList<FolhaPagamento> ListarFolhaPagamento()
         {
-            var url = _urlBase + "folha-pagameto/listar";
+            var url = _urlBase + "folha-pagamento/listar";
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
