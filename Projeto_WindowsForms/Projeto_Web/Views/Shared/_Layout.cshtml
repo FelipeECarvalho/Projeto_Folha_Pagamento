@@ -32,16 +32,16 @@
                             Relatórios
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item">Colaboradore</a></li>
-                            <li><a class="dropdown-item">Empresa</a></li>
-                            <li><a class="dropdown-item">Folha de pagamento</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioColaborador", "Relatorio")">Colaborador</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioEmpresa", "Relatorio")">Empresa</a></li>
+                            <li><a class="dropdown-item" href="@Url.Action("RelatorioFolhaPagamento", "Relatorio")">Folha de pagamento</a></li>
                         </ul>
                     </li>
 
                 </ul>
 
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-danger px-3 fw-bold" id="btnSair">Sair</button>
+                    <a class="btn btn-danger px-3 fw-bold" href="@Url.Action("Acesso", "Index")">Sair</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,6 @@
         </div>
     </div>
 
-    <script defer src="~/js/logout.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
