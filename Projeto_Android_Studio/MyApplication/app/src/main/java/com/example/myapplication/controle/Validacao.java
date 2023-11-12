@@ -1,5 +1,9 @@
 package com.example.myapplication.controle;
 
+import android.os.AsyncTask;
+
+import com.example.myapplication.modelo.Acesso;
+
 public class Validacao
 {
     public String mensagem;

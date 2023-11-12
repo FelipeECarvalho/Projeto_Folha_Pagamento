@@ -1,5 +1,7 @@
 package com.example.myapplication.controle;
 
+import com.example.myapplication.modelo.Acesso;
+
 public class Controle
 {
     public String mensagem = "";
@@ -12,7 +14,12 @@ public class Controle
         if (validacao.mensagem.isEmpty()) {
             try
             {
-                // TODO: CHAMAR API
+                Servico servico = new Servico();
+                Acesso acesso = servico.Acessar(usuario, senha);
+
+                if (acesso == null) {
+                    mensagem = servico.mensagem;
+                }
             }
             catch (Exception ex)
             {
