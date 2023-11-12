@@ -1,110 +1,106 @@
 [
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\layout_activity_tela_relatorios_colaboradores.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\layout\\activity_tela_relatorios_colaboradores.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_colab_icon.png.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\colab_icon.png"
+        "merged": "com.example.myapplication.app-merged_res-28:/layout_activity_tela_relatorios_colaboradores.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/layout/activity_tela_relatorios_colaboradores.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\xml_backup_rules.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\xml\\backup_rules.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/layout_activity_tela_menu.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/layout/activity_tela_menu.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_relatorios_icon.png.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/relatorios_icon.png"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/xml_backup_rules.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/xml/backup_rules.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_relatorios_icon.png.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\relatorios_icon.png"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\xml_data_extraction_rules.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\xml\\data_extraction_rules.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_colab_icon.png.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/colab_icon.png"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\layout_activity_tela_relatorio_folha_pagamento.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\layout\\activity_tela_relatorio_folha_pagamento.xml"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_rh_logo_png.png.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\rh_logo_png.png"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_rh_logo.png.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\rh_logo.png"
-    },
-    {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.example.myapplication.app-merged_res-28:/layout_activity_main.xml.flat",
         "source": "com.example.myapplication.app-main-30:/layout/activity_main.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\layout_activity_main.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\layout\\activity_main.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/layout_activity_tela_relatorio_folha_pagamento.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/layout/activity_tela_relatorio_folha_pagamento.xml"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\drawable_empresa_icon.png.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\drawable\\empresa_icon.png"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\layout_activity_tela_menu.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\layout\\activity_tela_menu.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_rh_logo.png.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/rh_logo.png"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\layout_activity_tela_relatorios_empresas.xml.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\layout\\activity_tela_relatorios_empresas.xml"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "Z:\\Users\\gb010\\.gradle\\daemon\\8.0\\com.example.myapplication.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-28:/layout_activity_tela_relatorios_empresas.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/layout/activity_tela_relatorios_empresas.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_empresa_icon.png.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/empresa_icon.png"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-28:/drawable_rh_logo_png.png.flat",
+        "source": "com.example.myapplication.app-main-30:/drawable/rh_logo_png.png"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.myapplication.app-merged_res-28:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.myapplication.app-main-30:/mipmap-anydpi-v26/ic_launcher_round.xml"
     }
 ]

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.modelo.Controle;
+import com.example.myapplication.controle.Controle;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity
 
         configuracao();
         eventos();
-
     }
 
     public void configuracao()
@@ -51,9 +50,9 @@ public class MainActivity extends AppCompatActivity
             {
 
                 Controle controle = new Controle();
-                controle.validarLogin(edtLogin.getText().toString(), edtSenha.getText().toString());
+                controle.acessar(edtLogin.getText().toString(), edtSenha.getText().toString());
 
-                if (controle.mensagem.equals("Login bem-sucedido!"))
+                if (controle.mensagem.isEmpty())
                 {
                     Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, Tela_Menu.class);
@@ -61,11 +60,8 @@ public class MainActivity extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(),
-                            controle.mensagem, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
                 }
-
-
             }
         });
     }
