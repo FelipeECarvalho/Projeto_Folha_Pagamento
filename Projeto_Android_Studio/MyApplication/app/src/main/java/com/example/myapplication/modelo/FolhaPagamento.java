@@ -2,7 +2,7 @@ package com.example.myapplication.modelo;
 
 import java.util.Date;
 
-public class FolhaPagamento {
+public class FolhaPagamento extends BaseModel {
     public Double Inss;
     public Double Irrf;
     public Integer HorasExtras;
@@ -12,6 +12,6 @@ public class FolhaPagamento {
     public Double VencimentosTotais;
     public Double AliquotaInss;
     public Double AliquotaIrrf;
-    public Date DataCriacao;
+    public String DataCriacao;
     public Colaborador Colaborador;
 }

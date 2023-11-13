@@ -1,6 +1,6 @@
 package com.example.myapplication.modelo;
 
-public class Empresa {
+public class Empresa extends BaseModel {
     public String Cnpj;
     public String RazaoSocial;
     public String NomeFantasia;

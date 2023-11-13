@@ -6,7 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.example.myapplication.DAL.ColaboradorDAO;
+import com.example.myapplication.DAL.FolhaPagamentoDAO;
+import com.example.myapplication.modelo.Colaborador;
+import com.example.myapplication.modelo.FolhaPagamento;
+import com.google.android.material.internal.ForegroundLinearLayout;
+
+import java.util.ArrayList;
 
 public class Tela_Relatorio_Folha_Pagamento extends AppCompatActivity {
 
@@ -27,6 +37,29 @@ public class Tela_Relatorio_Folha_Pagamento extends AppCompatActivity {
     {
         txvSetaVoltar = findViewById(R.id.txvSetaVoltar);
         txvLupa = findViewById(R.id.txvLupa);
+
+        ArrayList<FolhaPagamento> listaFolhaPagamento  = new FolhaPagamentoDAO().listarFolhaPagamento();
+
+        TableLayout table = (TableLayout)findViewById(R.id.folhaPagamentoTable);
+
+        for (FolhaPagamento folhaPagamento: listaFolhaPagamento) {
+            TableRow row= new TableRow(this);
+
+            TextView tv1= new TextView(this);
+            tv1.setText(folhaPagamento.Id.toString());
+
+            TextView tv2=new TextView(this);
+            tv2.setText(folhaPagamento.Colaborador.NomeCompleto);
+
+            TextView tv3=new TextView(this);
+            tv3.setText(folhaPagamento.DataCriacao.toString());
+
+            row.addView(tv1);
+            row.addView(tv2);
+            row.addView(tv3);
+
+            table.addView(row);
+        }
     }
 
     public void eventos()

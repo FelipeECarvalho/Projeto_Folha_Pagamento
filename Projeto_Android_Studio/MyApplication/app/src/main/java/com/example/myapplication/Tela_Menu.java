@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class Tela_Menu extends AppCompatActivity {
 
     Button btnLogOut;
     Context context;
+    TextView txvUserName;
     LinearLayout lnlColaboradores;
     LinearLayout lnlEmpresas;
     LinearLayout lnlFolhaPagamento;
@@ -33,6 +35,13 @@ public class Tela_Menu extends AppCompatActivity {
         lnlColaboradores = findViewById(R.id.lnlColaboradores);
         lnlEmpresas = findViewById(R.id.lnlEmpresas);
         lnlFolhaPagamento = findViewById(R.id.lnlFolhaPagamento);
+        txvUserName = findViewById(R.id.txvUserName);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String value = extras.getString("nome");
+            txvUserName.setText(value);
+        }
     }
 
     public void eventos()

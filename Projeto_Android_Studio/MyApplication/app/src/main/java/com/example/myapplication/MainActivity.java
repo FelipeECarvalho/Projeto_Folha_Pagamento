@@ -7,13 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.DAL.ColaboradorDAO;
 import com.example.myapplication.controle.Controle;
+import com.example.myapplication.modelo.Acesso;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -29,9 +30,6 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
 
         configuracao();
         eventos();
@@ -53,18 +51,24 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
 
-                Controle controle = new Controle();
-                controle.acessar(edtLogin.getText().toString(), edtSenha.getText().toString());
+                try {
+                    Controle controle = new Controle();
+                    Acesso acesso = controle.acessar(edtLogin.getText().toString(), edtSenha.getText().toString());
 
-                if (controle.mensagem.isEmpty())
-                {
-                    Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(MainActivity.this, Tela_Menu.class);
-                    startActivity(intent);
+                    if (acesso != null)
+                    {
+                        Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, Tela_Menu.class);
+                        intent.putExtra("nome", acesso.Colaborador.NomeCompleto);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
+                    }
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
+                catch (Exception ex) {
+                    Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });

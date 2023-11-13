@@ -4,5 +4,5 @@ public enum TipoCargo {
     Administrador,
     Gerente,
     AnalistaRH,
-    AnalistaDP
+    AnalistaDP()
 }
