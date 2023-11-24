@@ -73,6 +73,7 @@ public class Tela_Relatorios_Empresas extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Tela_Relatorios_Empresas.this, Tela_Menu.class);
+                intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
             }
         });

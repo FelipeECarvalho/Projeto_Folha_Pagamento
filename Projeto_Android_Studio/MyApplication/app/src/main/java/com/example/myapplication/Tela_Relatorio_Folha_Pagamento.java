@@ -75,6 +75,7 @@ public class Tela_Relatorio_Folha_Pagamento extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Tela_Relatorio_Folha_Pagamento.this, Tela_Menu.class);
+                intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
             }
         });

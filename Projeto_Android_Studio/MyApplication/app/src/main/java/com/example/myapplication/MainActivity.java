@@ -58,8 +58,15 @@ public class MainActivity extends AppCompatActivity
                     if (acesso != null)
                     {
                         Toast.makeText(getApplicationContext(), controle.mensagem, Toast.LENGTH_LONG).show();
+
                         Intent intent = new Intent(MainActivity.this, Tela_Menu.class);
-                        intent.putExtra("nome", acesso.Colaborador.NomeCompleto);
+
+                        Bundle extras = new Bundle();
+                        extras.putString("nome", acesso.Colaborador.NomeCompleto);
+                        extras.putString("cargo", acesso.Colaborador.Cargo.toString());
+
+                        intent.putExtras(extras);
+
                         startActivity(intent);
                     }
                     else

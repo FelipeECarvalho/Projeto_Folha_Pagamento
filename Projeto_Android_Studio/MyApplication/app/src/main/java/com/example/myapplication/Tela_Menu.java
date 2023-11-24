@@ -39,8 +39,22 @@ public class Tela_Menu extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String value = extras.getString("nome");
-            txvUserName.setText(value);
+            String nome = extras.getString("nome");
+            txvUserName.setText(nome);
+
+            String cargo = extras.getString("cargo");
+
+            if (cargo.equals("AnalistaDP")) {
+                lnlColaboradores.setVisibility(View.GONE);
+            }
+
+            if (cargo.equals("AnalistaRH") || cargo.equals("AnalistaDP")) {
+                lnlEmpresas.setVisibility(View.GONE);
+            }
+
+            if (cargo.equals("AnalistaRH")) {
+                lnlFolhaPagamento.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -62,6 +76,7 @@ public class Tela_Menu extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Tela_Menu.this, Tela_Relatorios_Colaboradores.class);
+                intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
             }
         });
@@ -72,6 +87,7 @@ public class Tela_Menu extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Tela_Menu.this, Tela_Relatorios_Empresas.class);
+                intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
             }
         });
@@ -82,6 +98,7 @@ public class Tela_Menu extends AppCompatActivity {
             public void onClick(View view)
             {
                 Intent intent = new Intent(Tela_Menu.this, Tela_Relatorio_Folha_Pagamento.class);
+                intent.putExtras(getIntent().getExtras());
                 startActivity(intent);
             }
         });
