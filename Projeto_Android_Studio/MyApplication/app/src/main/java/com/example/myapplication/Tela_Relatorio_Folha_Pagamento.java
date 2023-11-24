@@ -16,7 +16,9 @@ import com.example.myapplication.modelo.Colaborador;
 import com.example.myapplication.modelo.FolhaPagamento;
 import com.google.android.material.internal.ForegroundLinearLayout;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Tela_Relatorio_Folha_Pagamento extends AppCompatActivity {
 
@@ -52,7 +54,10 @@ public class Tela_Relatorio_Folha_Pagamento extends AppCompatActivity {
             tv2.setText(folhaPagamento.Colaborador.NomeCompleto);
 
             TextView tv3=new TextView(this);
-            tv3.setText(folhaPagamento.DataCriacao.toString());
+
+            // Vem do banco no formato datetime, aqui eu faço a separação para pegar apenas a data
+            String[] datas = folhaPagamento.DataCriacao.toString().split("\\s+");
+            tv3.setText(datas[0]);
 
             row.addView(tv1);
             row.addView(tv2);

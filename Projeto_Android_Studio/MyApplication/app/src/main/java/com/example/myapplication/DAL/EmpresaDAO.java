@@ -30,11 +30,11 @@ public class EmpresaDAO {
 
                 while (rs.next()) {
                     Empresa empresa = new Empresa();
-                    empresa.Id = rs.getInt("id_empresa");
+                    empresa.Id = rs.getInt("id");
                     empresa.Cnpj = rs.getString("cnpj");
                     empresa.RazaoSocial = rs.getString("razao_social");
                     empresa.NomeFantasia = rs.getString("nome_fantasia");
-                    empresa.Ativo = Boolean.parseBoolean(rs.getString("e_ativo"));
+                    empresa.Ativo = Boolean.parseBoolean(rs.getString("ativo"));
 
                     listaEmpresa.add(empresa);
                 }

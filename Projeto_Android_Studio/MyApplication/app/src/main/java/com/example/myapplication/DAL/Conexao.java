@@ -10,7 +10,7 @@ public class Conexao {
     String nome, senha, ip, port, database;
 
     public Connection Conectar() throws Exception {
-        ip = "192.168.0.2";
+        ip = "192.168.0.9";
         database = "recursos_humanos_db";
         nome = "sa";
         senha = "unip@123456";

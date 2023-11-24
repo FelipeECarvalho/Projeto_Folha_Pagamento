@@ -14,7 +14,9 @@ import android.widget.LinearLayout;
 import com.example.myapplication.DAL.ColaboradorDAO;
 import com.example.myapplication.modelo.Colaborador;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Tela_Relatorios_Colaboradores extends AppCompatActivity
 {
@@ -58,10 +60,18 @@ public class Tela_Relatorios_Colaboradores extends AppCompatActivity
             tv4.setText(colaborador.Cargo.toString());
 
             TextView tv5=new TextView(this);
-            tv5.setText(colaborador.Salario.toString());
+
+            // Formatando o dinheiro
+            Locale locale = new Locale("pt", "BR");
+            NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
+            String moneyString = formatter.format(colaborador.Salario);
+
+            tv5.setText(moneyString);
 
             TextView tv6=new TextView(this);
-            tv6.setText(colaborador.DataAdmissao.toString());
+
+            String[] datas = colaborador.DataAdmissao.toString().split("\\s+");
+            tv6.setText(datas[0]);
 
             row.addView(tv1);
             row.addView(tv2);
