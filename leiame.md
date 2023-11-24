@@ -8,19 +8,43 @@ Como executar o programa:
 
   1.1° Execute no seu banco de dados o script no que está dentro dos arquivos do programa:
   <br>
-  ![Captura de tela 2023-11-11 162809](https://github.com/FelipeECarvalho/Projeto_Folha_Pagamento/assets/83559381/35f093fc-44c9-4d61-830a-a636de22bce8)
+  https://imgur.com/a/p2HpmJO
+  <br>
 
 
-2º Para executar o programa será preciso iniciar a API do programa:
-
-![Captura de tela 2023-11-11 162232](https://github.com/FelipeECarvalho/Projeto_Folha_Pagamento/assets/83559381/829e212a-d0f2-4acd-8ada-3131580e679a)
-
-<br />
-
-![Captura de tela 2023-11-11 162347](https://github.com/FelipeECarvalho/Projeto_Folha_Pagamento/assets/83559381/f5543d23-d33a-4d0b-8b5e-33e655aedece)
-
-3º Após a excução da API, basta iniciar qualquer projeto do software.
-
+2º Para executar o programa será preciso, primeiro, iniciar a API:
+  <br>
+https://imgur.com/a/1hKCbGd
 <br>
 
-![Captura de tela 2023-11-11 162531](https://github.com/FelipeECarvalho/Projeto_Folha_Pagamento/assets/83559381/36a085fc-9d70-4c3e-a392-2fc0d57ad44d)
+3º Como executar o projeto Windows Forms.
+
+  3.1º. Clique com o botão direito no projeto windowsforms, e, após clique em "Debug" -> "Start New Instance"
+<br>
+https://imgur.com/a/cwG5r4o
+<br>
+
+4º Como executar o projeto WEB.
+
+  4.1º. Clique com o botão direito no web, e, após clique em "Debug" -> "Start New Instance"
+<br>
+https://imgur.com/a/JdfejHk
+<br>
+
+5º Como executar o projeto APP.
+
+  5.1º. Abra o Android Studio e carregue o projeto.
+  5.2º Após carregar o projeto procure a pasta Conexao. app/java/com.exemple.myapplication/DAL/Conexao
+  <br>
+  https://imgur.com/a/Elo5eQR
+  <br>
+
+  5.3º Dentro da classe Conexao, mude as variáveis de acordo com a conexão do seu banco de dados. Mude também a variável IP para seu próprio ip
+    5.4º Para conseguir seu IP, basta abrir o CMD e digitar ipconfig, depois copie o ip que fica em Endereço IPv4 - ex:  Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.9
+  <br>
+  https://imgur.com/a/FTqaHNb
+  <br>
+
+  5.5º Depois de ajustada a conexão, basta iniciar o APP
+
+  https://imgur.com/a/CEV1lda
