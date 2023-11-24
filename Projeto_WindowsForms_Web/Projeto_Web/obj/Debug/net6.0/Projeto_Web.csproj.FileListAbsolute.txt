@@ -98,3 +98,4 @@ C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_Web\obj\Debug\net6.0\Projeto_Web.pdb
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_Web\obj\Debug\net6.0\Projeto_Web.genruntimeconfig.cache
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_Web\obj\Debug\net6.0\ref\Projeto_Web.dll
+C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_Web\obj\Debug\net6.0\Projeto_Web.sourcelink.json

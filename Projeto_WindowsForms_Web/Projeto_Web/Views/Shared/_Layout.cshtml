@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Modelo.Enum;
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +11,10 @@
 </head>
 
 <body class="bg-body-secondary">
+    @{
+        var cargo = (TipoCargo)ViewBag.Cargo;
+    }
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-5 py-2">
         <div class="container-fluid">
 
@@ -32,9 +38,20 @@
                             Relatórios
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioColaborador", "Relatorio", new { id = ViewBag.Id })">Colaborador</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioEmpresa", "Relatorio", new { id = ViewBag.Id })">Empresa</a></li>
-                            <li><a class="dropdown-item" href="@Url.Action("RelatorioFolhaPagamento", "Relatorio", new { id = ViewBag.Id })">Folha de pagamento</a></li>
+                            @if (cargo != TipoCargo.AnalistaDP)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("RelatorioColaborador", "Relatorio", new { id = ViewBag.Id })">Colaborador</a></li>
+                            }
+
+                            @if (cargo != TipoCargo.AnalistaRH && cargo != TipoCargo.AnalistaDP)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("RelatorioEmpresa", "Relatorio", new { id = ViewBag.Id })">Empresa</a></li>
+                            }
+
+                            @if (cargo != TipoCargo.AnalistaRH)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("RelatorioFolhaPagamento", "Relatorio", new { id = ViewBag.Id })">Folha de pagamento</a></li>
+                            }
                         </ul>
                     </li>
 

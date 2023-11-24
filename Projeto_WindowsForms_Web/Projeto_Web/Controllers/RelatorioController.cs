@@ -25,6 +25,7 @@ namespace Projeto_Web.Controllers
             };
 
             ViewBag.Id = id;
+            ViewBag.Cargo = colaborador.Cargo;
 
             return View(viewModel);
         }
@@ -44,6 +45,7 @@ namespace Projeto_Web.Controllers
             };
 
             ViewBag.Id = id;
+            ViewBag.Cargo = colaborador.Cargo;
 
             return View(viewModel);
         }
@@ -66,6 +68,7 @@ namespace Projeto_Web.Controllers
             };
 
             ViewBag.Id = id;
+            ViewBag.Cargo = colaborador.Cargo;
 
             return View(viewModel);
         }
