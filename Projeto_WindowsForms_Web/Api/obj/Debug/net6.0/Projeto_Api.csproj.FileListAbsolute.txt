@@ -82,3 +82,4 @@ C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Api\obj\Debug\net6.0\Projeto_Api.pdb
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Api\obj\Debug\net6.0\Projeto_Api.genruntimeconfig.cache
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Api\obj\Debug\net6.0\ref\Projeto_Api.dll
+C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Api\obj\Debug\net6.0\Projeto_Api.sourcelink.json

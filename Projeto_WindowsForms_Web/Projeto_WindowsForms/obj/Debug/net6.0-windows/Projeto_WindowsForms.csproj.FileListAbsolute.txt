@@ -271,3 +271,4 @@ C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.pdb
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.genruntimeconfig.cache
 C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_WindowsForms\obj\Debug\net6.0-windows\ref\Projeto_WindowsForms.dll
+C:\Users\felip\OneDrive\Documentos\Estudos\Unip\PIM\PIM4\Projeto_Folha_Pagamento\Projeto_WindowsForms_Web\Projeto_WindowsForms\obj\Debug\net6.0-windows\Projeto_WindowsForms.sourcelink.json
