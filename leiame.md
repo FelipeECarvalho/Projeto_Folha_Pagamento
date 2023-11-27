@@ -4,7 +4,7 @@ O programa está disponível para as seguintes plataformas: <strong>Web</strong>
 
 Como executar o programa:
 
-1º Crie uma nova conexão no banco de dados com os seguintes dados: "uid = sa", "password = uip@123456", "server = localhost". Depois de criada a conexão, será necessário a criação de um novo banco de dados: recursos_humanos_db.
+1º Crie uma nova conexão no banco de dados (SqlServer) com os seguintes dados: "uid = sa", "password = unip@123456", "server = localhost". Depois de criada a conexão, será necessário a criação de um novo banco de dados: recursos_humanos_db.
 
   1.1° Execute no seu banco de dados o script no que está dentro dos arquivos do programa:
   <br>
