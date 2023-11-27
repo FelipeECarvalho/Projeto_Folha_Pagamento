@@ -34,12 +34,14 @@ https://imgur.com/a/JdfejHk
 5º Como executar o projeto APP.
 
   5.1º. Abra o Android Studio e carregue o projeto.
-  5.2º Após carregar o projeto procure a pasta Conexao. app/java/com.exemple.myapplication/DAL/Conexao
+  <br>
+  5.2º Após carregar o projeto procure a pasta Conexao. "app/java/com.exemple.myapplication/DAL/Conexao"
   <br>
   https://imgur.com/a/Elo5eQR
   <br>
 
   5.3º Dentro da classe Conexao, mude as variáveis de acordo com a conexão do seu banco de dados. Mude também a variável IP para seu próprio ip
+  <br>
     5.4º Para conseguir seu IP, basta abrir o CMD e digitar ipconfig, depois copie o ip que fica em Endereço IPv4 - ex:  Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.9
   <br>
   https://imgur.com/a/FTqaHNb
